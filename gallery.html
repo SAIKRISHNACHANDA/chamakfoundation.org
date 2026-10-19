@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery &amp; Live Events · Chamak Foundation</title>
+<meta name="description" content="A real-time visual chronicle of Chamak Foundation's daily ground initiatives, scholarship distribution ceremonies, STEM innovation labs, and community milestones.">
+<link rel="icon" href="assets/logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=3.5">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/logo.jpeg" alt="Chamak Foundation logo" class="nav__logo">
+      <span class="nav__brandtext"><strong>Chamak Foundation</strong><span>Chamak Padhai Se</span></span>
+    </a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="vision-mission.html">Vision &amp; Mission</a>
+      <a href="programmes.html">Our Programmes</a>
+      <a href="gallery.html" class="is-active">Gallery</a>
+      <a href="team.html">Our Team</a>
+      <a href="impact.html">Impact</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav__cta">
+      <a href="get-involved.html" class="btn btn-gold btn-sm">Donate Now</a>
+      <button class="nav__burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="nav__scrim"></div>
+<div class="nav__mobile">
+  <button class="nav__mobile-close" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="vision-mission.html">Vision &amp; Mission</a>
+  <a href="programmes.html">Our Programmes</a>
+  <a href="gallery.html" class="is-active">Gallery</a>
+  <a href="team.html">Our Team</a>
+  <a href="impact.html">Impact</a>
+  <a href="get-involved.html">Get Involved</a>
+  <a href="contact.html">Contact</a>
+  <a href="get-involved.html" class="btn btn-gold" style="margin-top:18px;justify-content:center;">Donate Now</a>
+</div>
+
+<section class="hero" style="min-height:auto;">
+  <canvas class="hero__stars"></canvas>
+  <div class="hero__grid hero__grid--center" style="padding-top:90px;padding-bottom:64px;">
+    <div class="hero__eyebrow" style="justify-content:center;">Moments of Transformation</div>
+    <h1>Gallery &amp; Live Field Updates</h1>
+    <p class="hero__desc" style="margin:0 auto;text-align:center;">A real-time visual journal of our daily grassroots initiatives, scholarship drives, STEM labs, and community milestones.</p>
+  </div>
+</section>
+
+<!-- Quick Impact Metric Strip -->
+<section class="gallery-stats-strip">
+  <div class="container">
+    <div class="gallery-stats-grid">
+      <div class="gallery-stat-item">
+        <span class="gallery-stat-num">6</span>
+        <span class="gallery-stat-label">Documented Events</span>
+      </div>
+      <div class="gallery-stat-item">
+        <span class="gallery-stat-num">15+</span>
+        <span class="gallery-stat-label">Archived Photos</span>
+      </div>
+      <div class="gallery-stat-item">
+        <span class="gallery-stat-num">25+</span>
+        <span class="gallery-stat-label">Communities Documented</span>
+      </div>
+      <div class="gallery-stat-item">
+        <span class="gallery-stat-num">100%</span>
+        <span class="gallery-stat-label">Authentic Field Work</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Gallery Section -->
+<section class="section section--gallery-main">
+  <div class="container">
+    <div class="gallery-controls">
+      <div class="gallery-search-wrap">
+        <input type="text" id="gallerySearchInput" placeholder="Search events by title, city, program, or keyword..." class="gallery-search-input">
+      </div>
+
+      <div class="gallery-pills" id="galleryFilterPills">
+        <button type="button" class="gallery-pill is-active" data-cat="all"><span>All Updates</span> <span class="gallery-pill__count">6</span></button>
+        <button type="button" class="gallery-pill" data-cat="scholarships"><span>Scholarships</span> <span class="gallery-pill__count">1</span></button>
+        <button type="button" class="gallery-pill" data-cat="community"><span>Community Outreach</span> <span class="gallery-pill__count">1</span></button>
+        <button type="button" class="gallery-pill" data-cat="career"><span>Career Mentorship</span> <span class="gallery-pill__count">1</span></button>
+        <button type="button" class="gallery-pill" data-cat="stem"><span>Digital &amp; STEM Labs</span> <span class="gallery-pill__count">2</span></button>
+        <button type="button" class="gallery-pill" data-cat="milestone"><span>Milestones</span> <span class="gallery-pill__count">1</span></button>
+      </div>
+    </div>
+
+    <!-- Events Stream -->
+    <div class="events-stream" id="eventsStreamContainer">
+      <!-- Event 1: Featured Mosaic -->
+      <article class="event-card" data-category="scholarships" data-keywords="scholarship kit annual distribution hyderabad auditorum school tuition">
+        <div class="event-card__header">
+          <div class="event-card__date-box">
+            <span class="event-card__day">18</span>
+            <span class="event-card__my">Oct 2026</span>
+          </div>
+          <div class="event-card__info">
+            <div class="event-card__meta-row">
+              <span class="event-card__badge">Flagship Event</span>
+              <span class="event-card__category">Scholarships</span>
+              <span class="event-card__metric"><span class="event-card__metric-dot"></span> 120+ Students Sponsored</span>
+            </div>
+            <h2 class="event-card__title">Annual Scholarship &amp; Academic Kit Distribution Drive</h2>
+            <div class="event-card__location">📍 Hyderabad Central Auditorium, Telangana</div>
+          </div>
+        </div>
+        <p class="event-card__summary">Comprehensive annual academic sponsorships disbursed to deserving students from economically vulnerable families. Covers full academic school fees, backpacks, textbooks, and essential stationery sets.</p>
+        
+        <div class="event-grid">
+          <div class="grid-mosaic">
+            <div class="grid-item grid-item--large gallery-trigger" data-img="assets/img/scholarship-ceremony.jpg" data-title="Annual Scholarship &amp; Academic Kit Distribution Drive" data-caption="A high-achieving student proudly receiving her annual sponsorship kit and certificate on stage.">
+              <img src="assets/img/scholarship-ceremony.jpg" alt="Student receiving scholarship certificate" class="grid-img">
+              <div class="grid-overlay">
+                <span class="grid-overlay__caption">A high-achieving student proudly receiving her annual sponsorship kit and certificate on stage.</span>
+                <span class="grid-overlay__action">🔍 Expand</span>
+              </div>
+            </div>
+            <div class="grid-mosaic__sidebar">
+              <div class="grid-item grid-item--stacked gallery-trigger" data-img="assets/img/classroom-students.jpg" data-title="Orientation &amp; Classroom Prep" data-caption="Scholarship recipients attending an orientation and goal-setting workshop before the academic term.">
+                <img src="assets/img/classroom-students.jpg" alt="Students in classroom" class="grid-img">
+                <div class="grid-overlay">
+                  <span class="grid-overlay__caption">Scholarship recipients attending an orientation session.</span>
+                  <span class="grid-overlay__action">🔍 Expand</span>
+                </div>
+              </div>
+              <div class="grid-item grid-item--stacked gallery-trigger" data-img="assets/img/founder-president.jpg" data-title="Leadership Address" data-caption="Founder President Dr. Mohammad Azam Ali sharing words of wisdom and encouragement with parents.">
+                <img src="assets/img/founder-president.jpg" alt="Founder President" class="grid-img">
+                <div class="grid-overlay">
+                  <span class="grid-overlay__caption">Founder President Dr. Mohammad Azam Ali sharing words of encouragement.</span>
+                  <span class="grid-overlay__action">🔍 Expand</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="event-card__footer">
+          <span class="event-card__count">📷 3 Photographs Captured</span>
+          <button type="button" class="event-card__view-all gallery-trigger" data-img="assets/img/scholarship-ceremony.jpg" data-title="Annual Scholarship Drive" data-caption="Merit student receiving annual school sponsorship package and backpack on stage.">View Photo Showcase 🔍</button>
+        </div>
+      </article>
+
+      <!-- Event 2: Split Duo -->
+      <article class="event-card" data-category="community" data-keywords="reading camp library neem tree shadnagar books telangana outdoor">
+        <div class="event-card__header">
+          <div class="event-card__date-box">
+            <span class="event-card__day">14</span>
+            <span class="event-card__my">Oct 2026</span>
+          </div>
+          <div class="event-card__info">
+            <div class="event-card__meta-row">
+              <span class="event-card__badge">Daily Field Update</span>
+              <span class="event-card__category">Community Outreach</span>
+              <span class="event-card__metric"><span class="event-card__metric-dot"></span> 450+ Books Gifted</span>
+            </div>
+            <h2 class="event-card__title">Gram Panchayat Outdoor Reading Camp &amp; Library Drive</h2>
+            <div class="event-card__location">📍 Shadnagar Cluster, Telangana</div>
+          </div>
+        </div>
+        <p class="event-card__summary">A joyful outdoor reading camp conducted under the village neem tree for primary school students, igniting curiosity and gifting bilingual storybooks to establish household mini-libraries.</p>
+        
+        <div class="event-grid">
+          <div class="grid-duo">
+            <div class="grid-item grid-item--half gallery-trigger" data-img="assets/img/book-reading-camp.jpg" data-title="Under the Neem Tree" data-caption="Village students and volunteers engaged in an interactive story circle and vocabulary games.">
+              <img src="assets/img/book-reading-camp.jpg" alt="Children reading outdoors" class="grid-img">
+              <div class="grid-overlay">
+                <span class="grid-overlay__caption">Village students and volunteers engaged in an interactive story circle.</span>
+                <span class="grid-overlay__action">🔍 Expand</span>
+              </div>
+            </div>
+            <div class="grid-item grid-item--half gallery-trigger" data-img="assets/img/classroom-students.jpg" data-title="Reading Comprehension" data-caption="Young learners demonstrating reading comprehension and taking home new illustrated storybooks.">
+              <img src="assets/img/classroom-students.jpg" alt="Students in class" class="grid-img">
+              <div class="grid-overlay">
+                <span class="grid-overlay__caption">Young learners taking home new illustrated storybooks.</span>
+                <span class="grid-overlay__action">🔍 Expand</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="event-card__footer">
+          <span class="event-card__count">📷 2 Photographs Captured</span>
+          <button type="button" class="event-card__view-all gallery-trigger" data-img="assets/img/book-reading-camp.jpg" data-title="Outdoor Reading Camp" data-caption="Village students and volunteers engaged in an interactive story circle.">View Photo Showcase 🔍</button>
+        </div>
+      </article>
+
+      <!-- Event 3: Trio Strip -->
+      <article class="event-card" data-category="career" data-keywords="career mentorship counseling t-hub high school guidance summit">
+        <div class="event-card__header">
+          <div class="event-card__date-box">
+            <span class="event-card__day">08</span>
+            <span class="event-card__my">Oct 2026</span>
+          </div>
+          <div class="event-card__info">
+            <div class="event-card__meta-row">
+              <span class="event-card__badge">Youth Empowerment</span>
+              <span class="event-card__category">Career Mentorship</span>
+              <span class="event-card__metric"><span class="event-card__metric-dot"></span> 280+ High Schoolers Guided</span>
+            </div>
+            <h2 class="event-card__title">Youth Career Guidance &amp; Professional Counseling Summit</h2>
+            <div class="event-card__location">📍 T-Hub Auditorium, Hyderabad</div>
+          </div>
+        </div>
+        <p class="event-card__summary">A high-impact interactive mentorship conference connecting 10th and 12th standard students with professionals across engineering, medicine, civil services, commerce, and digital design.</p>
+        
+        <div class="event-grid">
+          <div class="grid-trio">
+            <div class="grid-item grid-item--third gallery-trigger" data-img="assets/img/career-mentorship-session.jpg" data-title="Counselor Presentation" data-caption="Industry counselors guiding students through entrance exams, career pathways, and confidence building.">
+              <img src="assets/img/career-mentorship-session.jpg" alt="Career mentorship" class="grid-img">
+              <div class="grid-overlay">
+                <span class="grid-overlay__caption">Counselors guiding students through career pathways.</span>
+                <span class="grid-overlay__action">🔍 Expand</span>
+              </div>
+            </div>
+            <div class="grid-item grid-item--third gallery-trigger" data-img="assets/img/digital-lab.jpg" data-title="Coding Simulator" data-caption="Hands-on tech exploration: students testing coding simulators and graphic design fundamentals.">
+              <img src="assets/img/digital-lab.jpg" alt="Digital lab" class="grid-img">
+              <div class="grid-overlay">
+                <span class="grid-overlay__caption">Students testing computer applications and coding simulators.</span>
+                <span class="grid-overlay__action">🔍 Expand</span>
+              </div>
+            </div>
+            <div class="grid-item grid-item--third gallery-trigger" data-img="assets/img/classroom-students.jpg" data-title="Mentorship Breakout" data-caption="Interactive breakout groups where students mapped their 5-year academic roadmap with senior mentors.">
+              <img src="assets/img/classroom-students.jpg" alt="Students in group" class="grid-img">
+              <div class="grid-overlay">
+                <span class="grid-overlay__caption">Breakout groups mapping a 5-year academic roadmap.</span>
+                <span class="grid-overlay__action">🔍 Expand</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="event-card__footer">
+          <span class="event-card__count">📷 3 Photographs Captured</span>
+          <button type="button" class="event-card__view-all gallery-trigger" data-img="assets/img/career-mentorship-session.jpg" data-title="Youth Career Guidance Summit" data-caption="Industry counselors guiding students through entrance exams.">View Photo Showcase 🔍</button>
+        </div>
+      </article>
+
+      <!-- Event 4: Featured Mosaic STEM Fair -->
+      <article class="event-card" data-category="stem" data-keywords="stem science robotics fair solar car models secunderabad high school">
+        <div class="event-card__header">
+          <div class="event-card__date-box">
+            <span class="event-card__day">29</span>
+            <span class="event-card__my">Sep 2026</span>
+          </div>
+          <div class="event-card__info">
+            <div class="event-card__meta-row">
+              <span class="event-card__badge">Daily Field Update</span>
+              <span class="event-card__category">Digital &amp; STEM Labs</span>
+              <span class="event-card__metric"><span class="event-card__metric-dot"></span> 35 Working Models Built</span>
+            </div>
+            <h2 class="event-card__title">Future Innovators: Hands-on STEM &amp; Robotics Model Fair</h2>
+            <div class="event-card__location">📍 Secunderabad Government High School</div>
+          </div>
+        </div>
+        <p class="event-card__summary">Transforming abstract science concepts into tangible excitement: underprivileged students assembled working solar cars, simple robotic circuits, and clean energy demonstrations.</p>
+        
+        <div class="event-grid">
+          <div class="grid-mosaic">
+            <div class="grid-item grid-item--large gallery-trigger" data-img="assets/img/science-robotics-fair.jpg" data-title="Solar Car Assembly" data-caption="Enthusiastic students assembling solar-powered micro-cars under the guidance of volunteer engineers.">
+              <img src="assets/img/science-robotics-fair.jpg" alt="Science robotics fair" class="grid-img">
+              <div class="grid-overlay">
+                <span class="grid-overlay__caption">Students assembling solar-powered micro-cars.</span>
+                <span class="grid-overlay__action">🔍 Expand</span>
+              </div>
+            </div>
+            <div class="grid-mosaic__sidebar">
+              <div class="grid-item grid-item--stacked gallery-trigger" data-img="assets/img/digital-lab.jpg" data-title="Software &amp; Sensors" data-caption="Integrating software with hardware: teaching students basic logic, sensors, and computer literacy.">
+                <img src="assets/img/digital-lab.jpg" alt="Lab workstation" class="grid-img">
+                <div class="grid-overlay">
+                  <span class="grid-overlay__caption">Teaching students basic logic, sensors, and PC tools.</span>
+                  <span class="grid-overlay__action">🔍 Expand</span>
+                </div>
+              </div>
+              <div class="grid-item grid-item--stacked gallery-trigger" data-img="assets/img/book-reading-camp.jpg" data-title="DIY Kits Distribution" data-caption="Students receiving foundational science workbooks and DIY experimental circuit kits to take home.">
+                <img src="assets/img/book-reading-camp.jpg" alt="Science kits" class="grid-img">
+                <div class="grid-overlay">
+                  <span class="grid-overlay__caption">Receiving science workbooks and DIY circuit kits.</span>
+                  <span class="grid-overlay__action">🔍 Expand</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="event-card__footer">
+          <span class="event-card__count">📷 3 Photographs Captured</span>
+          <button type="button" class="event-card__view-all gallery-trigger" data-img="assets/img/science-robotics-fair.jpg" data-title="STEM Fair" data-caption="Enthusiastic students assembling solar-powered micro-cars.">View Photo Showcase 🔍</button>
+        </div>
+      </article>
+
+      <!-- Event 5: Split Duo Digital Lab -->
+      <article class="event-card" data-category="stem" data-keywords="digital literacy lab old city hyderabad computers workstations">
+        <div class="event-card__header">
+          <div class="event-card__date-box">
+            <span class="event-card__day">18</span>
+            <span class="event-card__my">Sep 2026</span>
+          </div>
+          <div class="event-card__info">
+            <div class="event-card__meta-row">
+              <span class="event-card__badge">Center Inauguration</span>
+              <span class="event-card__category">Digital &amp; STEM Labs</span>
+              <span class="event-card__metric"><span class="event-card__metric-dot"></span> 40 Workstations Active</span>
+            </div>
+            <h2 class="event-card__title">Digital Empowerment Lab &amp; Practical Computing Camp</h2>
+            <div class="event-card__location">📍 Chamak Learning Center, Old City, Hyderabad</div>
+          </div>
+        </div>
+        <p class="event-card__summary">Bridging the acute digital divide by giving students zero-cost daily access to modern PC terminals, safe internet exploration, typing mastery, and basic office application coaching.</p>
+        
+        <div class="event-grid">
+          <div class="grid-duo">
+            <div class="grid-item grid-item--half gallery-trigger" data-img="assets/img/digital-lab.jpg" data-title="Computer Workstations" data-caption="Students actively practicing 21st-century computer skills and digital research techniques.">
+              <img src="assets/img/digital-lab.jpg" alt="Digital lab" class="grid-img">
+              <div class="grid-overlay">
+                <span class="grid-overlay__caption">Practicing 21st-century computer skills and digital research.</span>
+                <span class="grid-overlay__action">🔍 Expand</span>
+              </div>
+            </div>
+            <div class="grid-item grid-item--half gallery-trigger" data-img="assets/img/science-robotics-fair.jpg" data-title="Practical Projects" data-caption="Practical sessions where theoretical computer science is reinforced through interactive projects.">
+              <img src="assets/img/science-robotics-fair.jpg" alt="Interactive science" class="grid-img">
+              <div class="grid-overlay">
+                <span class="grid-overlay__caption">Interactive sessions reinforcing practical skills.</span>
+                <span class="grid-overlay__action">🔍 Expand</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="event-card__footer">
+          <span class="event-card__count">📷 2 Photographs Captured</span>
+          <button type="button" class="event-card__view-all gallery-trigger" data-img="assets/img/digital-lab.jpg" data-title="Digital Empowerment Lab" data-caption="Students actively practicing computer skills.">View Photo Showcase 🔍</button>
+        </div>
+      </article>
+
+      <!-- Event 6: Milestone Launch -->
+      <article class="event-card" data-category="milestone" data-keywords="foundation launch inauguration shanta sinha venkat reddy azam ali 2023 hyderabad">
+        <div class="event-card__header">
+          <div class="event-card__date-box">
+            <span class="event-card__day">06</span>
+            <span class="event-card__my">Oct 2023</span>
+          </div>
+          <div class="event-card__info">
+            <div class="event-card__meta-row">
+              <span class="event-card__badge">Historic Milestone</span>
+              <span class="event-card__category">Milestones</span>
+              <span class="event-card__metric"><span class="event-card__metric-dot"></span> Mission Commenced</span>
+            </div>
+            <h2 class="event-card__title">Foundation Launch &amp; Inauguration at Prof. Shanta Sinha's Residence</h2>
+            <div class="event-card__location">📍 Prof. Shanta Sinha Residence, Hyderabad</div>
+          </div>
+        </div>
+        <p class="event-card__summary">Chamak Foundation was formally launched in the presence of renowned educationist and Ramon Magsaysay awardee Prof. Shanta Sinha and R. Venkat Reddy, National Convenor of MV Foundation, guided by Founder President Dr. Mohammad Azam Ali.</p>
+        
+        <div class="event-grid">
+          <div class="grid-duo">
+            <div class="grid-item grid-item--half gallery-trigger" data-img="assets/img/founder-president.jpg" data-title="Inaugural Gathering" data-caption="Dignitaries and child rights champions inaugurating Chamak Foundation on 6 October 2023.">
+              <img src="assets/img/founder-president.jpg" alt="Inauguration gathering" class="grid-img">
+              <div class="grid-overlay">
+                <span class="grid-overlay__caption">Prof. Shanta Sinha, R. Venkat Reddy, and Dr. Mohammad Azam Ali at the launch.</span>
+                <span class="grid-overlay__action">🔍 Expand</span>
+              </div>
+            </div>
+            <div class="grid-item grid-item--half gallery-trigger" data-img="assets/img/scholarship-ceremony.jpg" data-title="First Cohort" data-caption="The inaugural batch of students receiving foundational education support, setting the movement in motion.">
+              <img src="assets/img/scholarship-ceremony.jpg" alt="Scholarship cohort" class="grid-img">
+              <div class="grid-overlay">
+                <span class="grid-overlay__caption">The inaugural cohort of students receiving education support.</span>
+                <span class="grid-overlay__action">🔍 Expand</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="event-card__footer">
+          <span class="event-card__count">📷 2 Photographs Captured</span>
+          <button type="button" class="event-card__view-all gallery-trigger" data-img="assets/img/founder-president.jpg" data-title="Inaugural Gathering" data-caption="Dignitaries inaugurating Chamak Foundation.">View Photo Showcase 🔍</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- Developer & Volunteer Daily Update Helper -->
+    <div class="event-update-helper">
+      <div class="event-update-helper__badge">✨ Developer &amp; Volunteer Guide</div>
+      <div class="event-update-helper__grid">
+        <div>
+          <h3>How to update events every day:</h3>
+          <p>Our gallery is engineered with a modular, scalable architecture. Whenever an event happens:</p>
+          <ol class="event-update-helper__steps">
+            <li>Place your event photographs into <code>public/assets/img/</code>.</li>
+            <li>Open <code>src/data/galleryEvents.js</code> (or edit <code>gallery.html</code>) and append a new event object with title, date, and photo URLs.</li>
+            <li>Choose your card grid style: <code>featured-mosaic</code> (1 hero + 2 stacked), <code>split-duo</code> (2 equal), or <code>trio-strip</code> (3 action tiles).</li>
+          </ol>
+        </div>
+        <div class="event-update-helper__card">
+          <h4>Have field photos or daily reports?</h4>
+          <p>Send high-resolution photos and brief event notes directly to the Chamak Foundation media team for instant publication.</p>
+          <a href="https://wa.me/919100007768?text=Hello%20Chamak%20Foundation,%20I%20have%20event%20photos%20and%20field%20updates%20to%20share." target="_blank" rel="noopener noreferrer" class="btn btn-gold btn--full">
+            💬 Submit Event Photos via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fullscreen Lightbox Modal -->
+<div id="staticLightbox" class="gallery-lightbox" style="display:none;">
+  <div class="gallery-lightbox__dialog" onclick="event.stopPropagation()">
+    <div class="gallery-lightbox__header">
+      <div>
+        <span class="gallery-lightbox__badge">Chamak Event Showcase</span>
+        <h4 id="lightboxTitle" class="gallery-lightbox__title">Event Photograph</h4>
+      </div>
+      <button type="button" id="lightboxCloseBtn" class="gallery-lightbox__close" title="Close">&times;</button>
+    </div>
+    <div class="gallery-lightbox__stage">
+      <div class="gallery-lightbox__image-wrapper">
+        <img id="lightboxImg" src="" alt="Enlarged photo" class="gallery-lightbox__img">
+      </div>
+    </div>
+    <div class="gallery-lightbox__footer">
+      <p id="lightboxCaption" class="gallery-lightbox__caption">Photograph description</p>
+      <div class="gallery-lightbox__meta">
+        <span class="gallery-lightbox__location">📍 Hyderabad, Telangana · Verified Event</span>
+        <span class="gallery-lightbox__counter">High-Resolution Photo</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">
+          <img src="assets/logo.jpeg" alt="Chamak Foundation logo" style="width:54px;height:54px;border-radius:50%;object-fit:cover;">
+          <div>
+            <strong>Chamak Foundation</strong>
+            <span>Chamak Padhai Se</span>
+          </div>
+        </div>
+        <p>Empowering underprivileged children through education, scholarships and mentorship to help every child shine in life.</p>
+        <div style="margin-top:16px;font-size:0.84rem;color:rgba(250,247,239,0.5)">
+          Registered Non-Profit Organisation · Hyderabad, India
+        </div>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="vision-mission.html">Vision &amp; Mission</a></li>
+          <li><a href="programmes.html">Our Programmes</a></li>
+          <li><a href="gallery.html">Gallery &amp; Events</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="impact.html">Impact &amp; Stories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get Involved</h5>
+        <ul class="footer__links">
+          <li><a href="get-involved.html#donate">Support a Student</a></li>
+          <li><a href="get-involved.html#volunteer">Become a Volunteer</a></li>
+          <li><a href="get-involved.html#partner">Corporate &amp; CSR</a></li>
+          <li><a href="contact.html">Contact Our Office</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact Us</h5>
+        <p style="margin:0 0 10px;color:var(--cream-100);font-weight:500;">Hyderabad, Telangana, India</p>
+        <p style="margin:0 0 6px;"><a href="tel:+919100007768" style="color:var(--gold-400);">+91 91000 07768</a></p>
+        <p style="margin:0;"><a href="mailto:chamakpadhaise@gmail.com" style="color:var(--gold-400);">chamakpadhaise@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>&copy; 2026 Chamak Foundation (Chamak Padhai Se). All rights reserved.</div>
+      <div>Registered NGO committed to transparency &amp; child rights.</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919100007768" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff"><path d="M16 .5C7.44.5.5 7.44.5 16c0 2.73.71 5.3 1.95 7.53L.5 31.5l8.19-1.91A15.4 15.4 0 0 0 16 31.5c8.56 0 15.5-6.94 15.5-15.5S24.56.5 16 .5zm7.88 22.04c-.33.93-1.63 1.74-2.27 1.85-.6.1-1.39.15-2.26-.14a19.7 19.7 0 0 1-8.08-5.26 18.2 18.2 0 0 1-3.66-6.62c-.39-1.31.06-2.61.64-3.19.4-.4.89-.6 1.19-.6.28 0 .56 0 .8.01.26.01.6.09.87.69.34.78 1.16 2.82 1.26 3.03.1.2.16.44.03.7-.12.26-.18.42-.36.63-.18.21-.38.47-.54.63-.18.18-.37.38-.16.74.21.36.93 1.54 2 2.49 1.38 1.22 2.54 1.6 2.9 1.78.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.8-.18.33.12 2.07.98 2.43 1.16.36.18.6.27.69.42.09.15.09.88-.24 1.81z"/></svg>
+</a>
+
+<script src="js/main.js"></script>
+<script>
+  // Static Gallery Filter & Lightbox Logic
+  const pills = document.querySelectorAll('#galleryFilterPills .gallery-pill');
+  const searchInput = document.getElementById('gallerySearchInput');
+  const cards = document.querySelectorAll('.event-card');
+  const lightbox = document.getElementById('staticLightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxCloseBtn');
+
+  let currentCategory = 'all';
+
+  function filterCards() {
+    const query = searchInput.value.toLowerCase().trim();
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      const keywords = card.getAttribute('data-keywords') || '';
+      const title = card.querySelector('.event-card__title').innerText.toLowerCase();
+      const matchCat = (currentCategory === 'all' || cat === currentCategory);
+      const matchQuery = !query || keywords.includes(query) || title.includes(query);
+      card.style.display = (matchCat && matchQuery) ? 'block' : 'none';
+    });
+  }
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('is-active'));
+      pill.classList.add('is-active');
+      currentCategory = pill.getAttribute('data-cat');
+      filterCards();
+    });
+  });
+
+  searchInput.addEventListener('input', filterCards);
+
+  // Lightbox Triggers
+  document.querySelectorAll('.gallery-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const src = trigger.getAttribute('data-img');
+      const title = trigger.getAttribute('data-title') || 'Event Showcase';
+      const caption = trigger.getAttribute('data-caption') || '';
+      if (src) {
+        lightboxImg.src = src;
+        lightboxTitle.innerText = title;
+        lightboxCaption.innerText = caption;
+        lightbox.style.display = 'flex';
+      }
+    });
+  });
+
+  lightboxClose.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.style.display !== 'none') {
+      lightbox.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>
