@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   Calendar,
   MapPin,
@@ -27,6 +28,7 @@ import {
   Copy,
   Maximize2,
   Minimize2,
+  LogOut,
 } from "lucide-react";
 import { GALLERY_CATEGORIES } from "@/data/galleryEvents";
 
@@ -90,11 +92,23 @@ const GRID_STYLE_OPTIONS = [
 ];
 
 export default function GalleryAdminPage() {
+  const router = useRouter();
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [notification, setNotification] = useState(null);
+
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/admin/logout", { method: "POST" });
+    } catch (err) {
+      // ignore network errors
+    } finally {
+      router.push("/admin/login");
+      router.refresh();
+    }
+  };
 
   // Modal States
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -423,6 +437,20 @@ export default function GalleryAdminPage() {
                 className="btn btn-gold btn-sm"
               >
                 <Plus size={16} /> Add New Event
+              </button>
+
+              <div className="admin-user-pill">
+                <span className="admin-user-avatar">A</span>
+                <span className="admin-user-name">Admin</span>
+              </div>
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="admin-btn-logout"
+                title="Sign out of Admin Dashboard"
+              >
+                <LogOut size={13} />
+                <span>Logout</span>
               </button>
             </div>
           </div>
