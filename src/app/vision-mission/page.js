@@ -82,7 +82,7 @@ export default function VisionMissionPage() {
       <section className="section">
         <div className="container">
           <div className="grid grid--2 reveal">
-            <div className="card" style={{ borderColor: "rgba(201,154,58,0.3)" }}>
+            <div id="vision" className="card" style={{ borderColor: "rgba(201,154,58,0.3)", scrollMarginTop: "100px" }}>
               <div className="card__body" style={{ padding: "44px 38px" }}>
                 <div className="card__icon" style={{ background: "rgba(201,154,58,0.12)", color: "var(--gold-600)" }}>
                   <Eye size={26} strokeWidth={1.8} />
@@ -97,7 +97,7 @@ export default function VisionMissionPage() {
               </div>
             </div>
 
-            <div className="card" style={{ borderColor: "rgba(11,27,56,0.15)", background: "linear-gradient(145deg, #FAF7EF 0%, #F3EDE0 100%)" }}>
+            <div id="mission" className="card" style={{ borderColor: "rgba(11,27,56,0.15)", background: "linear-gradient(145deg, #FAF7EF 0%, #F3EDE0 100%)", scrollMarginTop: "100px" }}>
               <div className="card__body" style={{ padding: "44px 38px" }}>
                 <div className="card__icon" style={{ background: "var(--navy-900)", color: "var(--gold-400)" }}>
                   <Target size={26} strokeWidth={1.8} />

@@ -57,6 +57,21 @@
   if(scrim){ scrim.addEventListener('click', closeMenu); }
   if(mobile){
     mobile.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    mobile.querySelectorAll('.nav__mobile-trigger').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var group = btn.closest('.nav__mobile-group');
+        if(!group) return;
+        var sublinks = group.querySelector('.nav__mobile-sublinks');
+        if(sublinks){
+          var isHidden = window.getComputedStyle(sublinks).display === 'none';
+          sublinks.style.display = isHidden ? 'flex' : 'none';
+          var chevron = btn.querySelector('.chevron');
+          if(chevron){
+            chevron.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+          }
+        }
+      });
+    });
   }
 
   document.addEventListener('keydown', function(e){
@@ -126,7 +141,7 @@
       e.preventDefault();
       var note = form.querySelector('.form-note');
       if(note){
-        note.textContent = 'Thanks — this form is not yet connected to an inbox. Please email info@chamakfoundation.org directly until this is wired up.';
+        note.textContent = 'Thanks — this form is not yet connected to an inbox. Please email chamakfoundation23@gmail.com directly until this is wired up.';
       }
     });
   });

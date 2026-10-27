@@ -1,31 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { 
+import {
   MapPin, 
   Phone, 
   Mail, 
   Globe, 
-  Send, 
   CheckCircle2, 
   ChevronDown, 
   ChevronUp, 
-  MessageSquare,
   Clock,
-  HelpCircle
+  MessageCircle,
+  ArrowRight,
+  Sparkles,
+  HeartHandshake,
+  GraduationCap,
+  Users,
+  Compass
 } from "lucide-react";
 
 export default function ContactPage() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "general",
-    message: "",
-  });
-
   const [openFaq, setOpenFaq] = useState(0);
 
   const faqs = [
@@ -43,18 +39,13 @@ export default function ContactPage() {
     },
     {
       q: "How can our school or basti community partner with Chamak?",
-      a: "Government and low-income private schools can write to info@chamakfoundation.org. We evaluate pupil strength, infrastructural readiness, and teacher availability before rolling out remedial coaching or a community library nook.",
+      a: "Government and low-income private schools can write to chamakfoundation23@gmail.com. We evaluate pupil strength, infrastructural readiness, and teacher availability before rolling out remedial coaching or a community library nook.",
     },
     {
       q: "Can I sponsor a specific child or community library?",
       a: "Yes. Donors can choose to sponsor a specific high school scholar or fund an entire community library unit. You will receive direct periodic updates on the student's academic marks or the library's daily footfall.",
     },
   ];
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
 
   return (
     <>
@@ -64,15 +55,18 @@ export default function ContactPage() {
         subtitle="We would love to hear from you. Reach out with questions, collaboration ideas, or sponsorship inquiries."
       />
 
-      {/* Main Split: Contact Details & Interactive Form */}
+      {/* Main Split: Contact Details & Direct Assistance Hub */}
       <section className="section">
         <div className="container">
           <div className="split reveal">
-            {/* Left: Direct Contact Information */}
+            {/* Left: Official Contact Information */}
             <div>
-              <h2 style={{ marginBottom: "24px" }}>Contact Details</h2>
+              <div className="eyebrow" style={{ color: "var(--gold-600)" }}>
+                <Sparkles size={14} /> Official Contact Channels
+              </div>
+              <h2 style={{ marginBottom: "20px", color: "var(--navy-900)" }}>Reach Our Team</h2>
               <p style={{ color: "var(--ink-500)", marginBottom: "32px", fontSize: "1.02rem", lineHeight: 1.65 }}>
-                Our leadership and coordinator team are based in Hyderabad, Telangana. We welcome visits, phone conversations, and direct emails.
+                Our leadership and coordinator team are centrally based in Hyderabad, Telangana. We welcome visits, phone conversations, and direct emails.
               </p>
 
               <div className="info-row">
@@ -86,8 +80,8 @@ export default function ContactPage() {
               <div className="info-row">
                 <div className="info-row__icon"><Phone size={20} /></div>
                 <div>
-                  <h4>Phone &amp; WhatsApp</h4>
-                  <p><a href="tel:+919100007768" style={{ color: "inherit", textDecoration: "none" }}>+91 91000 07768</a></p>
+                  <h4>Phone &amp; WhatsApp Hotline</h4>
+                  <p><a href="tel:+919866129052" style={{ color: "inherit", textDecoration: "none" }}>+91 98661 29052</a></p>
                 </div>
               </div>
 
@@ -95,14 +89,14 @@ export default function ContactPage() {
                 <div className="info-row__icon"><Mail size={20} /></div>
                 <div>
                   <h4>Official Email</h4>
-                  <p><a href="mailto:info@chamakfoundation.org" style={{ color: "inherit", textDecoration: "none" }}>info@chamakfoundation.org</a></p>
+                  <p><a href="mailto:chamakfoundation23@gmail.com" style={{ color: "inherit", textDecoration: "none" }}>chamakfoundation23@gmail.com</a></p>
                 </div>
               </div>
 
               <div className="info-row">
                 <div className="info-row__icon"><Globe size={20} /></div>
                 <div>
-                  <h4>Website</h4>
+                  <h4>Official Website</h4>
                   <p>www.chamakfoundation.org</p>
                 </div>
               </div>
@@ -132,146 +126,179 @@ export default function ContactPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="4" stroke="currentColor" strokeWidth="1.6"/><path d="M11 10l4 2-4 2v-4z" fill="currentColor"/></svg>
                 </a>
               </div>
-
-              {/* Hyderabad Location Aesthetic Card */}
-              <div 
-                style={{
-                  marginTop: "32px",
-                  padding: "24px",
-                  borderRadius: "16px",
-                  background: "linear-gradient(135deg, var(--navy-900) 0%, var(--navy-950) 100%)",
-                  color: "var(--cream-100)",
-                  border: "1px solid rgba(201,154,58,0.25)",
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--gold-400)", marginBottom: "8px", fontWeight: 700, fontSize: "0.85rem", textTransform: "uppercase" }}>
-                  <MapPin size={16} />
-                  <span>Headquarters &amp; Field Hub</span>
-                </div>
-                <div style={{ fontFamily: "var(--serif)", fontSize: "1.2rem", marginBottom: "4px" }}>
-                  Hyderabad, Telangana, India
-                </div>
-                <p style={{ color: "rgba(250,247,239,0.7)", fontSize: "0.88rem", margin: 0, lineHeight: 1.5 }}>
-                  Centrally coordinating scholarship verifications, community libraries, and volunteer tutor centres across the twin cities.
-                </p>
-              </div>
             </div>
 
-            {/* Right: Message Form with state */}
-            <div className="card" style={{ padding: "40px 36px" }}>
-              {formSubmitted ? (
-                <div style={{ textAlign: "center", padding: "36px 16px" }}>
-                  <div style={{ width: "64px", height: "64px", borderRadius: "50%", background: "rgba(37,211,102,0.15)", color: "#25D366", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
-                    <CheckCircle2 size={36} />
-                  </div>
-                  <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.7rem", color: "var(--navy-900)", marginBottom: "12px" }}>
-                    Message Received
-                  </h3>
-                  <p style={{ color: "var(--ink-500)", lineHeight: 1.6, marginBottom: "24px", fontSize: "0.98rem" }}>
-                    Thank you for reaching out, <strong>{formState.name}</strong>. A representative from Chamak Foundation will respond to <strong>{formState.email}</strong> within 24 hours.
-                  </p>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "12px", maxWidth: "300px", margin: "0 auto" }}>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setFormSubmitted(false);
-                        setFormState({ name: "", email: "", phone: "", subject: "general", message: "" });
-                      }}
-                      className="btn btn-outline-navy btn-sm"
-                    >
-                      Send Another Message
-                    </button>
-                    <a
-                      href="https://wa.me/919100007768"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-gold btn-sm"
-                    >
-                      Instant WhatsApp Chat
-                    </a>
-                  </div>
+            {/* Right: Direct Assistance Hub (Replacing Generic Form) */}
+            <div
+              className="card"
+              style={{
+                background: "#FFFFFF",
+                borderRadius: "20px",
+                padding: "40px 36px",
+                border: "1px solid rgba(201,154,58,0.25)",
+                boxShadow: "0 12px 36px rgba(11,27,56,0.06)",
+                display: "flex",
+                flexDirection: "column",
+                gap: "28px",
+              }}
+            >
+              <div>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(37,211,102,0.12)", color: "#1E8E3E", padding: "4px 12px", borderRadius: "16px", fontSize: "0.78rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "12px" }}>
+                  <MessageCircle size={14} /> Instant Direct Access
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  <h3 style={{ marginBottom: "8px", color: "var(--navy-900)", fontSize: "1.5rem" }}>Send Us a Message</h3>
-                  <p style={{ color: "var(--ink-400)", fontSize: "0.9rem", marginBottom: "24px" }}>
-                    Have a question or proposal? Fill out the form below and we will get back to you swiftly.
-                  </p>
+                <h3 style={{ fontSize: "1.6rem", color: "var(--navy-900)", margin: "0 0 8px", fontFamily: "var(--serif)" }}>
+                  Connect Directly with Our Leadership
+                </h3>
+                <p style={{ color: "var(--ink-500)", fontSize: "0.93rem", lineHeight: 1.6, margin: 0 }}>
+                  Skip waiting for email queues. Reach our team directly via WhatsApp or telephone for urgent queries, student sponsorships, or institutional partnerships.
+                </p>
+              </div>
 
-                  <div className="field">
-                    <label htmlFor="name">Your Full Name *</label>
-                    <input 
-                      id="name" 
-                      type="text" 
-                      required 
-                      value={formState.name}
-                      onChange={e => setFormState({...formState, name: e.target.value})}
-                      placeholder="e.g. Dr. A. K. Rao" 
-                    />
-                  </div>
+              {/* Instant WhatsApp Action Card */}
+              <div
+                style={{
+                  background: "linear-gradient(135deg, #0b1b38 0%, #162a52 100%)",
+                  borderRadius: "16px",
+                  padding: "24px",
+                  color: "#FAF7EF",
+                  border: "1px solid rgba(201,154,58,0.3)",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
+                  <span style={{ fontSize: "0.8rem", color: "var(--gold-400)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                    Founder &amp; President Desk
+                  </span>
+                  <span style={{ fontSize: "0.75rem", background: "rgba(37,211,102,0.2)", color: "#25D366", padding: "2px 8px", borderRadius: "10px", fontWeight: 700 }}>
+                    Online
+                  </span>
+                </div>
+                <h4 style={{ fontSize: "1.2rem", color: "#FFFFFF", margin: "0 0 6px", fontFamily: "var(--serif)" }}>
+                  Dr. Mohammad Azam Ali
+                </h4>
+                <p style={{ fontSize: "0.86rem", color: "rgba(250,247,239,0.78)", margin: "0 0 16px", lineHeight: 1.5 }}>
+                  Assistant Professor, Founder &amp; President — Chamak Foundation
+                </p>
+                <a
+                  href="https://wa.me/919866129052?text=Hello%20Dr.%20Azam%20Ali,%20I%20would%20like%20to%20connect%20regarding%20Chamak%20Foundation."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-gold btn--full"
+                  style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}
+                >
+                  <MessageCircle size={18} /> Chat Directly on WhatsApp
+                </a>
+              </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
-                    <div className="field">
-                      <label htmlFor="email">Email Address *</label>
-                      <input 
-                        id="email" 
-                        type="email" 
-                        required 
-                        value={formState.email}
-                        onChange={e => setFormState({...formState, email: e.target.value})}
-                        placeholder="you@domain.com" 
-                      />
+              {/* Direct Pathways Grid */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                <h4 style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink-400)", margin: 0, fontWeight: 700 }}>
+                  Direct Assistance by Topic
+                </h4>
+
+                <Link
+                  href="/get-involved#donate"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "14px 18px",
+                    borderRadius: "12px",
+                    background: "var(--cream-100, #F7F3EE)",
+                    border: "1px solid rgba(11,27,56,0.06)",
+                    textDecoration: "none",
+                    color: "var(--navy-900)",
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <GraduationCap size={20} style={{ color: "var(--gold-600)" }} />
+                    <div>
+                      <div style={{ fontWeight: 700, fontSize: "0.92rem" }}>Support or Sponsor a Student</div>
+                      <div style={{ fontSize: "0.78rem", color: "var(--ink-400)" }}>Verified tuition aid, books, &amp; uniform kit distribution</div>
                     </div>
-                    <div className="field">
-                      <label htmlFor="phone">Phone Number</label>
-                      <input 
-                        id="phone" 
-                        type="tel" 
-                        value={formState.phone}
-                        onChange={e => setFormState({...formState, phone: e.target.value})}
-                        placeholder="+91 91000 00000" 
-                      />
+                  </div>
+                  <ArrowRight size={16} style={{ color: "var(--navy-900)" }} />
+                </Link>
+
+                <Link
+                  href="/get-involved#volunteer"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "14px 18px",
+                    borderRadius: "12px",
+                    background: "var(--cream-100, #F7F3EE)",
+                    border: "1px solid rgba(11,27,56,0.06)",
+                    textDecoration: "none",
+                    color: "var(--navy-900)",
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <Users size={20} style={{ color: "var(--gold-600)" }} />
+                    <div>
+                      <div style={{ fontWeight: 700, fontSize: "0.92rem" }}>Become a Weekend Volunteer</div>
+                      <div style={{ fontSize: "0.78rem", color: "var(--ink-400)" }}>Tutoring, library organizing, &amp; events across Hyderabad</div>
                     </div>
                   </div>
+                  <ArrowRight size={16} style={{ color: "var(--navy-900)" }} />
+                </Link>
 
-                  <div className="field">
-                    <label htmlFor="subject">Subject / Purpose of Inquiry *</label>
-                    <select
-                      id="subject"
-                      value={formState.subject}
-                      onChange={e => setFormState({...formState, subject: e.target.value})}
-                      style={{ width: "100%", padding: "12px", borderRadius: "10px", border: "1px solid rgba(11,27,56,0.18)", background: "white", fontSize: "0.95rem" }}
-                    >
-                      <option value="general">General Inquiry</option>
-                      <option value="scholarship">Student Scholarship Application</option>
-                      <option value="volunteer">Volunteering &amp; Mentorship</option>
-                      <option value="donation">Donation &amp; Sponsorship Support</option>
-                      <option value="school-partner">Institutional / School Partnership</option>
-                    </select>
+                <Link
+                  href="/get-involved#resource-person"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "14px 18px",
+                    borderRadius: "12px",
+                    background: "var(--cream-100, #F7F3EE)",
+                    border: "1px solid rgba(11,27,56,0.06)",
+                    textDecoration: "none",
+                    color: "var(--navy-900)",
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <Compass size={20} style={{ color: "var(--gold-600)" }} />
+                    <div>
+                      <div style={{ fontWeight: 700, fontSize: "0.92rem" }}>Join as a Resource Person</div>
+                      <div style={{ fontSize: "0.78rem", color: "var(--ink-400)" }}>Guest lectures, career roadmaps, &amp; teacher workshops</div>
+                    </div>
                   </div>
+                  <ArrowRight size={16} style={{ color: "var(--navy-900)" }} />
+                </Link>
+              </div>
 
-                  <div className="field">
-                    <label htmlFor="message">Your Message *</label>
-                    <textarea 
-                      id="message" 
-                      rows={4}
-                      required
-                      value={formState.message}
-                      onChange={e => setFormState({...formState, message: e.target.value})}
-                      placeholder="Please describe how we can assist or collaborate..."
-                    ></textarea>
-                  </div>
-
-                  <button type="submit" className="btn btn-gold" style={{ width: "100%", display: "flex", justifyContent: "center", gap: "8px", padding: "14px" }}>
-                    <Send size={16} />
-                    <span>Send Message</span>
-                  </button>
-
-                  <p className="form-note" style={{ textAlign: "center", marginTop: "12px" }}>
-                    Prefer direct communication? Call us at <strong>+91 91000 07768</strong> or email <strong>info@chamakfoundation.org</strong>.
-                  </p>
-                </form>
-              )}
+              {/* Direct Email Link Strip */}
+              <div
+                style={{
+                  padding: "14px 16px",
+                  borderRadius: "12px",
+                  background: "rgba(201,154,58,0.1)",
+                  border: "1px solid rgba(201,154,58,0.25)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  fontSize: "0.88rem",
+                }}
+              >
+                <span style={{ color: "var(--navy-900)", fontWeight: 600 }}>Prefer sending documents or proposals?</span>
+                <a
+                  href="mailto:chamakfoundation23@gmail.com"
+                  style={{
+                    color: "var(--gold-700)",
+                    fontWeight: 700,
+                    textDecoration: "none",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "4px",
+                  }}
+                >
+                  chamakfoundation23@gmail.com <ArrowRight size={13} />
+                </a>
+              </div>
             </div>
           </div>
         </div>

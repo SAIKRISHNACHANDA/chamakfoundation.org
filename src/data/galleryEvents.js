@@ -29,6 +29,31 @@ export const GALLERY_CATEGORIES = [
 
 export const GALLERY_EVENTS = [
   {
+    id: "daily-field-update-27-oct-2026",
+    date: "2026-10-27",
+    dateFormatted: "27 October 2026",
+    badge: "Daily Field Update",
+    category: "Daily Field Updates",
+    title: "Daily Field Education Drive & Remedial Learning Sessions",
+    location: "Government High School Matwada & Hyderabad Learning Centers",
+    metric: "Daily Coaching Active",
+    summary:
+      "Conducting daily foundational tutoring sessions in mathematics, science, and spoken English. Distributed fresh exercise notebooks, learning kits, and school supplies to enrolled student cohorts today.",
+    gridStyle: "split-duo",
+    images: [
+      {
+        src: "/assets/img/classroom-students.jpg",
+        alt: "Students attending foundational class and daily coaching session",
+        caption: "Students actively participating in today's foundational numeracy and literacy exercises.",
+      },
+      {
+        src: "/assets/img/book-reading-camp.jpg",
+        alt: "Students reading textbooks and practicing interactive learning",
+        caption: "Tutors conducting small group reading circles and issuing study guides to scholars.",
+      },
+    ],
+  },
+  {
     id: "annual-scholarships-2026",
     date: "2026-10-18",
     dateFormatted: "18 October 2026",
@@ -63,7 +88,7 @@ export const GALLERY_EVENTS = [
     date: "2026-10-14",
     dateFormatted: "14 October 2026",
     badge: "Daily Field Update",
-    category: "Community Outreach",
+    category: "Daily Field Updates",
     title: "Gram Panchayat Outdoor Reading Camp & Library Drive",
     location: "Shadnagar Cluster, Telangana",
     metric: "450+ Books Gifted",

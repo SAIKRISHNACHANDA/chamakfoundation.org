@@ -99,15 +99,48 @@ export default function GalleryAdminPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [notification, setNotification] = useState(null);
 
+  const [authChecked, setAuthChecked] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  // Strict client-side authentication gatekeeping
+  useEffect(() => {
+    let isMounted = true;
+    async function verifyAuth() {
+      try {
+        const res = await fetch("/api/admin/me");
+        if (!res.ok) {
+          window.location.href = "/admin/login?from=/admin/gallery";
+          return;
+        }
+        const data = await res.json();
+        if (!data.authenticated) {
+          window.location.href = "/admin/login?from=/admin/gallery";
+          return;
+        }
+        if (isMounted) {
+          setCurrentUser(data.user || { username: "Admin" });
+          setAuthChecked(true);
+        }
+      } catch (err) {
+        window.location.href = "/admin/login?from=/admin/gallery";
+      }
+    }
+    verifyAuth();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   const handleLogout = async () => {
     try {
       await fetch("/api/admin/logout", { method: "POST" });
     } catch (err) {
-      // ignore network errors
-    } finally {
-      router.push("/admin/login");
-      router.refresh();
+      console.warn("Logout error:", err);
     }
+    if (typeof document !== "undefined") {
+      document.cookie = "chamak_admin_session=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+    }
+    window.location.href = "/admin/login";
   };
 
   // Modal States
@@ -375,6 +408,47 @@ export default function GalleryAdminPage() {
     });
   };
 
+  if (!authChecked) {
+    return (
+      <div style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#0b1b38",
+        color: "#faf7ef",
+        fontFamily: "var(--font-outfit), sans-serif",
+      }}>
+        <div style={{
+          background: "rgba(255,255,255,0.06)",
+          border: "1px solid rgba(201,154,58,0.3)",
+          borderRadius: "16px",
+          padding: "36px 48px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "16px",
+          boxShadow: "0 20px 40px rgba(0,0,0,0.4)"
+        }}>
+          <Image
+            src="/assets/logo.jpeg"
+            alt="Chamak Foundation"
+            width={56}
+            height={56}
+            style={{ borderRadius: "50%", border: "2px solid #c99a3a" }}
+            priority
+          />
+          <RefreshCw size={26} className="spin" style={{ color: "#c99a3a" }} />
+          <div style={{ textAlign: "center" }}>
+            <div style={{ fontWeight: 700, fontSize: "1.1rem" }}>Verifying Authorization...</div>
+            <div style={{ fontSize: "0.85rem", opacity: 0.7, marginTop: "4px" }}>Securing Chamak Foundation Admin Session</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`admin-page ${isFullscreen ? "is-fullscreen" : ""}`}>
       {/* Toast Notification */}
@@ -441,15 +515,30 @@ export default function GalleryAdminPage() {
 
               <div className="admin-user-pill">
                 <span className="admin-user-avatar">A</span>
-                <span className="admin-user-name">Admin</span>
+                <span className="admin-user-name">{currentUser?.username || "Admin"}</span>
               </div>
               <button
                 type="button"
                 onClick={handleLogout}
                 className="admin-btn-logout"
                 title="Sign out of Admin Dashboard"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  background: "#dc2626",
+                  color: "#ffffff",
+                  border: "none",
+                  borderRadius: "8px",
+                  padding: "8px 16px",
+                  fontSize: "0.82rem",
+                  fontWeight: 700,
+                  cursor: "pointer",
+                  boxShadow: "0 2px 8px rgba(220,38,38,0.3)",
+                  transition: "all 0.2s ease"
+                }}
               >
-                <LogOut size={13} />
+                <LogOut size={14} />
                 <span>Logout</span>
               </button>
             </div>

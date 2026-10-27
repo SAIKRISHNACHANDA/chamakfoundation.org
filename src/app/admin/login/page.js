@@ -94,7 +94,7 @@ function LoginForm() {
                 id="admin-username"
                 type="text"
                 autoComplete="username"
-                placeholder="admin or admin@chamakfoundation.org"
+                placeholder="admin or chamakfoundation23@gmail.com"
                 value={username}
                 onChange={(e) => {
                   setUsername(e.target.value);
@@ -152,12 +152,6 @@ function LoginForm() {
             )}
           </button>
         </form>
-
-        {/* Credentials Tip */}
-        <div className="admin-login-hint">
-          <strong>Default Admin Credentials:</strong>
-          <code>User: admin</code> · <code>Pass: Chamak@2026!</code>
-        </div>
 
         {/* Footer Link */}
         <div className="admin-login-footer">

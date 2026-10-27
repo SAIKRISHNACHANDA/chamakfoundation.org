@@ -7,7 +7,7 @@ const DEFAULT_SECRET = "chamak_secret_key_production_2026_foundation";
 export const ADMIN_CONFIG = {
   // Support both username and email login
   username: process.env.ADMIN_USERNAME || "admin",
-  email: process.env.ADMIN_EMAIL || "admin@chamakfoundation.org",
+  email: process.env.ADMIN_EMAIL || "chamakfoundation23@gmail.com",
   password: process.env.ADMIN_PASSWORD || "Chamak@2026!",
 };
 

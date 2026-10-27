@@ -126,7 +126,7 @@
       e.preventDefault();
       var note = form.querySelector('.form-note');
       if(note){
-        note.textContent = 'Thanks — this form is not yet connected to an inbox. Please email info@chamakfoundation.org directly until this is wired up.';
+        note.textContent = 'Thanks — this form is not yet connected to an inbox. Please email chamakfoundation23@gmail.com directly until this is wired up.';
       }
     });
   });

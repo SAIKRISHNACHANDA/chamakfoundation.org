@@ -27,30 +27,40 @@ const outfit = Outfit({
 
 export const metadata = {
   metadataBase: new URL("https://www.chamakfoundation.org"),
+  applicationName: "Chamak Foundation",
   title: {
     default: "Chamak Foundation · Chamak Padhai Se",
     template: "%s · Chamak Foundation",
   },
   description:
-    "Empowering underprivileged children through quality education, scholarships, mentorship, and opportunities to help every child shine in life.",
+    "Chamak Foundation (Chamak Padhai Se) NGO — Empowering underprivileged children through quality education, scholarships, mentorship, community libraries, and career guidance.",
   keywords: [
     "Chamak Foundation",
     "Chamak Padhai Se",
+    "Chamak Foundation NGO",
     "child education charity",
     "scholarships India",
     "NGO Hyderabad",
+    "Telangana education NGO",
+    "Dr Mohammad Azam Ali",
     "underprivileged children education",
     "career guidance NGO",
   ],
   authors: [{ name: "Chamak Foundation" }],
   icons: {
-    icon: "/assets/logo.jpeg",
-    apple: "/assets/logo.jpeg",
+    icon: [
+      { url: "/favicon.png", sizes: "192x192", type: "image/png" },
+      { url: "/assets/logo.jpeg", sizes: "500x500", type: "image/jpeg" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "192x192", type: "image/png" },
+    ],
   },
   openGraph: {
-    title: "Chamak Foundation — Chamak Padhai Se",
+    title: "Chamak Foundation · Chamak Padhai Se",
     description:
-      "Empowering underprivileged children through education, scholarships, and opportunities.",
+      "Empowering underprivileged children through education, scholarships, mentorship, and opportunities.",
     url: "https://www.chamakfoundation.org",
     siteName: "Chamak Foundation",
     images: [
@@ -66,9 +76,55 @@ export const metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.chamakfoundation.org/#website",
+      "url": "https://www.chamakfoundation.org/",
+      "name": "Chamak Foundation",
+      "alternateName": ["Chamak Foundation NGO", "Chamak Padhai Se"],
+      "publisher": {
+        "@id": "https://www.chamakfoundation.org/#organization",
+      },
+    },
+    {
+      "@type": "NGO",
+      "@id": "https://www.chamakfoundation.org/#organization",
+      "name": "Chamak Foundation",
+      "alternateName": "Chamak Padhai Se",
+      "url": "https://www.chamakfoundation.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.chamakfoundation.org/assets/logo.jpeg",
+        "width": 500,
+        "height": 500,
+      },
+      "image": "https://www.chamakfoundation.org/assets/logo.jpeg",
+      "description":
+        "Chamak Foundation (Chamak Padhai Se) is a registered non-profit educational organization dedicated to empowering disadvantaged students through scholarships, career guidance, and community libraries.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN",
+      },
+      "telephone": "+919866129052",
+      "email": "chamakfoundation23@gmail.com",
+    },
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} ${outfit.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <Navbar />
         <main>{children}</main>

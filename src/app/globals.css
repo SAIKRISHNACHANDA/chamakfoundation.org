@@ -19,7 +19,7 @@
   --ink-400: #7c8090;
   --white: #ffffff;
 
-  --serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --serif: var(--font-outfit), "Outfit", var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --sans: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --num: var(--font-outfit), var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
@@ -166,27 +166,149 @@ p{margin:0 0 1em;color:var(--ink-600);max-width:62ch;}
 
 .nav__links{
   display:flex;align-items:center;justify-content:center;
-  gap:clamp(8px, 1.1vw, 20px);
+  gap:clamp(18px, 2.2vw, 38px);
   flex:1 1 auto;
   min-width:0;
 }
-.nav__links a{
-  font-size:clamp(0.74rem, 0.8vw, 0.84rem);
-  font-weight:600;color:var(--ink-600);
-  letter-spacing:.04em;text-transform:uppercase;
-  position:relative;padding:8px 0;
+.nav__links a,
+.nav__item-link {
+  font-size:clamp(0.92rem, 1.02vw, 1.02rem);
+  font-weight:600;
+  color:var(--navy-900);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  position:relative;
+  padding:10px 2px;
   white-space:nowrap !important;
   flex-shrink:0;
-  transition:color .25s var(--ease);
+  transition:all .25s var(--ease);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
 }
-.nav__links a::after{
-  content:"";position:absolute;left:0;bottom:0px;width:0;height:2.5px;
+.nav__links a::after,
+.nav__item-link::after {
+  content:"";position:absolute;left:0;bottom:-2px;width:0;height:3px;
   background:var(--gold-500);border-radius:2px;
   transition:width .3s var(--ease);
 }
-.nav__links a:hover{color:var(--navy-900);}
-.nav__links a:hover::after,.nav__links a.is-active::after{width:100%;}
-.nav__links a.is-active{color:var(--navy-900);font-weight:700;}
+.nav__links a:hover,
+.nav__item:hover .nav__item-link,
+.nav__item-link:hover {color:var(--gold-600);}
+.nav__links a:hover::after,
+.nav__links a.is-active::after,
+.nav__item:hover .nav__item-link::after,
+.nav__item-link.is-active::after {width:100%;}
+.nav__links a.is-active,
+.nav__item-link.is-active {color:var(--navy-950);font-weight:700;}
+
+/* Dropdown Container */
+.nav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.nav__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #ffffff;
+  border: 1px solid rgba(201, 154, 58, 0.28);
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(11, 27, 56, 0.14), 0 4px 14px rgba(11, 27, 56, 0.05);
+  padding: 10px 8px;
+  min-width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+}
+.nav__item:hover .nav__dropdown,
+.nav__item:focus-within .nav__dropdown,
+.nav__dropdown.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(2px);
+}
+.nav__dropdown a {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 16px !important;
+  font-size: 0.94rem !important;
+  font-weight: 600 !important;
+  color: var(--navy-900) !important;
+  text-transform: none !important;
+  letter-spacing: 0.01em !important;
+  border-radius: 10px;
+  transition: all 0.18s ease !important;
+  white-space: nowrap !important;
+}
+.nav__dropdown a::after {
+  display: none !important;
+}
+.nav__dropdown a:hover {
+  background: var(--cream-100);
+  color: var(--gold-700) !important;
+  padding-left: 20px !important;
+}
+.nav__dropdown a.is-active {
+  background: rgba(201, 154, 58, 0.12);
+  color: var(--gold-800) !important;
+  font-weight: 700 !important;
+}
+
+/* Mobile Dropdown Accordion */
+.nav__mobile-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.nav__mobile-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(11, 27, 56, 0.06);
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: inherit;
+}
+.nav__mobile-sublinks {
+  display: flex;
+  flex-direction: column;
+  padding-left: 14px;
+  gap: 6px;
+  margin: 6px 0 10px;
+}
+.nav__mobile-sublinks a {
+  font-size: 0.92rem;
+  color: var(--ink-500);
+  padding: 6px 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.nav__mobile-sublinks a:hover,
+.nav__mobile-sublinks a.is-active {
+  color: var(--gold-700);
+  font-weight: 600;
+}
 
 .nav__cta{
   display:flex;align-items:center;gap:12px;
@@ -3286,5 +3408,62 @@ body:has(.admin-login-wrap) .wa-float {
   background: #fef2f2;
   border-color: #f87171;
 }
+
+/* Executive & Advisory Card UI/UX Redesign */
+.advisor-card {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 154, 58, 0.22);
+  padding: 30px 28px;
+  box-shadow: 0 10px 30px rgba(11, 27, 56, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.advisor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(11, 27, 56, 0.1);
+  border-color: rgba(201, 154, 58, 0.45);
+}
+
+.advisor-card__media {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advisor-card__photo {
+  width: 130px;
+  height: 155px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2.5px solid var(--gold-400);
+  box-shadow: 0 8px 20px rgba(11, 27, 56, 0.12);
+  position: relative;
+}
+
+.advisor-card__content {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .advisor-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 20px;
+  }
+  .advisor-card__content {
+    text-align: center;
+  }
+}
+
 
 

@@ -15,7 +15,12 @@ import {
   CheckCircle2, 
   ArrowRight,
   ShieldCheck,
-  Send
+  Send,
+  GraduationCap,
+  BookOpenCheck,
+  Briefcase,
+  Award,
+  MessageCircle
 } from "lucide-react";
 
 export default function GetInvolvedPage() {
@@ -76,7 +81,7 @@ export default function GetInvolvedPage() {
   };
 
   const copyBankDetails = () => {
-    const details = `Chamak Foundation\nAccount Number: [Official Trust Account]\nIFSC Code: [Official Bank IFSC]\nBank: Hyderabad Main Branch\nContact: +91 91000 07768\nEmail: info@chamakfoundation.org`;
+    const details = `Chamak Foundation\nAccount Number: [Official Trust Account]\nIFSC Code: [Official Bank IFSC]\nBank: Hyderabad Main Branch\nContact: +91 98661 29052\nEmail: chamakfoundation23@gmail.com`;
     navigator.clipboard.writeText(details);
     setCopiedBank(true);
     setTimeout(() => setCopiedBank(false), 2500);
@@ -99,30 +104,30 @@ export default function GetInvolvedPage() {
       <section className="section" style={{ paddingBottom: "32px" }}>
         <div className="container">
           <div className="grid grid--3 reveal" id="ways-to-help">
-            <div className="involve" id="donate">
+            <div className="involve">
               <div className="involve__icon"><Heart size={22} /></div>
-              <h3>Donate</h3>
-              <p>Your contribution funds merit scholarships and classroom supplies.</p>
-              <a href="#donate-section" className="btn btn-outline-navy btn-sm" style={{ marginTop: "14px" }}>
+              <h3>Support a Student</h3>
+              <p>Your contribution funds merit scholarships, uniforms, and classroom supplies.</p>
+              <a href="#donate" className="btn btn-outline-navy btn-sm" style={{ marginTop: "14px" }}>
                 Support a Child
               </a>
             </div>
 
-            <div className="involve" id="volunteer">
+            <div className="involve">
               <div className="involve__icon"><Users size={22} /></div>
-              <h3>Volunteer</h3>
-              <p>Give your weekends to tutor math, science, or English at local centres.</p>
-              <a href="#volunteer-section" className="btn btn-outline-navy btn-sm" style={{ marginTop: "14px" }}>
+              <h3>Become a Volunteer</h3>
+              <p>Give your weekends to tutor math, science, or English at local learning centres.</p>
+              <a href="#volunteer" className="btn btn-outline-navy btn-sm" style={{ marginTop: "14px" }}>
                 Apply as Volunteer
               </a>
             </div>
 
             <div className="involve">
               <div className="involve__icon"><Compass size={22} /></div>
-              <h3>Mentor</h3>
-              <p>Guide high schoolers through career options and college choices.</p>
-              <a href="#volunteer-section" className="btn btn-outline-navy btn-sm" style={{ marginTop: "14px" }}>
-                Become a Mentor
+              <h3>Become a Resource Person</h3>
+              <p>Deliver guest masterclasses, career roadmaps, or teacher pedagogical workshops.</p>
+              <a href="#resource-person" className="btn btn-outline-navy btn-sm" style={{ marginTop: "14px" }}>
+                Join as Resource Person
               </a>
             </div>
 
@@ -159,7 +164,7 @@ export default function GetInvolvedPage() {
       </section>
 
       {/* Interactive Donation Calculator & Details */}
-      <section className="section section--cream2" id="donate-section">
+      <section className="section section--cream2" id="donate" style={{ scrollMarginTop: "90px" }}>
         <div className="container">
           <div className="section-head section-head--center reveal">
             <div className="eyebrow" style={{ justifyContent: "center" }}>Make a Direct Donation</div>
@@ -326,18 +331,18 @@ export default function GetInvolvedPage() {
                 </div>
                 <div>
                   <div style={{ color: "var(--ink-400)", fontSize: "0.78rem", textTransform: "uppercase" }}>Helpline Phone</div>
-                  <strong style={{ color: "var(--navy-900)" }}>+91 91000 07768</strong>
+                  <strong style={{ color: "var(--navy-900)" }}>+91 98661 29052</strong>
                 </div>
                 <div>
                   <div style={{ color: "var(--ink-400)", fontSize: "0.78rem", textTransform: "uppercase" }}>Email Receipt</div>
-                  <strong style={{ color: "var(--navy-900)" }}>info@chamakfoundation.org</strong>
+                  <strong style={{ color: "var(--navy-900)" }}>chamakfoundation23@gmail.com</strong>
                 </div>
               </div>
             </div>
 
             <div style={{ textAlign: "center" }}>
               <a 
-                href={`https://wa.me/919100007768?text=${encodeURIComponent(`Hello Chamak Foundation, I would like to support your educational mission with a ${donationFrequency} pledge of INR ${currentAmount}. Please share transfer instructions.`)}`}
+                href={`https://wa.me/919866129052?text=${encodeURIComponent(`Hello Chamak Foundation, I would like to support your educational mission with a ${donationFrequency} pledge of INR ${currentAmount}. Please share transfer instructions.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-gold"
@@ -354,7 +359,7 @@ export default function GetInvolvedPage() {
       </section>
 
       {/* Volunteer Application Form */}
-      <section className="section" id="volunteer-section">
+      <section className="section" id="volunteer" style={{ scrollMarginTop: "90px" }}>
         <div className="container">
           <div className="split reveal">
             <div>
@@ -496,6 +501,113 @@ export default function GetInvolvedPage() {
                   </button>
                 </form>
               )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Become a Resource Person Section */}
+      <section className="section section--cream2" id="resource-person" style={{ scrollMarginTop: "90px" }}>
+        <div className="container">
+          <div className="section-head section-head--center section-head--fit">
+            <div className="eyebrow" style={{ justifyContent: "center" }}>
+              <Briefcase size={15} /> Professional &amp; Academic Expertise
+            </div>
+            <h2 className="hdg-oneline" style={{ fontSize: "clamp(1.5rem, 2.6vw, 2.2rem)", margin: "8px 0 12px" }}>
+              Become a Resource Person
+            </h2>
+            <p style={{ color: "var(--ink-400)", maxWidth: "62ch", margin: "0 auto", fontSize: "0.98rem" }}>
+              Are you a professor, civil servant, corporate specialist, psychologist, or educator? Share your specialized knowledge to inspire youth and train educators across Telangana.
+            </p>
+          </div>
+
+          <div className="grid grid--4 reveal" style={{ gap: "20px", marginTop: "36px" }}>
+            <div className="card" style={{ padding: "32px 24px", background: "#FFFFFF", borderRadius: "16px", border: "1px solid rgba(201,154,58,0.22)" }}>
+              <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: "rgba(201,154,58,0.12)", color: "var(--gold-600)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px" }}>
+                <GraduationCap size={22} />
+              </div>
+              <h3 style={{ fontSize: "1.15rem", color: "var(--navy-900)", marginBottom: "8px" }}>Guest Masterclasses</h3>
+              <p style={{ fontSize: "0.88rem", color: "var(--ink-500)", lineHeight: 1.6, margin: 0 }}>
+                Deliver domain workshops in STEM, Spoken English, digital skills, or higher secondary sciences for our motivated student cohorts.
+              </p>
+            </div>
+
+            <div className="card" style={{ padding: "32px 24px", background: "#FFFFFF", borderRadius: "16px", border: "1px solid rgba(201,154,58,0.22)" }}>
+              <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: "rgba(11,27,56,0.06)", color: "var(--navy-900)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px" }}>
+                <Compass size={22} />
+              </div>
+              <h3 style={{ fontSize: "1.15rem", color: "var(--navy-900)", marginBottom: "8px" }}>Competitive Exam Mentoring</h3>
+              <p style={{ fontSize: "0.88rem", color: "var(--ink-500)", lineHeight: 1.6, margin: 0 }}>
+                Provide strategic preparation roadmaps, mock interview guidance, and tips for Civil Services (UPSC), TSPSC, Banking, and SSC.
+              </p>
+            </div>
+
+            <div className="card" style={{ padding: "32px 24px", background: "#FFFFFF", borderRadius: "16px", border: "1px solid rgba(201,154,58,0.22)" }}>
+              <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: "rgba(201,154,58,0.12)", color: "var(--gold-600)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px" }}>
+                <Award size={22} />
+              </div>
+              <h3 style={{ fontSize: "1.15rem", color: "var(--navy-900)", marginBottom: "8px" }}>Life Skills &amp; EQ Training</h3>
+              <p style={{ fontSize: "0.88rem", color: "var(--ink-500)", lineHeight: 1.6, margin: 0 }}>
+                Conduct interactive sessions on public speaking, emotional intelligence, leadership, ethical thinking, and adolescent mental wellness.
+              </p>
+            </div>
+
+            <div className="card" style={{ padding: "32px 24px", background: "#FFFFFF", borderRadius: "16px", border: "1px solid rgba(201,154,58,0.22)" }}>
+              <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: "rgba(11,27,56,0.06)", color: "var(--navy-900)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px" }}>
+                <BookOpenCheck size={22} />
+              </div>
+              <h3 style={{ fontSize: "1.15rem", color: "var(--navy-900)", marginBottom: "8px" }}>Teacher Enablement</h3>
+              <p style={{ fontSize: "0.88rem", color: "var(--ink-500)", lineHeight: 1.6, margin: 0 }}>
+                Train frontline government and rural school teachers in contemporary pedagogy, classroom tech tools, and joyful learning techniques.
+              </p>
+            </div>
+          </div>
+
+          {/* Express Interest Banner */}
+          <div
+            style={{
+              marginTop: "36px",
+              padding: "32px 36px",
+              borderRadius: "18px",
+              background: "linear-gradient(135deg, var(--navy-900) 0%, var(--navy-950) 100%)",
+              color: "var(--cream-100)",
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "24px",
+              border: "1px solid rgba(201,154,58,0.3)",
+              boxShadow: "0 14px 34px rgba(11,27,56,0.12)",
+            }}
+          >
+            <div style={{ maxWidth: "620px" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "var(--gold-400)", fontWeight: 700, fontSize: "0.82rem", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "6px" }}>
+                <Briefcase size={14} /> Join Our Distinguished Resource Network
+              </div>
+              <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.5rem", color: "var(--cream-100)", margin: "0 0 8px" }}>
+                Deliver a Session or Mentor a Student Cohort
+              </h3>
+              <p style={{ margin: 0, fontSize: "0.93rem", color: "rgba(250,247,239,0.8)", lineHeight: 1.6 }}>
+                Whether you can spare a single Saturday masterclass or want to join as an ongoing subject advisor, our academic council will align with your schedule and subject expertise.
+              </p>
+            </div>
+
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+              <a
+                href="https://wa.me/919866129052?text=Hello%20Chamak%20Foundation,%20I%20would%20like%20to%20contribute%20as%20a%20Resource%20Person%20/%20Guest%20Speaker."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-gold"
+                style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
+              >
+                <MessageCircle size={16} /> Connect via WhatsApp
+              </a>
+              <a
+                href="mailto:chamakfoundation23@gmail.com?subject=Expression%20of%20Interest%20-%20Resource%20Person"
+                className="btn btn-outline-cream"
+              >
+                Email CV / Bio
+              </a>
             </div>
           </div>
         </div>

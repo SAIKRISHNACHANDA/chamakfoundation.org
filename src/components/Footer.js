@@ -41,6 +41,7 @@ export default function Footer() {
             <h5>Quick Links</h5>
             <ul className="footer__links">
               <li><Link href="/">Home</Link></li>
+              <li><Link href="/about">About Us</Link></li>
               <li><Link href="/vision-mission">Vision &amp; Mission</Link></li>
               <li><Link href="/programmes">Our Programmes</Link></li>
               <li><Link href="/gallery">Gallery &amp; Events</Link></li>
@@ -65,13 +66,13 @@ export default function Footer() {
               Hyderabad, Telangana, India
             </p>
             <p style={{ margin: "0 0 6px" }}>
-              <a href="tel:+919100007768" style={{ color: "var(--gold-400)" }}>
-                +91 91000 07768
+              <a href="tel:+919866129052" style={{ color: "var(--gold-400)" }}>
+                +91 98661 29052
               </a>
             </p>
             <p style={{ margin: "0 0 16px" }}>
-              <a href="mailto:info@chamakfoundation.org" style={{ color: "var(--cream-100)" }}>
-                info@chamakfoundation.org
+              <a href="mailto:chamakfoundation23@gmail.com" style={{ color: "var(--cream-100)" }}>
+                chamakfoundation23@gmail.com
               </a>
             </p>
             <Link href="/get-involved#donate" className="btn btn-gold btn-sm" style={{ display: "inline-flex" }}>

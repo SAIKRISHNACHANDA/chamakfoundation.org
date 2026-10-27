@@ -24,8 +24,8 @@ was pulled directly from your logo and reference mockup, and used as-is:
 - All 6 programme names + one-line descriptions
 - Team names & titles (Dr. Mohammed Azam Ali, Mohammed Yousuf Ali,
   Mohammed Abdul Hadi, Syed Wajid Ali)
-- Contact details (Hyderabad, Telangana, India · +91 91000 07768 ·
-  info@chamakfoundation.org · www.chamakfoundation.org)
+- Contact details (Hyderabad, Telangana, India · +91 98661 29052 ·
+  chamakfoundation23@gmail.com · www.chamakfoundation.org)
 - The Nelson Mandela quote on the Programmes page
 
 Anything you hadn't supplied — team/student photographs, programme photos,

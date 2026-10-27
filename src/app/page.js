@@ -13,6 +13,8 @@ import {
   ArrowRight,
   Sparkles,
   HeartHandshake,
+  Library,
+  Smile,
 } from "lucide-react";
 
 export const metadata = {
@@ -22,10 +24,10 @@ export const metadata = {
 };
 
 const STATS_DATA = [
-  { target: 500, suffix: "+", label: "Students Supported" },
-  { target: 100, suffix: "+", label: "Scholarships Awarded" },
-  { target: 50, suffix: "+", label: "Career Guidance Sessions" },
-  { target: 25, suffix: "+", label: "Communities Reached" },
+  { target: 100, suffix: "+", label: "Motivational Lectures" },
+  { target: 70, suffix: "+", label: "Career Guidance Sessions" },
+  { target: 2, suffix: "", label: "Rural Libraries Established" },
+  { target: 20, suffix: "+", label: "Higher-Ed Scholars" },
   { target: 100, suffix: "+", label: "Volunteers" },
   { target: 2, suffix: "+", label: "Years of Impact" },
 ];
@@ -187,7 +189,7 @@ export default function HomePage() {
               <HeartHandshake size={14} /> Founder&apos;s Vision
             </div>
             <h3 style={{ color: "var(--cream-100)", fontSize: "clamp(1.5rem, 2.4vw, 2rem)", maxWidth: "28ch", lineHeight: 1.35, fontFamily: "var(--serif)" }}>
-              &ldquo;No child should ever be forced to abandon their education due to financial distress.&rdquo;
+              &ldquo;Education is the light (&lsquo;Chamak&rsquo;) that can illuminate lives and build a better society.&rdquo;
             </h3>
             <p style={{ color: "rgba(250,247,239,0.75)", maxWidth: "42ch", marginTop: "14px", fontSize: "0.95rem", lineHeight: 1.6 }}>
               Founded with the deep conviction that quality learning is the single most powerful equalizer in society.
@@ -196,43 +198,46 @@ export default function HomePage() {
 
           <div style={{ marginTop: "40px", paddingTop: "28px", borderTop: "1px solid rgba(201,154,58,0.3)" }}>
             <div className="eyebrow" style={{ color: "var(--gold-400)", marginBottom: "4px" }}>Founder &amp; President</div>
-            <h2 style={{ color: "var(--cream-100)", fontSize: "clamp(1.8rem, 2.8vw, 2.4rem)", margin: "0 0 6px" }}>Dr. Mohammed Azam Ali</h2>
+            <h2 style={{ color: "var(--cream-100)", fontSize: "clamp(1.8rem, 2.8vw, 2.4rem)", margin: "0 0 6px" }}>Dr. Mohammad Azam Ali</h2>
             <span style={{ color: "var(--gold-400)", fontWeight: 600, fontSize: "0.85rem", letterSpacing: "0.08em", textTransform: "uppercase", display: "block", marginBottom: "12px" }}>
-              Physician · Philanthropist · Educator
+              M.A., M.Ed., Ph.D. · Assistant Professor &amp; Educator
             </span>
-            <p style={{ color: "rgba(250,247,239,0.85)", fontSize: "0.95rem", lineHeight: 1.6, margin: 0, maxWidth: "46ch" }}>
-              Leading Chamak Foundation with an unwavering focus on grassroots educational empowerment, transparent scholarships, and dignified youth mentorship across Telangana.
+            <p style={{ color: "rgba(250,247,239,0.85)", fontSize: "0.95rem", lineHeight: 1.6, margin: "0 0 20px", maxWidth: "46ch" }}>
+              Overcoming early poverty and educational discontinuation through perseverance, Dr. Azam Ali achieved his dream of becoming an Assistant Professor. Inspired by Maulana Abul Kalam Azad and Dr. APJ Abdul Kalam, he founded Chamak Foundation to ensure no student&apos;s dream is left in the dark.
             </p>
+            <Link href="/about" className="btn btn-gold btn--sm" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+              Read Founder&apos;s Full Journey <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
 
         <div className="founder-full__gallery">
           <div className="showcase-tile" style={{ borderRadius: 0, padding: "30px 20px" }}>
-            <GraduationCap size={32} style={{ color: "var(--gold-400)", marginBottom: "12px" }} />
-            <h4 style={{ color: "var(--cream-100)", margin: 0, fontSize: "1.1rem" }}>Scholarships</h4>
-            <p style={{ fontSize: "0.82rem", color: "rgba(250,247,239,0.7)", margin: "6px 0 0" }}>
-              100% fee sponsorship for deserving students
-            </p>
-          </div>
-          <div className="showcase-tile" style={{ borderRadius: 0, padding: "30px 20px" }}>
-            <BookOpen size={32} style={{ color: "var(--gold-400)", marginBottom: "12px" }} />
-            <h4 style={{ color: "var(--cream-100)", margin: 0, fontSize: "1.1rem" }}>Tutoring</h4>
-            <p style={{ fontSize: "0.82rem", color: "rgba(250,247,239,0.7)", margin: "6px 0 0" }}>
-              After-school academic coaching
-            </p>
-          </div>
-          <div className="showcase-tile" style={{ borderRadius: 0, padding: "30px 20px" }}>
             <Compass size={32} style={{ color: "var(--gold-400)", marginBottom: "12px" }} />
-            <h4 style={{ color: "var(--cream-100)", margin: 0, fontSize: "1.1rem" }}>Mentorship</h4>
+            <h4 style={{ color: "var(--cream-100)", margin: 0, fontSize: "1.1rem" }}>Career Guidance</h4>
             <p style={{ fontSize: "0.82rem", color: "rgba(250,247,239,0.7)", margin: "6px 0 0" }}>
-              Guidance for careers and college
+              70+ sessions for school, college &amp; civil services
             </p>
           </div>
           <div className="showcase-tile" style={{ borderRadius: 0, padding: "30px 20px" }}>
-            <Laptop size={32} style={{ color: "var(--gold-400)", marginBottom: "12px" }} />
-            <h4 style={{ color: "var(--cream-100)", margin: 0, fontSize: "1.1rem" }}>Digital Labs</h4>
+            <Smile size={32} style={{ color: "var(--gold-400)", marginBottom: "12px" }} />
+            <h4 style={{ color: "var(--cream-100)", margin: 0, fontSize: "1.1rem" }}>Life Skills</h4>
             <p style={{ fontSize: "0.82rem", color: "rgba(250,247,239,0.7)", margin: "6px 0 0" }}>
-              Essential 21st-century computer skills
+              Leadership, communication &amp; emotional intelligence
+            </p>
+          </div>
+          <div className="showcase-tile" style={{ borderRadius: 0, padding: "30px 20px" }}>
+            <Library size={32} style={{ color: "var(--gold-400)", marginBottom: "12px" }} />
+            <h4 style={{ color: "var(--cream-100)", margin: 0, fontSize: "1.1rem" }}>Rural Libraries</h4>
+            <p style={{ fontSize: "0.82rem", color: "rgba(250,247,239,0.7)", margin: "6px 0 0" }}>
+              Active in Rangapoor &amp; Govt. HS Matwada
+            </p>
+          </div>
+          <div className="showcase-tile" style={{ borderRadius: 0, padding: "30px 20px" }}>
+            <GraduationCap size={32} style={{ color: "var(--gold-400)", marginBottom: "12px" }} />
+            <h4 style={{ color: "var(--cream-100)", margin: 0, fontSize: "1.1rem" }}>Higher-Ed Aid</h4>
+            <p style={{ fontSize: "0.82rem", color: "rgba(250,247,239,0.7)", margin: "6px 0 0" }}>
+              20+ scholars funded in Pharmacy, B.Ed, M.A. &amp; M.Phil
             </p>
           </div>
         </div>

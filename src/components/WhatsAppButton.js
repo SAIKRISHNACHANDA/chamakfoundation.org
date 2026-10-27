@@ -11,7 +11,7 @@ export default function WhatsAppButton() {
   return (
     <a
       className="wa-float"
-      href="https://wa.me/919100007768"
+      href="https://wa.me/919866129052"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Chamak Foundation on WhatsApp"
