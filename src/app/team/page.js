@@ -6,7 +6,7 @@ import { Users, Award, ShieldCheck, HeartHandshake, ArrowRight, BookOpen, Gradua
 export const metadata = {
   title: "Our Team | Chamak Foundation",
   description:
-    "Meet the executive board and advisory committee behind Chamak Foundation: Dr. Mohammad Azam Ali, Munukuntla Raju, Madhu Ontela, Syed Wajid Ali, R. Venkat Reddy, and Dr. Riyaz.",
+    "Meet the executive board and advisory committee behind Chamak Foundation: Dr. Mohammad Azam Ali, Munukuntla Raju, Madhu Ontela, Vajja Raju, R. Venkat Reddy, and Dr. Riyaz.",
 };
 
 export default function TeamPage() {
@@ -45,14 +45,15 @@ export default function TeamPage() {
       focus: "Field Governance & Operations",
     },
     {
-      name: "Syed Wajid Ali",
+      name: "Vajja Raju",
       role: "Treasurer",
-      qualification: "Finance & Accounts",
-      designation: "Executive Trustee",
-      institution: "Fiscal Compliance & Stewardship",
-      initials: "WA",
-      bio: "Stewarding financial integrity, regulatory compliance, audit rigor, and direct scholarship disbursements with absolute transparency and ethical accountability.",
-      focus: "Fiscal Stewardship & Audit",
+      qualification: "Lecturer in English",
+      designation: "Lecturer in English",
+      institution: "Fiscal Stewardship & Operations",
+      image: "/assets/team/vajja-raju.png",
+      initials: "VR",
+      bio: "Dedicated educator stewarding financial transparency, scholarship disbursements, and ethical accountability across all Chamak Foundation initiatives.",
+      focus: "Fiscal Stewardship & Governance",
     },
   ];
 
