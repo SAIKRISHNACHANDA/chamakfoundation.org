@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import {
   Compass,
@@ -109,6 +110,42 @@ export default function AboutPage() {
               <p style={{ color: "var(--ink-600)", lineHeight: 1.8, fontSize: "1.05rem" }}>
                 His personal struggles helped him realize the true power of education as the ultimate tool for empowerment. On <strong>6th October 2023</strong>, he founded Chamak Foundation in Hyderabad in the presence of <strong>Prof. Shantha Sinha</strong>, renowned social activist and Ramon Magsaysay Awardee.
               </p>
+
+              <div
+                style={{
+                  marginTop: "24px",
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  border: "1px solid rgba(11,27,56,0.12)",
+                  boxShadow: "0 12px 28px rgba(11,27,56,0.08)",
+                  background: "#fff",
+                }}
+              >
+                <Image
+                  src="/assets/img/founder-president.jpg"
+                  alt="Foundation Launch Ceremony in Hyderabad with Prof. Shantha Sinha"
+                  width={600}
+                  height={340}
+                  style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+                  priority
+                />
+                <div
+                  style={{
+                    padding: "12px 18px",
+                    fontSize: "0.84rem",
+                    color: "var(--ink-600)",
+                    background: "var(--cream-100, #F7F3EE)",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <Award size={16} style={{ color: "var(--gold-600)", flexShrink: 0 }} />
+                  <span>
+                    Chamak Foundation launch with <strong>Prof. Shantha Sinha</strong> (Ramon Magsaysay Awardee)
+                  </span>
+                </div>
+              </div>
             </div>
 
             {/* FOUNDER & FOUNDATION PROFILE CARD */}
@@ -117,20 +154,84 @@ export default function AboutPage() {
               style={{
                 background: "linear-gradient(145deg, var(--navy-950) 0%, var(--navy-900) 100%)",
                 borderColor: "rgba(201,154,58,0.3)",
-                padding: "44px 38px",
+                padding: "36px 32px",
                 color: "var(--cream-100)",
                 boxShadow: "0 20px 40px rgba(11,27,56,0.18)",
+                borderRadius: "20px",
               }}
             >
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(201,154,58,0.15)", color: "var(--gold-400)", padding: "4px 12px", borderRadius: "20px", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "16px" }}>
-                <HeartHandshake size={14} /> Founder &amp; President
+              <div style={{ display: "flex", gap: "20px", alignItems: "center", marginBottom: "22px" }}>
+                <div
+                  style={{
+                    position: "relative",
+                    width: "92px",
+                    height: "92px",
+                    flexShrink: 0,
+                    borderRadius: "50%",
+                    padding: "3px",
+                    background: "linear-gradient(135deg, var(--gold-400), rgba(201,154,58,0.25))",
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+                  }}
+                >
+                  <Image
+                    src="/assets/team/dr-azam-ali.png"
+                    alt="Dr. Mohammad Azam Ali"
+                    width={86}
+                    height={86}
+                    style={{
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "100%",
+                      background: "#ffffff",
+                    }}
+                    priority
+                  />
+                </div>
+                <div>
+                  <div
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      background: "rgba(201,154,58,0.15)",
+                      color: "var(--gold-400)",
+                      padding: "4px 10px",
+                      borderRadius: "20px",
+                      fontSize: "0.74rem",
+                      fontWeight: 700,
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      marginBottom: "6px",
+                    }}
+                  >
+                    <HeartHandshake size={13} /> Founder &amp; President
+                  </div>
+                  <h3
+                    style={{
+                      fontSize: "clamp(1.45rem, 2vw, 1.8rem)",
+                      color: "var(--cream-100)",
+                      margin: "0 0 4px",
+                      fontFamily: "var(--serif)",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    Dr. Mohammad Azam Ali
+                  </h3>
+                  <p
+                    style={{
+                      color: "var(--gold-400)",
+                      fontSize: "0.85rem",
+                      fontWeight: 600,
+                      letterSpacing: "0.02em",
+                      margin: 0,
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    M.A., M.Ed., Ph.D. · Assistant Professor &amp; Social Visionary
+                  </p>
+                </div>
               </div>
-              <h3 style={{ fontSize: "1.9rem", color: "var(--cream-100)", margin: "0 0 6px", fontFamily: "var(--serif)" }}>
-                Dr. Mohammad Azam Ali
-              </h3>
-              <p style={{ color: "var(--gold-400)", fontSize: "0.92rem", fontWeight: 600, letterSpacing: "0.04em", margin: "0 0 20px" }}>
-                M.A., M.Ed., Ph.D. · Assistant Professor &amp; Social Visionary
-              </p>
 
               <div style={{ borderTop: "1px solid rgba(201,154,58,0.25)", paddingTop: "22px", display: "flex", flexDirection: "column", gap: "14px" }}>
                 <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
