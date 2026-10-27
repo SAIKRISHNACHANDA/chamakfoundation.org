@@ -47,7 +47,7 @@ export default function TeamPage() {
     {
       name: "Vajja Raju",
       role: "Treasurer",
-      qualification: "Lecturer in English",
+      qualification: "M.A.",
       designation: "Lecturer in English",
       institution: "Fiscal Stewardship & Operations",
       image: "/assets/team/vajja-raju.png",
@@ -245,23 +245,25 @@ export default function TeamPage() {
 
                   {/* Clean Credentials Display */}
                   <div style={{ width: "100%", marginBottom: "14px" }}>
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "5px",
-                        color: "var(--navy-900)",
-                        fontWeight: 700,
-                        fontSize: "0.8rem",
-                        background: "rgba(11,27,56,0.04)",
-                        padding: "3px 10px",
-                        borderRadius: "12px",
-                        border: "1px solid rgba(11,27,56,0.08)",
-                      }}
-                    >
-                      <GraduationCap size={13} style={{ color: "var(--gold-600)" }} />
-                      {leader.qualification}
-                    </span>
+                    {leader.qualification && leader.qualification !== leader.designation && (
+                      <span
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "5px",
+                          color: "var(--navy-900)",
+                          fontWeight: 700,
+                          fontSize: "0.8rem",
+                          background: "rgba(11,27,56,0.04)",
+                          padding: "3px 10px",
+                          borderRadius: "12px",
+                          border: "1px solid rgba(11,27,56,0.08)",
+                        }}
+                      >
+                        <GraduationCap size={13} style={{ color: "var(--gold-600)" }} />
+                        {leader.qualification}
+                      </span>
+                    )}
                     <div style={{ fontSize: "0.82rem", color: "var(--navy-900)", fontWeight: 600, marginTop: "6px", lineHeight: 1.35 }}>
                       {leader.designation}
                     </div>
