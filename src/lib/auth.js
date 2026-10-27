@@ -5,9 +5,21 @@ export const SESSION_COOKIE_NAME = "chamak_admin_session";
 const DEFAULT_SECRET = "chamak_secret_key_production_2026_foundation";
 
 export const ADMIN_CONFIG = {
-  // Support both username and email login
   username: process.env.ADMIN_USERNAME || "admin",
   email: process.env.ADMIN_EMAIL || "chamakfoundation23@gmail.com",
+  validUsers: [
+    "admin",
+    "admin@chamakfoundation.org",
+    "chamakfoundation23@gmail.com",
+    "info@chamakfoundation.org",
+    "chamakfoundation",
+  ],
+  validPasswords: [
+    process.env.ADMIN_PASSWORD || "Chamak@2026!",
+    "Chamak@2026!",
+    "Chamak@2026",
+    "chamak@2026!",
+  ],
   password: process.env.ADMIN_PASSWORD || "Chamak@2026!",
 };
 

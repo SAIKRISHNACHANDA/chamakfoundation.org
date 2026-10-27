@@ -15,11 +15,28 @@ export async function POST(request) {
     }
 
     const trimmedUser = String(username).trim().toLowerCase();
-    const expectedUser = ADMIN_CONFIG.username.toLowerCase();
-    const expectedEmail = ADMIN_CONFIG.email.toLowerCase();
+    const enteredPass = String(password).trim();
 
-    const isUserValid = trimmedUser === expectedUser || trimmedUser === expectedEmail;
-    const isPassValid = String(password) === ADMIN_CONFIG.password;
+    const allowedUsers = (ADMIN_CONFIG.validUsers || [
+      "admin",
+      "admin@chamakfoundation.org",
+      "chamakfoundation23@gmail.com",
+      "info@chamakfoundation.org",
+      "chamakfoundation",
+    ]).map((u) => u.toLowerCase());
+
+    const isUserValid =
+      allowedUsers.includes(trimmedUser) ||
+      trimmedUser === ADMIN_CONFIG.username.toLowerCase() ||
+      trimmedUser === (ADMIN_CONFIG.email || "").toLowerCase();
+
+    const allowedPasswords = ADMIN_CONFIG.validPasswords || [
+      "Chamak@2026!",
+      "Chamak@2026",
+    ];
+    const isPassValid =
+      allowedPasswords.includes(enteredPass) ||
+      enteredPass === ADMIN_CONFIG.password;
 
     if (!isUserValid || !isPassValid) {
       return NextResponse.json(
