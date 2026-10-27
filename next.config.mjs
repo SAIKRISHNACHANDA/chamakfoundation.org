@@ -5,11 +5,7 @@ const nextConfig = {
   partialPrefetching: true,
   async redirects() {
     return [
-      {
-        source: '/about',
-        destination: '/vision-mission',
-        permanent: false,
-      },
+
       {
         source: '/events',
         destination: '/gallery',
