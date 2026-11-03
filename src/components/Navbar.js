@@ -132,7 +132,7 @@ export default function Navbar() {
             />
             <span className="nav__brandtext">
               <strong>Chamak Foundation</strong>
-              <span>Chamak Padhai Se</span>
+              <span className="nav__brandcaption">Chamak Padhai Se</span>
             </span>
           </Link>
 
@@ -235,16 +235,19 @@ export default function Navbar() {
           &times;
         </button>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "16px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "12px" }}>
           {NAV_ITEMS.map((item) => {
             if (item.children) {
               const isExpanded = !!mobileExpanded[item.label];
+              const isParentActive = item.children.some((child) => isLinkActive(child.href));
+
               return (
                 <div key={item.label} className="nav__mobile-group">
                   <button
                     type="button"
-                    className="nav__mobile-trigger"
+                    className={`nav__mobile-trigger ${isParentActive ? "is-active" : ""}`}
                     onClick={() => toggleMobileSubmenu(item.label)}
+                    aria-expanded={isExpanded}
                   >
                     <span>{item.label}</span>
                     <ChevronDown
@@ -280,15 +283,6 @@ export default function Navbar() {
                 href={item.href}
                 className={isLinkActive(item.href) ? "is-active" : ""}
                 onClick={closeMenu}
-                style={{
-                  fontSize: "1rem",
-                  fontWeight: 700,
-                  color: "var(--navy-900)",
-                  padding: "10px 0",
-                  borderBottom: "1px solid rgba(11, 27, 56, 0.06)",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.04em",
-                }}
               >
                 {item.label}
               </Link>

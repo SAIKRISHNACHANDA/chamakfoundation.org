@@ -6,7 +6,7 @@ import { Users, Award, ShieldCheck, HeartHandshake, ArrowRight, BookOpen, Gradua
 export const metadata = {
   title: "Our Team | Chamak Foundation",
   description:
-    "Meet the executive board and advisory committee behind Chamak Foundation: Dr. Mohammad Azam Ali, Munukuntla Raju, Madhu Ontela, Vajja Raju, R. Venkat Reddy, and Dr. Riyaz.",
+    "Meet the executive board and advisory committee behind Chamak Foundation: Dr. Mohammad Azam Ali, Munukuntla Raju, Madhu Ontela, Vajja Raju, R. Venkat Reddy, Dr. Riyaz, and Dr. Syed Musthak Ahmed.",
 };
 
 export default function TeamPage() {
@@ -21,6 +21,9 @@ export default function TeamPage() {
       initials: "AA",
       bio: "Overcoming early poverty and schooling discontinuation through sheer perseverance, he achieved his dream of becoming an Assistant Professor and founded Chamak Foundation to ensure no student is left behind.",
       focus: "Strategic Vision & Philanthropy",
+      imagePosition: "center 24%",
+      imageScale: 1.0,
+      bgColor: "#ded8cb",
     },
     {
       name: "Munukuntla Raju",
@@ -32,6 +35,9 @@ export default function TeamPage() {
       initials: "MR",
       bio: "Passionate educator directing community partnerships, student career guidance sessions, and academic mentorship initiatives across Warangal, Hyderabad, and Telangana.",
       focus: "Academic Outreach & Mentorship",
+      imagePosition: "center 0%",
+      imageScale: 0.90,
+      bgColor: "#1662df",
     },
     {
       name: "Madhu Ontela",
@@ -43,6 +49,9 @@ export default function TeamPage() {
       initials: "MO",
       bio: "Directing field operations, rural library activations, volunteer coordination, and academic support roadmaps across rural and marginalized learning communities.",
       focus: "Field Governance & Operations",
+      imagePosition: "center 0%",
+      imageScale: 0.90,
+      bgColor: "#1a6ce8",
     },
     {
       name: "Vajja Raju",
@@ -54,6 +63,9 @@ export default function TeamPage() {
       initials: "VR",
       bio: "Dedicated educator stewarding financial transparency, scholarship disbursements, and ethical accountability across all Chamak Foundation initiatives.",
       focus: "Fiscal Stewardship & Governance",
+      imagePosition: "center 0%",
+      imageScale: 0.88,
+      bgColor: "#ffffff",
     },
   ];
 
@@ -61,21 +73,43 @@ export default function TeamPage() {
     {
       name: "R. Venkat Reddy",
       role: "Academic Advisor",
+      qualification: "Educationist & Child Rights Leader",
       image: "/assets/team/r-venkat-reddy.png",
       initials: "VR",
       office1: "National Convenor, M.V. Foundation, India",
-      office2: "Advisory Committee Member, Telangana Education Commission",
-      bio: "Renowned educationist and champion for child rights, guiding Chamak Foundation's educational policy dialogue, school-retention models, and grassroots equity strategy.",
+      office2: "Member, Telangana Education Commission",
+      highlights: ["National Convenor", "Child Rights Leader", "State Education Commission"],
+      bio: "Renowned educationist and pioneer for child rights, guiding Chamak Foundation's educational policy dialogue, school-retention models, and grassroots equity strategy across Telangana.",
+      focus: "Child Rights & Educational Policy",
     },
     {
       name: "Dr. Riyaz",
       role: "Academic Advisor",
-      qualification: "M.A., M.Ed., M.Phil., Ph.D. · NET Qualified & Gold Medalist",
-      image: "/assets/team/dr-riyaz.png",
+      qualification: "M.A., M.Ed., M.Phil., Ph.D. · NET & Gold Medalist",
+      image: "/assets/team/dr-riyaz-enhanced.jpg",
       initials: "DR",
       office1: "Chairman, Telangana Rashtra Grandalaya Parishad",
       office2: "Eminent Academician & Library Development Leader",
-      bio: "Guiding Chamak Foundation's rural community library movement and knowledge accessibility initiatives across rural, tribal, and minority communities.",
+      highlights: ["State Parishad Chairman", "Library Movement Leader", "University Gold Medalist"],
+      bio: "Distinguished educational leader steering Chamak Foundation's rural community library movement and knowledge accessibility initiatives across rural, tribal, and marginalized communities.",
+      focus: "Rural Libraries & Knowledge Access",
+    },
+    {
+      name: "Dr. Syed Musthak Ahmed",
+      role: "Academic Advisor",
+      qualification: "B.E., M.E. (Bangalore Univ) · Ph.D. (VMU, TN)",
+      image: "/assets/team/dr-syed-musthak-ahmed-portrait.jpg",
+      initials: "SMA",
+      office1: "Principal, SVS Group of Institutions, Warangal",
+      office2: "Former Principal, Vaagdevi Engg. College · Ex-SRU & SREC",
+      highlights: [
+        "40+ Yrs UG/PG/PhD Teaching",
+        "150+ Research Publications",
+        "Guided 6 Ph.D. Scholars",
+        "Ex-IEEE Hyderabad Exec Member",
+      ],
+      bio: "Distinguished academician with 40+ years in higher education (UG, PG, PhD) and 150+ research publications. Former Principal at Vaagdevi and IEEE Hyderabad Section leader, steering Chamak Foundation's higher education mentorship and technical learning roadmaps.",
+      focus: "Higher Education & Technical Pedagogy",
     },
   ];
 
@@ -165,15 +199,15 @@ export default function TeamPage() {
                   {/* Photo or Monogram Avatar */}
                   <div
                     style={{
-                      width: "120px",
-                      height: "120px",
+                      width: "124px",
+                      height: "124px",
                       borderRadius: "50%",
                       overflow: "hidden",
                       border: "3.5px solid var(--gold-400)",
                       boxShadow: "0 8px 24px rgba(201,154,58,0.22), 0 4px 12px rgba(11,27,56,0.12)",
                       marginBottom: "16px",
                       position: "relative",
-                      background: "linear-gradient(135deg, var(--navy-950) 0%, var(--navy-900) 100%)",
+                      background: leader.bgColor || "#ffffff",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -181,14 +215,32 @@ export default function TeamPage() {
                     }}
                   >
                     {leader.image ? (
-                      <Image
-                        src={leader.image}
-                        alt={leader.name}
-                        width={120}
-                        height={120}
-                        style={{ objectFit: "cover", width: "100%", height: "100%" }}
-                        priority
-                      />
+                      <div
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          overflow: "hidden",
+                          transform: leader.imageScale ? `scale(${leader.imageScale})` : "none",
+                          transformOrigin: "center 20%",
+                        }}
+                      >
+                        <Image
+                          src={leader.image}
+                          alt={leader.name}
+                          width={124}
+                          height={124}
+                          style={{
+                            objectFit: "cover",
+                            objectPosition: leader.imagePosition || "center top",
+                            width: "100%",
+                            height: "100%",
+                          }}
+                          priority
+                        />
+                      </div>
                     ) : (
                       <span
                         style={{
@@ -281,7 +333,7 @@ export default function TeamPage() {
                       color: "var(--ink-500)",
                       lineHeight: 1.6,
                       margin: "0 0 16px",
-                      textAlign: "center",
+                      textAlign: "left",
                     }}
                   >
                     {leader.bio}
@@ -337,20 +389,71 @@ export default function TeamPage() {
             </p>
           </div>
 
-          <div className="grid grid--2 reveal" style={{ gap: "28px", maxWidth: "1100px", margin: "0 auto" }}>
+          <div className="grid grid--3 reveal" style={{ gap: "24px", maxWidth: "1240px", margin: "0 auto" }}>
             {advisors.map((adv, index) => (
-              <div key={index} className="advisor-card">
-                {/* Advisor Photo & Role */}
-                <div className="advisor-card__media">
-                  <div className="advisor-card__photo">
+              <div
+                key={index}
+                className="card team-exec-card"
+                style={{
+                  background: "#FFFFFF",
+                  border: "1px solid rgba(201,154,58,0.22)",
+                  borderRadius: "20px",
+                  padding: "36px 24px 24px",
+                  textAlign: "center",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  boxShadow: "0 10px 30px rgba(11,27,56,0.05)",
+                  position: "relative",
+                  transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                  overflow: "hidden",
+                }}
+              >
+                {/* Top decorative gold line */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "4px",
+                    background: "linear-gradient(90deg, rgba(201,154,58,0.2), var(--gold-500), rgba(201,154,58,0.2))",
+                  }}
+                />
+
+                {/* Top Section: Avatar, Titles, Bio */}
+                <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  {/* Framed Portrait Photo */}
+                  <div
+                    style={{
+                      width: "135px",
+                      height: "160px",
+                      borderRadius: "18px",
+                      overflow: "hidden",
+                      border: "3px solid var(--gold-400)",
+                      boxShadow: "0 10px 24px rgba(201,154,58,0.20), 0 4px 12px rgba(11,27,56,0.10)",
+                      marginBottom: "14px",
+                      position: "relative",
+                      background: "#ffffff",
+                      flexShrink: 0,
+                    }}
+                  >
                     <Image
                       src={adv.image}
                       alt={adv.name}
-                      width={130}
-                      height={155}
-                      style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                      width={135}
+                      height={160}
+                      style={{
+                        objectFit: "cover",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                      priority
                     />
                   </div>
+
+                  {/* Role Pill Badge */}
                   <div
                     style={{
                       display: "inline-flex",
@@ -358,63 +461,123 @@ export default function TeamPage() {
                       gap: "5px",
                       background: "rgba(201,154,58,0.12)",
                       color: "var(--gold-700)",
-                      padding: "4px 10px",
-                      borderRadius: "16px",
-                      fontSize: "0.7rem",
+                      border: "1px solid rgba(201,154,58,0.3)",
+                      fontSize: "0.72rem",
                       fontWeight: 700,
                       letterSpacing: "0.06em",
                       textTransform: "uppercase",
-                      marginTop: "12px",
-                      whiteSpace: "nowrap",
+                      padding: "4px 12px",
+                      borderRadius: "20px",
+                      marginBottom: "10px",
                     }}
                   >
                     <Award size={12} /> {adv.role}
                   </div>
-                </div>
 
-                {/* Advisor Details */}
-                <div className="advisor-card__content">
+                  {/* Name */}
                   <h3
                     style={{
-                      fontSize: "1.35rem",
+                      fontSize: "1.28rem",
                       color: "var(--navy-900)",
-                      margin: "0 0 4px",
+                      margin: "0 0 6px",
                       fontFamily: "var(--serif)",
                       fontWeight: 700,
+                      letterSpacing: "-0.01em",
+                      lineHeight: 1.25,
                     }}
                   >
                     {adv.name}
                   </h3>
 
+                  {/* Qualification */}
                   {adv.qualification && (
-                    <div
+                    <span
                       style={{
-                        fontSize: "0.78rem",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "5px",
+                        fontSize: "0.74rem",
                         color: "var(--gold-700)",
                         fontWeight: 700,
-                        marginBottom: "6px",
+                        background: "rgba(201,154,58,0.08)",
+                        padding: "3px 10px",
+                        borderRadius: "12px",
+                        border: "1px solid rgba(201,154,58,0.2)",
+                        marginBottom: "10px",
                       }}
                     >
+                      <GraduationCap size={13} style={{ color: "var(--gold-600)" }} />
                       {adv.qualification}
+                    </span>
+                  )}
+
+                  {/* Primary Office */}
+                  <div style={{ fontSize: "0.88rem", color: "var(--navy-900)", fontWeight: 700, lineHeight: 1.35, marginTop: "2px" }}>
+                    {adv.office1}
+                  </div>
+
+                  {/* Secondary Office */}
+                  {adv.office2 && (
+                    <div style={{ fontSize: "0.78rem", color: "var(--ink-400)", marginTop: "3px", lineHeight: 1.35 }}>
+                      {adv.office2}
                     </div>
                   )}
 
-                  <div style={{ margin: "6px 0 10px" }}>
-                    <div style={{ fontSize: "0.86rem", fontWeight: 700, color: "var(--navy-900)", lineHeight: 1.4 }}>
-                      {adv.office1}
+                  {/* Quick Accolade Badges */}
+                  {adv.highlights && (
+                    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "5px", margin: "12px 0 14px" }}>
+                      {adv.highlights.map((item, hIdx) => (
+                        <span
+                          key={hIdx}
+                          style={{
+                            fontSize: "0.70rem",
+                            fontWeight: 600,
+                            color: "var(--navy-800)",
+                            background: "rgba(11,27,56,0.04)",
+                            border: "1px solid rgba(11,27,56,0.08)",
+                            padding: "2px 8px",
+                            borderRadius: "6px",
+                          }}
+                        >
+                          ✦ {item}
+                        </span>
+                      ))}
                     </div>
-                    {adv.office2 && (
-                      <div style={{ fontSize: "0.8rem", color: "var(--ink-400)", marginTop: "2px", lineHeight: 1.35 }}>
-                        {adv.office2}
-                      </div>
-                    )}
-                  </div>
+                  )}
 
-                  <div style={{ height: "1px", background: "linear-gradient(90deg, rgba(201,154,58,0.35), transparent)", margin: "12px 0" }} />
-
-                  <p style={{ fontSize: "0.85rem", color: "var(--ink-500)", lineHeight: 1.6, margin: 0 }}>
+                  {/* Bio Narrative */}
+                  <p
+                    style={{
+                      fontSize: "0.84rem",
+                      color: "var(--ink-500)",
+                      lineHeight: 1.6,
+                      margin: "0 0 16px",
+                      textAlign: "center",
+                    }}
+                  >
                     {adv.bio}
                   </p>
+                </div>
+
+                {/* Bottom Strategic Advisory Focus Tag */}
+                <div
+                  style={{
+                    width: "100%",
+                    paddingTop: "12px",
+                    borderTop: "1px solid rgba(11,27,56,0.08)",
+                    fontSize: "0.72rem",
+                    color: "var(--gold-700)",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "6px",
+                  }}
+                >
+                  <Sparkles size={12} />
+                  <span>{adv.focus}</span>
                 </div>
               </div>
             ))}
