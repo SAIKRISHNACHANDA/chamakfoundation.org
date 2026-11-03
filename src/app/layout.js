@@ -49,14 +49,17 @@ export const metadata = {
   authors: [{ name: "Chamak Foundation" }],
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon.png", sizes: "192x192", type: "image/png" },
-      { url: "/assets/logo.jpeg", sizes: "500x500", type: "image/jpeg" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "192x192", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Chamak Foundation · Chamak Padhai Se",
     description:
