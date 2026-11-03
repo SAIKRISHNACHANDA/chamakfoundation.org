@@ -398,11 +398,11 @@ export default function TeamPage() {
                   background: "#FFFFFF",
                   border: "1px solid rgba(201,154,58,0.22)",
                   borderRadius: "20px",
-                  padding: "36px 24px 24px",
-                  textAlign: "center",
+                  padding: "34px 28px 24px",
+                  textAlign: "left",
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: "center",
+                  alignItems: "flex-start",
                   justifyContent: "space-between",
                   boxShadow: "0 10px 30px rgba(11,27,56,0.05)",
                   position: "relative",
@@ -423,7 +423,7 @@ export default function TeamPage() {
                 />
 
                 {/* Top Section: Avatar, Titles, Bio */}
-                <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
                   {/* Framed Portrait Photo */}
                   <div
                     style={{
@@ -433,10 +433,11 @@ export default function TeamPage() {
                       overflow: "hidden",
                       border: "3px solid var(--gold-400)",
                       boxShadow: "0 10px 24px rgba(201,154,58,0.20), 0 4px 12px rgba(11,27,56,0.10)",
-                      marginBottom: "14px",
+                      marginBottom: "16px",
                       position: "relative",
                       background: "#ffffff",
                       flexShrink: 0,
+                      alignSelf: "flex-start",
                     }}
                   >
                     <Image
@@ -469,6 +470,7 @@ export default function TeamPage() {
                       padding: "4px 12px",
                       borderRadius: "20px",
                       marginBottom: "10px",
+                      alignSelf: "flex-start",
                     }}
                   >
                     <Award size={12} /> {adv.role}
@@ -477,13 +479,15 @@ export default function TeamPage() {
                   {/* Name */}
                   <h3
                     style={{
-                      fontSize: "1.28rem",
+                      fontSize: "1.32rem",
                       color: "var(--navy-900)",
                       margin: "0 0 6px",
                       fontFamily: "var(--serif)",
                       fontWeight: 700,
                       letterSpacing: "-0.01em",
                       lineHeight: 1.25,
+                      textAlign: "left",
+                      width: "100%",
                     }}
                   >
                     {adv.name}
@@ -504,6 +508,7 @@ export default function TeamPage() {
                         borderRadius: "12px",
                         border: "1px solid rgba(201,154,58,0.2)",
                         marginBottom: "10px",
+                        alignSelf: "flex-start",
                       }}
                     >
                       <GraduationCap size={13} style={{ color: "var(--gold-600)" }} />
@@ -512,20 +517,20 @@ export default function TeamPage() {
                   )}
 
                   {/* Primary Office */}
-                  <div style={{ fontSize: "0.88rem", color: "var(--navy-900)", fontWeight: 700, lineHeight: 1.35, marginTop: "2px" }}>
+                  <div style={{ fontSize: "0.88rem", color: "var(--navy-900)", fontWeight: 700, lineHeight: 1.35, marginTop: "2px", textAlign: "left", width: "100%" }}>
                     {adv.office1}
                   </div>
 
                   {/* Secondary Office */}
                   {adv.office2 && (
-                    <div style={{ fontSize: "0.78rem", color: "var(--ink-400)", marginTop: "3px", lineHeight: 1.35 }}>
+                    <div style={{ fontSize: "0.78rem", color: "var(--ink-400)", marginTop: "3px", lineHeight: 1.35, textAlign: "left", width: "100%" }}>
                       {adv.office2}
                     </div>
                   )}
 
                   {/* Quick Accolade Badges */}
                   {adv.highlights && (
-                    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "5px", margin: "12px 0 14px" }}>
+                    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start", gap: "6px", margin: "12px 0 14px", width: "100%" }}>
                       {adv.highlights.map((item, hIdx) => (
                         <span
                           key={hIdx}
@@ -548,11 +553,12 @@ export default function TeamPage() {
                   {/* Bio Narrative */}
                   <p
                     style={{
-                      fontSize: "0.84rem",
+                      fontSize: "0.85rem",
                       color: "var(--ink-500)",
-                      lineHeight: 1.6,
+                      lineHeight: 1.62,
                       margin: "0 0 16px",
-                      textAlign: "center",
+                      textAlign: "left",
+                      width: "100%",
                     }}
                   >
                     {adv.bio}
@@ -572,7 +578,7 @@ export default function TeamPage() {
                     letterSpacing: "0.05em",
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
+                    justifyContent: "flex-start",
                     gap: "6px",
                   }}
                 >
