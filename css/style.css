@@ -157,8 +157,8 @@ p{margin:0 0 1em;color:var(--ink-600);max-width:62ch;}
 }
 .nav__brandcaption,
 .nav__brandtext span{
-  font-size:.56rem;color:var(--navy-800);letter-spacing:.12em;
-  font-weight:600;text-transform:uppercase;white-space:nowrap;opacity:.82;margin-top:1px;
+  font-size:.70rem;color:var(--navy-800);letter-spacing:0.01em;
+  font-weight:600;text-transform:none;white-space:nowrap;opacity:.85;margin-top:1px;
 }
 
 .nav__links{
@@ -464,7 +464,7 @@ p{margin:0 0 1em;color:var(--ink-600);max-width:62ch;}
   .nav.is-scrolled .nav__logo{width:40px;height:40px;}
   .nav__brandtext strong{font-size:1.06rem;}
   .nav__brandcaption,
-  .nav__brandtext span{font-size:.52rem;}
+  .nav__brandtext span{font-size:.66rem;}
   .nav__cta{margin-left:0;}
   .nav__cta .btn-sm{padding:8px 15px;font-size:.70rem;}
 }
@@ -477,7 +477,7 @@ p{margin:0 0 1em;color:var(--ink-600);max-width:62ch;}
   .nav__brand{gap:10px;margin-right:0;}
   .nav__brandtext strong{font-size:.96rem;}
   .nav__brandcaption,
-  .nav__brandtext span{font-size:.48rem;}
+  .nav__brandtext span{font-size:.60rem;}
   .nav__cta .btn-sm{display:none;}
 }
 
