@@ -39,7 +39,7 @@ export default function HomePage() {
           <div>
             <div className="hero__eyebrow">Chamak Padhai Se</div>
             <h1 className="hero__title--fit">
-              Every Child Deserves to <em>Shine.</em>
+              Every Child Deserves to Shine.
             </h1>
           </div>
 
