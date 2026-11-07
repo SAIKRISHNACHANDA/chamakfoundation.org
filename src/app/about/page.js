@@ -80,185 +80,252 @@ export default function AboutPage() {
         subtitle="The establishment of Chamak Foundation is deeply rooted in resilience, transformation, and the unyielding belief that education is the light that illuminates lives."
       />
 
-      {/* WHY CHAMAK FOUNDATION - THE FOUNDER'S JOURNEY */}
-      <section className="section" id="founder" style={{ scrollMarginTop: "90px" }}>
+      {/* WHY CHAMAK FOUNDATION - FOUNDER FULL CV & JOURNEY */}
+      <section className="section founder-cv-section" id="founder" style={{ scrollMarginTop: "90px" }}>
         <div className="container">
-          <div className="grid grid--2" style={{ alignItems: "center", gap: "48px" }}>
-            <div>
-              <div className="eyebrow" style={{ color: "var(--gold-600)" }}>
-                <Sparkles size={14} /> Why Chamak Foundation?
-              </div>
-              <h2
-                style={{
-                  fontFamily: "var(--serif)",
-                  fontSize: "clamp(2rem, 3.2vw, 2.7rem)",
-                  color: "var(--navy-900)",
-                  lineHeight: 1.25,
-                  marginBottom: "20px",
-                }}
-              >
-                From Dropout to Doctorate
-              </h2>
-              <p style={{ color: "var(--ink-600)", lineHeight: 1.8, fontSize: "1.05rem" }}>
-                The establishment of <strong>Chamak Foundation (Chamak Padhai Se) NGO</strong> is deeply rooted in the life journey of <strong>Dr. Mohammad Azam Ali</strong>—a journey marked by hardship, resilience, and an unwavering commitment to education and social transformation.
-              </p>
-              <p style={{ color: "var(--ink-600)", lineHeight: 1.8, fontSize: "1.05rem" }}>
-                Born into a very poor background, he faced severe financial constraints during his early life and was forced to discontinue his education at one point. However, transformative incidents reignited his determination. With remarkable perseverance, dedication, and hard work, he successfully completed his <strong>M.A., M.Ed., and Ph.D.</strong>, eventually achieving his goal of becoming an <strong>Assistant Professor</strong>.
-              </p>
-              <p style={{ color: "var(--ink-600)", lineHeight: 1.8, fontSize: "1.05rem" }}>
-                His personal struggles helped him realize the true power of education as the ultimate tool for empowerment. On <strong>6th October 2023</strong>, he founded Chamak Foundation in Hyderabad in the presence of <strong>Prof. Shantha Sinha</strong>, renowned social activist and Ramon Magsaysay Awardee.
-              </p>
+          <div className="founder-cv-grid">
+            {/* Left: Founder Portrait & Executive Sidebar */}
+            <div className="founder-cv-sidebar">
+              <div className="founder-cv-portrait-card">
+                <div className="founder-cv-portrait">
+                  <Image
+                    src="/assets/team/dr-azam-ali-portrait.jpg"
+                    alt="Dr. Mohammad Azam Ali - Founder & President, Chamak Foundation"
+                    width={480}
+                    height={580}
+                    priority
+                    className="founder-cv-portrait__img"
+                  />
+                  <div className="founder-cv-portrait__badge">
+                    Founder &amp; President
+                  </div>
+                </div>
 
-              <div
-                style={{
-                  marginTop: "24px",
-                  borderRadius: "16px",
-                  overflow: "hidden",
-                  border: "1px solid rgba(11,27,56,0.12)",
-                  boxShadow: "0 12px 28px rgba(11,27,56,0.08)",
-                  background: "#fff",
-                }}
-              >
-                <Image
-                  src="/assets/img/founder-president.jpg"
-                  alt="Foundation Launch Ceremony in Hyderabad with Prof. Shantha Sinha"
-                  width={600}
-                  height={340}
-                  style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
-                  priority
-                />
-                <div
-                  style={{
-                    padding: "12px 18px",
-                    fontSize: "0.84rem",
-                    color: "var(--ink-600)",
-                    background: "var(--cream-100, #F7F3EE)",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <Award size={16} style={{ color: "var(--gold-600)", flexShrink: 0 }} />
-                  <span>
-                    Chamak Foundation launch with <strong>Prof. Shantha Sinha</strong> (Ramon Magsaysay Awardee)
-                  </span>
+                <div className="founder-cv-card-body">
+                  <h3 className="founder-cv-name">Dr. Mohammad Azam Ali</h3>
+                  <p className="founder-cv-qualifications">M.A., M.Ed., Ph.D.</p>
+                  <p className="founder-cv-role">Assistant Professor, Motivational Speaker &amp; Social Visionary</p>
+
+                  <div className="founder-cv-meta-list">
+                    <div className="founder-cv-meta-item">
+                      <GraduationCap size={18} className="founder-cv-meta-icon" />
+                      <div>
+                        <strong>Doctorate &amp; Double Masters</strong>
+                        <span>Ph.D. · M.Ed. · M.A. in English</span>
+                      </div>
+                    </div>
+                    <div className="founder-cv-meta-item">
+                      <Award size={18} className="founder-cv-meta-icon" />
+                      <div>
+                        <strong>National Honors</strong>
+                        <span>Recognized at Rashtrapati Bhavan &amp; Union Ministry</span>
+                      </div>
+                    </div>
+                    <div className="founder-cv-meta-item">
+                      <Sparkles size={18} className="founder-cv-meta-icon" />
+                      <div>
+                        <strong>100+ Motivational Sessions</strong>
+                        <span>Empowering thousands of rural &amp; underprivileged youth</span>
+                      </div>
+                    </div>
+                    <div className="founder-cv-meta-item">
+                      <ShieldCheck size={18} className="founder-cv-meta-icon" />
+                      <div>
+                        <strong>NGO Registration</strong>
+                        <span>Telangana Regd. No. 643/2023 · Est. Oct 2023</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* FOUNDER & FOUNDATION PROFILE CARD */}
-            <div
-              className="card"
-              style={{
-                background: "linear-gradient(145deg, var(--navy-950) 0%, var(--navy-900) 100%)",
-                borderColor: "rgba(201,154,58,0.3)",
-                padding: "36px 32px",
-                color: "var(--cream-100)",
-                boxShadow: "0 20px 40px rgba(11,27,56,0.18)",
-                borderRadius: "20px",
-              }}
-            >
-              <div style={{ display: "flex", gap: "20px", alignItems: "center", marginBottom: "22px" }}>
-                <div
-                  style={{
-                    position: "relative",
-                    width: "92px",
-                    height: "92px",
-                    flexShrink: 0,
-                    borderRadius: "50%",
-                    padding: "3px",
-                    background: "linear-gradient(135deg, var(--gold-400), rgba(201,154,58,0.25))",
-                    boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
-                  }}
-                >
-                  <Image
-                    src="/assets/team/dr-azam-ali.png"
-                    alt="Dr. Mohammad Azam Ali"
-                    width={86}
-                    height={86}
-                    style={{
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                      width: "100%",
-                      height: "100%",
-                      background: "#ffffff",
-                    }}
-                    priority
-                  />
-                </div>
-                <div>
-                  <div
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "6px",
-                      background: "rgba(201,154,58,0.15)",
-                      color: "var(--gold-400)",
-                      padding: "4px 10px",
-                      borderRadius: "20px",
-                      fontSize: "0.74rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      marginBottom: "6px",
-                    }}
-                  >
-                    <HeartHandshake size={13} /> Founder &amp; President
+            {/* Right: Full Curriculum Vitae & Inspiring Narrative */}
+            <div className="founder-cv-main">
+              {/* Custom Header Eyebrow matching the exact design */}
+              <div className="founder-cv-eyebrow">
+                <span className="founder-cv-eyebrow__line" />
+                <span className="founder-cv-eyebrow__icon">
+                  <Sparkles size={18} />
+                </span>
+                <span>WHY CHAMAK FOUNDATION?</span>
+              </div>
+
+              <h2 className="founder-cv-heading">From Dropout to Doctorate</h2>
+              <p className="founder-cv-lead">
+                The establishment of <strong>Chamak Foundation (Chamak Padhai Se)</strong> is deeply rooted in the life journey of <strong>Dr. Mohammad Azam Ali</strong>—a true journey of transformation from severe hardship to academic triumph, higher education, and nation-building.
+              </p>
+
+              {/* CV Section 1: Biographical Overview & Early Struggle */}
+              <div className="founder-cv-section-box">
+                <div className="founder-cv-section-head">
+                  <div className="founder-cv-section-icon">
+                    <Sparkles size={20} />
                   </div>
-                  <h3
-                    style={{
-                      fontSize: "clamp(1.45rem, 2vw, 1.8rem)",
-                      color: "var(--cream-100)",
-                      margin: "0 0 4px",
-                      fontFamily: "var(--serif)",
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    Dr. Mohammad Azam Ali
-                  </h3>
-                  <p
-                    style={{
-                      color: "var(--gold-400)",
-                      fontSize: "0.85rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.02em",
-                      margin: 0,
-                      lineHeight: 1.4,
-                    }}
-                  >
-                    M.A., M.Ed., Ph.D. · Assistant Professor &amp; Social Visionary
-                  </p>
+                  <h3 className="founder-cv-section-title">The Struggle &amp; Turning Point</h3>
+                </div>
+                <p style={{ color: "var(--ink-600)", lineHeight: 1.75, fontSize: "0.96rem", margin: "0 0 14px" }}>
+                  Born into a family facing severe financial constraints, Dr. Mohammad Azam Ali was forced to discontinue his schooling during his formative years. Experiencing firsthand the acute despair of poverty, the lack of textbooks, and denied opportunity, he understood the silent struggle that millions of Indian children face every day.
+                </p>
+                <p style={{ color: "var(--ink-600)", lineHeight: 1.75, fontSize: "0.96rem", margin: 0 }}>
+                  A pivotal turning point reignited his fierce desire to learn. Driven by unbreakable resilience, he returned to studies against all odds, financing his schooling through persistent hard work and viewing every setback as a stepping stone toward excellence.
+                </p>
+              </div>
+
+              {/* CV Section 2: Academic Qualifications */}
+              <div className="founder-cv-section-box">
+                <div className="founder-cv-section-head">
+                  <div className="founder-cv-section-icon">
+                    <GraduationCap size={20} />
+                  </div>
+                  <h3 className="founder-cv-section-title">Academic Qualifications &amp; Research</h3>
+                </div>
+                <div className="cv-timeline">
+                  <div className="cv-item">
+                    <div className="cv-item__header">
+                      <h4 className="cv-item__title">Doctor of Philosophy (Ph.D.)</h4>
+                      <span className="cv-item__badge">Doctorate</span>
+                    </div>
+                    <div className="cv-item__subtitle">English Literature &amp; Pedagogy</div>
+                    <p className="cv-item__desc">
+                      Completed advanced doctoral research, culminating the inspiring transition from a former school dropout to an accomplished doctor of letters and pedagogue.
+                    </p>
+                  </div>
+
+                  <div className="cv-item">
+                    <div className="cv-item__header">
+                      <h4 className="cv-item__title">Master of Education (M.Ed.)</h4>
+                      <span className="cv-item__badge">Post-Graduate</span>
+                    </div>
+                    <div className="cv-item__subtitle">Pedagogical Theory &amp; Educational Psychology</div>
+                    <p className="cv-item__desc">
+                      Specialized in modern curriculum design, student psychological counseling, and inclusive educational practices for marginalized youth.
+                    </p>
+                  </div>
+
+                  <div className="cv-item">
+                    <div className="cv-item__header">
+                      <h4 className="cv-item__title">Master of Arts (M.A.) in English</h4>
+                      <span className="cv-item__badge">Post-Graduate</span>
+                    </div>
+                    <div className="cv-item__subtitle">English Literature, Linguistics &amp; Communication</div>
+                    <p className="cv-item__desc">
+                      Mastered linguistic and communicative competencies, laying the foundation for his lectures, youth career mentorships, and state-wide public addresses.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div style={{ borderTop: "1px solid rgba(201,154,58,0.25)", paddingTop: "22px", display: "flex", flexDirection: "column", gap: "14px" }}>
-                <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                  <CheckCircle2 size={18} style={{ color: "var(--gold-400)", flexShrink: 0, marginTop: "3px" }} />
-                  <span style={{ fontSize: "0.92rem", color: "rgba(250,247,239,0.9)", lineHeight: 1.5 }}>
-                    Turned early educational discontinuation into academic triumph through perseverance.
-                  </span>
+              {/* CV Section 3: Professional Appointments */}
+              <div className="founder-cv-section-box">
+                <div className="founder-cv-section-head">
+                  <div className="founder-cv-section-icon">
+                    <Award size={20} />
+                  </div>
+                  <h3 className="founder-cv-section-title">Professional Appointments &amp; Leadership</h3>
                 </div>
-                <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                  <CheckCircle2 size={18} style={{ color: "var(--gold-400)", flexShrink: 0, marginTop: "3px" }} />
-                  <span style={{ fontSize: "0.92rem", color: "rgba(250,247,239,0.9)", lineHeight: 1.5 }}>
-                    Delivered 100+ motivational lectures and 70+ career sessions across Telangana.
-                  </span>
-                </div>
-                <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                  <CheckCircle2 size={18} style={{ color: "var(--gold-400)", flexShrink: 0, marginTop: "3px" }} />
-                  <span style={{ fontSize: "0.92rem", color: "rgba(250,247,239,0.9)", lineHeight: 1.5 }}>
-                    Supported 20+ students in Pharmacy, B.Ed, M.A., and M.Phil to continue their higher studies.
-                  </span>
+                <div className="cv-timeline">
+                  <div className="cv-item">
+                    <div className="cv-item__header">
+                      <h4 className="cv-item__title">Assistant Professor in Higher Education</h4>
+                      <span className="cv-item__badge">Academic Career</span>
+                    </div>
+                    <div className="cv-item__subtitle">University &amp; Degree College Level</div>
+                    <p className="cv-item__desc">
+                      Dedicated academician training undergraduate and post-graduate scholars, conducting research, and authoring educational papers.
+                    </p>
+                  </div>
+
+                  <div className="cv-item">
+                    <div className="cv-item__header">
+                      <h4 className="cv-item__title">Founder &amp; President · Chamak Foundation</h4>
+                      <span className="cv-item__badge">October 2023 – Present</span>
+                    </div>
+                    <div className="cv-item__subtitle">Chamak Padhai Se (Regd. No. 643/2023)</div>
+                    <p className="cv-item__desc">
+                      Established to institutionalize free educational support, student sponsorships, career counseling, and village community libraries across Telangana.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div style={{ marginTop: "28px", paddingTop: "20px", borderTop: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px" }}>
-                <span style={{ fontSize: "0.8rem", color: "rgba(250,247,239,0.6)" }}>
-                  Regd. No. 643/2023 · Telangana Societies Act
-                </span>
-                <span style={{ fontSize: "0.8rem", color: "var(--gold-400)", fontWeight: 600 }}>
-                  Est. 6th October 2023
-                </span>
+              {/* CV Section 4: National Dignitary Recognitions */}
+              <div className="founder-cv-section-box">
+                <div className="founder-cv-section-head">
+                  <div className="founder-cv-section-icon">
+                    <ShieldCheck size={20} />
+                  </div>
+                  <h3 className="founder-cv-section-title">National Recognitions &amp; Honors</h3>
+                </div>
+                <div className="founder-honors-grid">
+                  <div className="founder-honor-card">
+                    <div className="founder-honor-card__icon">
+                      <Award size={18} />
+                    </div>
+                    <div>
+                      <h5 className="founder-honor-card__name">Late Shri Pranab Mukherjee</h5>
+                      <p className="founder-honor-card__role">Former President of India</p>
+                    </div>
+                  </div>
+
+                  <div className="founder-honor-card">
+                    <div className="founder-honor-card__icon">
+                      <Award size={18} />
+                    </div>
+                    <div>
+                      <h5 className="founder-honor-card__name">Smt. Droupadi Murmu</h5>
+                      <p className="founder-honor-card__role">Hon&apos;ble President of India</p>
+                    </div>
+                  </div>
+
+                  <div className="founder-honor-card">
+                    <div className="founder-honor-card__icon">
+                      <Award size={18} />
+                    </div>
+                    <div>
+                      <h5 className="founder-honor-card__name">Shri M. Venkaiah Naidu</h5>
+                      <p className="founder-honor-card__role">Former Vice President of India</p>
+                    </div>
+                  </div>
+
+                  <div className="founder-honor-card">
+                    <div className="founder-honor-card__icon">
+                      <Award size={18} />
+                    </div>
+                    <div>
+                      <h5 className="founder-honor-card__name">Shri Anurag Singh Thakur</h5>
+                      <p className="founder-honor-card__role">Hon&apos;ble Union Minister</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* CV Key Impact Metrics */}
+              <div className="founder-cv-stats-grid">
+                <div className="founder-cv-stat-box">
+                  <span className="founder-cv-stat-num">100+</span>
+                  <span className="founder-cv-stat-label">Motivational Lectures Across Telangana</span>
+                </div>
+                <div className="founder-cv-stat-box">
+                  <span className="founder-cv-stat-num">70+</span>
+                  <span className="founder-cv-stat-label">Career Guidance &amp; Civil Services Seminars</span>
+                </div>
+                <div className="founder-cv-stat-box">
+                  <span className="founder-cv-stat-num">20+</span>
+                  <span className="founder-cv-stat-label">Scholars Aided in Pharmacy, B.Ed, M.A. &amp; M.Phil</span>
+                </div>
+                <div className="founder-cv-stat-box">
+                  <span className="founder-cv-stat-num">2</span>
+                  <span className="founder-cv-stat-label">Libraries at Rangapoor &amp; Govt. HS Matwada</span>
+                </div>
+              </div>
+
+              {/* Founder Motto Quote Card */}
+              <div className="founder-cv-quote">
+                <p>
+                  &ldquo;Every child carries a spark—a Chamak. If we give them direction, mentorship, and support, no poverty can prevent them from shining.&rdquo;
+                </p>
+                <cite>— Dr. Mohammad Azam Ali</cite>
               </div>
             </div>
           </div>
