@@ -71,39 +71,15 @@ export default function HomePage() {
       </section>
 
 
-      {/* Quote Section */}
-      <section className="section section--navy">
+      {/* Inspirational Quote inside an Elegant Box */}
+      <section className="section section--navy quote-section">
         <div className="container">
-          <div className="quote">
-            <p>
-              &ldquo;Education is the most powerful weapon which you can use to
-              change the world.&rdquo;
-            </p>
-            <cite>— Nelson Mandela</cite>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Band */}
-      <section className="section">
-        <div className="container">
-          <div className="cta-band">
-            <div className="eyebrow" style={{ color: "var(--gold-300)", justifyContent: "center" }}>
-              Make a Direct Difference
-            </div>
-            <h2>Be the Reason a Child Shines</h2>
-            <p>
-              Your monthly sponsorship or one-time donation provides textbooks,
-              school fees, uniforms, and mentorship to an underprivileged student.
-            </p>
-            <div className="cta-band__ctas">
-              <Link href="/get-involved#donate" className="btn btn-gold">
-                Support a Student
-              </Link>
-              <Link href="/get-involved#volunteer" className="btn btn-outline-light">
-                Join as a Volunteer
-              </Link>
-            </div>
+          <div className="quote-box">
+            <span className="quote-box__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote className="quote-box__text">
+              Education is the most powerful weapon which you can use to change the world.
+            </blockquote>
+            <cite className="quote-box__author">&mdash; Nelson Mandela</cite>
           </div>
         </div>
       </section>

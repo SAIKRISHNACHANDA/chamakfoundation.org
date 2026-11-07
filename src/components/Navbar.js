@@ -197,8 +197,8 @@ export default function Navbar() {
           </div>
 
           <div className="nav__cta">
-            <Link href="/get-involved#donate" className="btn btn-gold btn-sm">
-              Donate Now
+            <Link href="/impact" className="btn btn-gold btn-sm">
+              Testimonials
             </Link>
             <button
               className={`nav__burger ${isMobileOpen ? "is-active" : ""}`}
@@ -291,12 +291,12 @@ export default function Navbar() {
         </div>
 
         <Link
-          href="/get-involved#donate"
+          href="/impact"
           className="btn btn-gold"
           onClick={closeMenu}
           style={{ marginTop: "24px", justifyContent: "center" }}
         >
-          Donate Now
+          Testimonials
         </Link>
       </div>
     </>
