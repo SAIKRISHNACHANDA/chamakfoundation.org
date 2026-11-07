@@ -76,7 +76,6 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="Chamak Padhai Se · Regd. No. 643/2023"
         title="Shine Through Education."
         subtitle="The establishment of Chamak Foundation is deeply rooted in resilience, transformation, and the unyielding belief that education is the light that illuminates lives."
       />
@@ -98,8 +97,7 @@ export default function AboutPage() {
                   marginBottom: "20px",
                 }}
               >
-                Born from Hardship. <br />
-                <em>Powered by Resilience.</em>
+                From Dropout to Doctorate
               </h2>
               <p style={{ color: "var(--ink-600)", lineHeight: 1.8, fontSize: "1.05rem" }}>
                 The establishment of <strong>Chamak Foundation (Chamak Padhai Se) NGO</strong> is deeply rooted in the life journey of <strong>Dr. Mohammad Azam Ali</strong>—a journey marked by hardship, resilience, and an unwavering commitment to education and social transformation.
