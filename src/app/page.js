@@ -41,14 +41,6 @@ export default function HomePage() {
             <h1 className="hero__title--fit">
               Every Child Deserves to <em>Shine.</em>
             </h1>
-            <div className="hero__ctas">
-              <Link href="/get-involved#donate" className="btn btn-gold">
-                Support a Student
-              </Link>
-              <Link href="/impact" className="btn btn-outline-light">
-                See Our Impact
-              </Link>
-            </div>
           </div>
 
           <div className="hero__media">
