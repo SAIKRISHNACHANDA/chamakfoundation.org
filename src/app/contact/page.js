@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import {
@@ -8,51 +5,26 @@ import {
   Phone, 
   Mail, 
   Globe, 
-  CheckCircle2, 
-  ChevronDown, 
-  ChevronUp, 
   Clock,
   MessageCircle,
   ArrowRight,
   Sparkles,
-  HeartHandshake,
   GraduationCap,
   Users,
   Compass
 } from "lucide-react";
 
+export const metadata = {
+  title: "Contact Us · Chamak Foundation (Chamak Padhai Se)",
+  description: "Connect directly with Chamak Foundation leadership, coordinators, and volunteers in Hyderabad, Telangana.",
+};
+
 export default function ContactPage() {
-  const [openFaq, setOpenFaq] = useState(0);
-
-  const faqs = [
-    {
-      q: "How does a student apply for a Chamak Foundation scholarship?",
-      a: "Students or their guardians can apply directly by reaching out via our contact email or phone with academic transcripts and proof of family income. Our welfare committee reviews applications twice yearly before school terms commence.",
-    },
-    {
-      q: "How can I verify how my donation is utilized?",
-      a: "Chamak Foundation operates with radical financial transparency. 100% of educational donations are disbursed directly to accredited educational institutions and certified book vendors. Donors receive student progress reports and audit confirmation statements.",
-    },
-    {
-      q: "Can working professionals and college students volunteer on weekends?",
-      a: "Yes! The majority of our tutoring and library sessions occur on Saturday mornings and Sunday afternoons to accommodate corporate employees and university students. We provide tutor training and structured workbooks.",
-    },
-    {
-      q: "How can our school or basti community partner with Chamak?",
-      a: "Government and low-income private schools can write to chamakfoundation23@gmail.com. We evaluate pupil strength, infrastructural readiness, and teacher availability before rolling out remedial coaching or a community library nook.",
-    },
-    {
-      q: "Can I sponsor a specific child or community library?",
-      a: "Yes. Donors can choose to sponsor a specific high school scholar or fund an entire community library unit. You will receive direct periodic updates on the student's academic marks or the library's daily footfall.",
-    },
-  ];
-
   return (
     <>
       <PageHero
         eyebrow="Get In Touch"
         title="Let's Create More Chamaks."
-        subtitle="We would love to hear from you. Reach out with questions, collaboration ideas, or sponsorship inquiries."
       />
 
       {/* Main Split: Contact Details & Direct Assistance Hub */}
@@ -131,7 +103,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right: Direct Assistance Hub (Replacing Generic Form) */}
+            {/* Right: Direct Assistance Hub */}
             <div
               className="card"
               style={{
@@ -303,54 +275,6 @@ export default function ContactPage() {
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Frequently Asked Questions Accordion */}
-      <section className="section section--cream2">
-        <div className="container">
-          <div className="section-head section-head--center reveal">
-            <div className="eyebrow" style={{ justifyContent: "center" }}>FAQ</div>
-            <h2>Frequently Asked Questions</h2>
-            <p style={{ color: "var(--ink-400)", maxWidth: "56ch", margin: "10px auto 0" }}>
-              Quick answers about student eligibility, donor accountability, and our community programs.
-            </p>
-          </div>
-
-          <div style={{ maxWidth: "800px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "14px" }}>
-            {faqs.map((faq, index) => {
-              const isOpen = openFaq === index;
-              return (
-                <div 
-                  key={index}
-                  className="card"
-                  style={{
-                    padding: "24px 28px",
-                    cursor: "pointer",
-                    transition: "all 0.25s ease",
-                    border: isOpen ? "1.5px solid var(--gold-500)" : "1px solid rgba(11,27,56,0.1)",
-                    background: isOpen ? "#FFFFFF" : "rgba(255,255,255,0.7)",
-                  }}
-                  onClick={() => setOpenFaq(isOpen ? -1 : index)}
-                >
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
-                    <h3 style={{ fontSize: "1.08rem", color: "var(--navy-900)", margin: 0, fontFamily: "var(--sans)", fontWeight: 600 }}>
-                      {faq.q}
-                    </h3>
-                    <div style={{ color: isOpen ? "var(--gold-600)" : "var(--ink-400)", flexShrink: 0 }}>
-                      {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                    </div>
-                  </div>
-
-                  {isOpen && (
-                    <div style={{ marginTop: "14px", paddingTop: "14px", borderTop: "1px solid rgba(11,27,56,0.06)", color: "var(--ink-500)", lineHeight: 1.65, fontSize: "0.93rem" }}>
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
