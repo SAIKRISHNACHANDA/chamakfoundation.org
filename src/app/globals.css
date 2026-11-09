@@ -4219,5 +4219,49 @@ body:has(.admin-login-wrap) .wa-float {
   }
 }
 
+/* ---------- Contact Direct Proposal Email Strip ---------- */
+.contact-proposal-strip {
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(201,154,58,0.12) 0%, rgba(11,27,56,0.03) 100%);
+  border: 1px solid rgba(201,154,58,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.contact-proposal-strip:hover {
+  border-color: var(--gold-500);
+  background: linear-gradient(135deg, rgba(201,154,58,0.18) 0%, rgba(11,27,56,0.06) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201,154,58,0.15);
+}
+.contact-proposal-strip__label {
+  color: var(--navy-900);
+  font-weight: 600;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+.contact-proposal-strip__email {
+  color: var(--gold-700);
+  font-weight: 700;
+  font-size: 0.90rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .contact-proposal-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 14px 16px;
+  }
+}
+
 
 

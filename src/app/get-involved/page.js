@@ -166,9 +166,9 @@ export default function GetInvolvedPage() {
       {/* Interactive Donation Calculator & Details */}
       <section className="section section--cream2" id="donate" style={{ scrollMarginTop: "90px" }}>
         <div className="container">
-          <div className="section-head section-head--center reveal">
+          <div className="section-head section-head--center section-head--wide reveal">
             <div className="eyebrow" style={{ justifyContent: "center" }}>Make a Direct Donation</div>
-            <h2>Sponsor a Student&apos;s Education</h2>
+            <h2 className="section-title--oneline">Sponsor a Student&apos;s Education</h2>
             <p style={{ color: "var(--ink-400)", maxWidth: "56ch", margin: "10px auto 0" }}>
               100% of educational donations go directly toward school fees, books, and verified student provisions.
             </p>

@@ -247,33 +247,20 @@ export default function ContactPage() {
               </div>
 
               {/* Direct Email Link Strip */}
-              <div
-                style={{
-                  padding: "14px 16px",
-                  borderRadius: "12px",
-                  background: "rgba(201,154,58,0.1)",
-                  border: "1px solid rgba(201,154,58,0.25)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  fontSize: "0.88rem",
-                }}
+              <a
+                href="mailto:chamakfoundation23@gmail.com"
+                className="contact-proposal-strip"
               >
-                <span style={{ color: "var(--navy-900)", fontWeight: 600 }}>Prefer sending documents or proposals?</span>
-                <a
-                  href="mailto:chamakfoundation23@gmail.com"
-                  style={{
-                    color: "var(--gold-700)",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "4px",
-                  }}
-                >
-                  chamakfoundation23@gmail.com <ArrowRight size={13} />
-                </a>
-              </div>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", minWidth: 0 }}>
+                  <Mail size={18} style={{ color: "var(--gold-600)", flexShrink: 0 }} />
+                  <span className="contact-proposal-strip__label">
+                    Prefer sending documents or proposals?
+                  </span>
+                </div>
+                <span className="contact-proposal-strip__email">
+                  chamakfoundation23@gmail.com <ArrowRight size={14} />
+                </span>
+              </a>
             </div>
           </div>
         </div>
