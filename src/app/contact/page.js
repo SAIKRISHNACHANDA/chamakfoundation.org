@@ -250,16 +250,33 @@ export default function ContactPage() {
               <a
                 href="mailto:chamakfoundation23@gmail.com"
                 className="contact-proposal-strip"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  padding: "16px 20px",
+                  borderRadius: "14px",
+                  background: "linear-gradient(135deg, rgba(201,154,58,0.12) 0%, rgba(11,27,56,0.03) 100%)",
+                  border: "1.5px solid rgba(201,154,58,0.3)",
+                  textDecoration: "none",
+                  color: "var(--navy-900)",
+                  transition: "all 0.25s ease",
+                }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", minWidth: 0 }}>
-                  <Mail size={18} style={{ color: "var(--gold-600)", flexShrink: 0 }} />
-                  <span className="contact-proposal-strip__label">
-                    Prefer sending documents or proposals?
-                  </span>
+                <div style={{ display: "flex", alignItems: "center", gap: "14px", minWidth: 0 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(201,154,58,0.15)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--gold-700)", flexShrink: 0 }}>
+                    <Mail size={20} />
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <div style={{ fontSize: "0.82rem", color: "var(--ink-500)", fontWeight: 600, whiteSpace: "nowrap" }}>
+                      Prefer sending documents or proposals?
+                    </div>
+                    <div style={{ fontWeight: 700, fontSize: "0.95rem", color: "var(--gold-700)", whiteSpace: "nowrap", marginTop: "2px" }}>
+                      chamakfoundation23@gmail.com
+                    </div>
+                  </div>
                 </div>
-                <span className="contact-proposal-strip__email">
-                  chamakfoundation23@gmail.com <ArrowRight size={14} />
-                </span>
+                <ArrowRight size={18} style={{ color: "var(--gold-700)", flexShrink: 0, marginLeft: "12px" }} />
               </a>
             </div>
           </div>

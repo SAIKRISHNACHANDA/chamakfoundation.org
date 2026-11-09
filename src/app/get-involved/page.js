@@ -97,7 +97,6 @@ export default function GetInvolvedPage() {
       <PageHero
         eyebrow="Join Us"
         title="You Can Create a Chamak."
-        subtitle="Your time, skills, support, or voice can ignite a lifetime of possibilities for a child."
       />
 
       {/* 5 Ways to Engage Quick Grid */}
