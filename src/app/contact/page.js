@@ -81,7 +81,19 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <h4 style={{ marginTop: "32px", fontFamily: "var(--sans)", fontSize: "0.82rem", letterSpacing: "0.06em", color: "var(--ink-400)", textTransform: "uppercase", fontWeight: 700 }}>
+              <p
+                style={{
+                  marginTop: "32px",
+                  marginBottom: "0",
+                  color: "var(--ink-600)",
+                  fontSize: "0.98rem",
+                  lineHeight: 1.65,
+                }}
+              >
+                Chamak Foundation (Chamak Padhaai Se) is a Non Profit Organisation that empowers Underprivileged students through Education.
+              </p>
+
+              <h4 style={{ marginTop: "24px", fontFamily: "var(--sans)", fontSize: "0.82rem", letterSpacing: "0.06em", color: "var(--ink-400)", textTransform: "uppercase", fontWeight: 700 }}>
                 Social Channels
               </h4>
               <div className="social-row">
