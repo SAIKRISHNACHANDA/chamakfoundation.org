@@ -77,7 +77,6 @@ export default function AboutPage() {
     <>
       <PageHero
         title="Shine Through Education."
-        subtitle="The establishment of Chamak Foundation is deeply rooted in resilience, transformation, and the unyielding belief that education is the light that illuminates lives."
       />
 
       {/* WHY CHAMAK FOUNDATION - FOUNDER FULL CV & JOURNEY */}
@@ -335,11 +334,11 @@ export default function AboutPage() {
       {/* INSPIRATIONS & CORE PHILOSOPHY */}
       <section className="section section--cream2">
         <div className="container">
-          <div className="section-head section-head--center">
+          <div className="section-head section-head--center section-head--wide">
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               <Quote size={14} /> Guiding Words
             </div>
-            <h2>The Visionary Ideals That Guide Us</h2>
+            <h2 className="section-title--oneline">The Visionary Ideals That Guide Us</h2>
             <p>Dr. Azam Ali was moved by two profound philosophical statements that became the bedrock of Chamak Foundation.</p>
           </div>
 
@@ -404,11 +403,11 @@ export default function AboutPage() {
       {/* FOUR CORE PROGRAMMES */}
       <section className="section section--cream2">
         <div className="container">
-          <div className="section-head section-head--center">
+          <div className="section-head section-head--center section-head--wide">
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               <Award size={14} /> Our Programmes
             </div>
-            <h2>Four Pillars of Practical Action</h2>
+            <h2 className="section-title--oneline">Four Pillars of Practical Action</h2>
             <p>Targeted initiatives structured to mentor, educate, and empower every aspiring scholar.</p>
           </div>
 
@@ -443,11 +442,11 @@ export default function AboutPage() {
       {/* MEASURABLE GROUND IMPACT */}
       <section className="section" style={{ background: "var(--navy-950)", color: "var(--cream-100)" }}>
         <div className="container">
-          <div className="section-head section-head--center" style={{ color: "var(--cream-100)" }}>
+          <div className="section-head section-head--center section-head--wide" style={{ color: "var(--cream-100)" }}>
             <div className="eyebrow" style={{ justifyContent: "center", color: "var(--gold-400)" }}>
               Ground Realities
             </div>
-            <h2 style={{ color: "var(--cream-100)" }}>Our Impact in Numbers</h2>
+            <h2 className="section-title--oneline" style={{ color: "var(--cream-100)" }}>Our Impact in Numbers</h2>
             <p style={{ color: "rgba(250,247,239,0.7)" }}>Demonstrating real, measurable change across Telangana&apos;s youth.</p>
           </div>
 
