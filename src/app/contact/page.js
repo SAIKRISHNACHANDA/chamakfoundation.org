@@ -16,7 +16,7 @@ import {
 
 export const metadata = {
   title: "Contact Us · Chamak Foundation (Chamak Padhai Se)",
-  description: "Connect directly with Chamak Foundation leadership, coordinators, and volunteers in Hyderabad, Telangana.",
+  description: "Connect directly with Chamak Foundation NGO Telangana leadership, coordinators, and volunteers in Karimnagar, Telangana.",
 };
 
 export default function ContactPage() {
@@ -38,14 +38,14 @@ export default function ContactPage() {
               </div>
               <h2 style={{ marginBottom: "20px", color: "var(--navy-900)" }}>Reach Our Team</h2>
               <p style={{ color: "var(--ink-500)", marginBottom: "32px", fontSize: "1.02rem", lineHeight: 1.65 }}>
-                Our leadership and coordinator team are centrally based in Hyderabad, Telangana. We welcome visits, phone conversations, and direct emails.
+                Our office and coordinator team are located in Bommakal, Karimnagar, Telangana. We welcome visits, phone conversations, and direct emails.
               </p>
 
               <div className="info-row">
                 <div className="info-row__icon"><MapPin size={20} /></div>
                 <div>
-                  <h4>Registered Location</h4>
-                  <p>Hyderabad, Telangana, India</p>
+                  <h4>Office Address</h4>
+                  <p>Bommakal, Karimnagar, 505001, Telangana, India</p>
                 </div>
               </div>
 
@@ -53,7 +53,7 @@ export default function ContactPage() {
                 <div className="info-row__icon"><Phone size={20} /></div>
                 <div>
                   <h4>Phone &amp; WhatsApp Hotline</h4>
-                  <p><a href="tel:+919866129052" style={{ color: "inherit", textDecoration: "none" }}>+91 98661 29052</a></p>
+                  <p><a href="tel:+919491638052" style={{ color: "inherit", textDecoration: "none" }}>+91 94916 38052</a></p>
                 </div>
               </div>
 
@@ -154,7 +154,7 @@ export default function ContactPage() {
                   Assistant Professor, Founder &amp; President — Chamak Foundation
                 </p>
                 <a
-                  href="https://wa.me/919866129052?text=Hello%20Dr.%20Azam%20Ali,%20I%20would%20like%20to%20connect%20regarding%20Chamak%20Foundation."
+                  href="https://wa.me/919491638052?text=Hello%20Dr.%20Azam%20Ali,%20I%20would%20like%20to%20connect%20regarding%20Chamak%20Foundation."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-gold btn--full"

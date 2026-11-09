@@ -431,7 +431,7 @@ export default function GalleryPage() {
                   Send high-resolution photos and brief event notes directly to the Chamak Foundation media team for instant publication.
                 </p>
                 <a
-                  href="https://wa.me/919866129052?text=Hello%20Chamak%20Foundation,%20I%20have%20event%20photos%20and%20field%20updates%20to%20share."
+                  href="https://wa.me/919491638052?text=Hello%20Chamak%20Foundation,%20I%20have%20event%20photos%20and%20field%20updates%20to%20share."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-gold btn--full"
@@ -641,7 +641,7 @@ export default function GalleryPage() {
                 chamakfoundation23@gmail.com
               </a>
               <a
-                href="https://wa.me/919866129052?text=Hello%20Chamak%20Foundation,%20I%20am%20from%20the%20press/media%20and%20would%20like%20information."
+                href="https://wa.me/919491638052?text=Hello%20Chamak%20Foundation,%20I%20am%20from%20the%20press/media%20and%20would%20like%20information."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-gold btn-sm"

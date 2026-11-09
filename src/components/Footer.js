@@ -210,11 +210,11 @@ export default function Footer() {
           <div>
             <h5>Contact Us</h5>
             <p style={{ margin: "0 0 10px", color: "var(--cream-100)", fontWeight: 500 }}>
-              Hyderabad, Telangana, India
+              Bommakal, Karimnagar, 505001, Telangana, India
             </p>
             <p style={{ margin: "0 0 6px" }}>
-              <a href="tel:+919866129052" style={{ color: "var(--gold-400)" }}>
-                +91 98661 29052
+              <a href="tel:+919491638052" style={{ color: "var(--gold-400)" }}>
+                +91 94916 38052
               </a>
             </p>
             <p style={{ margin: "0 0 16px" }}>

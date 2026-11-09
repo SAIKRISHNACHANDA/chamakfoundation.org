@@ -71,7 +71,7 @@ export async function POST(req) {
       badge: body.badge || "Daily Field Update",
       category: body.category || "Daily Field Updates",
       title: body.title.trim(),
-      location: body.location?.trim() || "Hyderabad, Telangana",
+      location: body.location?.trim() || "Karimnagar, Telangana",
       metric: body.metric?.trim() || "Field Impact Verified",
       summary: body.summary?.trim() || "",
       gridStyle: body.gridStyle || "split-duo",

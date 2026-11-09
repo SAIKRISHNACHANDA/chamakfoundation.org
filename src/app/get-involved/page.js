@@ -326,11 +326,11 @@ export default function GetInvolvedPage() {
                 </div>
                 <div>
                   <div style={{ color: "var(--ink-400)", fontSize: "0.78rem", textTransform: "uppercase" }}>Location</div>
-                  <strong style={{ color: "var(--navy-900)" }}>Hyderabad, Telangana</strong>
+                  <strong style={{ color: "var(--navy-900)" }}>Karimnagar, Telangana</strong>
                 </div>
                 <div>
                   <div style={{ color: "var(--ink-400)", fontSize: "0.78rem", textTransform: "uppercase" }}>Helpline Phone</div>
-                  <strong style={{ color: "var(--navy-900)" }}>+91 98661 29052</strong>
+                  <strong style={{ color: "var(--navy-900)" }}>+91 94916 38052</strong>
                 </div>
                 <div>
                   <div style={{ color: "var(--ink-400)", fontSize: "0.78rem", textTransform: "uppercase" }}>Email Receipt</div>
@@ -341,7 +341,7 @@ export default function GetInvolvedPage() {
 
             <div style={{ textAlign: "center" }}>
               <a 
-                href={`https://wa.me/919866129052?text=${encodeURIComponent(`Hello Chamak Foundation, I would like to support your educational mission with a ${donationFrequency} pledge of INR ${currentAmount}. Please share transfer instructions.`)}`}
+                href={`https://wa.me/919491638052?text=${encodeURIComponent(`Hello Chamak Foundation, I would like to support your educational mission with a ${donationFrequency} pledge of INR ${currentAmount}. Please share transfer instructions.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-gold"
@@ -593,7 +593,7 @@ export default function GetInvolvedPage() {
 
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
               <a
-                href="https://wa.me/919866129052?text=Hello%20Chamak%20Foundation,%20I%20would%20like%20to%20contribute%20as%20a%20Resource%20Person%20/%20Guest%20Speaker."
+                href="https://wa.me/919491638052?text=Hello%20Chamak%20Foundation,%20I%20would%20like%20to%20contribute%20as%20a%20Resource%20Person%20/%20Guest%20Speaker."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-gold"

@@ -194,7 +194,7 @@ export default function GalleryAdminPage() {
     dateFormatted: "",
     badge: "Daily Field Update",
     category: "Daily Field Updates",
-    location: "Hyderabad, Telangana",
+    location: "Karimnagar, Telangana",
     metric: "Field Impact Verified",
     summary: "",
     gridStyle: "split-duo",

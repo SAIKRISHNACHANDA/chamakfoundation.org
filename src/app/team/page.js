@@ -675,7 +675,7 @@ export default function TeamPage() {
             <p>We are always eager to connect with potential institutional partners, alumni, and donors.</p>
             <div className="cta-band__ctas">
               <Link href="/contact" className="btn btn-gold">Contact Leadership</Link>
-              <a href="tel:+919866129052" className="btn btn-outline-cream">+91 98661 29052</a>
+              <a href="tel:+919491638052" className="btn btn-outline-cream">+91 94916 38052</a>
             </div>
           </div>
         </div>
