@@ -4256,5 +4256,238 @@ body:has(.admin-login-wrap) .wa-float {
   }
 }
 
+/* ---------- Words of Appreciation & Testimonials Page ---------- */
+.testimonials-stats-wrapper {
+  margin: -48px auto 60px;
+  position: relative;
+  z-index: 10;
+}
+
+.testimonials-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.testimonials-stat-card {
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-950) 100%);
+  border: 1px solid rgba(217, 175, 82, 0.32);
+  border-radius: 18px;
+  padding: 24px 18px;
+  text-align: center;
+  color: var(--cream-100);
+  box-shadow: 0 12px 32px rgba(7, 15, 34, 0.28);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.testimonials-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-400);
+  box-shadow: 0 18px 42px rgba(7, 15, 34, 0.38), 0 0 20px rgba(217, 175, 82, 0.15);
+}
+
+.testimonials-stat-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--gold-400);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.testimonials-stat-label {
+  font-size: 0.8rem;
+  color: rgba(250, 247, 239, 0.82);
+  line-height: 1.4;
+  font-weight: 500;
+  display: block;
+}
+
+.appreciation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.appreciation-card {
+  background: #ffffff;
+  border: 1px solid rgba(201, 154, 58, 0.24);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 10px 30px rgba(11, 27, 56, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.appreciation-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold-500), var(--gold-300), var(--gold-500));
+  opacity: 0.85;
+}
+
+.appreciation-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 154, 58, 0.65);
+  box-shadow: 0 20px 45px rgba(11, 27, 56, 0.1), 0 0 24px rgba(201, 154, 58, 0.12);
+}
+
+.appreciation-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.appreciation-card__author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.appreciation-card__avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-400);
+  box-shadow: 0 4px 12px rgba(11, 27, 56, 0.15);
+  flex-shrink: 0;
+}
+
+.appreciation-card__monogram {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-950) 100%);
+  border: 2px solid var(--gold-400);
+  color: var(--gold-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(11, 27, 56, 0.18);
+  letter-spacing: 0.05em;
+}
+
+.appreciation-card__name {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+.appreciation-card__designation {
+  font-size: 0.85rem;
+  color: var(--ink-600);
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.appreciation-card__quote-icon {
+  color: rgba(201, 154, 58, 0.28);
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.appreciation-card:hover .appreciation-card__quote-icon {
+  color: var(--gold-500);
+}
+
+.appreciation-card__body {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.78;
+  color: var(--navy-900);
+  margin: 0 0 24px;
+  position: relative;
+  font-style: normal;
+}
+
+.appreciation-card__body em {
+  font-style: italic;
+  color: var(--navy-800);
+}
+
+.appreciation-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(11, 27, 56, 0.08);
+}
+
+.appreciation-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold-700);
+  background: rgba(201, 154, 58, 0.12);
+  padding: 5px 12px;
+  border-radius: 14px;
+}
+
+.appreciation-card__verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--navy-700);
+}
+
+@media (max-width: 991px) {
+  .appreciation-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonials-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonials-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonials-stats-wrapper {
+    margin-top: -30px;
+  }
+  .appreciation-card {
+    padding: 26px 20px;
+  }
+  .appreciation-card__name {
+    font-size: 1.18rem;
+  }
+  .appreciation-card__body {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+}
+
+
 
 

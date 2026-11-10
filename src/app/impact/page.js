@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import StatCounter from "@/components/StatCounter";
 import { 
@@ -15,7 +16,9 @@ import {
   FileText, 
   TrendingUp,
   Heart,
-  Quote
+  Quote,
+  Award,
+  ArrowRight
 } from "lucide-react";
 
 export default function ImpactPage() {
@@ -55,6 +58,46 @@ export default function ImpactPage() {
     { value: 25, suffix: "+", label: "Communities Reached", desc: "Grassroots presence in marginalized pockets of Hyderabad." },
     { value: 100, suffix: "+", label: "Active Volunteers", desc: "Dedicated educators, students, and professionals giving time." },
     { value: 2, suffix: "+", label: "Years of Impact", desc: "Building sustainable, transparent generational change." },
+  ];
+
+  const appreciations = [
+    {
+      id: "prof-g-damodar",
+      name: "Professor G. Damodar",
+      role: "Former Vice-Chancellor & Senior Professor of English",
+      badge: "Higher Education Leadership",
+      monogram: "GD",
+      quote:
+        "Chamak Foundation, under the leadership of Dr. Mohammad Azam Ali, is making commendable efforts to transform lives through education and social service. Its initiatives in empowering underprivileged students, promoting educational awareness, mentoring and career guidance are highly appreciable. The foundation's commitment to creating equal opportunities for young people reflects a noble vision. I wish Dr. Azam Ali and his team great success in their mission.",
+    },
+    {
+      id: "prof-suresh-lal",
+      name: "Professor Suresh Lal",
+      role: "Senior Professor, Academician & Social Scientist",
+      badge: "Social Transformation & Youth Empowerment",
+      monogram: "SL",
+      quote:
+        "Chamak Foundation is an inspiring initiative towards educational empowerment and social transformation. Its focus on student development, life skills education, personality development and career counselling addresses the important needs of today's younger generation. I appreciate the dedication and vision of Dr. Mohammad Azam Ali in working for disadvantaged communities. I hope the foundation continues to expand its activities and positively impact many more lives.",
+    },
+    {
+      id: "prof-meghana-rao",
+      name: "Professor Meghana Rao",
+      role: "Professor & Student Mentorship Leader",
+      badge: "Student Mentorship & Character Building",
+      monogram: "MR",
+      quote:
+        "Chamak Foundation is creating hope and opportunities for young minds through education and empowerment. Its initiatives in mentoring, counselling, career guidance, communication skills and holistic personality development are particularly meaningful. I appreciate Dr. Mohammad Azam Ali for his commitment to nurturing young talent and supporting students from underprivileged backgrounds. Such efforts can inspire confidence, build character and create a brighter future for society.",
+    },
+    {
+      id: "r-venkat-reddy",
+      name: "R. Venkat Reddy",
+      role: "National Convenor, M.V. Foundation & Member, Telangana Education Commission",
+      badge: "Child Rights & Educational Policy",
+      image: "/assets/team/r-venkat-reddy.png",
+      monogram: "VR",
+      quote:
+        "Chamak Foundation represents a meaningful commitment to educational empowerment and inclusive social development. Its efforts to support underprivileged students through mentoring, educational awareness, career guidance, counselling and community-based initiatives are noteworthy. I appreciate the leadership and dedication of Dr. Mohammad Azam Ali in taking forward this noble mission. I strongly believe that initiatives like Chamak Foundation can contribute significantly to building an educated, empowered and equitable society. My best wishes for its continued growth and success.",
+    },
   ];
 
   return (
@@ -193,6 +236,73 @@ export default function ImpactPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Words of Appreciation Section */}
+      <section className="section section--cream2">
+        <div className="container">
+          <div className="section-head reveal" style={{ textAlign: "center", maxWidth: "780px", margin: "0 auto" }}>
+            <div className="eyebrow" style={{ justifyContent: "center" }}>
+              <Sparkles size={14} /> Academic Endorsements
+            </div>
+            <h2>Words of Appreciation</h2>
+            <p style={{ color: "var(--ink-400)", margin: "8px auto 0" }}>
+              Reflections from eminent university professors, education leaders, and child rights pioneers on Chamak Foundation&apos;s impact.
+            </p>
+          </div>
+
+          <div className="appreciation-grid" style={{ marginTop: "36px" }}>
+            {appreciations.map((item) => (
+              <div key={item.id} className="appreciation-card">
+                <div>
+                  <div className="appreciation-card__header">
+                    <div className="appreciation-card__author">
+                      {item.image ? (
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          width={58}
+                          height={58}
+                          className="appreciation-card__avatar"
+                        />
+                      ) : (
+                        <div className="appreciation-card__monogram">
+                          {item.monogram}
+                        </div>
+                      )}
+                      <div>
+                        <h3 className="appreciation-card__name">{item.name}</h3>
+                        <p className="appreciation-card__designation">{item.role}</p>
+                      </div>
+                    </div>
+                    <Quote size={32} className="appreciation-card__quote-icon" />
+                  </div>
+
+                  <blockquote className="appreciation-card__body">
+                    &ldquo;{item.quote}&rdquo;
+                  </blockquote>
+                </div>
+
+                <div className="appreciation-card__footer">
+                  <span className="appreciation-card__badge">
+                    <Award size={13} />
+                    {item.badge}
+                  </span>
+                  <span className="appreciation-card__verified">
+                    <CheckCircle2 size={14} style={{ color: "var(--gold-600)" }} />
+                    Verified Endorsement
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: "36px" }}>
+            <Link href="/testimonials" className="btn btn-outline" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+              View Full Words of Appreciation &amp; Testimonials <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

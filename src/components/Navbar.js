@@ -24,6 +24,7 @@ const NAV_ITEMS = [
     children: [
       { label: "Our Founder", href: "/about#founder" },
       { label: "Our Team", href: "/team" },
+      { label: "Words of Appreciation", href: "/testimonials" },
       { label: "Impact", href: "/impact" },
     ],
   },
@@ -197,7 +198,7 @@ export default function Navbar() {
           </div>
 
           <div className="nav__cta">
-            <Link href="/impact" className="btn btn-gold btn-sm">
+            <Link href="/testimonials" className="btn btn-gold btn-sm">
               Testimonials
             </Link>
             <button
@@ -291,7 +292,7 @@ export default function Navbar() {
         </div>
 
         <Link
-          href="/impact"
+          href="/testimonials"
           className="btn btn-gold"
           onClick={closeMenu}
           style={{ marginTop: "24px", justifyContent: "center" }}
