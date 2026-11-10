@@ -25,7 +25,6 @@ const NAV_ITEMS = [
       { label: "Our Founder", href: "/about#founder" },
       { label: "Our Team", href: "/team" },
       { label: "Words of Appreciation", href: "/testimonials" },
-      { label: "Impact", href: "/impact" },
     ],
   },
   {
@@ -45,7 +44,7 @@ const NAV_ITEMS = [
       { label: "Become a Resource Person", href: "/get-involved#resource-person" },
     ],
   },
-  { label: "Contact", href: "/contact" },
+  { label: "Testimonials", href: "/testimonials" },
 ];
 
 export default function Navbar() {
@@ -198,8 +197,8 @@ export default function Navbar() {
           </div>
 
           <div className="nav__cta">
-            <Link href="/testimonials" className="btn btn-gold btn-sm">
-              Testimonials
+            <Link href="/contact" className="btn btn-gold btn-sm">
+              Contact
             </Link>
             <button
               className={`nav__burger ${isMobileOpen ? "is-active" : ""}`}
@@ -292,12 +291,12 @@ export default function Navbar() {
         </div>
 
         <Link
-          href="/testimonials"
+          href="/contact"
           className="btn btn-gold"
           onClick={closeMenu}
           style={{ marginTop: "24px", justifyContent: "center" }}
         >
-          Testimonials
+          Contact
         </Link>
       </div>
     </>

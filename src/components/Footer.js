@@ -192,7 +192,7 @@ export default function Footer() {
               <li><Link href="/programmes">Our Programmes</Link></li>
               <li><Link href="/gallery">Gallery &amp; Events</Link></li>
               <li><Link href="/team">Our Team</Link></li>
-              <li><Link href="/impact">Impact &amp; Stories</Link></li>
+              <li><Link href="/testimonials">Words of Appreciation</Link></li>
             </ul>
           </div>
 
@@ -233,7 +233,7 @@ export default function Footer() {
           </div>
           <div className="footer__legal">
             <Link href="/vision-mission">Transparency</Link>
-            <Link href="/impact">Impact Metrics</Link>
+            <Link href="/testimonials">Testimonials</Link>
             <Link href="/contact">Privacy &amp; Terms</Link>
           </div>
         </div>

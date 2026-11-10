@@ -12,6 +12,11 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: '/impact',
+        destination: '/testimonials',
+        permanent: false,
+      },
+      {
         source: '/admin',
         destination: '/admin/gallery',
         permanent: false,
