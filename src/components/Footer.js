@@ -29,11 +29,10 @@ export default function Footer() {
               </div>
             </div>
             <p>
-              Empowering underprivileged children through education, scholarships,
-              and mentorship to help every child shine in life.
+              Chamak Foundation (Chamak Padhaai Se) is a Non Profit Organisation that empowers Underprivileged students through Education.
             </p>
             <div style={{ marginTop: "16px", fontSize: "0.84rem", color: "rgba(250,247,239,0.5)" }}>
-              Registered Non-Profit Organisation · Hyderabad, India
+              Registered Non-Profit Organisation · Telangana, India
             </div>
             <div style={{ marginTop: "20px", display: "flex", gap: "10px", alignItems: "center" }}>
               <a
