@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Sparkles } from "lucide-react";
 
 export default function HeroImageSlider() {
   return (
@@ -12,6 +13,13 @@ export default function HeroImageSlider() {
         className="hero-slider__img"
         style={{ objectPosition: "center 20%" }}
       />
+      <div className="hero__media-chip">
+        <Sparkles size={16} className="hero__media-chip-icon" />
+        <div>
+          <strong>Rural Library &amp; Awareness Campaign</strong>
+          <span>Ground educational empowerment across Telangana</span>
+        </div>
+      </div>
     </div>
   );
 }
