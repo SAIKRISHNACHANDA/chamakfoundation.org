@@ -13,7 +13,6 @@ const NAV_ITEMS = [
     href: "/about",
     children: [
       { label: "About Us", href: "/about" },
-      { label: "Vision & Mission", href: "/about#vision-mission" },
       { label: "Our Programmes", href: "/programmes" },
     ],
   },
