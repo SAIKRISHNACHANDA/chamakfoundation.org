@@ -2,10 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import {
-  Compass,
-  Smile,
   Library,
-  BookOpenCheck,
   Award,
   Sparkles,
   Quote,
@@ -29,53 +26,6 @@ export const metadata = {
   description:
     "The inspiring biographical journey of Dr. Mohammad Azam Ali — from wall poster boy to Kakatiya University Ph.D., National Award winner, and Founder President of Chamak Foundation.",
 };
-
-const PROGRAMMES = [
-  {
-    num: "01",
-    title: "Career Guidance Programmes",
-    tag: "Future Readiness",
-    icon: Compass,
-    points: [
-      "Career counseling for high school and college students.",
-      "Competitive exam awareness sessions and strategy roadmaps.",
-      "Civil Services awareness and dedicated mentoring initiatives.",
-    ],
-  },
-  {
-    num: "02",
-    title: "Life Skills Education",
-    tag: "Holistic Development",
-    icon: Smile,
-    points: [
-      "Youth leadership development & confidence building.",
-      "Public speaking, communication & emotional intelligence (EQ).",
-      "Personality development & ethical decision-making skills.",
-    ],
-  },
-  {
-    num: "03",
-    title: "Community Library Initiatives",
-    tag: "Knowledge Access",
-    icon: Library,
-    points: [
-      "Establishing vibrant libraries in rural, tribal & minority areas.",
-      "Promoting a joyful reading culture & textbook accessibility.",
-      "Active libraries: Rangapoor village (Huzurabad, Karimnagar) & Govt. High School Matwada.",
-    ],
-  },
-  {
-    num: "04",
-    title: "Education Dialogue & Policy",
-    tag: "Professional Growth",
-    icon: BookOpenCheck,
-    points: [
-      "Organizing seminars and symposiums on educational issues & trends.",
-      "Creating collaborative platforms for educators, researchers & policymakers.",
-      "Professional development and pedagogue upskilling workshops.",
-    ],
-  },
-];
 
 const MAJOR_AWARDS = [
   { num: "01", name: "President of India NSS National Award", year: "2012–13", conferredBy: "Conferred by President Pranab Mukherjee at Rashtrapati Bhavan" },
@@ -611,113 +561,6 @@ export default function AboutPage() {
               <span style={{ fontSize: "0.82rem", color: "var(--ink-400)", display: "block", marginTop: "4px" }}>
                 Former President of India &amp; Visionary Scientist
               </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* FOUR CORE PROGRAMMES */}
-      <section className="section section--cream2">
-        <div className="container">
-          <div className="section-head section-head--center section-head--wide">
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              <Award size={14} /> Our Programmes
-            </div>
-            <h2 className="section-title--oneline">Four Pillars of Practical Action</h2>
-            <p>Targeted initiatives structured to mentor, educate, and empower every aspiring scholar.</p>
-          </div>
-
-          <div className="grid grid--2" style={{ gap: "28px", marginTop: "36px" }}>
-            {PROGRAMMES.map((prog) => {
-              const Icon = prog.icon;
-              return (
-                <div key={prog.num} className="card" style={{ padding: "34px", background: "#fff", boxShadow: "0 10px 30px rgba(11,27,56,0.04)" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
-                    <div style={{ width: 46, height: 46, borderRadius: 12, background: "rgba(201,154,58,0.12)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--gold-600)" }}>
-                      <Icon size={24} />
-                    </div>
-                    <span style={{ fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: 20, background: "var(--cream-100)", color: "var(--navy-900)", letterSpacing: "0.04em" }}>
-                      {prog.tag}
-                    </span>
-                  </div>
-                  <h3 style={{ fontSize: "1.3rem", color: "var(--navy-900)", marginBottom: "14px", fontFamily: "var(--serif)" }}>
-                    {prog.title}
-                  </h3>
-                  <ul style={{ paddingLeft: "18px", margin: 0, color: "var(--ink-500)", lineHeight: 1.65, fontSize: "0.94rem" }}>
-                    {prog.points.map((pt, i) => (
-                      <li key={i} style={{ marginBottom: "8px" }}>{pt}</li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* MEASURABLE GROUND IMPACT */}
-      <section className="impact-section">
-        <div className="container">
-          <div className="section-head section-head--center section-head--wide" style={{ marginBottom: "16px" }}>
-            <div className="impact-eyebrow">
-              <Sparkles size={14} /> Ground Realities
-            </div>
-            <h2 className="section-title--oneline" style={{ color: "var(--cream-100)" }}>
-              Our Impact in Numbers
-            </h2>
-            <p style={{ color: "rgba(250,247,239,0.78)", maxWidth: "620px", margin: "0 auto", fontSize: "1.05rem", lineHeight: 1.6 }}>
-              Demonstrating real, measurable, and life-changing progress across youth and rural communities.
-            </p>
-          </div>
-
-          <div className="impact-grid">
-            <div className="impact-card">
-              <div className="impact-card__icon-wrap">
-                <Sparkles size={26} />
-              </div>
-              <span className="impact-card__tag">Youth Outreach</span>
-              <div className="impact-card__num">1,000+</div>
-              <h3 className="impact-card__title">Motivational Lectures</h3>
-              <p className="impact-card__desc">
-                Delivered across schools, colleges, and national youth forums across India.
-              </p>
-            </div>
-
-            <div className="impact-card">
-              <div className="impact-card__icon-wrap">
-                <Users size={26} />
-              </div>
-              <span className="impact-card__tag">Student Mentorship</span>
-              <div className="impact-card__num">20,000+</div>
-              <h3 className="impact-card__title">Students Mentored</h3>
-              <p className="impact-card__desc">
-                Trained in English communication, career roadmaps, and personality development.
-              </p>
-            </div>
-
-            <div className="impact-card">
-              <div className="impact-card__icon-wrap">
-                <Library size={26} />
-              </div>
-              <span className="impact-card__tag">Infrastructure</span>
-              <div className="impact-card__num">2</div>
-              <h3 className="impact-card__title">Rural Libraries Built</h3>
-              <p className="impact-card__desc">
-                Equipped at Rangapoor village (Karimnagar) and Govt. High School Matwada.
-              </p>
-            </div>
-
-            <div className="impact-card">
-              <div className="impact-card__icon-wrap">
-                <GraduationCap size={26} />
-              </div>
-              <span className="impact-card__tag">Scholarship Aid</span>
-              <div className="impact-card__num">20+</div>
-              <h3 className="impact-card__title">Higher-Ed Scholars</h3>
-              <p className="impact-card__desc">
-                Direct financial assistance for Pharmacy, B.Ed, M.A., and M.Phil degree students.
-              </p>
             </div>
           </div>
         </div>
