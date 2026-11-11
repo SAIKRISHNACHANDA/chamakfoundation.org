@@ -616,35 +616,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* VISION & MISSION DUAL PILLARS */}
-      <section className="section">
-        <div className="container">
-          <div className="grid grid--2" style={{ gap: "32px" }}>
-            <div className="card" style={{ padding: "44px 38px", borderColor: "rgba(201,154,58,0.3)" }}>
-              <div className="eyebrow" style={{ color: "var(--gold-600)" }}>Our Vision</div>
-              <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.65rem", color: "var(--navy-900)", margin: "12px 0 16px", lineHeight: 1.35 }}>
-                An inclusive, educated India where every child shines with dignity.
-              </h3>
-              <p style={{ color: "var(--ink-500)", lineHeight: 1.75, fontSize: "1rem", margin: 0 }}>
-                To build an inclusive and educated India where every underprivileged child has access to quality education, equal opportunities, and the confidence to shine in life with dignity and self-reliance.
-              </p>
-            </div>
-
-            <div className="card" style={{ padding: "44px 38px", borderColor: "rgba(11,27,56,0.15)", background: "linear-gradient(145deg, #FAF7EF 0%, #F3EDE0 100%)" }}>
-              <div className="eyebrow" style={{ color: "var(--navy-800)" }}>Our Mission</div>
-              <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.65rem", color: "var(--navy-900)", margin: "12px 0 16px", lineHeight: 1.35 }}>
-                Dismantling barriers and nurturing tomorrow&apos;s value-driven leaders.
-              </h3>
-              <ul style={{ paddingLeft: "18px", color: "var(--ink-500)", lineHeight: 1.75, fontSize: "0.98rem", margin: 0 }}>
-                <li style={{ marginBottom: "6px" }}>To empower marginalized and disadvantaged students through education.</li>
-                <li style={{ marginBottom: "6px" }}>To promote equitable access to primary, secondary, and higher education.</li>
-                <li style={{ marginBottom: "6px" }}>To create awareness about the transformative power of education in rural, tribal, and minority communities.</li>
-                <li>To nurture socially responsible, skilled, and value-driven citizens for nation-building.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* FOUR CORE PROGRAMMES */}
       <section className="section section--cream2">
@@ -686,46 +657,66 @@ export default function AboutPage() {
       </section>
 
       {/* MEASURABLE GROUND IMPACT */}
-      <section className="section" style={{ background: "var(--navy-950)", color: "var(--cream-100)" }}>
+      <section className="impact-section">
         <div className="container">
-          <div className="section-head section-head--center section-head--wide" style={{ color: "var(--cream-100)" }}>
-            <div className="eyebrow" style={{ justifyContent: "center", color: "var(--gold-400)" }}>
-              Ground Realities
+          <div className="section-head section-head--center section-head--wide" style={{ marginBottom: "16px" }}>
+            <div className="impact-eyebrow">
+              <Sparkles size={14} /> Ground Realities
             </div>
-            <h2 className="section-title--oneline" style={{ color: "var(--cream-100)" }}>Our Impact in Numbers</h2>
-            <p style={{ color: "rgba(250,247,239,0.7)" }}>Demonstrating real, measurable change across Telangana&apos;s youth.</p>
+            <h2 className="section-title--oneline" style={{ color: "var(--cream-100)" }}>
+              Our Impact in Numbers
+            </h2>
+            <p style={{ color: "rgba(250,247,239,0.78)", maxWidth: "620px", margin: "0 auto", fontSize: "1.05rem", lineHeight: 1.6 }}>
+              Demonstrating real, measurable, and life-changing progress across youth and rural communities.
+            </p>
           </div>
 
-          <div className="grid grid--4" style={{ gap: "20px", marginTop: "36px" }}>
-            <div className="card" style={{ background: "rgba(255,255,255,0.05)", borderColor: "rgba(201,154,58,0.25)", padding: "30px 24px", textAlign: "center" }}>
-              <div style={{ fontSize: "3rem", fontWeight: 800, color: "var(--gold-400)", fontFamily: "var(--serif)" }}>1,000+</div>
-              <h4 style={{ color: "var(--cream-100)", margin: "10px 0 6px", fontSize: "1.1rem" }}>Motivational Lectures</h4>
-              <p style={{ fontSize: "0.85rem", color: "rgba(250,247,239,0.65)", margin: 0 }}>
-                Delivered across schools, colleges, and national youth forums across India
+          <div className="impact-grid">
+            <div className="impact-card">
+              <div className="impact-card__icon-wrap">
+                <Sparkles size={26} />
+              </div>
+              <span className="impact-card__tag">Youth Outreach</span>
+              <div className="impact-card__num">1,000+</div>
+              <h3 className="impact-card__title">Motivational Lectures</h3>
+              <p className="impact-card__desc">
+                Delivered across schools, colleges, and national youth forums across India.
               </p>
             </div>
 
-            <div className="card" style={{ background: "rgba(255,255,255,0.05)", borderColor: "rgba(201,154,58,0.25)", padding: "30px 24px", textAlign: "center" }}>
-              <div style={{ fontSize: "3rem", fontWeight: 800, color: "var(--gold-400)", fontFamily: "var(--serif)" }}>20,000+</div>
-              <h4 style={{ color: "var(--cream-100)", margin: "10px 0 6px", fontSize: "1.1rem" }}>Students Mentored</h4>
-              <p style={{ fontSize: "0.85rem", color: "rgba(250,247,239,0.65)", margin: 0 }}>
-                Trained in English communication, career roadmaps, and personality development
+            <div className="impact-card">
+              <div className="impact-card__icon-wrap">
+                <Users size={26} />
+              </div>
+              <span className="impact-card__tag">Student Mentorship</span>
+              <div className="impact-card__num">20,000+</div>
+              <h3 className="impact-card__title">Students Mentored</h3>
+              <p className="impact-card__desc">
+                Trained in English communication, career roadmaps, and personality development.
               </p>
             </div>
 
-            <div className="card" style={{ background: "rgba(255,255,255,0.05)", borderColor: "rgba(201,154,58,0.25)", padding: "30px 24px", textAlign: "center" }}>
-              <div style={{ fontSize: "3rem", fontWeight: 800, color: "var(--gold-400)", fontFamily: "var(--serif)" }}>2</div>
-              <h4 style={{ color: "var(--cream-100)", margin: "10px 0 6px", fontSize: "1.1rem" }}>Rural Libraries Built</h4>
-              <p style={{ fontSize: "0.85rem", color: "rgba(250,247,239,0.65)", margin: 0 }}>
-                1. Rangapoor village (Karimnagar)<br />2. Govt. High School Matwada
+            <div className="impact-card">
+              <div className="impact-card__icon-wrap">
+                <Library size={26} />
+              </div>
+              <span className="impact-card__tag">Infrastructure</span>
+              <div className="impact-card__num">2</div>
+              <h3 className="impact-card__title">Rural Libraries Built</h3>
+              <p className="impact-card__desc">
+                Equipped at Rangapoor village (Karimnagar) and Govt. High School Matwada.
               </p>
             </div>
 
-            <div className="card" style={{ background: "rgba(255,255,255,0.05)", borderColor: "rgba(201,154,58,0.25)", padding: "30px 24px", textAlign: "center" }}>
-              <div style={{ fontSize: "3rem", fontWeight: 800, color: "var(--gold-400)", fontFamily: "var(--serif)" }}>20+</div>
-              <h4 style={{ color: "var(--cream-100)", margin: "10px 0 6px", fontSize: "1.1rem" }}>Higher-Ed Students Funded</h4>
-              <p style={{ fontSize: "0.85rem", color: "rgba(250,247,239,0.65)", margin: 0 }}>
-                Direct financial assistance for Pharmacy, B.Ed, M.A., and M.Phil students
+            <div className="impact-card">
+              <div className="impact-card__icon-wrap">
+                <GraduationCap size={26} />
+              </div>
+              <span className="impact-card__tag">Scholarship Aid</span>
+              <div className="impact-card__num">20+</div>
+              <h3 className="impact-card__title">Higher-Ed Scholars</h3>
+              <p className="impact-card__desc">
+                Direct financial assistance for Pharmacy, B.Ed, M.A., and M.Phil degree students.
               </p>
             </div>
           </div>

@@ -31,11 +31,6 @@ export default function HomePage() {
         <StarfieldCanvas />
         <div className="hero__grid">
           <div className="hero__content">
-            <div className="hero__badge">
-              <span className="hero__badge-dot" />
-              <span>Registered Non-Profit Organisation · Regd. No. 643/2023</span>
-            </div>
-
             <h1 className="hero__brand-title">
               Chamak Padhai Se
             </h1>
@@ -44,38 +39,7 @@ export default function HomePage() {
               Every Child Deserves to Shine.
             </p>
 
-            <p className="hero__desc">
-              Chamak Foundation is dedicated to empowering underprivileged students across Telangana through scholarships, career guidance, community libraries, and life-skills mentorship.
-            </p>
 
-            <div className="hero__ctas">
-              <Link href="/get-involved#donate" className="btn btn-gold">
-                Support a Student <ArrowRight size={16} />
-              </Link>
-              <Link href="/about" className="btn btn-outline-light">
-                Our Founder Story
-              </Link>
-              <Link href="/testimonials" className="btn btn-outline-light">
-                Words of Appreciation
-              </Link>
-            </div>
-
-            <div className="hero__highlights">
-              <div className="hero__highlight-item">
-                <strong>20,000+</strong>
-                <span>Students Mentored</span>
-              </div>
-              <div className="hero__highlight-divider" />
-              <div className="hero__highlight-item">
-                <strong>2</strong>
-                <span>Rural Libraries</span>
-              </div>
-              <div className="hero__highlight-divider" />
-              <div className="hero__highlight-item">
-                <strong>President&apos;s</strong>
-                <span>NSS Awardee Founder</span>
-              </div>
-            </div>
           </div>
 
           <div className="hero__media">

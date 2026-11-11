@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { Eye, Target, BookOpen, GraduationCap, Compass, Smile, Heart, Library, ShieldCheck, Award, Users } from "lucide-react";
+import { Eye, Target, BookOpen, GraduationCap, Compass, Smile, Heart, Library, ShieldCheck, Award, Users, Sparkles } from "lucide-react";
 
 export const metadata = {
   title: "Vision & Mission | Chamak Foundation",
@@ -81,34 +81,54 @@ export default function VisionMissionPage() {
       {/* Vision & Mission Dual Pillars */}
       <section className="section">
         <div className="container">
-          <div className="grid grid--2 reveal">
-            <div id="vision" className="card" style={{ borderColor: "rgba(201,154,58,0.3)", scrollMarginTop: "100px" }}>
-              <div className="card__body" style={{ padding: "44px 38px" }}>
-                <div className="card__icon" style={{ background: "rgba(201,154,58,0.12)", color: "var(--gold-600)" }}>
+          <div className="grid grid--2 reveal" style={{ gap: "32px" }}>
+            <div id="vision" className="pillar-card pillar-card--vision" style={{ scrollMarginTop: "100px" }}>
+              <div className="pillar-card__header">
+                <div className="pillar-card__icon">
                   <Eye size={26} strokeWidth={1.8} />
                 </div>
-                <div className="eyebrow" style={{ color: "var(--gold-600)" }}>Our Vision</div>
-                <h2 style={{ fontFamily: "var(--serif)", fontSize: "1.75rem", lineHeight: 1.35, color: "var(--navy-900)", marginBottom: "16px" }}>
-                  A society where every child has unhindered access to quality education and the opportunity to achieve their fullest potential.
-                </h2>
-                <p style={{ color: "var(--ink-500)", lineHeight: 1.7, margin: 0 }}>
-                  We envision communities where poverty never acts as an educational ceiling, and where every child discovers the spark ("Chamak") of knowledge to transform their family&apos;s destiny.
-                </p>
+                <span className="pillar-badge pillar-badge--gold">
+                  <Sparkles size={13} /> The North Star
+                </span>
+              </div>
+
+              <div className="pillar-card__eyebrow">Our Vision</div>
+              <h2 className="pillar-card__title">
+                A society where every child has unhindered access to quality education and the opportunity to achieve their fullest potential.
+              </h2>
+              <p className="pillar-card__body">
+                We envision communities where poverty never acts as an educational ceiling, and where every child discovers the spark (&ldquo;Chamak&rdquo;) of knowledge to transform their family&apos;s destiny.
+              </p>
+
+              <div className="pillar-card__footer">
+                <span className="pillar-tag"><span className="dot" /> Equal Access</span>
+                <span className="pillar-tag"><span className="dot" /> Generational Mobility</span>
+                <span className="pillar-tag"><span className="dot" /> Zero Poverty Barrier</span>
               </div>
             </div>
 
-            <div id="mission" className="card" style={{ borderColor: "rgba(11,27,56,0.15)", background: "linear-gradient(145deg, #FAF7EF 0%, #F3EDE0 100%)", scrollMarginTop: "100px" }}>
-              <div className="card__body" style={{ padding: "44px 38px" }}>
-                <div className="card__icon" style={{ background: "var(--navy-900)", color: "var(--gold-400)" }}>
+            <div id="mission" className="pillar-card pillar-card--mission" style={{ scrollMarginTop: "100px" }}>
+              <div className="pillar-card__header">
+                <div className="pillar-card__icon">
                   <Target size={26} strokeWidth={1.8} />
                 </div>
-                <div className="eyebrow" style={{ color: "var(--navy-800)" }}>Our Mission</div>
-                <h2 style={{ fontFamily: "var(--serif)", fontSize: "1.75rem", lineHeight: 1.35, color: "var(--navy-900)", marginBottom: "16px" }}>
-                  To empower underprivileged children through academic excellence, merit scholarships, personal guidance, and holistic life skills.
-                </h2>
-                <p style={{ color: "var(--ink-500)", lineHeight: 1.7, margin: 0 }}>
-                  Through direct classroom support, scholarship funding, community libraries, and career navigation, we systematically dismantle the barriers between marginalized students and their aspirations.
-                </p>
+                <span className="pillar-badge pillar-badge--navy">
+                  <Compass size={13} /> The Action Blueprint
+                </span>
+              </div>
+
+              <div className="pillar-card__eyebrow">Our Mission</div>
+              <h2 className="pillar-card__title">
+                To empower underprivileged children through academic excellence, merit scholarships, personal guidance, and holistic life skills.
+              </h2>
+              <p className="pillar-card__body">
+                Through direct classroom support, scholarship funding, community libraries, and career navigation, we systematically dismantle the barriers between marginalized students and their aspirations.
+              </p>
+
+              <div className="pillar-card__footer">
+                <span className="pillar-tag"><span className="dot" /> Merit Scholarships</span>
+                <span className="pillar-tag"><span className="dot" /> Rural Libraries</span>
+                <span className="pillar-tag"><span className="dot" /> Career Mentorship</span>
               </div>
             </div>
           </div>
