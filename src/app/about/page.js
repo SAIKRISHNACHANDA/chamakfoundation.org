@@ -19,12 +19,15 @@ import {
   Flag,
   Globe,
   Share2,
+  Eye,
+  Target,
+  Compass,
 } from "lucide-react";
 
 export const metadata = {
-  title: "Dr. Mohammad Azam Ali: From Dropout to Professor · About Us · Chamak Foundation",
+  title: "About Us · Vision & Mission · Chamak Foundation",
   description:
-    "The inspiring biographical journey of Dr. Mohammad Azam Ali — from wall poster boy to Kakatiya University Ph.D., National Award winner, and Founder President of Chamak Foundation.",
+    "Learn about Chamak Foundation, our Vision, Mission, and Founder Dr. Mohammad Azam Ali's inspiring journey of empowering underprivileged children through education.",
 };
 
 const MAJOR_AWARDS = [
@@ -527,6 +530,73 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* VISION & MISSION COMPACT SECTION */}
+      <section className="section" id="vision-mission" style={{ scrollMarginTop: "90px" }}>
+        <div className="container">
+          <div className="section-head section-head--center section-head--fit">
+            <div className="eyebrow" style={{ justifyContent: "center" }}>
+              <Sparkles size={14} /> Purpose &amp; Direction
+            </div>
+            <h2 className="section-title--oneline">Vision &amp; Mission</h2>
+            <p style={{ marginTop: "10px", color: "var(--ink-500)", maxWidth: "56ch", marginLeft: "auto", marginRight: "auto" }}>
+              The foundational pillars that guide Chamak Foundation&apos;s daily efforts and our long-term commitment to underprivileged youth.
+            </p>
+          </div>
+
+          <div className="grid grid--2" style={{ gap: "28px", marginTop: "32px" }}>
+            <div id="vision" className="pillar-card pillar-card--vision" style={{ scrollMarginTop: "100px" }}>
+              <div className="pillar-card__header">
+                <div className="pillar-card__icon">
+                  <Eye size={26} strokeWidth={1.8} />
+                </div>
+                <span className="pillar-badge pillar-badge--gold">
+                  <Sparkles size={13} /> The North Star
+                </span>
+              </div>
+
+              <div className="pillar-card__eyebrow">Our Vision</div>
+              <h3 className="pillar-card__title" style={{ fontSize: "1.24rem", lineHeight: 1.45 }}>
+                A society where every child has unhindered access to quality education and the opportunity to achieve their fullest potential.
+              </h3>
+              <p className="pillar-card__body">
+                We envision communities where poverty never acts as an educational ceiling, and where every child discovers the spark (&ldquo;Chamak&rdquo;) of knowledge to transform their family&apos;s destiny.
+              </p>
+
+              <div className="pillar-card__footer">
+                <span className="pillar-tag"><span className="dot" /> Equal Access</span>
+                <span className="pillar-tag"><span className="dot" /> Generational Mobility</span>
+                <span className="pillar-tag"><span className="dot" /> Zero Poverty Barrier</span>
+              </div>
+            </div>
+
+            <div id="mission" className="pillar-card pillar-card--mission" style={{ scrollMarginTop: "100px" }}>
+              <div className="pillar-card__header">
+                <div className="pillar-card__icon">
+                  <Target size={26} strokeWidth={1.8} />
+                </div>
+                <span className="pillar-badge pillar-badge--navy">
+                  <Compass size={13} /> The Action Blueprint
+                </span>
+              </div>
+
+              <div className="pillar-card__eyebrow">Our Mission</div>
+              <h3 className="pillar-card__title" style={{ fontSize: "1.24rem", lineHeight: 1.45 }}>
+                To empower underprivileged children through academic excellence, merit scholarships, personal guidance, and holistic life skills.
+              </h3>
+              <p className="pillar-card__body">
+                Through direct classroom support, scholarship funding, community libraries, and career navigation, we systematically dismantle the barriers between marginalized students and their aspirations.
+              </p>
+
+              <div className="pillar-card__footer">
+                <span className="pillar-tag"><span className="dot" /> Merit Scholarships</span>
+                <span className="pillar-tag"><span className="dot" /> Rural Libraries</span>
+                <span className="pillar-tag"><span className="dot" /> Career Mentorship</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* INSPIRATIONS & CORE PHILOSOPHY */}
       <section className="section section--cream2">
         <div className="container">
@@ -561,6 +631,20 @@ export default function AboutPage() {
               <span style={{ fontSize: "0.82rem", color: "var(--ink-400)", display: "block", marginTop: "4px" }}>
                 Former President of India &amp; Visionary Scientist
               </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CALL TO ACTION BAND */}
+      <section className="section" style={{ paddingTop: "20px" }}>
+        <div className="container">
+          <div className="cta-band">
+            <h2>Join Our Mission to Educate and Empower</h2>
+            <p>Every mentor, volunteer, and donor helps us illuminate the path for one more student.</p>
+            <div className="cta-band__ctas">
+              <Link href="/get-involved" className="btn btn-gold">Support a Child</Link>
+              <Link href="/programmes" className="btn btn-outline-cream">Explore Programmes</Link>
             </div>
           </div>
         </div>

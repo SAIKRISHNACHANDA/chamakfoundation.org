@@ -7,6 +7,11 @@ const nextConfig = {
     return [
 
       {
+        source: '/vision-mission',
+        destination: '/about#vision-mission',
+        permanent: false,
+      },
+      {
         source: '/events',
         destination: '/gallery',
         permanent: false,

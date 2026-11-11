@@ -188,7 +188,7 @@ export default function Footer() {
             <ul className="footer__links">
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/vision-mission">Vision &amp; Mission</Link></li>
+              <li><Link href="/about#vision-mission">Vision &amp; Mission</Link></li>
               <li><Link href="/programmes">Our Programmes</Link></li>
               <li><Link href="/gallery">Gallery &amp; Events</Link></li>
               <li><Link href="/team">Our Team</Link></li>
@@ -232,7 +232,7 @@ export default function Footer() {
             &copy; 2026 Chamak Foundation. All rights reserved.
           </div>
           <div className="footer__legal">
-            <Link href="/vision-mission">Transparency</Link>
+            <Link href="/about#vision-mission">Transparency</Link>
             <Link href="/testimonials">Testimonials</Link>
             <Link href="/contact">Privacy &amp; Terms</Link>
           </div>
