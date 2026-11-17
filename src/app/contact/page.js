@@ -273,22 +273,23 @@ export default function ContactPage() {
                   textDecoration: "none",
                   color: "var(--navy-900)",
                   transition: "all 0.25s ease",
+                  gap: "14px",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "14px", minWidth: 0 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(201,154,58,0.15)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--gold-700)", flexShrink: 0 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "14px", minWidth: 0, flex: "1 1 auto" }}>
+                  <div style={{ width: 42, height: 42, borderRadius: 10, background: "rgba(201,154,58,0.15)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--gold-700)", flexShrink: 0 }}>
                     <Mail size={20} />
                   </div>
-                  <div style={{ minWidth: 0 }}>
-                    <div style={{ fontSize: "0.82rem", color: "var(--ink-500)", fontWeight: 600, whiteSpace: "nowrap" }}>
+                  <div style={{ minWidth: 0, flex: "1 1 auto" }}>
+                    <div style={{ fontSize: "0.82rem", color: "var(--ink-500)", fontWeight: 600, lineHeight: 1.35 }}>
                       Prefer sending documents or proposals?
                     </div>
-                    <div style={{ fontWeight: 700, fontSize: "0.95rem", color: "var(--gold-700)", whiteSpace: "nowrap", marginTop: "2px" }}>
+                    <div style={{ fontWeight: 700, fontSize: "0.95rem", color: "var(--gold-700)", marginTop: "2px", wordBreak: "break-word" }}>
                       chamakfoundation23@gmail.com
                     </div>
                   </div>
                 </div>
-                <ArrowRight size={18} style={{ color: "var(--gold-700)", flexShrink: 0, marginLeft: "12px" }} />
+                <ArrowRight size={18} style={{ color: "var(--gold-700)", flexShrink: 0 }} />
               </a>
             </div>
           </div>

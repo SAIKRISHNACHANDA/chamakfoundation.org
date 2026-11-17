@@ -227,7 +227,7 @@ export default function AboutPage() {
                 <span className="founder-cv-eyebrow__icon">
                   <Sparkles size={18} />
                 </span>
-                <span>A JOURNEY OF INDOMITABLE SPIRIT</span>
+                <span>From Dropout to Doctorate</span>
               </div>
 
               <h2 className="founder-cv-heading" style={{ fontSize: "clamp(1.9rem, 2.7vw, 2.5rem)", lineHeight: 1.25 }}>
