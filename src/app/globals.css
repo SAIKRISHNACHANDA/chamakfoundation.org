@@ -580,15 +580,18 @@ p{margin:0 0 1em;color:var(--ink-600);max-width:62ch;}
   background:var(--gold-400);
   box-shadow:0 0 8px var(--gold-400);
 }
+.hero .hero__brand-title,
+.hero h1.hero__brand-title,
+h1.hero__brand-title,
 .hero__brand-title{
   font-family:var(--serif);
   font-size:clamp(2.3rem, 4vw, 3.6rem);
   font-weight:800;
-  color:var(--secondary);
+  color:var(--gold-400, #d9af52) !important;
   line-height:1.12;
   margin:0 0 10px;
   letter-spacing:-0.02em;
-  text-shadow:0 2px 20px rgba(0,0,0,0.4);
+  text-shadow:0 2px 20px rgba(0,0,0,0.45);
 }
 .hero__lead-quote{
   font-family:var(--serif);

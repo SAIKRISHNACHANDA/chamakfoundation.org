@@ -31,7 +31,7 @@ export default function HomePage() {
         <StarfieldCanvas />
         <div className="hero__grid">
           <div className="hero__content">
-            <h1 className="hero__brand-title">
+            <h1 className="hero__brand-title" style={{ color: "var(--gold-400, #d9af52)" }}>
               Chamak Padhai Se
             </h1>
 

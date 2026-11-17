@@ -227,11 +227,11 @@ export default function AboutPage() {
                 <span className="founder-cv-eyebrow__icon">
                   <Sparkles size={18} />
                 </span>
-                <span>From Dropout to Doctorate</span>
+                <span>A Journey of Indomitable Spirit</span>
               </div>
 
               <h2 className="founder-cv-heading" style={{ fontSize: "clamp(1.9rem, 2.7vw, 2.5rem)", lineHeight: 1.25 }}>
-                Dr. Mohammad Azam Ali: From Dropout to Professor
+                Dr. Mohammad Azam Ali: From Dropout to Doctorate
               </h2>
               
               <p className="founder-cv-lead">
