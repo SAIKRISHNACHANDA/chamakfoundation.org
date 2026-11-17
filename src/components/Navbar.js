@@ -13,6 +13,7 @@ const NAV_ITEMS = [
     href: "/about",
     children: [
       { label: "About Us", href: "/about" },
+      { label: "Sustainable Development Goals", href: "/sustainable-development-goals" },
       { label: "Our Programmes", href: "/programmes" },
     ],
   },
@@ -22,7 +23,6 @@ const NAV_ITEMS = [
     children: [
       { label: "Our Founder", href: "/about#founder" },
       { label: "Our Team", href: "/team" },
-      { label: "Words of Appreciation", href: "/testimonials" },
     ],
   },
   {
@@ -33,6 +33,7 @@ const NAV_ITEMS = [
       { label: "Press Clippings", href: "/gallery#press" },
     ],
   },
+  { label: "Testimonials", href: "/testimonials" },
   {
     label: "Support",
     href: "/get-involved",
@@ -42,7 +43,6 @@ const NAV_ITEMS = [
       { label: "Become a Resource Person", href: "/get-involved#resource-person" },
     ],
   },
-  { label: "Testimonials", href: "/testimonials" },
 ];
 
 export default function Navbar() {

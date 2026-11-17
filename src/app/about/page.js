@@ -597,6 +597,44 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* SUSTAINABLE DEVELOPMENT GOALS TEASER BANNER */}
+      <section className="section section--tight" style={{ paddingTop: 0, paddingBottom: "40px" }}>
+        <div className="container">
+          <div
+            style={{
+              background: "linear-gradient(135deg, #0b1b38 0%, #122349 100%)",
+              borderRadius: "var(--radius-lg)",
+              padding: "36px 32px",
+              color: "#fff",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "24px",
+              boxShadow: "0 12px 36px rgba(11,27,56,0.16)",
+              border: "1px solid rgba(217,175,82,0.3)",
+            }}
+          >
+            <div style={{ maxWidth: "620px" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "var(--gold-400)", fontSize: "0.82rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "8px" }}>
+                <Globe size={15} /> UN Agenda 2030 Alignment
+              </div>
+              <h3 style={{ fontFamily: "var(--serif)", fontSize: "clamp(1.4rem, 2vw, 1.8rem)", color: "#fff", margin: "0 0 10px", lineHeight: 1.3 }}>
+                Advancing the United Nations Sustainable Development Goals
+              </h3>
+              <p style={{ color: "rgba(250,247,239,0.78)", fontSize: "0.95rem", lineHeight: 1.6, margin: 0 }}>
+                Discover how Chamak Foundation champions <strong>SDG 4 (Quality Education)</strong>, <strong>SDG 5 (Gender Equality)</strong>, and <strong>SDG 10 (Reduced Inequalities)</strong> across Telangana.
+              </p>
+            </div>
+            <div>
+              <Link href="/sustainable-development-goals" className="btn btn-gold" style={{ whiteSpace: "nowrap" }}>
+                Explore SDG Action <ArrowRight size={15} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* INSPIRATIONS & CORE PHILOSOPHY */}
       <section className="section section--cream2">
         <div className="container">

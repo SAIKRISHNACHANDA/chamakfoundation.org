@@ -22,6 +22,21 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: '/about/sustainable-development-goals',
+        destination: '/sustainable-development-goals',
+        permanent: false,
+      },
+      {
+        source: '/sdg',
+        destination: '/sustainable-development-goals',
+        permanent: false,
+      },
+      {
+        source: '/sdgs',
+        destination: '/sustainable-development-goals',
+        permanent: false,
+      },
+      {
         source: '/admin',
         destination: '/admin/gallery',
         permanent: false,
