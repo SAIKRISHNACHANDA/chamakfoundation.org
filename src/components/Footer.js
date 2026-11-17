@@ -192,7 +192,7 @@ export default function Footer() {
               <li><Link href="/programmes">Our Programmes</Link></li>
               <li><Link href="/gallery">Gallery &amp; Events</Link></li>
               <li><Link href="/team">Our Team</Link></li>
-              <li><Link href="/testimonials">Words of Appreciation</Link></li>
+              <li><Link href="/testimonials">Testimonials</Link></li>
             </ul>
           </div>
 
