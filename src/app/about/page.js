@@ -137,81 +137,38 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 2. OUR VISION & MISSION SECTION */}
-      <section className="section section--cream2" id="vision-mission" style={{ scrollMarginTop: "90px" }}>
+      {/* 2. OUR VISION & MISSION LINK BANNER */}
+      <section className="section section--tight" style={{ paddingTop: 0, paddingBottom: "36px" }}>
         <div className="container">
-          <div className="section-head section-head--center section-head--fit">
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              <Target size={14} /> Purpose &amp; Direction
-            </div>
-            <h2 className="section-title--oneline">Our Vision &amp; Mission</h2>
-            <p style={{ marginTop: "10px", color: "var(--ink-500)", maxWidth: "56ch", marginLeft: "auto", marginRight: "auto" }}>
-              The foundational commitments that guide Chamak Foundation&apos;s daily efforts and long-term service to society.
-            </p>
-          </div>
-
-          <div className="grid grid--2" style={{ gap: "28px", marginTop: "36px" }}>
-            {/* Our Vision Card */}
-            <div id="vision" className="pillar-card pillar-card--vision" style={{ scrollMarginTop: "100px" }}>
-              <div className="pillar-card__header">
-                <div className="pillar-card__icon">
-                  <Eye size={26} strokeWidth={1.8} />
-                </div>
-                <span className="pillar-badge pillar-badge--gold">
-                  <Sparkles size={13} /> The North Star
-                </span>
+          <div
+            style={{
+              background: "linear-gradient(135deg, #FAF7EF 0%, #FFFFFF 100%)",
+              border: "1px solid rgba(201,154,58,0.32)",
+              borderRadius: "20px",
+              padding: "clamp(28px, 3.8vw, 40px)",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "24px",
+              boxShadow: "0 10px 30px rgba(11,27,56,0.05)",
+            }}
+          >
+            <div style={{ maxWidth: "680px" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "var(--gold-700)", fontSize: "0.82rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "8px" }}>
+                <Target size={15} /> Purpose &amp; Direction
               </div>
-
-              <div className="pillar-card__eyebrow">Our Vision</div>
-              <h3 className="pillar-card__title" style={{ fontSize: "1.28rem", lineHeight: 1.5, color: "var(--navy-900)" }}>
-                To build an inclusive and educated India where every underprivileged child has access to quality education, equal opportunities, and the confidence to shine in life with dignity and self-reliance.
+              <h3 style={{ fontFamily: "var(--serif)", fontSize: "clamp(1.4rem, 2vw, 1.8rem)", color: "var(--navy-900)", margin: "0 0 10px", lineHeight: 1.3 }}>
+                Our Vision &amp; Mission
               </h3>
-
-              <div className="pillar-card__footer" style={{ marginTop: "auto" }}>
-                <span className="pillar-tag"><span className="dot" /> Inclusive India</span>
-                <span className="pillar-tag"><span className="dot" /> Quality Education</span>
-                <span className="pillar-tag"><span className="dot" /> Equal Opportunities</span>
-                <span className="pillar-tag"><span className="dot" /> Dignity &amp; Self-Reliance</span>
-              </div>
+              <p style={{ color: "var(--ink-600)", fontSize: "0.98rem", lineHeight: 1.65, margin: 0 }}>
+                To build an inclusive and educated India where every underprivileged child has access to quality education, equal opportunities, and the confidence to shine in life with dignity and self-reliance.
+              </p>
             </div>
-
-            {/* Our Mission Card */}
-            <div id="mission" className="pillar-card pillar-card--mission" style={{ scrollMarginTop: "100px" }}>
-              <div className="pillar-card__header">
-                <div className="pillar-card__icon">
-                  <Target size={26} strokeWidth={1.8} />
-                </div>
-                <span className="pillar-badge pillar-badge--navy">
-                  <Compass size={13} /> The Action Blueprint
-                </span>
-              </div>
-
-              <div className="pillar-card__eyebrow">Our Mission</div>
-              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "14px" }}>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.98rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
-                  <CheckCircle2 size={18} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
-                  <span>To empower marginalized and disadvantaged students through education.</span>
-                </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.98rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
-                  <CheckCircle2 size={18} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
-                  <span>To promote equitable access to primary, secondary, and higher education.</span>
-                </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.98rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
-                  <CheckCircle2 size={18} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
-                  <span>To create awareness about the transformative power of education in rural, tribal, and minority communities.</span>
-                </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.98rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
-                  <CheckCircle2 size={18} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
-                  <span>To nurture socially responsible, skilled, and value-driven citizens for nation-building.</span>
-                </li>
-              </ul>
-
-              <div className="pillar-card__footer" style={{ marginTop: "auto" }}>
-                <span className="pillar-tag"><span className="dot" /> Marginalized Students</span>
-                <span className="pillar-tag"><span className="dot" /> Equitable Access</span>
-                <span className="pillar-tag"><span className="dot" /> Community Awareness</span>
-                <span className="pillar-tag"><span className="dot" /> Nation Building</span>
-              </div>
+            <div>
+              <Link href="/vision-mission" className="btn btn-navy" style={{ whiteSpace: "nowrap" }}>
+                View Full Vision &amp; Mission <ArrowRight size={15} style={{ marginLeft: "4px" }} />
+              </Link>
             </div>
           </div>
         </div>

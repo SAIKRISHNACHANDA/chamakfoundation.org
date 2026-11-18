@@ -13,8 +13,9 @@ const NAV_ITEMS = [
     href: "/about",
     children: [
       { label: "About Us", href: "/about" },
-      { label: "Sustainable Development Goals", href: "/sustainable-development-goals" },
+      { label: "Vision & Mission", href: "/vision-mission" },
       { label: "Our Programmes", href: "/programmes" },
+      { label: "Sustainable Development Goals", href: "/sustainable-development-goals" },
     ],
   },
   {
