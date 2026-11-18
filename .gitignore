@@ -12,4 +12,5 @@ yarn-error.log*
 .env*.local
 .env.*
 *.zip
+deploy-pkg/
 .vercel
