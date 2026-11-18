@@ -1,6 +1,9 @@
 #!/bin/bash
 cd /home/site/wwwroot
 
+# Clear stale incremental cache and prerenders on every startup
+rm -rf .next/cache
+
 if [ -f "server.js" ]; then
   echo "Starting Next.js standalone on port 3000..."
   export PORT=3000
