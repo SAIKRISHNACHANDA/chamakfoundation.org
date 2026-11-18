@@ -4,7 +4,7 @@ import StarfieldCanvas from "@/components/StarfieldCanvas";
 import StatCounter from "@/components/StatCounter";
 import HeroImageSlider from "@/components/HeroImageSlider";
 import FounderGallery from "@/components/FounderGallery";
-import { ArrowRight, Award, Sparkles, Landmark, GraduationCap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 
 export const metadata = {
@@ -72,63 +72,31 @@ export default function HomePage() {
             <h2 className="hdg-oneline">The Person Behind Chamak Padhai Se</h2>
           </div>
 
-          {/* Founder Profile Card with Photo, Title & Awards */}
+          {/* Founder Profile Card with Round Photo & Bio */}
           <div className="founder-hero-card">
             <div className="founder-hero-card__media">
               <div className="founder-hero-card__img-wrap">
                 <Image
                   src="/assets/team/dr-azam-ali-portrait.jpg"
                   alt="Dr. Mohammad Azam Ali — Founder & President, Chamak Foundation"
-                  width={420}
-                  height={480}
+                  width={280}
+                  height={280}
                   className="founder-hero-card__img"
                   priority
                 />
-                <span className="founder-hero-card__badge">
-                  Founder &amp; President
-                </span>
               </div>
+              <span className="founder-hero-card__badge">
+                Founder &amp; President
+              </span>
             </div>
 
             <div className="founder-hero-card__content">
-              <div className="founder-hero-card__tag">National Awardee &middot; Academician &middot; Social Reformer</div>
               <h3 className="founder-hero-card__name">Dr. Mohammad Azam Ali</h3>
-              <p className="founder-hero-card__degrees">M.A., M.Ed., Ph.D. in English (Kakatiya University)</p>
+              <p className="founder-hero-card__degrees">M.A, M.Ed, Ph.D</p>
 
-              {/* Founder Titles & Awards Grid */}
-              <div className="founder-hero-awards">
-                <div className="founder-hero-award-item">
-                  <Award size={18} className="founder-hero-award-icon" />
-                  <div>
-                    <strong>President of India NSS National Award</strong>
-                    <span>Conferred by Late President Shri Pranab Mukherjee at Rashtrapati Bhavan</span>
-                  </div>
-                </div>
-
-                <div className="founder-hero-award-item">
-                  <Sparkles size={18} className="founder-hero-award-icon" />
-                  <div>
-                    <strong>National Youth Award</strong>
-                    <span>Conferred by Union Minister Shri Anurag Thakur, Govt. of India</span>
-                  </div>
-                </div>
-
-                <div className="founder-hero-award-item">
-                  <Landmark size={18} className="founder-hero-award-icon" />
-                  <div>
-                    <strong>Presidential &amp; Vice-Presidential Honors</strong>
-                    <span>Felicitated by Hon&apos;ble President Smt. Droupadi Murmu &amp; Former VP Shri M. Venkaiah Naidu</span>
-                  </div>
-                </div>
-
-                <div className="founder-hero-award-item">
-                  <GraduationCap size={18} className="founder-hero-award-icon" />
-                  <div>
-                    <strong>1,000+ Lectures &amp; 20,000+ Students Mentored</strong>
-                    <span>Ground educational awareness, rural libraries, and student career counselling across Telangana</span>
-                  </div>
-                </div>
-              </div>
+              <p className="founder-hero-card__bio">
+                Educator, Social Activist, Motivational Speaker, President of India NSS National awardee 2012-13 and National Youth awardee 2017-18 by the Ministry of Youth Affairs and Sports Government of India.
+              </p>
 
               <div className="founder-hero-card__actions">
                 <Link href="/about#founder" className="btn btn-gold btn-sm">

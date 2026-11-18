@@ -18,16 +18,16 @@ import {
   Milestone,
   Flag,
   Globe,
-  Share2,
   Eye,
   Target,
   Compass,
+  Smile,
 } from "lucide-react";
 
 export const metadata = {
-  title: "About Us · Vision & Mission · Chamak Foundation",
+  title: "About Us · Vision & Mission · Programmes · Chamak Foundation",
   description:
-    "Learn about Chamak Foundation, our Vision, Mission, and Founder Dr. Mohammad Azam Ali's inspiring journey of empowering underprivileged children through education.",
+    "Learn about Chamak Foundation (Chamak Padhai Se), launched on 6th October 2023 by Prof. Shantha Sinha, our Vision, Mission, Programmes, and Founder Dr. Mohammad Azam Ali.",
 };
 
 const MAJOR_AWARDS = [
@@ -60,10 +60,295 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        eyebrow="About Chamak Foundation"
         title="Shine Through Education."
+        subtitle="Chamak Foundation stands as a symbol of hope, resilience, and transformation—believing firmly that education is the light that can illuminate lives and build a better society."
       />
 
-      {/* FOUNDER COMPREHENSIVE BIOGRAPHY SECTION */}
+      {/* 1. ABOUT CHAMAK FOUNDATION SECTION */}
+      <section className="section" id="about-chamak" style={{ paddingTop: "56px", paddingBottom: "48px" }}>
+        <div className="container">
+          <div className="section-head section-head--center section-head--fit">
+            <div className="eyebrow" style={{ justifyContent: "center" }}>
+              <Sparkles size={14} /> Who We Are
+            </div>
+            <h2 className="section-title--oneline">About Chamak Foundation</h2>
+            <p style={{ marginTop: "10px", color: "var(--ink-500)", maxWidth: "60ch", marginLeft: "auto", marginRight: "auto" }}>
+              Lighting up the futures of disadvantaged students through the transformative power of education.
+            </p>
+          </div>
+
+          {/* Quick Key Facts Strip */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "16px",
+              margin: "32px 0 36px",
+            }}
+          >
+            <div style={{ background: "#fff", border: "1px solid rgba(201,154,58,0.28)", borderRadius: "16px", padding: "20px 22px", boxShadow: "0 6px 20px rgba(11,27,56,0.04)" }}>
+              <div style={{ fontSize: "0.74rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, color: "var(--gold-700)", marginBottom: "6px" }}>Official Registration</div>
+              <div style={{ fontSize: "1.12rem", fontWeight: 800, color: "var(--navy-900)" }}>Regd. No. 643/2023</div>
+              <div style={{ fontSize: "0.82rem", color: "var(--ink-500)", marginTop: "3px" }}>Telangana Societies Registration Act, 2001</div>
+            </div>
+
+            <div style={{ background: "#fff", border: "1px solid rgba(201,154,58,0.28)", borderRadius: "16px", padding: "20px 22px", boxShadow: "0 6px 20px rgba(11,27,56,0.04)" }}>
+              <div style={{ fontSize: "0.74rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, color: "var(--gold-700)", marginBottom: "6px" }}>Inauguration Date</div>
+              <div style={{ fontSize: "1.12rem", fontWeight: 800, color: "var(--navy-900)" }}>6th October 2023</div>
+              <div style={{ fontSize: "0.82rem", color: "var(--ink-500)", marginTop: "3px" }}>Launched in Hyderabad, Telangana</div>
+            </div>
+
+            <div style={{ background: "#fff", border: "1px solid rgba(201,154,58,0.28)", borderRadius: "16px", padding: "20px 22px", boxShadow: "0 6px 20px rgba(11,27,56,0.04)" }}>
+              <div style={{ fontSize: "0.74rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, color: "var(--gold-700)", marginBottom: "6px" }}>Inaugurated By</div>
+              <div style={{ fontSize: "1.12rem", fontWeight: 800, color: "var(--navy-900)" }}>Prof. Shantha Sinha</div>
+              <div style={{ fontSize: "0.82rem", color: "var(--ink-500)", marginTop: "3px" }}>Ramon Magsaysay Awardee &amp; Former NCPCR ChairPerson</div>
+            </div>
+
+            <div style={{ background: "#fff", border: "1px solid rgba(201,154,58,0.28)", borderRadius: "16px", padding: "20px 22px", boxShadow: "0 6px 20px rgba(11,27,56,0.04)" }}>
+              <div style={{ fontSize: "0.74rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, color: "var(--gold-700)", marginBottom: "6px" }}>Meaning &amp; Motto</div>
+              <div style={{ fontSize: "1.12rem", fontWeight: 800, color: "var(--navy-900)" }}>&ldquo;Chamak&rdquo; = Shine</div>
+              <div style={{ fontSize: "0.82rem", color: "var(--ink-500)", marginTop: "3px" }}>Shine Through Education (Chamak Padhai Se)</div>
+            </div>
+          </div>
+
+          {/* Narrative Card */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1px solid rgba(11,27,56,0.1)",
+              borderRadius: "20px",
+              padding: "clamp(26px, 3.8vw, 44px)",
+              boxShadow: "0 12px 36px rgba(11,27,56,0.05)",
+            }}
+          >
+            <p style={{ fontSize: "1.06rem", lineHeight: 1.85, color: "var(--navy-950)", marginBottom: "20px", fontWeight: 500 }}>
+              <strong>Chamak Foundation (Chamak Padhai Se) Non-Profit Organization</strong> was launched on <strong>6th October 2023</strong> in Hyderabad by <strong>Professor Shantha Sinha</strong>, a renowned social activist, Ramon Magsaysay Award winner and Former ChairPerson for National Commission for Protection of Child Rights ( NCPCR ) . The NGO is registered with the number <strong>643/2023</strong> under the <strong>Telangana Societies Registration Act, 2001</strong>. The word <em>&ldquo;Chamak &rdquo;</em> means <em>&ldquo;Shine&rdquo;</em> in Hindi. (Shine through Education) Chamak Foundation stands as a symbol of hope, resilience, and transformation—believing firmly that education is the light (<em>&ldquo;Chamak&rdquo;</em>) that can illuminate lives and build a better society.
+            </p>
+
+            <p style={{ fontSize: "1.02rem", lineHeight: 1.8, color: "var(--ink-700)", marginBottom: "20px" }}>
+              Chamak Foundation, a beacon of hope in the realm of education, is a non-profit organization dedicated to lighting up the futures of disadvantaged students. Founded on the belief that education is the key to unlocking one&apos;s full potential, we are on a mission to remove the barriers that often stand in the way of aspiring scholars. With a passionate team of educators, volunteers, and advocates, Chamak Foundation offers a comprehensive range of services to nurture the talents of tomorrow&apos;s leaders. Our core programs include, mentorship, tutoring, career guidance, and more, all designed to empower students to achieve academic excellence and realize their dreams.
+            </p>
+
+            <p style={{ fontSize: "1.02rem", lineHeight: 1.8, color: "var(--ink-700)", margin: 0 }}>
+              Since our inception, Chamak Foundation has made a profound impact on the lives of hundreds of students, enabling them to pursue higher education, overcome financial hardships, and reach their career aspirations. Our success stories are a testament to the life-changing work we do.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. OUR VISION & MISSION SECTION */}
+      <section className="section section--cream2" id="vision-mission" style={{ scrollMarginTop: "90px" }}>
+        <div className="container">
+          <div className="section-head section-head--center section-head--fit">
+            <div className="eyebrow" style={{ justifyContent: "center" }}>
+              <Target size={14} /> Purpose &amp; Direction
+            </div>
+            <h2 className="section-title--oneline">Our Vision &amp; Mission</h2>
+            <p style={{ marginTop: "10px", color: "var(--ink-500)", maxWidth: "56ch", marginLeft: "auto", marginRight: "auto" }}>
+              The foundational commitments that guide Chamak Foundation&apos;s daily efforts and long-term service to society.
+            </p>
+          </div>
+
+          <div className="grid grid--2" style={{ gap: "28px", marginTop: "36px" }}>
+            {/* Our Vision Card */}
+            <div id="vision" className="pillar-card pillar-card--vision" style={{ scrollMarginTop: "100px" }}>
+              <div className="pillar-card__header">
+                <div className="pillar-card__icon">
+                  <Eye size={26} strokeWidth={1.8} />
+                </div>
+                <span className="pillar-badge pillar-badge--gold">
+                  <Sparkles size={13} /> The North Star
+                </span>
+              </div>
+
+              <div className="pillar-card__eyebrow">Our Vision</div>
+              <h3 className="pillar-card__title" style={{ fontSize: "1.28rem", lineHeight: 1.5, color: "var(--navy-900)" }}>
+                To build an inclusive and educated India where every underprivileged child has access to quality education, equal opportunities, and the confidence to shine in life with dignity and self-reliance.
+              </h3>
+
+              <div className="pillar-card__footer" style={{ marginTop: "auto" }}>
+                <span className="pillar-tag"><span className="dot" /> Inclusive India</span>
+                <span className="pillar-tag"><span className="dot" /> Quality Education</span>
+                <span className="pillar-tag"><span className="dot" /> Equal Opportunities</span>
+                <span className="pillar-tag"><span className="dot" /> Dignity &amp; Self-Reliance</span>
+              </div>
+            </div>
+
+            {/* Our Mission Card */}
+            <div id="mission" className="pillar-card pillar-card--mission" style={{ scrollMarginTop: "100px" }}>
+              <div className="pillar-card__header">
+                <div className="pillar-card__icon">
+                  <Target size={26} strokeWidth={1.8} />
+                </div>
+                <span className="pillar-badge pillar-badge--navy">
+                  <Compass size={13} /> The Action Blueprint
+                </span>
+              </div>
+
+              <div className="pillar-card__eyebrow">Our Mission</div>
+              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "14px" }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.98rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
+                  <CheckCircle2 size={18} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
+                  <span>To empower marginalized and disadvantaged students through education.</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.98rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
+                  <CheckCircle2 size={18} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
+                  <span>To promote equitable access to primary, secondary, and higher education.</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.98rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
+                  <CheckCircle2 size={18} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
+                  <span>To create awareness about the transformative power of education in rural, tribal, and minority communities.</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.98rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
+                  <CheckCircle2 size={18} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
+                  <span>To nurture socially responsible, skilled, and value-driven citizens for nation-building.</span>
+                </li>
+              </ul>
+
+              <div className="pillar-card__footer" style={{ marginTop: "auto" }}>
+                <span className="pillar-tag"><span className="dot" /> Marginalized Students</span>
+                <span className="pillar-tag"><span className="dot" /> Equitable Access</span>
+                <span className="pillar-tag"><span className="dot" /> Community Awareness</span>
+                <span className="pillar-tag"><span className="dot" /> Nation Building</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. OUR PROGRAMMES SECTION */}
+      <section className="section" id="programmes" style={{ scrollMarginTop: "90px" }}>
+        <div className="container">
+          <div className="section-head section-head--center section-head--fit">
+            <div className="eyebrow" style={{ justifyContent: "center" }}>
+              <BookOpen size={14} /> Core Initiatives
+            </div>
+            <h2 className="section-title--oneline">Our Programmes</h2>
+            <p style={{ marginTop: "10px", color: "var(--ink-500)", maxWidth: "58ch", marginLeft: "auto", marginRight: "auto" }}>
+              Four strategic pillars designed to nurture talent, bridge educational gaps, and unlock potential from classrooms to policy.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", marginTop: "36px" }}>
+            {/* 1 Career Guidance Programmes */}
+            <div className="card" style={{ padding: "32px 28px", background: "#fff", border: "1px solid rgba(201,154,58,0.25)", borderRadius: "18px", boxShadow: "0 8px 24px rgba(11,27,56,0.04)", display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
+                <span style={{ fontFamily: "var(--num)", fontSize: "1.1rem", fontWeight: 700, color: "var(--gold-600)" }}>01</span>
+                <div style={{ width: "42px", height: "42px", borderRadius: "10px", background: "rgba(201,154,58,0.12)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--gold-700)" }}>
+                  <Compass size={22} />
+                </div>
+              </div>
+              <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.25rem", color: "var(--navy-900)", margin: "0 0 16px", fontWeight: 700 }}>
+                Career Guidance Programmes
+              </h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px", flexGrow: 1 }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Career counseling for school and college students.</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Competitive exam awareness sessions.</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Civil Services awareness and mentoring initiatives.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* 2 Life Skills Education */}
+            <div className="card" style={{ padding: "32px 28px", background: "#fff", border: "1px solid rgba(201,154,58,0.25)", borderRadius: "18px", boxShadow: "0 8px 24px rgba(11,27,56,0.04)", display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
+                <span style={{ fontFamily: "var(--num)", fontSize: "1.1rem", fontWeight: 700, color: "var(--gold-600)" }}>02</span>
+                <div style={{ width: "42px", height: "42px", borderRadius: "10px", background: "rgba(11,27,56,0.08)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--navy-900)" }}>
+                  <Smile size={22} />
+                </div>
+              </div>
+              <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.25rem", color: "var(--navy-900)", margin: "0 0 16px", fontWeight: 700 }}>
+                Life Skills Education
+              </h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px", flexGrow: 1 }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Leadership development</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Communication skills</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Emotional intelligence</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Personality development</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Decision-making skills</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* 3 Community Library Initiatives */}
+            <div className="card" style={{ padding: "32px 28px", background: "#fff", border: "1px solid rgba(201,154,58,0.25)", borderRadius: "18px", boxShadow: "0 8px 24px rgba(11,27,56,0.04)", display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
+                <span style={{ fontFamily: "var(--num)", fontSize: "1.1rem", fontWeight: 700, color: "var(--gold-600)" }}>03</span>
+                <div style={{ width: "42px", height: "42px", borderRadius: "10px", background: "rgba(201,154,58,0.12)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--gold-700)" }}>
+                  <Library size={22} />
+                </div>
+              </div>
+              <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.25rem", color: "var(--navy-900)", margin: "0 0 16px", fontWeight: 700 }}>
+                Community Library Initiatives
+              </h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px", flexGrow: 1 }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Establishing libraries in rural, tribal, and minority areas.</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Promoting reading culture and knowledge accessibility.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* 4 Education Dialogue, Policy & Professional Development Programme */}
+            <div className="card" style={{ padding: "32px 28px", background: "#fff", border: "1px solid rgba(201,154,58,0.25)", borderRadius: "18px", boxShadow: "0 8px 24px rgba(11,27,56,0.04)", display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
+                <span style={{ fontFamily: "var(--num)", fontSize: "1.1rem", fontWeight: 700, color: "var(--gold-600)" }}>04</span>
+                <div style={{ width: "42px", height: "42px", borderRadius: "10px", background: "rgba(11,27,56,0.08)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--navy-900)" }}>
+                  <GraduationCap size={22} />
+                </div>
+              </div>
+              <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.25rem", color: "var(--navy-900)", margin: "0 0 16px", fontWeight: 700 }}>
+                Education Dialogue, Policy &amp; Professional Development Programme
+              </h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px", flexGrow: 1 }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Organizing seminars and symposiums on educational issues, trends, and challenges.</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.92rem", color: "var(--ink-600)", lineHeight: 1.55 }}>
+                  <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Creating platforms for educators, researchers, and policymakers.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: "36px" }}>
+            <Link href="/programmes" className="btn btn-navy">
+              Explore Detailed Programmes &amp; How to Support <ArrowRight size={15} style={{ marginLeft: "4px" }} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. FOUNDER COMPREHENSIVE BIOGRAPHY SECTION */}
       <section className="section founder-cv-section" id="founder" style={{ scrollMarginTop: "90px" }}>
         <div className="container">
           <div className="founder-cv-grid">
@@ -86,7 +371,7 @@ export default function AboutPage() {
 
                 <div className="founder-cv-card-body">
                   <h3 className="founder-cv-name">Dr. Mohammad Azam Ali</h3>
-                  <p className="founder-cv-qualifications">M.A., M.Ed., Ph.D.</p>
+                  <p className="founder-cv-qualifications">M.A, M.Ed, Ph.D</p>
                   <p className="founder-cv-role">Assistant Professor of English, National Awardee &amp; Social Activist</p>
 
                   <div className="founder-cv-meta-list">
@@ -530,74 +815,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* VISION & MISSION COMPACT SECTION */}
-      <section className="section" id="vision-mission" style={{ scrollMarginTop: "90px" }}>
-        <div className="container">
-          <div className="section-head section-head--center section-head--fit">
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              <Sparkles size={14} /> Purpose &amp; Direction
-            </div>
-            <h2 className="section-title--oneline">Vision &amp; Mission</h2>
-            <p style={{ marginTop: "10px", color: "var(--ink-500)", maxWidth: "56ch", marginLeft: "auto", marginRight: "auto" }}>
-              The foundational pillars that guide Chamak Foundation&apos;s daily efforts and our long-term commitment to underprivileged youth.
-            </p>
-          </div>
-
-          <div className="grid grid--2" style={{ gap: "28px", marginTop: "32px" }}>
-            <div id="vision" className="pillar-card pillar-card--vision" style={{ scrollMarginTop: "100px" }}>
-              <div className="pillar-card__header">
-                <div className="pillar-card__icon">
-                  <Eye size={26} strokeWidth={1.8} />
-                </div>
-                <span className="pillar-badge pillar-badge--gold">
-                  <Sparkles size={13} /> The North Star
-                </span>
-              </div>
-
-              <div className="pillar-card__eyebrow">Our Vision</div>
-              <h3 className="pillar-card__title" style={{ fontSize: "1.24rem", lineHeight: 1.45 }}>
-                A society where every child has unhindered access to quality education and the opportunity to achieve their fullest potential.
-              </h3>
-              <p className="pillar-card__body">
-                We envision communities where poverty never acts as an educational ceiling, and where every child discovers the spark (&ldquo;Chamak&rdquo;) of knowledge to transform their family&apos;s destiny.
-              </p>
-
-              <div className="pillar-card__footer">
-                <span className="pillar-tag"><span className="dot" /> Equal Access</span>
-                <span className="pillar-tag"><span className="dot" /> Generational Mobility</span>
-                <span className="pillar-tag"><span className="dot" /> Zero Poverty Barrier</span>
-              </div>
-            </div>
-
-            <div id="mission" className="pillar-card pillar-card--mission" style={{ scrollMarginTop: "100px" }}>
-              <div className="pillar-card__header">
-                <div className="pillar-card__icon">
-                  <Target size={26} strokeWidth={1.8} />
-                </div>
-                <span className="pillar-badge pillar-badge--navy">
-                  <Compass size={13} /> The Action Blueprint
-                </span>
-              </div>
-
-              <div className="pillar-card__eyebrow">Our Mission</div>
-              <h3 className="pillar-card__title" style={{ fontSize: "1.24rem", lineHeight: 1.45 }}>
-                To empower underprivileged children through academic excellence, merit scholarships, personal guidance, and holistic life skills.
-              </h3>
-              <p className="pillar-card__body">
-                Through direct classroom support, scholarship funding, community libraries, and career navigation, we systematically dismantle the barriers between marginalized students and their aspirations.
-              </p>
-
-              <div className="pillar-card__footer">
-                <span className="pillar-tag"><span className="dot" /> Merit Scholarships</span>
-                <span className="pillar-tag"><span className="dot" /> Rural Libraries</span>
-                <span className="pillar-tag"><span className="dot" /> Career Mentorship</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SUSTAINABLE DEVELOPMENT GOALS TEASER BANNER */}
+      {/* 5. SUSTAINABLE DEVELOPMENT GOALS TEASER BANNER */}
       <section className="section section--tight" style={{ paddingTop: 0, paddingBottom: "40px" }}>
         <div className="container">
           <div
@@ -635,7 +853,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* INSPIRATIONS & CORE PHILOSOPHY */}
+      {/* 6. INSPIRATIONS & CORE PHILOSOPHY */}
       <section className="section section--cream2">
         <div className="container">
           <div className="section-head section-head--center section-head--wide">
@@ -674,7 +892,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CALL TO ACTION BAND */}
+      {/* 7. CALL TO ACTION BAND */}
       <section className="section" style={{ paddingTop: "20px" }}>
         <div className="container">
           <div className="cta-band">
