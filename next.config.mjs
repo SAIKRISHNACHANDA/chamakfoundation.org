@@ -7,6 +7,16 @@ const nextConfig = {
     return [
 
       {
+        source: '/our-founder',
+        destination: '/founder',
+        permanent: false,
+      },
+      {
+        source: '/about/founder',
+        destination: '/founder',
+        permanent: false,
+      },
+      {
         source: '/events',
         destination: '/gallery',
         permanent: false,

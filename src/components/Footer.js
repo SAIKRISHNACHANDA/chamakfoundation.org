@@ -188,6 +188,7 @@ export default function Footer() {
             <ul className="footer__links">
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About Us</Link></li>
+              <li><Link href="/founder">Our Founder</Link></li>
               <li><Link href="/vision-mission">Our Vision &amp; Mission</Link></li>
               <li><Link href="/programmes">Our Programmes</Link></li>
               <li><Link href="/sustainable-development-goals">Sustainable Development Goals</Link></li>
