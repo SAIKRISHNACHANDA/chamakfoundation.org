@@ -10,7 +10,6 @@ import {
   Compass,
   Users,
   HeartHandshake,
-  CheckCircle2,
 } from "lucide-react";
 
 export const metadata = {
@@ -197,7 +196,7 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 2: BEACON OF HOPE & NURTURING LEADERS */}
-      <section className="section section--cream2" style={{ paddingTop: "72px", paddingBottom: "72px" }}>
+      <section className="section section--cream2" style={{ paddingTop: "72px", paddingBottom: "80px" }}>
         <div className="container" style={{ maxWidth: "1140px" }}>
           <div className="grid grid--2" style={{ alignItems: "center", gap: "48px" }}>
             {/* Left Column: Mentorship Session Photo */}
@@ -212,7 +211,7 @@ export default function AboutPage() {
                   background: "#ffffff",
                 }}
               >
-                <div style={{ position: "relative", width: "100%", height: "360px" }}>
+                <div style={{ position: "relative", width: "100%", height: "380px" }}>
                   <Image
                     src="/assets/img/career-mentorship-session.jpg"
                     alt="Chamak Foundation Career Guidance and Student Mentorship Session"
@@ -267,7 +266,7 @@ export default function AboutPage() {
               </p>
 
               {/* 4 Feature Cards */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "14px" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "14px", marginBottom: "28px" }}>
                 <div
                   style={{
                     background: "#ffffff",
@@ -332,148 +331,16 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* SECTION 3: PROFOUND IMPACT ON HUNDREDS OF STUDENTS */}
-      <section className="section" style={{ paddingTop: "72px", paddingBottom: "80px" }}>
-        <div className="container" style={{ maxWidth: "1140px" }}>
-          <div
-            style={{
-              background: "linear-gradient(145deg, var(--navy-950) 0%, var(--navy-900) 100%)",
-              borderRadius: "24px",
-              padding: "clamp(32px, 4.5vw, 56px)",
-              color: "#ffffff",
-              boxShadow: "0 24px 60px rgba(11,27,56,0.22)",
-              border: "1px solid rgba(217, 175, 82, 0.28)",
-            }}
-          >
-            <div style={{ maxWidth: "860px", margin: "0 auto", textAlign: "center" }}>
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  background: "rgba(217, 175, 82, 0.15)",
-                  color: "var(--gold-400)",
-                  padding: "6px 16px",
-                  borderRadius: "30px",
-                  fontSize: "0.8rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  marginBottom: "18px",
-                  border: "1px solid rgba(217, 175, 82, 0.3)",
-                }}
-              >
-                <Sparkles size={14} /> Ground Realities &amp; Success Stories
-              </div>
-
-              <h2
-                style={{
-                  fontFamily: "var(--serif)",
-                  fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)",
-                  color: "#ffffff",
-                  lineHeight: 1.3,
-                  marginBottom: "20px",
-                }}
-              >
-                Profound Impact on Hundreds of Students
-              </h2>
-
-              <p
-                style={{
-                  fontSize: "1.12rem",
-                  lineHeight: 1.85,
-                  color: "rgba(250, 247, 239, 0.88)",
-                  marginBottom: "36px",
-                }}
-              >
-                Since our inception, Chamak Foundation has made a profound impact on the lives of hundreds of students, enabling them to pursue higher education, overcome financial hardships, and reach their career aspirations. Our success stories are a testament to the life-changing work we do.
-              </p>
-
-              {/* 3 Impact Pillars */}
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-                  gap: "20px",
-                  textAlign: "left",
-                  marginBottom: "40px",
-                }}
-              >
-                <div
-                  style={{
-                    background: "rgba(255, 255, 255, 0.06)",
-                    border: "1px solid rgba(255, 255, 255, 0.12)",
-                    borderRadius: "16px",
-                    padding: "24px 22px",
-                    backdropFilter: "blur(6px)",
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-                    <CheckCircle2 size={20} style={{ color: "var(--gold-400)" }} />
-                    <h3 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>
-                      Higher Education
-                    </h3>
-                  </div>
-                  <p style={{ fontSize: "0.92rem", color: "rgba(250, 247, 239, 0.72)", margin: 0, lineHeight: 1.6 }}>
-                    Enabling disadvantaged youth to pursue college degrees and university admissions.
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    background: "rgba(255, 255, 255, 0.06)",
-                    border: "1px solid rgba(255, 255, 255, 0.12)",
-                    borderRadius: "16px",
-                    padding: "24px 22px",
-                    backdropFilter: "blur(6px)",
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-                    <CheckCircle2 size={20} style={{ color: "var(--gold-400)" }} />
-                    <h3 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>
-                      Overcoming Hardships
-                    </h3>
-                  </div>
-                  <p style={{ fontSize: "0.92rem", color: "rgba(250, 247, 239, 0.72)", margin: 0, lineHeight: 1.6 }}>
-                    Removing financial barriers and empowering scholars to study with dignity.
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    background: "rgba(255, 255, 255, 0.06)",
-                    border: "1px solid rgba(255, 255, 255, 0.12)",
-                    borderRadius: "16px",
-                    padding: "24px 22px",
-                    backdropFilter: "blur(6px)",
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-                    <CheckCircle2 size={20} style={{ color: "var(--gold-400)" }} />
-                    <h3 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>
-                      Career Aspirations
-                    </h3>
-                  </div>
-                  <p style={{ fontSize: "0.92rem", color: "rgba(250, 247, 239, 0.72)", margin: 0, lineHeight: 1.6 }}>
-                    Empowering students to achieve academic excellence and realize their dreams.
-                  </p>
-                </div>
-              </div>
-
-              {/* Action Links */}
-              <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-                <Link href="/vision-mission" className="btn btn-gold">
+              {/* Navigation Actions */}
+              <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", paddingTop: "20px", borderTop: "1px solid rgba(11,27,56,0.1)" }}>
+                <Link href="/vision-mission" className="btn btn-navy">
                   Our Vision &amp; Mission <ArrowRight size={14} style={{ marginLeft: "4px" }} />
                 </Link>
-                <Link href="/programmes" className="btn btn-outline-light">
+                <Link href="/programmes" className="btn btn-outline-navy">
                   Our Programmes
                 </Link>
-                <Link href="/get-involved" className="btn btn-outline-light">
+                <Link href="/get-involved" className="btn btn-gold">
                   Support Our Mission
                 </Link>
               </div>
