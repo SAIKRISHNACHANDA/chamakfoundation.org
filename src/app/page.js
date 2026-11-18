@@ -99,8 +99,8 @@ export default function HomePage() {
               </p>
 
               <div className="founder-hero-card__actions">
-                <Link href="/about#founder" className="btn btn-gold btn-sm">
-                  Read Full Story &amp; Journey <ArrowRight size={15} style={{ marginLeft: "4px" }} />
+                <Link href="/team" className="btn btn-gold btn-sm">
+                  Meet Our Team <ArrowRight size={15} style={{ marginLeft: "4px" }} />
                 </Link>
                 <Link href="/get-involved" className="btn btn-outline-navy btn-sm">
                   Support the Mission

@@ -22,7 +22,7 @@ const NAV_ITEMS = [
     label: "Our Team",
     href: "/team",
     children: [
-      { label: "Our Founder", href: "/about#founder" },
+      { label: "Our Founder", href: "/team" },
       { label: "Our Team", href: "/team" },
     ],
   },
