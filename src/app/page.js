@@ -70,9 +70,6 @@ export default function HomePage() {
               Meet Our Founder
             </div>
             <h2 className="hdg-oneline">The Person Behind Chamak Padhai Se</h2>
-            <p style={{ maxWidth: "68ch", margin: "14px auto 0", color: "var(--ink-600)", fontSize: "1.02rem" }}>
-              From overcoming childhood adversity and child labour to receiving India&apos;s highest national youth honors from the President of India.
-            </p>
           </div>
 
           {/* Founder Profile Card with Photo, Title & Awards */}
@@ -97,13 +94,6 @@ export default function HomePage() {
               <div className="founder-hero-card__tag">National Awardee &middot; Academician &middot; Social Reformer</div>
               <h3 className="founder-hero-card__name">Dr. Mohammad Azam Ali</h3>
               <p className="founder-hero-card__degrees">M.A., M.Ed., Ph.D. in English (Kakatiya University)</p>
-              <p className="founder-hero-card__role">
-                Assistant Professor of English &middot; Head of Department &middot; Chairperson, Board of Studies
-              </p>
-
-              <p className="founder-hero-card__bio">
-                Born into a poor working-class family in rural Telangana and once forced into child labour, Dr. Mohammad Azam Ali triumphed over extreme hardship through sheer determination and the power of education. He founded <strong>Chamak Foundation (Chamak Padhai Se)</strong> to ensure that every disadvantaged child receives the mentorship, scholarships, and opportunities needed to shine.
-              </p>
 
               {/* Founder Titles & Awards Grid */}
               <div className="founder-hero-awards">
