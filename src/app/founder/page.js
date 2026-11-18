@@ -55,7 +55,6 @@ export default function FounderPage() {
       <PageHero
         eyebrow="Leadership & Inspiration"
         title="Our Founder"
-        subtitle="The extraordinary journey of Dr. Mohammad Azam Ali: From overcoming childhood adversity and child labour to receiving India's highest national youth honors and founding Chamak Foundation."
       />
 
       <section className="section founder-cv-section" id="founder" style={{ paddingTop: "60px", paddingBottom: "90px" }}>
