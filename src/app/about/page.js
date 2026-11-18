@@ -137,42 +137,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 2. OUR VISION & MISSION LINK BANNER */}
-      <section className="section section--tight" style={{ paddingTop: 0, paddingBottom: "36px" }}>
-        <div className="container">
-          <div
-            style={{
-              background: "linear-gradient(135deg, #FAF7EF 0%, #FFFFFF 100%)",
-              border: "1px solid rgba(201,154,58,0.32)",
-              borderRadius: "20px",
-              padding: "clamp(28px, 3.8vw, 40px)",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              flexWrap: "wrap",
-              gap: "24px",
-              boxShadow: "0 10px 30px rgba(11,27,56,0.05)",
-            }}
-          >
-            <div style={{ maxWidth: "680px" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "var(--gold-700)", fontSize: "0.82rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "8px" }}>
-                <Target size={15} /> Purpose &amp; Direction
-              </div>
-              <h3 style={{ fontFamily: "var(--serif)", fontSize: "clamp(1.4rem, 2vw, 1.8rem)", color: "var(--navy-900)", margin: "0 0 10px", lineHeight: 1.3 }}>
-                Our Vision &amp; Mission
-              </h3>
-              <p style={{ color: "var(--ink-600)", fontSize: "0.98rem", lineHeight: 1.65, margin: 0 }}>
-                To build an inclusive and educated India where every underprivileged child has access to quality education, equal opportunities, and the confidence to shine in life with dignity and self-reliance.
-              </p>
-            </div>
-            <div>
-              <Link href="/vision-mission" className="btn btn-navy" style={{ whiteSpace: "nowrap" }}>
-                View Full Vision &amp; Mission <ArrowRight size={15} style={{ marginLeft: "4px" }} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 3. OUR PROGRAMMES SECTION */}
       <section className="section" id="programmes" style={{ scrollMarginTop: "90px" }}>

@@ -250,19 +250,6 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
-      {/* Collaboration Call to Action */}
-      <section className="section">
-        <div className="container">
-          <div className="cta-band reveal">
-            <h2>Partner with us in your community or institution</h2>
-            <p>We work collaboratively with schools, colleges, civil society organizations, and educators to multiply educational outcomes across Telangana.</p>
-            <div className="cta-band__ctas">
-              <Link href="/contact" className="btn btn-gold">Propose a Partnership</Link>
-              <Link href="/get-involved" className="btn btn-outline-cream">Volunteer With Us</Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
