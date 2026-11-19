@@ -100,119 +100,7 @@ export default function SustainableDevelopmentGoalsPage() {
               marginBottom: "52px",
             }}
           >
-            {/* CARD 1: SDG #5 - GENDER EQUALITY */}
-            <div
-              style={{
-                background: "#ffffff",
-                borderRadius: "22px",
-                padding: "36px 30px",
-                border: "1px solid rgba(229, 36, 59, 0.22)",
-                boxShadow: "0 18px 45px rgba(229, 36, 59, 0.08)",
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                transition: "transform 0.25s ease, box-shadow 0.25s ease",
-                overflow: "hidden",
-              }}
-            >
-              {/* Top Accent Bar */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: "5px",
-                  background: "linear-gradient(90deg, #FF4B72, #E5243B)",
-                }}
-              />
-
-              {/* Hexagon Graphic Badge */}
-              <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px" }}>
-                <div
-                  style={{
-                    position: "relative",
-                    width: "72px",
-                    height: "72px",
-                    flexShrink: 0,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <svg viewBox="0 0 100 100" style={{ width: "100%", height: "100%", filter: "drop-shadow(0 6px 14px rgba(229,36,59,0.38))" }}>
-                    <defs>
-                      <linearGradient id="sdg5grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#FF5A79" />
-                        <stop offset="100%" stopColor="#E5243B" />
-                      </linearGradient>
-                    </defs>
-                    <polygon points="50,3 93,26 93,74 50,97 7,74 7,26" fill="url(#sdg5grad)" />
-                  </svg>
-                  {/* Hexagon Inner Content */}
-                  <div
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#ffffff",
-                      textAlign: "center",
-                      paddingTop: "2px",
-                    }}
-                  >
-                    <span style={{ fontSize: "1.3rem", fontWeight: 900, lineHeight: 1 }}>♀</span>
-                    <span style={{ fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.04em", marginTop: "1px" }}>#5</span>
-                  </div>
-                </div>
-
-                <div>
-                  <div
-                    style={{
-                      fontSize: "0.74rem",
-                      fontWeight: 800,
-                      letterSpacing: "0.08em",
-                      color: "#E5243B",
-                      textTransform: "uppercase",
-                      marginBottom: "4px",
-                    }}
-                  >
-                    UN SDG Goal 05
-                  </div>
-                  <h3
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: "1.5rem",
-                      fontWeight: 700,
-                      color: "var(--navy-900)",
-                      margin: 0,
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    Gender Equality
-                  </h3>
-                </div>
-              </div>
-
-              {/* Core Text */}
-              <p style={{ fontSize: "1.04rem", lineHeight: 1.75, color: "var(--ink-700)", margin: "0 0 24px", flexGrow: 1 }}>
-                <strong>Gender Equality:</strong> Empowering girl child education and guaranteeing equal leadership access.
-              </p>
-
-              {/* Action Pillars Strip */}
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", paddingTop: "18px", borderTop: "1px solid rgba(229, 36, 59, 0.12)" }}>
-                <span style={{ background: "rgba(229, 36, 59, 0.08)", color: "#c2182d", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
-                  Girl Child Education
-                </span>
-                <span style={{ background: "rgba(229, 36, 59, 0.08)", color: "#c2182d", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
-                  Equal Leadership Access
-                </span>
-              </div>
-            </div>
-
-            {/* CARD 2: SDG #4 - QUALITY EDUCATION */}
+            {/* CARD 1: SDG #4 - QUALITY EDUCATION */}
             <div
               style={{
                 background: "#ffffff",
@@ -321,6 +209,118 @@ export default function SustainableDevelopmentGoalsPage() {
                 </span>
                 <span style={{ background: "rgba(217, 175, 82, 0.14)", color: "var(--gold-800)", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
                   Merit Sponsorships
+                </span>
+              </div>
+            </div>
+
+            {/* CARD 2: SDG #5 - GENDER EQUALITY */}
+            <div
+              style={{
+                background: "#ffffff",
+                borderRadius: "22px",
+                padding: "36px 30px",
+                border: "1px solid rgba(229, 36, 59, 0.22)",
+                boxShadow: "0 18px 45px rgba(229, 36, 59, 0.08)",
+                position: "relative",
+                display: "flex",
+                flexDirection: "column",
+                transition: "transform 0.25s ease, box-shadow 0.25s ease",
+                overflow: "hidden",
+              }}
+            >
+              {/* Top Accent Bar */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "5px",
+                  background: "linear-gradient(90deg, #FF4B72, #E5243B)",
+                }}
+              />
+
+              {/* Hexagon Graphic Badge */}
+              <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px" }}>
+                <div
+                  style={{
+                    position: "relative",
+                    width: "72px",
+                    height: "72px",
+                    flexShrink: 0,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <svg viewBox="0 0 100 100" style={{ width: "100%", height: "100%", filter: "drop-shadow(0 6px 14px rgba(229,36,59,0.38))" }}>
+                    <defs>
+                      <linearGradient id="sdg5grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#FF5A79" />
+                        <stop offset="100%" stopColor="#E5243B" />
+                      </linearGradient>
+                    </defs>
+                    <polygon points="50,3 93,26 93,74 50,97 7,74 7,26" fill="url(#sdg5grad)" />
+                  </svg>
+                  {/* Hexagon Inner Content */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#ffffff",
+                      textAlign: "center",
+                      paddingTop: "2px",
+                    }}
+                  >
+                    <span style={{ fontSize: "1.3rem", fontWeight: 900, lineHeight: 1 }}>♀</span>
+                    <span style={{ fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.04em", marginTop: "1px" }}>#5</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    style={{
+                      fontSize: "0.74rem",
+                      fontWeight: 800,
+                      letterSpacing: "0.08em",
+                      color: "#E5243B",
+                      textTransform: "uppercase",
+                      marginBottom: "4px",
+                    }}
+                  >
+                    UN SDG Goal 05
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: "var(--serif)",
+                      fontSize: "1.5rem",
+                      fontWeight: 700,
+                      color: "var(--navy-900)",
+                      margin: 0,
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    Gender Equality
+                  </h3>
+                </div>
+              </div>
+
+              {/* Core Text */}
+              <p style={{ fontSize: "1.04rem", lineHeight: 1.75, color: "var(--ink-700)", margin: "0 0 24px", flexGrow: 1 }}>
+                <strong>Gender Equality:</strong> Empowering girl child education and guaranteeing equal leadership access.
+              </p>
+
+              {/* Action Pillars Strip */}
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", paddingTop: "18px", borderTop: "1px solid rgba(229, 36, 59, 0.12)" }}>
+                <span style={{ background: "rgba(229, 36, 59, 0.08)", color: "#c2182d", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
+                  Girl Child Education
+                </span>
+                <span style={{ background: "rgba(229, 36, 59, 0.08)", color: "#c2182d", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
+                  Equal Leadership Access
                 </span>
               </div>
             </div>
