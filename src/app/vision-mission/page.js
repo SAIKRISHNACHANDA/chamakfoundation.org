@@ -26,7 +26,6 @@ export default function VisionMissionPage() {
       <PageHero
         eyebrow="Purpose & Direction"
         title="Our Vision & Mission"
-        subtitle="The foundational commitments that guide Chamak Foundation's daily efforts and long-term service to society."
       />
 
       {/* Main Vision & Mission Cards */}
