@@ -242,9 +242,6 @@ export default function AboutPage() {
 
             {/* Right Column: Mission Narrative */}
             <div style={{ order: 2 }}>
-              <div className="eyebrow" style={{ color: "var(--gold-600)", marginBottom: "14px" }}>
-                <Compass size={14} /> Our Mission in Action
-              </div>
               <h2
                 style={{
                   fontFamily: "var(--serif)",

@@ -7,7 +7,6 @@ import {
   Compass,
   CheckCircle2,
   Globe,
-  Quote,
   ArrowRight,
   ShieldCheck,
   Heart,
@@ -202,45 +201,6 @@ export default function VisionMissionPage() {
               <Link href="/sustainable-development-goals" className="btn btn-gold" style={{ whiteSpace: "nowrap" }}>
                 Explore SDG Action <ArrowRight size={15} />
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Guiding Words Section */}
-      <section className="section section--cream2">
-        <div className="container">
-          <div className="section-head section-head--center section-head--wide">
-            <div className="eyebrow" style={{ justifyContent: "center" }}>
-              <Quote size={14} /> Guiding Words
-            </div>
-            <h2 className="section-title--oneline">The Visionary Ideals That Guide Us</h2>
-            <p>Dr. Azam Ali was moved by two profound philosophical statements that became the bedrock of Chamak Foundation.</p>
-          </div>
-
-          <div className="grid grid--2" style={{ gap: "28px", marginTop: "32px" }}>
-            <div className="card" style={{ padding: "38px", background: "#fff", borderLeft: "5px solid var(--gold-500)", boxShadow: "0 10px 30px rgba(11,27,56,0.05)" }}>
-              <p style={{ fontFamily: "var(--serif)", fontSize: "1.22rem", lineHeight: 1.6, color: "var(--navy-900)", fontStyle: "italic", margin: 0 }}>
-                &ldquo;Agar tum sirf apne liye zinda ho toh iska matlab yahi hai ke tum apni qaum ke liye zinda laash ho.&rdquo;
-              </p>
-              <div style={{ marginTop: "18px", fontSize: "0.88rem", fontWeight: 700, color: "var(--gold-700)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                — Maulana Abul Kalam Azad
-              </div>
-              <span style={{ fontSize: "0.82rem", color: "var(--ink-400)", display: "block", marginTop: "4px" }}>
-                First Minister of Education of Independent India &amp; Visionary Leader
-              </span>
-            </div>
-
-            <div className="card" style={{ padding: "38px", background: "#fff", borderLeft: "5px solid var(--navy-800)", boxShadow: "0 10px 30px rgba(11,27,56,0.05)" }}>
-              <p style={{ fontFamily: "var(--serif)", fontSize: "1.22rem", lineHeight: 1.6, color: "var(--navy-900)", fontStyle: "italic", margin: 0 }}>
-                &ldquo;Aap badho, desh ko badhao.&rdquo;
-              </p>
-              <div style={{ marginTop: "18px", fontSize: "0.88rem", fontWeight: 700, color: "var(--navy-900)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                — Dr. A. P. J. Abdul Kalam
-              </div>
-              <span style={{ fontSize: "0.82rem", color: "var(--ink-400)", display: "block", marginTop: "4px" }}>
-                Former President of India &amp; Visionary Scientist
-              </span>
             </div>
           </div>
         </div>
