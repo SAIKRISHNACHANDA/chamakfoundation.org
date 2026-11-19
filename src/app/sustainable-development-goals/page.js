@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { Sparkles, ArrowRight, Heart, BookOpen, Layers, Globe } from "lucide-react";
+import { Sparkles, ArrowRight, Heart, BookOpen, Layers, Globe, Link2 } from "lucide-react";
 
 export const metadata = {
   title: "Sustainable Development Goals (SDGs) · Chamak Foundation",
@@ -91,30 +91,10 @@ export default function SustainableDevelopmentGoalsPage() {
             </p>
           </div>
 
-          {/* THE 3 SDG CARDS PLACED HORIZONTALLY */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "28px",
-              marginBottom: "52px",
-            }}
-          >
-            {/* CARD 1: SDG #4 - QUALITY EDUCATION */}
-            <div
-              style={{
-                background: "#ffffff",
-                borderRadius: "22px",
-                padding: "36px 30px",
-                border: "1px solid rgba(217, 175, 82, 0.35)",
-                boxShadow: "0 18px 45px rgba(217, 175, 82, 0.12)",
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                transition: "transform 0.25s ease, box-shadow 0.25s ease",
-                overflow: "hidden",
-              }}
-            >
+          {/* THE 3 SDG CARDS CONNECTED AS A CONTINUOUS CHAIN OF IMPACT */}
+          <div className="sdg-chain-grid">
+            {/* CARD 1: SDG #4 - QUALITY EDUCATION (CHAIN LINK 01: ROOT) */}
+            <div className="sdg-chain-card sdg-chain-card--gold">
               {/* Top Accent Bar */}
               <div
                 style={{
@@ -126,6 +106,11 @@ export default function SustainableDevelopmentGoalsPage() {
                   background: "linear-gradient(90deg, #F3C669, #D9AF52, #C99A3A)",
                 }}
               />
+
+              {/* Chain Badge */}
+              <div className="sdg-chain-badge sdg-chain-badge--gold">
+                <Link2 size={12} strokeWidth={2.5} /> Link 01 · Root
+              </div>
 
               {/* Hexagon Graphic Badge */}
               <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px" }}>
@@ -213,21 +198,16 @@ export default function SustainableDevelopmentGoalsPage() {
               </div>
             </div>
 
-            {/* CARD 2: SDG #5 - GENDER EQUALITY */}
-            <div
-              style={{
-                background: "#ffffff",
-                borderRadius: "22px",
-                padding: "36px 30px",
-                border: "1px solid rgba(229, 36, 59, 0.22)",
-                boxShadow: "0 18px 45px rgba(229, 36, 59, 0.08)",
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                transition: "transform 0.25s ease, box-shadow 0.25s ease",
-                overflow: "hidden",
-              }}
-            >
+            {/* INTERLOCKING CHAIN BRIDGE 1 (04 -> 05) */}
+            <div className="sdg-chain-bridge" aria-hidden="true">
+              <div className="sdg-chain-link-icon-wrap sdg-chain-link-icon-wrap--gold-pink">
+                <Link2 size={22} strokeWidth={2.4} />
+              </div>
+              <div className="sdg-chain-pill">Catalyzes ➔</div>
+            </div>
+
+            {/* CARD 2: SDG #5 - GENDER EQUALITY (CHAIN LINK 02: CATALYST) */}
+            <div className="sdg-chain-card sdg-chain-card--pink">
               {/* Top Accent Bar */}
               <div
                 style={{
@@ -239,6 +219,11 @@ export default function SustainableDevelopmentGoalsPage() {
                   background: "linear-gradient(90deg, #FF4B72, #E5243B)",
                 }}
               />
+
+              {/* Chain Badge */}
+              <div className="sdg-chain-badge sdg-chain-badge--pink">
+                <Link2 size={12} strokeWidth={2.5} /> Link 02 · Catalyst
+              </div>
 
               {/* Hexagon Graphic Badge */}
               <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px" }}>
@@ -325,21 +310,16 @@ export default function SustainableDevelopmentGoalsPage() {
               </div>
             </div>
 
-            {/* CARD 3: SDG #10 - REDUCED INEQUALITIES */}
-            <div
-              style={{
-                background: "#ffffff",
-                borderRadius: "22px",
-                padding: "36px 30px",
-                border: "1px solid rgba(79, 70, 229, 0.22)",
-                boxShadow: "0 18px 45px rgba(79, 70, 229, 0.08)",
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                transition: "transform 0.25s ease, box-shadow 0.25s ease",
-                overflow: "hidden",
-              }}
-            >
+            {/* INTERLOCKING CHAIN BRIDGE 2 (05 -> 10) */}
+            <div className="sdg-chain-bridge" aria-hidden="true">
+              <div className="sdg-chain-link-icon-wrap sdg-chain-link-icon-wrap--pink-purple">
+                <Link2 size={22} strokeWidth={2.4} />
+              </div>
+              <div className="sdg-chain-pill">Dismantles ➔</div>
+            </div>
+
+            {/* CARD 3: SDG #10 - REDUCED INEQUALITIES (CHAIN LINK 03: OUTCOME) */}
+            <div className="sdg-chain-card sdg-chain-card--purple">
               {/* Top Accent Bar */}
               <div
                 style={{
@@ -351,6 +331,11 @@ export default function SustainableDevelopmentGoalsPage() {
                   background: "linear-gradient(90deg, #6366F1, #4F46E5)",
                 }}
               />
+
+              {/* Chain Badge */}
+              <div className="sdg-chain-badge sdg-chain-badge--purple">
+                <Link2 size={12} strokeWidth={2.5} /> Link 03 · Outcome
+              </div>
 
               {/* Hexagon Graphic Badge */}
               <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px" }}>
@@ -434,6 +419,41 @@ export default function SustainableDevelopmentGoalsPage() {
                 <span style={{ background: "rgba(79, 70, 229, 0.08)", color: "#4338ca", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
                   First-Gen Scholars
                 </span>
+              </div>
+            </div>
+          </div>
+
+          {/* COMPOUNDING CHAIN REACTION EXPLAINER */}
+          <div className="sdg-chain-explainer">
+            <div className="sdg-chain-explainer__header">
+              <span className="sdg-chain-explainer__icon">
+                <Link2 size={16} strokeWidth={2.5} />
+              </span>
+              <h4>The Unbroken Chain of Impact</h4>
+            </div>
+            <div className="sdg-chain-explainer__grid">
+              <div className="sdg-chain-explainer__step">
+                <span className="sdg-chain-explainer__num gold">01</span>
+                <div>
+                  <strong>Quality Education (Root)</strong>
+                  <p>Rural libraries and merit scholarships establish foundational literacy and cognitive confidence.</p>
+                </div>
+              </div>
+              <div className="sdg-chain-explainer__connector">➔</div>
+              <div className="sdg-chain-explainer__step">
+                <span className="sdg-chain-explainer__num pink">02</span>
+                <div>
+                  <strong>Gender Equality (Catalyst)</strong>
+                  <p>Keeping girls in schools and leadership programs accelerates community-wide transformation.</p>
+                </div>
+              </div>
+              <div className="sdg-chain-explainer__connector">➔</div>
+              <div className="sdg-chain-explainer__step">
+                <span className="sdg-chain-explainer__num purple">03</span>
+                <div>
+                  <strong>Reduced Inequalities (Outcome)</strong>
+                  <p>First-generation rural scholars secure generational social and economic mobility.</p>
+                </div>
               </div>
             </div>
           </div>
