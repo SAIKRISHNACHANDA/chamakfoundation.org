@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { Sparkles, ArrowRight, Heart, BookOpen, Layers } from "lucide-react";
+import { Sparkles, ArrowRight, Heart, BookOpen, Layers, Globe } from "lucide-react";
 
 export const metadata = {
   title: "Sustainable Development Goals (SDGs) · Chamak Foundation",
@@ -17,10 +17,45 @@ export default function SustainableDevelopmentGoalsPage() {
         subtitle="Aligning grassroots educational interventions in Telangana with the United Nations global framework for peace, dignity, and shared prosperity."
       />
 
-      <section className="section" style={{ paddingTop: "72px", paddingBottom: "96px" }}>
+      <section className="section" style={{ paddingTop: "60px", paddingBottom: "96px" }}>
         <div className="container" style={{ maxWidth: "1180px" }}>
+          {/* UN SDG Alignment Callout Banner */}
+          <div
+            style={{
+              background: "linear-gradient(135deg, #0b1b38 0%, #122349 100%)",
+              borderRadius: "var(--radius-lg)",
+              padding: "36px 32px",
+              color: "#fff",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "24px",
+              boxShadow: "0 12px 36px rgba(11,27,56,0.16)",
+              border: "1px solid rgba(217,175,82,0.3)",
+              marginBottom: "52px",
+            }}
+          >
+            <div style={{ maxWidth: "680px" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "var(--gold-400)", fontSize: "0.82rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "8px" }}>
+                <Globe size={15} /> UN Agenda 2030 Alignment
+              </div>
+              <h3 style={{ fontFamily: "var(--serif)", fontSize: "clamp(1.4rem, 2vw, 1.85rem)", color: "#fff", margin: "0 0 10px", lineHeight: 1.3 }}>
+                Advancing the United Nations Sustainable Development Goals
+              </h3>
+              <p style={{ color: "rgba(250,247,239,0.78)", fontSize: "0.96rem", lineHeight: 1.65, margin: 0 }}>
+                Discover how Chamak Foundation champions <strong>SDG 4 (Quality Education)</strong>, <strong>SDG 5 (Gender Equality)</strong>, and <strong>SDG 10 (Reduced Inequalities)</strong> across Telangana.
+              </p>
+            </div>
+            <div>
+              <a href="#goals" className="btn btn-gold" style={{ whiteSpace: "nowrap" }}>
+                Explore SDG Action <ArrowRight size={15} />
+              </a>
+            </div>
+          </div>
+
           {/* Section Header */}
-          <div style={{ textAlign: "center", maxWidth: "780px", margin: "0 auto 52px" }}>
+          <div id="goals" style={{ textAlign: "center", maxWidth: "780px", margin: "0 auto 52px", scrollMarginTop: "100px" }}>
             <div
               style={{
                 display: "inline-flex",
