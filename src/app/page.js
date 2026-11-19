@@ -111,7 +111,11 @@ export default function HomePage() {
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
                   <span style={{ color: "var(--gold-600)", fontSize: "1.1rem", lineHeight: 1, marginTop: "1px" }}>•</span>
-                  <span>President of India NSS National awardee 2012-13 and National Youth awardee 2017-18 by the Ministry of Youth Affairs and Sports Government of India.</span>
+                  <span>President of India NSS National awardee 2012-13</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                  <span style={{ color: "var(--gold-600)", fontSize: "1.1rem", lineHeight: 1, marginTop: "1px" }}>•</span>
+                  <span>National Youth awardee 2017-18 by the Ministry of Youth Affairs and Sports Government of India.</span>
                 </li>
               </ul>
 

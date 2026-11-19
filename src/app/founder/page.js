@@ -24,7 +24,7 @@ export const metadata = {
 };
 
 const MAJOR_AWARDS = [
-  { num: "01", name: "President of India NSS National Award", year: "2012–13", conferredBy: "Conferred by Late President Pranab Mukherjee at Rashtrapati Bhavan" },
+  { num: "01", name: "President of India NSS National Award", year: "2012–13", conferredBy: "Conferred by Then President Pranab Mukherjee at Rashtrapati Bhavan" },
   { num: "02", name: "National Youth Award", year: "2017–18", conferredBy: "Ministry of Youth Affairs and Sports, Govt of India at Vigyan Bhavan" },
   { num: "03", name: "Maulana Azad National Award", year: "2018", conferredBy: "Recognizing outstanding educational & social leadership" },
   { num: "04", name: "UN World Environment Day Hero", year: "2019", conferredBy: "United Nations Environment Programme youth recognition" },
@@ -142,7 +142,11 @@ export default function FounderPage() {
                     </li>
                     <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.88rem", lineHeight: 1.5, color: "var(--ink-700)" }}>
                       <span style={{ color: "var(--gold-600)", fontSize: "1.1rem", lineHeight: 1, marginTop: "1px" }}>•</span>
-                      <span>President of India NSS National awardee 2012-13 and National Youth awardee 2017-18 by the Ministry of Youth Affairs and Sports Government of India.</span>
+                      <span>President of India NSS National awardee 2012-13</span>
+                    </li>
+                    <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.88rem", lineHeight: 1.5, color: "var(--ink-700)" }}>
+                      <span style={{ color: "var(--gold-600)", fontSize: "1.1rem", lineHeight: 1, marginTop: "1px" }}>•</span>
+                      <span>National Youth awardee 2017-18 by the Ministry of Youth Affairs and Sports Government of India.</span>
                     </li>
                   </ul>
 

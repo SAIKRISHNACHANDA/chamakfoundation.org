@@ -8,8 +8,8 @@ const HONORS_DATA = [
   {
     id: 1,
     src: "/assets/img/founder/founder-pranab-mukherjee.jpg",
-    alt: "Dr. Mohammad Azam Ali receiving an honor from the Former President of India, Late Shri Pranab Mukherjee",
-    title: "With Late President of India, Shri Pranab Mukherjee",
+    alt: "Dr. Mohammad Azam Ali receiving an honor from Then President of India, Shri Pranab Mukherjee",
+    title: "With Then President of India, Shri Pranab Mukherjee",
     tag: "Presidential Honor",
     venue: "Rashtrapati Bhavan, New Delhi",
   },
@@ -18,14 +18,14 @@ const HONORS_DATA = [
     src: "/assets/img/founder/founder-droupadi-murmu.jpg",
     alt: "Dr. Mohammad Azam Ali presenting a bouquet to the Hon'ble President of India, Smt. Droupadi Murmu",
     title: "With Hon'ble President of India, Smt. Droupadi Murmu",
-    tag: "Rashtrapati Bhavan",
-    venue: "New Delhi",
+    tag: "",
+    venue: "",
   },
   {
     id: 3,
     src: "/assets/img/founder/founder-venkaiah-naidu.jpg",
-    alt: "Dr. Mohammad Azam Ali with Former Vice President of India, Shri M. Venkaiah Naidu",
-    title: "With Former Vice President of India, Shri M. Venkaiah Naidu",
+    alt: "Dr. Mohammad Azam Ali with Then Vice President of India, Shri M. Venkaiah Naidu",
+    title: "With Then Vice President of India, Shri M. Venkaiah Naidu",
     tag: "National Recognition",
     venue: "Upa-Rashtrapati Nivas, New Delhi",
   },
@@ -87,7 +87,7 @@ export default function FounderGallery() {
                   <ZoomIn size={18} />
                 </span>
                 <div className="founder-card__info">
-                  <span className="founder-card__tag">{item.tag}</span>
+                  {item.tag ? <span className="founder-card__tag">{item.tag}</span> : null}
                   <p className="founder-card__title">{item.title}</p>
                 </div>
               </div>
@@ -145,11 +145,13 @@ export default function FounderGallery() {
             </div>
 
             <div className="founder-lightbox__caption">
-              <span className="founder-lightbox__tag">
-                {HONORS_DATA[activeIdx].tag}
-              </span>
+              {HONORS_DATA[activeIdx].tag ? (
+                <span className="founder-lightbox__tag">
+                  {HONORS_DATA[activeIdx].tag}
+                </span>
+              ) : null}
               <h3>{HONORS_DATA[activeIdx].title}</h3>
-              <p>{HONORS_DATA[activeIdx].venue}</p>
+              {HONORS_DATA[activeIdx].venue ? <p>{HONORS_DATA[activeIdx].venue}</p> : null}
             </div>
           </div>
         </div>

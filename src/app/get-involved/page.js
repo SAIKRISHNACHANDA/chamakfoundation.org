@@ -178,7 +178,8 @@ export default function GetInvolvedPage() {
             style={{ 
               maxWidth: "760px", 
               margin: "0 auto", 
-              padding: "48px 40px", 
+              padding: "clamp(24px, 4vw, 44px) clamp(16px, 4vw, 36px)", 
+              width: "100%",
               boxShadow: "0 16px 40px rgba(11,27,56,0.08)",
               borderColor: "rgba(201,154,58,0.25)"
             }}
@@ -319,7 +320,7 @@ export default function GetInvolvedPage() {
                 </button>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", fontSize: "0.88rem" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px", fontSize: "0.88rem" }}>
                 <div>
                   <div style={{ color: "var(--ink-400)", fontSize: "0.78rem", textTransform: "uppercase" }}>Account Name</div>
                   <strong style={{ color: "var(--navy-900)" }}>Chamak Foundation</strong>
@@ -334,7 +335,7 @@ export default function GetInvolvedPage() {
                 </div>
                 <div>
                   <div style={{ color: "var(--ink-400)", fontSize: "0.78rem", textTransform: "uppercase" }}>Email Receipt</div>
-                  <strong style={{ color: "var(--navy-900)" }}>chamakfoundation23@gmail.com</strong>
+                  <strong style={{ color: "var(--navy-900)", wordBreak: "break-all" }}>chamakfoundation23@gmail.com</strong>
                 </div>
               </div>
             </div>
@@ -345,7 +346,7 @@ export default function GetInvolvedPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-gold"
-                style={{ width: "100%", justifyContent: "center", padding: "16px", fontSize: "1rem" }}
+                style={{ width: "100%", justifyContent: "center", padding: "16px", fontSize: "1rem", whiteSpace: "normal", lineHeight: 1.35, textAlign: "center", wordBreak: "break-word" }}
               >
                 Connect on WhatsApp to Confirm Donation (₹{currentAmount.toLocaleString("en-IN")})
               </a>
@@ -388,7 +389,7 @@ export default function GetInvolvedPage() {
               </div>
             </div>
 
-            <div className="card" style={{ padding: "40px 36px" }}>
+            <div className="card" style={{ padding: "clamp(24px, 4vw, 40px) clamp(16px, 4vw, 32px)", width: "100%" }}>
               {volunteerSubmitted ? (
                 <div style={{ textAlign: "center", padding: "32px 16px" }}>
                   <div style={{ width: "64px", height: "64px", borderRadius: "50%", background: "rgba(37,211,102,0.15)", color: "#25D366", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
@@ -427,7 +428,7 @@ export default function GetInvolvedPage() {
                     />
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px" }}>
                     <div className="field">
                       <label htmlFor="vol-email">Email Address *</label>
                       <input 
@@ -452,7 +453,7 @@ export default function GetInvolvedPage() {
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px" }}>
                     <div className="field">
                       <label htmlFor="vol-interest">Area of Interest</label>
                       <select 
@@ -494,7 +495,7 @@ export default function GetInvolvedPage() {
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="btn btn-navy" style={{ width: "100%", display: "flex", justifyContent: "center", gap: "8px" }}>
+                  <button type="submit" className="btn btn-navy" style={{ width: "100%", display: "flex", justifyContent: "center", gap: "8px", whiteSpace: "normal", textAlign: "center" }}>
                     <Send size={16} />
                     <span>Submit Volunteer Application</span>
                   </button>
