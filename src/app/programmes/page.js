@@ -8,7 +8,6 @@ import {
   Smile, 
   Library, 
   GraduationCap, 
-  CheckCircle2, 
   ArrowRight,
   Sparkles,
   BookOpen
@@ -200,20 +199,6 @@ export default function ProgrammesPage() {
                           <p style={{ fontSize: "0.95rem", color: "var(--navy-900)", lineHeight: 1.65, margin: 0 }}>
                             {p.whoItHelps}
                           </p>
-                        </div>
-                      </div>
-
-                      <div style={{ marginTop: "24px" }}>
-                        <h4 style={{ fontSize: "0.88rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--ink-500)", marginBottom: "12px" }}>
-                          Core Programme Components:
-                        </h4>
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "10px" }}>
-                          {p.highlights.map((h, i) => (
-                            <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.92rem", color: "var(--ink-700)" }}>
-                              <CheckCircle2 size={16} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
-                              <span>{h}</span>
-                            </div>
-                          ))}
                         </div>
                       </div>
 
