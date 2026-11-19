@@ -55,7 +55,7 @@ export default function SustainableDevelopmentGoalsPage() {
           </div>
 
           {/* Section Header */}
-          <div id="goals" style={{ textAlign: "center", maxWidth: "780px", margin: "0 auto 52px", scrollMarginTop: "100px" }}>
+          <div id="goals" style={{ textAlign: "center", maxWidth: "960px", margin: "0 auto 52px", scrollMarginTop: "100px" }}>
             <div
               style={{
                 display: "inline-flex",
@@ -76,9 +76,9 @@ export default function SustainableDevelopmentGoalsPage() {
               <Sparkles size={14} /> Global Standards · Grassroots Action
             </div>
             <h2
+              className="section-title--oneline"
               style={{
-                fontFamily: "var(--serif)",
-                fontSize: "clamp(2rem, 3.4vw, 2.75rem)",
+                fontSize: "clamp(1.35rem, 2.6vw, 2.35rem)",
                 color: "var(--navy-900)",
                 lineHeight: 1.25,
                 margin: "0 0 14px",
@@ -86,7 +86,7 @@ export default function SustainableDevelopmentGoalsPage() {
             >
               Three Interconnected Goals. Compounding Impact.
             </h2>
-            <p style={{ color: "var(--ink-600)", fontSize: "1.05rem", lineHeight: 1.7, margin: 0 }}>
+            <p style={{ color: "var(--ink-600)", fontSize: "1.05rem", lineHeight: 1.7, margin: "0 auto", maxWidth: "780px" }}>
               At Chamak Foundation, our ground operations in rural, tribal, and disadvantaged communities anchor directly around three deeply intertwined goals.
             </p>
           </div>
