@@ -94,9 +94,26 @@ export default function HomePage() {
               <h3 className="founder-hero-card__name">Dr. Mohammad Azam Ali</h3>
               <p className="founder-hero-card__degrees">M.A, M.Ed, Ph.D</p>
 
-              <p className="founder-hero-card__bio">
-                Educator, Social Activist, Motivational Speaker, President of India NSS National awardee 2012-13 and National Youth awardee 2017-18 by the Ministry of Youth Affairs and Sports Government of India.
-              </p>
+              <ul
+                className="founder-hero-card__bio"
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: "0 0 22px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "8px",
+                }}
+              >
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                  <span style={{ color: "var(--gold-600)", fontSize: "1.1rem", lineHeight: 1, marginTop: "1px" }}>•</span>
+                  <span>Educator, Social Activist, Motivational Speaker</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                  <span style={{ color: "var(--gold-600)", fontSize: "1.1rem", lineHeight: 1, marginTop: "1px" }}>•</span>
+                  <span>President of India NSS National awardee 2012-13 and National Youth awardee 2017-18 by the Ministry of Youth Affairs and Sports Government of India.</span>
+                </li>
+              </ul>
 
               <div className="founder-hero-card__actions">
                 <Link href="/founder" className="btn btn-gold btn-sm">

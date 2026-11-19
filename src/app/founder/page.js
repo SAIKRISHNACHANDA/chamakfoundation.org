@@ -125,9 +125,26 @@ export default function FounderPage() {
                   <p className="founder-cv-qualifications" style={{ fontSize: "1rem", color: "var(--gold-700)", fontWeight: 700, marginBottom: "8px" }}>
                     M.A, M.Ed, Ph.D
                   </p>
-                  <p className="founder-cv-role" style={{ fontSize: "0.88rem", lineHeight: 1.5, color: "var(--ink-600)", marginBottom: "20px" }}>
-                    Educator, Social Activist, Motivational Speaker, President of India NSS National awardee 2012-13 and National Youth awardee 2017-18 by the Ministry of Youth Affairs and Sports Government of India.
-                  </p>
+                  <ul
+                    style={{
+                      listStyle: "none",
+                      padding: 0,
+                      margin: "0 0 20px",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "8px",
+                      textAlign: "left",
+                    }}
+                  >
+                    <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.88rem", lineHeight: 1.5, color: "var(--ink-700)" }}>
+                      <span style={{ color: "var(--gold-600)", fontSize: "1.1rem", lineHeight: 1, marginTop: "1px" }}>•</span>
+                      <span>Educator, Social Activist, Motivational Speaker</span>
+                    </li>
+                    <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.88rem", lineHeight: 1.5, color: "var(--ink-700)" }}>
+                      <span style={{ color: "var(--gold-600)", fontSize: "1.1rem", lineHeight: 1, marginTop: "1px" }}>•</span>
+                      <span>President of India NSS National awardee 2012-13 and National Youth awardee 2017-18 by the Ministry of Youth Affairs and Sports Government of India.</span>
+                    </li>
+                  </ul>
 
                   <div className="founder-cv-meta-list" style={{ textAlign: "left" }}>
                     <div className="founder-cv-meta-item">

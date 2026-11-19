@@ -141,12 +141,12 @@ export default function AboutPage() {
                   background: "#ffffff",
                 }}
               >
-                <div style={{ position: "relative", width: "100%", height: "380px" }}>
+                <div style={{ position: "relative", width: "100%", height: "400px" }}>
                   <Image
-                    src="/assets/img/founder-president.jpg"
-                    alt="Chamak Foundation Launch Ceremony in Hyderabad with Prof. Shantha Sinha"
+                    src="/assets/img/about-launch-shantha-sinha.jpg"
+                    alt="Chamak Foundation Formal Inauguration in Hyderabad with Prof. Shantha Sinha"
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "cover", objectPosition: "center 15%" }}
                     priority
                   />
                   <div
@@ -199,7 +199,7 @@ export default function AboutPage() {
       <section className="section section--cream2" style={{ paddingTop: "72px", paddingBottom: "80px" }}>
         <div className="container" style={{ maxWidth: "1140px" }}>
           <div className="grid grid--2" style={{ alignItems: "center", gap: "48px" }}>
-            {/* Left Column: Mentorship Session Photo */}
+            {/* Left Column: Leadership & Mentorship Photo */}
             <div style={{ order: 1 }}>
               <div
                 style={{
@@ -211,12 +211,12 @@ export default function AboutPage() {
                   background: "#ffffff",
                 }}
               >
-                <div style={{ position: "relative", width: "100%", height: "380px" }}>
+                <div style={{ position: "relative", width: "100%", height: "400px" }}>
                   <Image
-                    src="/assets/img/career-mentorship-session.jpg"
-                    alt="Chamak Foundation Career Guidance and Student Mentorship Session"
+                    src="/assets/img/about-foundation-dignitary.jpg"
+                    alt="Chamak Foundation Educational Leadership and Outreach in Telangana"
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "cover", objectPosition: "center 15%" }}
                   />
                   <div
                     style={{
@@ -234,7 +234,7 @@ export default function AboutPage() {
                       border: "1px solid rgba(255, 255, 255, 0.15)",
                     }}
                   >
-                    Mentorship, tutoring, and career guidance for aspiring scholars.
+                    Mentorship, educational empowerment, and guidance for aspiring scholars across Telangana.
                   </div>
                 </div>
               </div>
