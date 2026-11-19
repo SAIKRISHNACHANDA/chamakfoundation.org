@@ -75,26 +75,26 @@ export default function FounderPage() {
                   <div
                     style={{
                       position: "relative",
-                      width: "200px",
-                      height: "200px",
+                      width: "240px",
+                      height: "240px",
                       borderRadius: "50%",
                       overflow: "hidden",
                       border: "4px solid var(--gold-400)",
-                      boxShadow: "0 12px 32px rgba(11,27,56,0.18)",
+                      boxShadow: "0 14px 36px rgba(11,27,56,0.18)",
                       background: "#ffffff",
                     }}
                   >
                     <Image
                       src="/assets/team/dr-azam-ali-portrait.jpg"
                       alt="Dr. Mohammad Azam Ali - Founder & President, Chamak Foundation"
-                      width={200}
-                      height={200}
+                      width={240}
+                      height={240}
                       priority
                       style={{
                         width: "100%",
                         height: "100%",
                         objectFit: "cover",
-                        objectPosition: "center 20%",
+                        objectPosition: "center center",
                       }}
                     />
                   </div>
