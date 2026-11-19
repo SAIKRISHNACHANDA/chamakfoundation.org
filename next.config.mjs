@@ -3,6 +3,14 @@ const nextConfig = {
   output: 'standalone',
   cacheComponents: true,
   partialPrefetching: true,
+  async rewrites() {
+    return [
+      {
+        source: '/uploads/:path*',
+        destination: '/api/uploads/:path*',
+      },
+    ];
+  },
   async redirects() {
     return [
 

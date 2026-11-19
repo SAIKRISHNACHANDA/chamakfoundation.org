@@ -1,0 +1,58 @@
+[
+  {
+    "id": "preset-1",
+    "name": "Scholarship Ceremony",
+    "url": "/assets/img/scholarship-ceremony.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2023-10-06T10:00:00.000Z"
+  },
+  {
+    "id": "preset-2",
+    "name": "Classroom & Students",
+    "url": "/assets/img/classroom-students.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2023-10-06T10:00:00.000Z"
+  },
+  {
+    "id": "preset-3",
+    "name": "Book Reading Camp",
+    "url": "/assets/img/book-reading-camp.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2023-10-06T10:00:00.000Z"
+  },
+  {
+    "id": "preset-4",
+    "name": "Career Mentorship Session",
+    "url": "/assets/img/career-mentorship-session.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2023-10-06T10:00:00.000Z"
+  },
+  {
+    "id": "preset-5",
+    "name": "Science & Robotics Fair",
+    "url": "/assets/img/science-robotics-fair.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2023-10-06T10:00:00.000Z"
+  },
+  {
+    "id": "preset-6",
+    "name": "Digital Lab",
+    "url": "/assets/img/digital-lab.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2023-10-06T10:00:00.000Z"
+  },
+  {
+    "id": "preset-7",
+    "name": "Foundation Launch Ceremony",
+    "url": "/assets/img/founder-president.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2023-10-06T10:00:00.000Z"
+  }
+]

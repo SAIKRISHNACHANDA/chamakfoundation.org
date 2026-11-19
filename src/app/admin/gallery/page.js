@@ -29,6 +29,9 @@ import {
   Maximize2,
   Minimize2,
   LogOut,
+  Upload,
+  UploadCloud,
+  FolderOpen,
 } from "lucide-react";
 import { GALLERY_CATEGORIES } from "@/data/galleryEvents";
 
@@ -150,6 +153,16 @@ export default function GalleryAdminPage() {
   const [isExportOpen, setIsExportOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // File Manager & Upload States
+  const [isFileManagerOpen, setIsFileManagerOpen] = useState(false);
+  const [fileManagerTargetIndex, setFileManagerTargetIndex] = useState(null);
+  const [mediaItems, setMediaItems] = useState([]);
+  const [isLoadingMedia, setIsLoadingMedia] = useState(false);
+  const [mediaFilter, setMediaFilter] = useState("all");
+  const [mediaSearch, setMediaSearch] = useState("");
+  const [uploadingIndex, setUploadingIndex] = useState(null);
+  const [isBulkUploading, setIsBulkUploading] = useState(false);
 
   // Fullscreen Handler
   const toggleFullScreen = async () => {
@@ -408,6 +421,208 @@ export default function GalleryAdminPage() {
     });
   };
 
+  // Media Library & Device Upload Handlers
+  const fetchMedia = async () => {
+    setIsLoadingMedia(true);
+    try {
+      const res = await fetch("/api/admin/media");
+      const json = await res.json();
+      if (json.success && Array.isArray(json.data)) {
+        setMediaItems(json.data);
+      }
+    } catch (err) {
+      console.warn("Error fetching media:", err);
+    } finally {
+      setIsLoadingMedia(false);
+    }
+  };
+
+  const openFileManager = (targetIndex = null) => {
+    setFileManagerTargetIndex(targetIndex);
+    setIsFileManagerOpen(true);
+    fetchMedia();
+  };
+
+  const handleSelectFromManager = (mediaItem) => {
+    if (fileManagerTargetIndex !== null) {
+      handleImageChange(fileManagerTargetIndex, "src", mediaItem.url);
+      if (!formData.images[fileManagerTargetIndex]?.caption) {
+        handleImageChange(
+          fileManagerTargetIndex,
+          "caption",
+          mediaItem.name ? mediaItem.name.replace(/\.[^/.]+$/, "") : "Event photograph"
+        );
+      }
+      showToast("Photo applied to event!");
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        images: [
+          ...prev.images,
+          {
+            src: mediaItem.url,
+            alt: mediaItem.name || "Event photo",
+            caption: mediaItem.name ? mediaItem.name.replace(/\.[^/.]+$/, "") : "Event photograph",
+          },
+        ],
+      }));
+      showToast("Photo added to event list!");
+    }
+    setIsFileManagerOpen(false);
+  };
+
+  const handleSingleDeviceUpload = async (e, photoIndex) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadingIndex(photoIndex);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: fd,
+      });
+      const json = await res.json();
+
+      if (json.success && json.data) {
+        const uploadedUrl = json.data.url;
+        handleImageChange(photoIndex, "src", uploadedUrl);
+        if (!formData.images[photoIndex]?.caption) {
+          handleImageChange(photoIndex, "caption", file.name.replace(/\.[^/.]+$/, ""));
+        }
+        showToast("Photo uploaded successfully from device!");
+        fetchMedia();
+      } else {
+        showToast(json.error || "Upload failed", "error");
+      }
+    } catch (err) {
+      showToast("Upload failed: " + err.message, "error");
+    } finally {
+      setUploadingIndex(null);
+      e.target.value = "";
+    }
+  };
+
+  const handleBulkDeviceUpload = async (e) => {
+    const files = Array.from(e.target.files || []);
+    if (files.length === 0) return;
+
+    setIsBulkUploading(true);
+    try {
+      const fd = new FormData();
+      for (const file of files) {
+        fd.append("files", file);
+      }
+
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: fd,
+      });
+      const json = await res.json();
+
+      if (json.success && json.data) {
+        const uploadedList = Array.isArray(json.data) ? json.data : [json.data];
+        const newImages = uploadedList.map((item) => ({
+          src: item.url,
+          alt: item.name || "Event photo",
+          caption: item.name ? item.name.replace(/\.[^/.]+$/, "") : "Event photograph",
+        }));
+
+        setFormData((prev) => {
+          const hasOnlyDefault =
+            prev.images.length === 1 &&
+            prev.images[0].src === "/assets/img/classroom-students.jpg" &&
+            !prev.images[0].caption;
+
+          return {
+            ...prev,
+            images: hasOnlyDefault ? newImages : [...prev.images, ...newImages],
+          };
+        });
+
+        showToast(`${uploadedList.length} photo(s) uploaded and added to event!`);
+        fetchMedia();
+      } else {
+        showToast(json.error || "Bulk upload failed", "error");
+      }
+    } catch (err) {
+      showToast("Upload failed: " + err.message, "error");
+    } finally {
+      setIsBulkUploading(false);
+      e.target.value = "";
+    }
+  };
+
+  const handleManagerFileUpload = async (e) => {
+    const files = Array.from(e.target.files || []);
+    if (files.length === 0) return;
+
+    setIsLoadingMedia(true);
+    try {
+      const fd = new FormData();
+      for (const file of files) {
+        fd.append("files", file);
+      }
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: fd,
+      });
+      const json = await res.json();
+      if (json.success) {
+        showToast("Photo(s) uploaded to library!");
+        fetchMedia();
+      } else {
+        showToast(json.error || "Upload failed", "error");
+      }
+    } catch (err) {
+      showToast("Upload error: " + err.message, "error");
+    } finally {
+      setIsLoadingMedia(false);
+      e.target.value = "";
+    }
+  };
+
+  const handleDeleteMediaItem = async (item) => {
+    if (item.isPreset) {
+      showToast("Cannot delete preset system assets", "error");
+      return;
+    }
+    if (!confirm(`Delete "${item.name}" from library?`)) return;
+
+    try {
+      const res = await fetch(
+        `/api/admin/media?id=${encodeURIComponent(item.id)}&filename=${encodeURIComponent(item.filename || "")}`,
+        { method: "DELETE" }
+      );
+      const json = await res.json();
+      if (json.success) {
+        showToast("Photo removed from library");
+        setMediaItems((prev) => prev.filter((m) => m.id !== item.id));
+      } else {
+        showToast(json.error || "Delete failed", "error");
+      }
+    } catch (err) {
+      showToast("Delete error: " + err.message, "error");
+    }
+  };
+
+  const filteredMedia = useMemo(() => {
+    let list = mediaItems;
+    if (mediaFilter === "uploads") {
+      list = list.filter((m) => !m.isPreset);
+    } else if (mediaFilter === "presets") {
+      list = list.filter((m) => m.isPreset);
+    }
+
+    if (mediaSearch.trim()) {
+      const q = mediaSearch.toLowerCase().trim();
+      list = list.filter((m) => (m.name || "").toLowerCase().includes(q));
+    }
+    return list;
+  }, [mediaItems, mediaFilter, mediaSearch]);
+
   if (!authChecked) {
     return (
       <div style={{
@@ -505,6 +720,14 @@ export default function GalleryAdminPage() {
               <Link href="/gallery" target="_blank" className="btn btn-outline-light btn-sm">
                 View Live Gallery <ExternalLink size={13} />
               </Link>
+              <button
+                type="button"
+                onClick={() => openFileManager(null)}
+                className="btn btn-outline-light btn-sm"
+                title="Browse & Upload Media Files"
+              >
+                <FolderOpen size={14} /> File Manager
+              </button>
               <button
                 type="button"
                 onClick={handleOpenCreate}
@@ -1001,18 +1224,65 @@ export default function GalleryAdminPage() {
                 <div className="admin-form-group admin-form-group--full">
                   <div className="admin-photos-header">
                     <div>
-                      <label style={{ margin: 0 }}>Event Photographs ({formData.images.length}) *</label>
+                      <label style={{ margin: 0, fontSize: "0.95rem", fontWeight: 700, color: "var(--navy-900)" }}>
+                        Event Photographs ({formData.images.length}) *
+                      </label>
                       <p className="admin-photos-hint">
-                        Choose from high-res library presets or enter custom photo URLs.
+                        Upload directly from device, pick from file manager, or choose presets.
                       </p>
                     </div>
-                    <button
-                      type="button"
-                      onClick={handleAddImage}
-                      className="btn btn-outline-light btn-sm"
-                    >
-                      <Plus size={14} /> Add Another Photo
-                    </button>
+
+                    <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
+                      {/* Bulk Device Upload */}
+                      <label
+                        className="btn btn-gold btn-sm"
+                        style={{
+                          cursor: "pointer",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "6px",
+                          padding: "8px 14px",
+                        }}
+                      >
+                        {isBulkUploading ? (
+                          <>
+                            <RefreshCw size={14} className="spin" /> Uploading...
+                          </>
+                        ) : (
+                          <>
+                            <UploadCloud size={14} /> Upload from Device
+                          </>
+                        )}
+                        <input
+                          type="file"
+                          multiple
+                          accept="image/*"
+                          onChange={handleBulkDeviceUpload}
+                          disabled={isBulkUploading}
+                          style={{ display: "none" }}
+                        />
+                      </label>
+
+                      {/* File Manager Button */}
+                      <button
+                        type="button"
+                        onClick={() => openFileManager(null)}
+                        className="btn btn-outline-navy btn-sm"
+                        style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "8px 14px" }}
+                      >
+                        <FolderOpen size={14} /> Open File Manager
+                      </button>
+
+                      {/* Add Another Blank Photo */}
+                      <button
+                        type="button"
+                        onClick={handleAddImage}
+                        className="btn btn-outline-light btn-sm"
+                        style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "8px 12px" }}
+                      >
+                        <Plus size={14} /> Add Row
+                      </button>
+                    </div>
                   </div>
 
                   <div className="admin-photos-list">
@@ -1022,16 +1292,62 @@ export default function GalleryAdminPage() {
 
                         <div className="admin-photo-item__preview">
                           <Image
-                            src={img.src}
+                            src={img.src || "/assets/img/classroom-students.jpg"}
                             alt={img.alt || "Preview"}
                             width={72}
                             height={52}
+                            unoptimized
                             className="admin-photo-item__img"
                           />
                         </div>
 
                         <div className="admin-photo-item__fields">
-                          <div className="admin-photo-row">
+                          {/* Row 1: Direct Device Upload & File Manager quick buttons */}
+                          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+                            <label
+                              className="btn btn-sm btn-gold"
+                              style={{
+                                cursor: "pointer",
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "5px",
+                                padding: "6px 12px",
+                                fontSize: "0.78rem",
+                              }}
+                            >
+                              {uploadingIndex === i ? (
+                                <>
+                                  <RefreshCw size={13} className="spin" /> Uploading...
+                                </>
+                              ) : (
+                                <>
+                                  <Upload size={13} /> Upload from Device
+                                </>
+                              )}
+                              <input
+                                type="file"
+                                accept="image/*"
+                                onChange={(e) => handleSingleDeviceUpload(e, i)}
+                                disabled={uploadingIndex === i}
+                                style={{ display: "none" }}
+                              />
+                            </label>
+
+                            <button
+                              type="button"
+                              onClick={() => openFileManager(i)}
+                              className="btn btn-sm btn-outline-navy"
+                              style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "5px",
+                                padding: "6px 12px",
+                                fontSize: "0.78rem",
+                              }}
+                            >
+                              <FolderOpen size={13} /> Pick from File Manager
+                            </button>
+
                             <select
                               value={
                                 AVAILABLE_PRESET_IMAGES.some((p) => p.url === img.src)
@@ -1044,18 +1360,22 @@ export default function GalleryAdminPage() {
                                 }
                               }}
                               className="admin-select admin-select--sm"
+                              style={{ maxWidth: "200px" }}
                             >
-                              <option value="custom">Preset Image Library...</option>
+                              <option value="custom">Preset Library...</option>
                               {AVAILABLE_PRESET_IMAGES.map((p) => (
                                 <option key={p.url} value={p.url}>
                                   📷 {p.name}
                                 </option>
                               ))}
                             </select>
+                          </div>
 
+                          {/* Row 2: Image URL input */}
+                          <div className="admin-photo-row">
                             <input
                               type="text"
-                              placeholder="Image URL (e.g. /assets/img/scholarship-ceremony.jpg)"
+                              placeholder="Image URL or upload path (e.g. /uploads/photo.jpg)"
                               value={img.src}
                               onChange={(e) =>
                                 handleImageChange(i, "src", e.target.value)
@@ -1064,6 +1384,7 @@ export default function GalleryAdminPage() {
                             />
                           </div>
 
+                          {/* Row 3: Caption & Alt Text */}
                           <div className="admin-photo-row">
                             <input
                               type="text"
@@ -1221,6 +1542,176 @@ export default function GalleryAdminPage() {
                 className="btn btn-outline-light"
               >
                 Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================
+          FILE MANAGER & MEDIA LIBRARY MODAL
+          ======================================================== */}
+      {isFileManagerOpen && (
+        <div className="admin-modal-backdrop" onClick={() => setIsFileManagerOpen(false)}>
+          <div
+            className="admin-modal-dialog admin-modal-dialog--large"
+            style={{ maxWidth: "880px" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="admin-modal-header">
+              <div>
+                <span className="admin-badge admin-badge--gold">Asset Manager</span>
+                <h3 className="admin-modal-title">Media Library &amp; File Manager</h3>
+                <p style={{ margin: "4px 0 0", fontSize: "0.82rem", color: "var(--ink-500)" }}>
+                  {fileManagerTargetIndex !== null
+                    ? `Click "Select Photo" on any image to apply to Photo #${fileManagerTargetIndex + 1}`
+                    : "Upload from your device and manage gallery photos"}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsFileManagerOpen(false)}
+                className="admin-modal-close"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div style={{ padding: "20px 24px" }}>
+              {/* Dropzone Upload Box */}
+              <label className="admin-media-dropzone" style={{ marginBottom: "20px" }}>
+                <UploadCloud size={32} style={{ color: "var(--gold-600)" }} />
+                <div style={{ fontWeight: 700, color: "var(--navy-900)", fontSize: "0.95rem" }}>
+                  {isLoadingMedia ? "Processing upload..." : "Click or Tap to Upload Photos from Device"}
+                </div>
+                <div style={{ fontSize: "0.8rem", color: "#64748b" }}>
+                  Supports JPG, PNG, WEBP, GIF · Uploaded directly to your server
+                </div>
+                <input
+                  type="file"
+                  multiple
+                  accept="image/*"
+                  onChange={handleManagerFileUpload}
+                  disabled={isLoadingMedia}
+                  style={{ display: "none" }}
+                />
+              </label>
+
+              {/* Search & Filter Bar */}
+              <div
+                style={{
+                  display: "flex",
+                  gap: "12px",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  marginBottom: "16px",
+                }}
+              >
+                <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+                  <button
+                    type="button"
+                    onClick={() => setMediaFilter("all")}
+                    className={`btn btn-sm ${mediaFilter === "all" ? "btn-navy" : "btn-outline-light"}`}
+                    style={{ padding: "6px 14px", fontSize: "0.8rem" }}
+                  >
+                    All Media ({mediaItems.length})
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setMediaFilter("uploads")}
+                    className={`btn btn-sm ${mediaFilter === "uploads" ? "btn-navy" : "btn-outline-light"}`}
+                    style={{ padding: "6px 14px", fontSize: "0.8rem" }}
+                  >
+                    Device Uploads ({mediaItems.filter((m) => !m.isPreset).length})
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setMediaFilter("presets")}
+                    className={`btn btn-sm ${mediaFilter === "presets" ? "btn-navy" : "btn-outline-light"}`}
+                    style={{ padding: "6px 14px", fontSize: "0.8rem" }}
+                  >
+                    System Presets ({mediaItems.filter((m) => m.isPreset).length})
+                  </button>
+                </div>
+
+                <div style={{ position: "relative", minWidth: "220px" }}>
+                  <Search size={14} style={{ position: "absolute", left: "10px", top: "50%", transform: "translateY(-50%)", color: "#94a3b8" }} />
+                  <input
+                    type="text"
+                    placeholder="Search photos..."
+                    value={mediaSearch}
+                    onChange={(e) => setMediaSearch(e.target.value)}
+                    className="admin-form-input admin-form-input--sm"
+                    style={{ paddingLeft: "30px", width: "100%" }}
+                  />
+                </div>
+              </div>
+
+              {/* Media Grid */}
+              <div className="admin-media-grid">
+                {filteredMedia.length === 0 ? (
+                  <div style={{ gridColumn: "1 / -1", textAlign: "center", padding: "40px 16px", color: "#64748b" }}>
+                    <ImageIcon size={36} style={{ margin: "0 auto 10px", opacity: 0.5 }} />
+                    <p style={{ margin: 0, fontWeight: 600 }}>No photos match your filter</p>
+                    <p style={{ margin: "4px 0 0", fontSize: "0.82rem" }}>
+                      Upload photos from your device above to see them in this library.
+                    </p>
+                  </div>
+                ) : (
+                  filteredMedia.map((item) => (
+                    <div key={item.id} className="admin-media-card">
+                      <div className="admin-media-card__thumb">
+                        <img
+                          src={item.url}
+                          alt={item.name}
+                          className="admin-media-card__img"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="admin-media-card__info">
+                        <span className="admin-media-card__name" title={item.name}>
+                          {item.name}
+                        </span>
+                        <div className="admin-media-card__meta">
+                          <span>{item.isPreset ? "Preset" : `${Math.round((item.size || 0) / 1024)} KB`}</span>
+                          <span>{item.uploadedAt ? new Date(item.uploadedAt).toLocaleDateString("en-GB", { day: "2-digit", month: "short" }) : ""}</span>
+                        </div>
+                        <div style={{ display: "flex", gap: "6px", marginTop: "8px" }}>
+                          <button
+                            type="button"
+                            onClick={() => handleSelectFromManager(item)}
+                            className="btn btn-gold btn-sm"
+                            style={{ flexGrow: 1, padding: "6px 8px", fontSize: "0.74rem", justifyContent: "center" }}
+                          >
+                            <Check size={12} /> Select Photo
+                          </button>
+                          {!item.isPreset && (
+                            <button
+                              type="button"
+                              onClick={() => handleDeleteMediaItem(item)}
+                              className="admin-icon-btn admin-icon-btn--delete"
+                              title="Delete from server"
+                              style={{ width: "28px", height: "28px" }}
+                            >
+                              <Trash2 size={12} />
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+
+            <div className="admin-modal-actions">
+              <button
+                type="button"
+                onClick={() => setIsFileManagerOpen(false)}
+                className="btn btn-outline-light"
+              >
+                Close File Manager
               </button>
             </div>
           </div>
