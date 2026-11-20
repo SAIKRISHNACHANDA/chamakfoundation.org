@@ -5,16 +5,23 @@ import { GALLERY_EVENTS } from "@/data/galleryEvents";
 
 const DATA_FILE = path.join(process.cwd(), "src", "data", "events.json");
 
+const NO_CACHE_HEADERS = {
+  "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+  Pragma: "no-cache",
+  Expires: "0",
+};
+
 async function getStoredEvents() {
   try {
     const raw = await fs.readFile(DATA_FILE, "utf-8");
     const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed) && parsed.length > 0) {
+    if (Array.isArray(parsed)) {
       return parsed;
     }
   } catch (err) {
-    // If file doesn't exist, try initializing it
+    // If file doesn't exist or cannot be read, initialize it
     try {
+      await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
       await fs.writeFile(DATA_FILE, JSON.stringify(GALLERY_EVENTS, null, 2), "utf-8");
       return GALLERY_EVENTS;
     } catch (writeErr) {
@@ -26,6 +33,7 @@ async function getStoredEvents() {
 
 async function saveEvents(events) {
   try {
+    await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
     await fs.writeFile(DATA_FILE, JSON.stringify(events, null, 2), "utf-8");
     return true;
   } catch (err) {
@@ -36,7 +44,10 @@ async function saveEvents(events) {
 
 export async function GET() {
   const events = await getStoredEvents();
-  return NextResponse.json({ success: true, count: events.length, data: events });
+  return NextResponse.json(
+    { success: true, count: events.length, data: events },
+    { headers: NO_CACHE_HEADERS }
+  );
 }
 
 export async function POST(req) {
@@ -45,7 +56,7 @@ export async function POST(req) {
     if (!body.title || !body.title.trim()) {
       return NextResponse.json(
         { success: false, error: "Event title is required" },
-        { status: 400 }
+        { status: 400, headers: NO_CACHE_HEADERS }
       );
     }
 
@@ -75,28 +86,35 @@ export async function POST(req) {
       metric: body.metric?.trim() || "Field Impact Verified",
       summary: body.summary?.trim() || "",
       gridStyle: body.gridStyle || "split-duo",
-      images: Array.isArray(body.images) && body.images.length > 0
-        ? body.images
-        : [
-            {
-              src: "/assets/img/classroom-students.jpg",
-              alt: body.title,
-              caption: body.summary || body.title,
-            },
-          ],
+      images:
+        Array.isArray(body.images) && body.images.length > 0
+          ? body.images
+          : [
+              {
+                src: "/assets/img/classroom-students.jpg",
+                alt: body.title,
+                caption: body.summary || body.title,
+              },
+            ],
     };
 
     const updated = [newEvent, ...events];
-    await saveEvents(updated);
+    const saved = await saveEvents(updated);
+    if (!saved) {
+      return NextResponse.json(
+        { success: false, error: "Failed to persist event to server disk" },
+        { status: 500, headers: NO_CACHE_HEADERS }
+      );
+    }
 
     return NextResponse.json(
       { success: true, message: "Event created successfully", data: newEvent },
-      { status: 201 }
+      { status: 201, headers: NO_CACHE_HEADERS }
     );
   } catch (err) {
     return NextResponse.json(
       { success: false, error: err.message || "Failed to create event" },
-      { status: 500 }
+      { status: 500, headers: NO_CACHE_HEADERS }
     );
   }
 }
@@ -107,16 +125,20 @@ export async function PUT(req) {
     if (!body.id) {
       return NextResponse.json(
         { success: false, error: "Event ID is required for update" },
-        { status: 400 }
+        { status: 400, headers: NO_CACHE_HEADERS }
       );
     }
 
     const events = await getStoredEvents();
-    const index = events.findIndex((ev) => ev.id === body.id);
+    const targetId = String(body.id).trim().toLowerCase();
+    const index = events.findIndex(
+      (ev) => String(ev.id).trim().toLowerCase() === targetId
+    );
+
     if (index === -1) {
       return NextResponse.json(
         { success: false, error: "Event not found" },
-        { status: 404 }
+        { status: 404, headers: NO_CACHE_HEADERS }
       );
     }
 
@@ -127,17 +149,26 @@ export async function PUT(req) {
     };
 
     events[index] = updatedEvent;
-    await saveEvents(events);
+    const saved = await saveEvents(events);
+    if (!saved) {
+      return NextResponse.json(
+        { success: false, error: "Failed to persist update to server disk" },
+        { status: 500, headers: NO_CACHE_HEADERS }
+      );
+    }
 
-    return NextResponse.json({
-      success: true,
-      message: "Event updated successfully",
-      data: updatedEvent,
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        message: "Event updated successfully",
+        data: updatedEvent,
+      },
+      { headers: NO_CACHE_HEADERS }
+    );
   } catch (err) {
     return NextResponse.json(
       { success: false, error: err.message || "Failed to update event" },
-      { status: 500 }
+      { status: 500, headers: NO_CACHE_HEADERS }
     );
   }
 }
@@ -155,30 +186,44 @@ export async function DELETE(req) {
     if (!id) {
       return NextResponse.json(
         { success: false, error: "Event ID is required to delete" },
-        { status: 400 }
+        { status: 400, headers: NO_CACHE_HEADERS }
       );
     }
 
     const events = await getStoredEvents();
-    const filtered = events.filter((ev) => ev.id !== id);
+    const targetId = String(id).trim().toLowerCase();
+    const filtered = events.filter(
+      (ev) => String(ev.id).trim().toLowerCase() !== targetId
+    );
 
     if (filtered.length === events.length) {
       return NextResponse.json(
         { success: false, error: "Event not found" },
-        { status: 404 }
+        { status: 404, headers: NO_CACHE_HEADERS }
       );
     }
 
-    await saveEvents(filtered);
-    return NextResponse.json({
-      success: true,
-      message: "Event deleted successfully",
-      deletedId: id,
-    });
+    const saved = await saveEvents(filtered);
+    if (!saved) {
+      return NextResponse.json(
+        { success: false, error: "Failed to persist deletion on server disk" },
+        { status: 500, headers: NO_CACHE_HEADERS }
+      );
+    }
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: "Event deleted successfully",
+        deletedId: id,
+        remainingCount: filtered.length,
+      },
+      { headers: NO_CACHE_HEADERS }
+    );
   } catch (err) {
     return NextResponse.json(
       { success: false, error: err.message || "Failed to delete event" },
-      { status: 500 }
+      { status: 500, headers: NO_CACHE_HEADERS }
     );
   }
 }

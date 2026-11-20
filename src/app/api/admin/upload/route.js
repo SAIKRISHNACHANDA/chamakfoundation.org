@@ -17,6 +17,7 @@ async function getMediaList() {
 
 async function saveMediaList(list) {
   try {
+    await fs.mkdir(path.dirname(MEDIA_FILE), { recursive: true });
     await fs.writeFile(MEDIA_FILE, JSON.stringify(list, null, 2), "utf-8");
     return true;
   } catch (err) {
@@ -148,3 +149,4 @@ export async function POST(req) {
     );
   }
 }
+

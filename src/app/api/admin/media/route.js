@@ -5,6 +5,12 @@ import path from "path";
 const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
 const MEDIA_FILE = path.join(process.cwd(), "src", "data", "media.json");
 
+const NO_CACHE_HEADERS = {
+  "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+  Pragma: "no-cache",
+  Expires: "0",
+};
+
 async function getMediaList() {
   try {
     const raw = await fs.readFile(MEDIA_FILE, "utf-8");
@@ -17,6 +23,7 @@ async function getMediaList() {
 
 async function saveMediaList(list) {
   try {
+    await fs.mkdir(path.dirname(MEDIA_FILE), { recursive: true });
     await fs.writeFile(MEDIA_FILE, JSON.stringify(list, null, 2), "utf-8");
     return true;
   } catch (err) {
@@ -57,15 +64,18 @@ export async function GET() {
       // ignore
     }
 
-    return NextResponse.json({
-      success: true,
-      count: stored.length,
-      data: stored,
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        count: stored.length,
+        data: stored,
+      },
+      { headers: NO_CACHE_HEADERS }
+    );
   } catch (err) {
     return NextResponse.json(
       { success: false, error: err.message || "Failed to retrieve media library" },
-      { status: 500 }
+      { status: 500, headers: NO_CACHE_HEADERS }
     );
   }
 }
@@ -98,14 +108,17 @@ export async function DELETE(req) {
       await saveMediaList(list);
     }
 
-    return NextResponse.json({
-      success: true,
-      message: "Media item deleted successfully",
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        message: "Media item deleted successfully",
+      },
+      { headers: NO_CACHE_HEADERS }
+    );
   } catch (err) {
     return NextResponse.json(
       { success: false, error: err.message || "Failed to delete media item" },
-      { status: 500 }
+      { status: 500, headers: NO_CACHE_HEADERS }
     );
   }
 }

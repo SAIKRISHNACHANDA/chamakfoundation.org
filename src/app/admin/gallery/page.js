@@ -150,6 +150,7 @@ export default function GalleryAdminPage() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingEventId, setEditingEventId] = useState(null);
   const [deleteCandidate, setDeleteCandidate] = useState(null);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [isExportOpen, setIsExportOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -225,7 +226,13 @@ export default function GalleryAdminPage() {
   const fetchEvents = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch("/api/gallery");
+      const res = await fetch(`/api/gallery?t=${Date.now()}`, {
+        cache: "no-store",
+        headers: {
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+          Pragma: "no-cache",
+        },
+      });
       const json = await res.json();
       if (json.success && Array.isArray(json.data)) {
         setEvents(json.data);
@@ -356,6 +363,15 @@ export default function GalleryAdminPage() {
           isEdit ? "Event updated successfully!" : "New event created successfully!"
         );
         setIsFormOpen(false);
+        const savedEvent = data.data || payload;
+        // Optimistic state update
+        setEvents((prev) => {
+          if (isEdit) {
+            return prev.map((ev) => (ev.id === editingEventId ? savedEvent : ev));
+          } else {
+            return [savedEvent, ...prev.filter((ev) => ev.id !== savedEvent.id)];
+          }
+        });
         fetchEvents();
       } else {
         showToast(data.error || "Failed to save event.", "error");
@@ -369,21 +385,33 @@ export default function GalleryAdminPage() {
 
   // Delete Event
   const handleConfirmDelete = async () => {
-    if (!deleteCandidate) return;
+    if (!deleteCandidate || isDeleting) return;
+    const target = deleteCandidate;
+    setIsDeleting(true);
+
+    // Optimistically remove from state so the table updates immediately
+    setEvents((prev) => prev.filter((ev) => ev.id !== target.id));
+    setDeleteCandidate(null);
+
     try {
-      const res = await fetch(`/api/gallery?id=${encodeURIComponent(deleteCandidate.id)}`, {
+      const res = await fetch(`/api/gallery?id=${encodeURIComponent(target.id)}`, {
         method: "DELETE",
+        headers: {
+          "Cache-Control": "no-cache",
+        },
       });
       const data = await res.json();
       if (data.success) {
-        showToast(`"${deleteCandidate.title}" deleted.`);
-        setDeleteCandidate(null);
-        fetchEvents();
+        showToast(`"${target.title}" deleted.`);
       } else {
         showToast(data.error || "Failed to delete.", "error");
+        fetchEvents();
       }
     } catch (err) {
       showToast("Network error during delete.", "error");
+      fetchEvents();
+    } finally {
+      setIsDeleting(false);
     }
   };
 
@@ -922,6 +950,7 @@ export default function GalleryAdminPage() {
                                 alt={ev.title}
                                 width={48}
                                 height={34}
+                                unoptimized
                                 className="admin-thumb"
                               />
                             </div>
@@ -1476,6 +1505,7 @@ export default function GalleryAdminPage() {
               <button
                 type="button"
                 onClick={() => setDeleteCandidate(null)}
+                disabled={isDeleting}
                 className="btn btn-outline-light"
               >
                 Cancel
@@ -1483,9 +1513,18 @@ export default function GalleryAdminPage() {
               <button
                 type="button"
                 onClick={handleConfirmDelete}
+                disabled={isDeleting}
                 className="btn btn-danger"
               >
-                <Trash2 size={16} /> Confirm Delete
+                {isDeleting ? (
+                  <>
+                    <RefreshCw size={14} className="spin" /> Deleting...
+                  </>
+                ) : (
+                  <>
+                    <Trash2 size={16} /> Confirm Delete
+                  </>
+                )}
               </button>
             </div>
           </div>

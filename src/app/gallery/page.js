@@ -35,10 +35,16 @@ export default function GalleryPage() {
 
   // Sync with live /api/gallery with real-time cache busting
   useEffect(() => {
-    fetch("/api/gallery?t=" + Date.now(), { cache: "no-store" })
+    fetch("/api/gallery?t=" + Date.now(), {
+      cache: "no-store",
+      headers: {
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        Pragma: "no-cache",
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success && Array.isArray(data.data) && data.data.length > 0) {
+        if (data.success && Array.isArray(data.data)) {
           setEventsList(data.data);
         }
       })
