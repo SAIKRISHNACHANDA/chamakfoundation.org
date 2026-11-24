@@ -26,7 +26,9 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build --if-present
+          # Next.js 16 emits a one-shot "security reminder" that exits code 1
+          # on the first invocation; it continues on retry. Retry once.
+          npm run build --if-present || npm run build --if-present
           npm run test --if-present
 
       - name: Upload artifact for deployment job
