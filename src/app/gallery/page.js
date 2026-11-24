@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { GALLERY_EVENTS, GALLERY_CATEGORIES } from "@/data/galleryEvents";
-import { FRESH_PRESS_CLIPPINGS, ARCHIVED_PRESS_HIGHLIGHTS } from "@/data/pressClippings";
+import { ALL_PRESS_CLIPPINGS, ARCHIVED_PRESS_HIGHLIGHTS } from "@/data/pressClippings";
 import {
   Calendar,
   MapPin,
@@ -86,13 +86,13 @@ export default function GalleryPage() {
       if (e.key === "ArrowRight") {
         if (lightbox !== null) handleNextPhoto();
         if (pressModal !== null) {
-          setPressModal((prev) => (prev + 1) % FRESH_PRESS_CLIPPINGS.length);
+          setPressModal((prev) => (prev + 1) % ALL_PRESS_CLIPPINGS.length);
         }
       }
       if (e.key === "ArrowLeft") {
         if (lightbox !== null) handlePrevPhoto();
         if (pressModal !== null) {
-          setPressModal((prev) => (prev - 1 + FRESH_PRESS_CLIPPINGS.length) % FRESH_PRESS_CLIPPINGS.length);
+          setPressModal((prev) => (prev - 1 + ALL_PRESS_CLIPPINGS.length) % ALL_PRESS_CLIPPINGS.length);
         }
       }
     };
@@ -107,7 +107,16 @@ export default function GalleryPage() {
   const currentEvent = lightbox ? filteredEvents[lightbox.eventIndex] : null;
   const currentPhoto =
     currentEvent && lightbox ? currentEvent.images[lightbox.imageIndex] : null;
-  const currentPress = pressModal !== null ? FRESH_PRESS_CLIPPINGS[pressModal] : null;
+
+  const recent2026Clippings = useMemo(
+    () => ALL_PRESS_CLIPPINGS.filter((c) => c.year === "2026"),
+    []
+  );
+  const groundworkClippings = useMemo(
+    () => ALL_PRESS_CLIPPINGS.filter((c) => c.year !== "2026"),
+    []
+  );
+  const currentPress = pressModal !== null ? ALL_PRESS_CLIPPINGS[pressModal] : null;
 
   const handleNextPhoto = () => {
     if (!lightbox || !currentEvent) return;
@@ -225,7 +234,7 @@ export default function GalleryPage() {
                   className="gallery-pill__count"
                   style={{ background: "var(--navy-900)", color: "var(--gold-400)" }}
                 >
-                  {FRESH_PRESS_CLIPPINGS.length}
+                  {ALL_PRESS_CLIPPINGS.length}
                 </span>
               </a>
             </div>
@@ -534,10 +543,10 @@ export default function GalleryPage() {
                   textTransform: "uppercase",
                 }}
               >
-                <Sparkles size={13} /> Fresh 2026 Coverage · SPOT NEWS
+                <Sparkles size={13} /> Fresh 2026 Policy &amp; Higher Education · SPOT NEWS
               </span>
               <span style={{ fontSize: "0.86rem", color: "var(--ink-400)", fontWeight: 500 }}>
-                {FRESH_PRESS_CLIPPINGS.length} Verified Newspaper Articles
+                {recent2026Clippings.length} Verified Newspaper Articles
               </span>
             </div>
             <span style={{ fontSize: "0.82rem", color: "var(--gold-700)", fontWeight: 600 }}>
@@ -553,268 +562,583 @@ export default function GalleryPage() {
               gap: "26px",
             }}
           >
-            {FRESH_PRESS_CLIPPINGS.map((clip, index) => (
-              <div
-                key={clip.id}
-                className="card press-card"
-                style={{
-                  background: "#FFFFFF",
-                  borderRadius: "18px",
-                  overflow: "hidden",
-                  border: "1px solid rgba(201,154,58,0.28)",
-                  boxShadow: "0 8px 24px rgba(11,27,56,0.06)",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                }}
-              >
-                {/* Clipping Image Stage with Click to Expand */}
+            {recent2026Clippings.map((clip) => {
+              const globalIndex = ALL_PRESS_CLIPPINGS.indexOf(clip);
+              return (
                 <div
+                  key={clip.id}
+                  className="card press-card"
                   style={{
-                    position: "relative",
-                    height: "360px",
-                    background: "#0c1524",
-                    cursor: "pointer",
+                    background: "#FFFFFF",
+                    borderRadius: "18px",
                     overflow: "hidden",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                  onClick={() => setPressModal(index)}
-                  title="Click to view full newspaper clipping"
-                >
-                  <Image
-                    src={clip.image}
-                    alt={clip.alt}
-                    width={720}
-                    height={1024}
-                    unoptimized
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                      transition: "transform 0.35s ease",
-                    }}
-                    className="press-clip-img"
-                  />
-                  {/* Top Badges */}
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "12px",
-                      left: "12px",
-                      zIndex: 2,
-                    }}
-                  >
-                    <span
-                      style={{
-                        background: "rgba(11,27,56,0.85)",
-                        backdropFilter: "blur(6px)",
-                        color: "#FFFFFF",
-                        fontSize: "0.74rem",
-                        fontWeight: 700,
-                        padding: "5px 11px",
-                        borderRadius: "8px",
-                        border: "1px solid rgba(255,255,255,0.2)",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "5px",
-                      }}
-                    >
-                      <Calendar size={12} /> {clip.source} · {clip.dateFormatted}
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "12px",
-                      right: "12px",
-                      zIndex: 2,
-                    }}
-                  >
-                    <span
-                      style={{
-                        background: "var(--gold-500)",
-                        color: "var(--navy-950)",
-                        fontSize: "0.72rem",
-                        fontWeight: 800,
-                        padding: "5px 10px",
-                        borderRadius: "8px",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.04em",
-                      }}
-                    >
-                      {clip.badge}
-                    </span>
-                  </div>
-
-                  {/* Hover Overlay */}
-                  <div
-                    className="press-hover-overlay"
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      background: "rgba(11,27,56,0.45)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      opacity: 0,
-                      transition: "opacity 0.2s ease",
-                      zIndex: 3,
-                    }}
-                  >
-                    <span
-                      style={{
-                        background: "rgba(255,255,255,0.96)",
-                        color: "var(--navy-900)",
-                        fontWeight: 700,
-                        fontSize: "0.85rem",
-                        padding: "8px 16px",
-                        borderRadius: "999px",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "6px",
-                        boxShadow: "0 6px 16px rgba(0,0,0,0.2)",
-                      }}
-                    >
-                      <Maximize2 size={14} /> Tap to Expand Clipping
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content Details */}
-                <div
-                  style={{
-                    padding: "24px 22px 20px",
+                    border: "1px solid rgba(201,154,58,0.28)",
+                    boxShadow: "0 8px 24px rgba(11,27,56,0.06)",
                     display: "flex",
                     flexDirection: "column",
-                    flexGrow: 1,
                     justifyContent: "space-between",
                   }}
                 >
-                  <div>
-                    {/* Telugu Original Headline */}
-                    <h3
+                  {/* Clipping Image Stage with Click to Expand */}
+                  <div
+                    style={{
+                      position: "relative",
+                      height: "360px",
+                      background: "#0c1524",
+                      cursor: "pointer",
+                      overflow: "hidden",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                    onClick={() => setPressModal(globalIndex)}
+                    title="Click to view full newspaper clipping"
+                  >
+                    <Image
+                      src={clip.image}
+                      alt={clip.alt}
+                      width={720}
+                      height={1024}
+                      unoptimized
                       style={{
-                        fontSize: "1.18rem",
-                        fontWeight: 700,
-                        color: "var(--navy-900)",
-                        lineHeight: 1.4,
-                        marginBottom: "8px",
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        transition: "transform 0.35s ease",
                       }}
-                    >
-                      {clip.titleTelugu}
-                    </h3>
-                    {/* English Translated Headline */}
+                      className="press-clip-img"
+                    />
+                    {/* Top Badges */}
                     <div
                       style={{
-                        fontSize: "0.94rem",
-                        fontWeight: 600,
-                        color: "var(--gold-700)",
-                        lineHeight: 1.4,
-                        marginBottom: "12px",
-                      }}
-                    >
-                      {clip.titleEnglish}
-                    </div>
-                    {/* Speaker Badge */}
-                    <div
-                      style={{
-                        fontSize: "0.8rem",
-                        color: "var(--ink-400)",
-                        fontWeight: 600,
-                        marginBottom: "12px",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "6px",
+                        position: "absolute",
+                        top: "12px",
+                        left: "12px",
+                        zIndex: 2,
                       }}
                     >
                       <span
                         style={{
-                          width: "7px",
-                          height: "7px",
-                          borderRadius: "50%",
-                          background: "var(--gold-500)",
-                          display: "inline-block",
-                        }}
-                      />
-                      {clip.speaker}
-                    </div>
-                    {/* English Summary */}
-                    <p
-                      style={{
-                        fontSize: "0.88rem",
-                        color: "var(--ink-500)",
-                        lineHeight: 1.62,
-                        margin: 0,
-                      }}
-                    >
-                      {clip.summaryEnglish}
-                    </p>
-
-                    {/* Highlights List */}
-                    {clip.highlights && (
-                      <ul
-                        style={{
-                          margin: "14px 0 0",
-                          paddingLeft: "18px",
-                          fontSize: "0.82rem",
-                          color: "var(--ink-600)",
-                          lineHeight: 1.55,
-                        }}
-                      >
-                        {clip.highlights.map((h, hIdx) => (
-                          <li key={hIdx} style={{ marginBottom: "5px" }}>
-                            {h}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-
-                  {/* Card Actions Footer */}
-                  <div
-                    style={{
-                      marginTop: "22px",
-                      paddingTop: "14px",
-                      borderTop: "1px solid rgba(11,27,56,0.08)",
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "10px",
-                    }}
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setPressModal(index)}
-                      className="btn btn-gold btn-sm"
-                      style={{ width: "100%", justifyContent: "center", gap: "6px" }}
-                    >
-                      <Maximize2 size={14} /> Read Full Newspaper Clipping
-                    </button>
-                    {clip.portalUrl && (
-                      <a
-                        href={clip.portalUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          fontSize: "0.8rem",
-                          color: "var(--navy-800)",
-                          textAlign: "center",
+                          background: "rgba(11,27,56,0.85)",
+                          backdropFilter: "blur(6px)",
+                          color: "#FFFFFF",
+                          fontSize: "0.74rem",
+                          fontWeight: 700,
+                          padding: "5px 11px",
+                          borderRadius: "8px",
+                          border: "1px solid rgba(255,255,255,0.2)",
                           display: "inline-flex",
                           alignItems: "center",
-                          justifyContent: "center",
-                          gap: "4px",
-                          fontWeight: 600,
-                          textDecoration: "underline",
+                          gap: "5px",
                         }}
                       >
-                        {clip.portalLabel} <ExternalLink size={12} />
-                      </a>
-                    )}
+                        <Calendar size={12} /> {clip.source} · {clip.dateFormatted}
+                      </span>
+                    </div>
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "12px",
+                        right: "12px",
+                        zIndex: 2,
+                      }}
+                    >
+                      <span
+                        style={{
+                          background: "var(--gold-500)",
+                          color: "var(--navy-950)",
+                          fontSize: "0.72rem",
+                          fontWeight: 800,
+                          padding: "5px 10px",
+                          borderRadius: "8px",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.04em",
+                        }}
+                      >
+                        {clip.badge}
+                      </span>
+                    </div>
+
+                    {/* Hover Overlay */}
+                    <div
+                      className="press-hover-overlay"
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        background: "rgba(11,27,56,0.45)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        opacity: 0,
+                        transition: "opacity 0.2s ease",
+                        zIndex: 3,
+                      }}
+                    >
+                      <span
+                        style={{
+                          background: "rgba(255,255,255,0.96)",
+                          color: "var(--navy-900)",
+                          fontWeight: 700,
+                          fontSize: "0.85rem",
+                          padding: "8px 16px",
+                          borderRadius: "999px",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "6px",
+                          boxShadow: "0 6px 16px rgba(0,0,0,0.2)",
+                        }}
+                      >
+                        <Maximize2 size={14} /> Tap to Expand Clipping
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content Details */}
+                  <div
+                    style={{
+                      padding: "24px 22px 20px",
+                      display: "flex",
+                      flexDirection: "column",
+                      flexGrow: 1,
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <div>
+                      {/* Telugu Original Headline */}
+                      <h3
+                        style={{
+                          fontSize: "1.18rem",
+                          fontWeight: 700,
+                          color: "var(--navy-900)",
+                          lineHeight: 1.4,
+                          marginBottom: "8px",
+                        }}
+                      >
+                        {clip.titleTelugu}
+                      </h3>
+                      {/* English Translated Headline */}
+                      <div
+                        style={{
+                          fontSize: "0.94rem",
+                          fontWeight: 600,
+                          color: "var(--gold-700)",
+                          lineHeight: 1.4,
+                          marginBottom: "12px",
+                        }}
+                      >
+                        {clip.titleEnglish}
+                      </div>
+                      {/* Speaker Badge */}
+                      <div
+                        style={{
+                          fontSize: "0.8rem",
+                          color: "var(--ink-400)",
+                          fontWeight: 600,
+                          marginBottom: "12px",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "6px",
+                        }}
+                      >
+                        <span
+                          style={{
+                            width: "7px",
+                            height: "7px",
+                            borderRadius: "50%",
+                            background: "var(--gold-500)",
+                            display: "inline-block",
+                          }}
+                        />
+                        {clip.speaker}
+                      </div>
+                      {/* English Summary */}
+                      <p
+                        style={{
+                          fontSize: "0.88rem",
+                          color: "var(--ink-500)",
+                          lineHeight: 1.62,
+                          margin: 0,
+                        }}
+                      >
+                        {clip.summaryEnglish}
+                      </p>
+
+                      {/* Highlights List */}
+                      {clip.highlights && (
+                        <ul
+                          style={{
+                            margin: "14px 0 0",
+                            paddingLeft: "18px",
+                            fontSize: "0.82rem",
+                            color: "var(--ink-600)",
+                            lineHeight: 1.55,
+                          }}
+                        >
+                          {clip.highlights.map((h, hIdx) => (
+                            <li key={hIdx} style={{ marginBottom: "5px" }}>
+                              {h}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+
+                    {/* Card Actions Footer */}
+                    <div
+                      style={{
+                        marginTop: "22px",
+                        paddingTop: "14px",
+                        borderTop: "1px solid rgba(11,27,56,0.08)",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setPressModal(globalIndex)}
+                        className="btn btn-gold btn-sm"
+                        style={{ width: "100%", justifyContent: "center", gap: "6px" }}
+                      >
+                        <Maximize2 size={14} /> Read Full Newspaper Clipping
+                      </button>
+                      {clip.portalUrl && (
+                        <a
+                          href={clip.portalUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            fontSize: "0.8rem",
+                            color: "var(--navy-800)",
+                            textAlign: "center",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: "4px",
+                            fontWeight: 600,
+                            textDecoration: "underline",
+                          }}
+                        >
+                          {clip.portalLabel} <ExternalLink size={12} />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
+          </div>
+
+          {/* Groundwork, School Libraries & Student Aid Media Coverage */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: "12px",
+              marginTop: "56px",
+              marginBottom: "24px",
+              paddingBottom: "12px",
+              borderBottom: "1px solid rgba(201,154,58,0.25)",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  background: "var(--navy-900)",
+                  color: "var(--gold-400)",
+                  padding: "6px 14px",
+                  borderRadius: "999px",
+                  fontSize: "0.82rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.04em",
+                  textTransform: "uppercase",
+                }}
+              >
+                <Newspaper size={13} /> Groundwork, School Libraries &amp; Student Aid
+              </span>
+              <span style={{ fontSize: "0.86rem", color: "var(--ink-400)", fontWeight: 500 }}>
+                {groundworkClippings.length} Regional Newspaper Articles (Telangana Today, Namasthe Telangana &amp; Hindi Daily)
+              </span>
+            </div>
+            <span style={{ fontSize: "0.82rem", color: "var(--gold-700)", fontWeight: 600 }}>
+              National Youth Awardee Dr. Mohammad Azam Ali&apos;s Field Action
+            </span>
+          </div>
+
+          {/* Grid for Groundwork & Field Action Clippings */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "26px",
+            }}
+          >
+            {groundworkClippings.map((clip) => {
+              const globalIndex = ALL_PRESS_CLIPPINGS.indexOf(clip);
+              return (
+                <div
+                  key={clip.id}
+                  className="card press-card"
+                  style={{
+                    background: "#FFFFFF",
+                    borderRadius: "18px",
+                    overflow: "hidden",
+                    border: "1px solid rgba(201,154,58,0.28)",
+                    boxShadow: "0 8px 24px rgba(11,27,56,0.06)",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  {/* Clipping Image Stage with Click to Expand */}
+                  <div
+                    style={{
+                      position: "relative",
+                      height: "340px",
+                      background: "#0c1524",
+                      cursor: "pointer",
+                      overflow: "hidden",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                    onClick={() => setPressModal(globalIndex)}
+                    title="Click to view full newspaper clipping"
+                  >
+                    <Image
+                      src={clip.image}
+                      alt={clip.alt}
+                      width={720}
+                      height={1024}
+                      unoptimized
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        transition: "transform 0.35s ease",
+                      }}
+                      className="press-clip-img"
+                    />
+                    {/* Top Badges */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "12px",
+                        left: "12px",
+                        zIndex: 2,
+                      }}
+                    >
+                      <span
+                        style={{
+                          background: "rgba(11,27,56,0.85)",
+                          backdropFilter: "blur(6px)",
+                          color: "#FFFFFF",
+                          fontSize: "0.74rem",
+                          fontWeight: 700,
+                          padding: "5px 11px",
+                          borderRadius: "8px",
+                          border: "1px solid rgba(255,255,255,0.2)",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "5px",
+                        }}
+                      >
+                        <Calendar size={12} /> {clip.source} · {clip.dateFormatted}
+                      </span>
+                    </div>
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "12px",
+                        right: "12px",
+                        zIndex: 2,
+                      }}
+                    >
+                      <span
+                        style={{
+                          background: "var(--gold-500)",
+                          color: "var(--navy-950)",
+                          fontSize: "0.72rem",
+                          fontWeight: 800,
+                          padding: "5px 10px",
+                          borderRadius: "8px",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.04em",
+                        }}
+                      >
+                        {clip.badge}
+                      </span>
+                    </div>
+
+                    {/* Hover Overlay */}
+                    <div
+                      className="press-hover-overlay"
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        background: "rgba(11,27,56,0.45)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        opacity: 0,
+                        transition: "opacity 0.2s ease",
+                        zIndex: 3,
+                      }}
+                    >
+                      <span
+                        style={{
+                          background: "rgba(255,255,255,0.96)",
+                          color: "var(--navy-900)",
+                          fontWeight: 700,
+                          fontSize: "0.85rem",
+                          padding: "8px 16px",
+                          borderRadius: "999px",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "6px",
+                          boxShadow: "0 6px 16px rgba(0,0,0,0.2)",
+                        }}
+                      >
+                        <Maximize2 size={14} /> Tap to Expand Clipping
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content Details */}
+                  <div
+                    style={{
+                      padding: "24px 22px 20px",
+                      display: "flex",
+                      flexDirection: "column",
+                      flexGrow: 1,
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <div>
+                      {/* Title in Hindi if available */}
+                      {clip.titleHindi && (
+                        <h3
+                          style={{
+                            fontSize: "1.18rem",
+                            fontWeight: 700,
+                            color: "var(--navy-900)",
+                            lineHeight: 1.4,
+                            marginBottom: "8px",
+                          }}
+                        >
+                          {clip.titleHindi}
+                        </h3>
+                      )}
+                      {/* Telugu Original Headline */}
+                      {clip.titleTelugu && (
+                        <h3
+                          style={{
+                            fontSize: "1.18rem",
+                            fontWeight: 700,
+                            color: "var(--navy-900)",
+                            lineHeight: 1.4,
+                            marginBottom: "8px",
+                          }}
+                        >
+                          {clip.titleTelugu}
+                        </h3>
+                      )}
+                      {/* English Translated Headline */}
+                      <div
+                        style={{
+                          fontSize: "0.94rem",
+                          fontWeight: 600,
+                          color: "var(--gold-700)",
+                          lineHeight: 1.4,
+                          marginBottom: "12px",
+                        }}
+                      >
+                        {clip.titleEnglish}
+                      </div>
+                      {/* Speaker Badge */}
+                      <div
+                        style={{
+                          fontSize: "0.8rem",
+                          color: "var(--ink-400)",
+                          fontWeight: 600,
+                          marginBottom: "12px",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "6px",
+                        }}
+                      >
+                        <span
+                          style={{
+                            width: "7px",
+                            height: "7px",
+                            borderRadius: "50%",
+                            background: "var(--gold-500)",
+                            display: "inline-block",
+                          }}
+                        />
+                        {clip.speaker}
+                      </div>
+                      {/* English Summary */}
+                      <p
+                        style={{
+                          fontSize: "0.88rem",
+                          color: "var(--ink-500)",
+                          lineHeight: 1.62,
+                          margin: 0,
+                        }}
+                      >
+                        {clip.summaryEnglish}
+                      </p>
+
+                      {/* Highlights List */}
+                      {clip.highlights && (
+                        <ul
+                          style={{
+                            margin: "14px 0 0",
+                            paddingLeft: "18px",
+                            fontSize: "0.82rem",
+                            color: "var(--ink-600)",
+                            lineHeight: 1.55,
+                          }}
+                        >
+                          {clip.highlights.map((h, hIdx) => (
+                            <li key={hIdx} style={{ marginBottom: "5px" }}>
+                              {h}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+
+                    {/* Card Actions Footer */}
+                    <div
+                      style={{
+                        marginTop: "22px",
+                        paddingTop: "14px",
+                        borderTop: "1px solid rgba(11,27,56,0.08)",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setPressModal(globalIndex)}
+                        className="btn btn-gold btn-sm"
+                        style={{ width: "100%", justifyContent: "center", gap: "6px" }}
+                      >
+                        <Maximize2 size={14} /> Read Full Newspaper Clipping
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           {/* Archived Milestones Section */}
@@ -1101,7 +1425,9 @@ export default function GalleryPage() {
                 <span className="gallery-lightbox__badge">
                   {currentPress.source} · {currentPress.dateFormatted} · {currentPress.badge}
                 </span>
-                <h4 className="gallery-lightbox__title">{currentPress.titleTelugu}</h4>
+                <h4 className="gallery-lightbox__title">
+                  {currentPress.titleHindi || currentPress.titleTelugu || currentPress.titleEnglish}
+                </h4>
                 <div style={{ fontSize: "0.88rem", color: "var(--gold-300)", marginTop: "4px", fontWeight: 600 }}>
                   {currentPress.titleEnglish}
                 </div>
@@ -1121,14 +1447,14 @@ export default function GalleryPage() {
               className="gallery-lightbox__stage"
               style={{ maxHeight: "72vh", background: "#0c1524" }}
             >
-              {FRESH_PRESS_CLIPPINGS.length > 1 && (
+              {ALL_PRESS_CLIPPINGS.length > 1 && (
                 <button
                   type="button"
                   onClick={() =>
                     setPressModal(
                       (prev) =>
-                        (prev - 1 + FRESH_PRESS_CLIPPINGS.length) %
-                        FRESH_PRESS_CLIPPINGS.length
+                        (prev - 1 + ALL_PRESS_CLIPPINGS.length) %
+                        ALL_PRESS_CLIPPINGS.length
                     )
                   }
                   className="gallery-lightbox__nav gallery-lightbox__nav--prev"
@@ -1153,11 +1479,11 @@ export default function GalleryPage() {
                 />
               </div>
 
-              {FRESH_PRESS_CLIPPINGS.length > 1 && (
+              {ALL_PRESS_CLIPPINGS.length > 1 && (
                 <button
                   type="button"
                   onClick={() =>
-                    setPressModal((prev) => (prev + 1) % FRESH_PRESS_CLIPPINGS.length)
+                    setPressModal((prev) => (prev + 1) % ALL_PRESS_CLIPPINGS.length)
                   }
                   className="gallery-lightbox__nav gallery-lightbox__nav--next"
                   title="Next Clipping (Right Arrow)"
@@ -1194,7 +1520,7 @@ export default function GalleryPage() {
                     Open Original Full-Res Image <ExternalLink size={12} />
                   </a>
                   <span className="gallery-lightbox__counter">
-                    Clipping {pressModal + 1} of {FRESH_PRESS_CLIPPINGS.length}
+                    Clipping {pressModal + 1} of {ALL_PRESS_CLIPPINGS.length}
                   </span>
                 </div>
               </div>

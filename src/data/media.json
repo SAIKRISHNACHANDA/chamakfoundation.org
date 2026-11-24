@@ -24,6 +24,46 @@
     "uploadedAt": "2026-02-26T10:00:00.000Z"
   },
   {
+    "id": "press-clipping-4",
+    "name": "Telangana Today - Activist Donates Prize Money for Library (03 Apr 2022)",
+    "url": "/assets/img/press/press-activist-donates-prize-money-library-03apr2022.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2022-04-03T10:00:00.000Z"
+  },
+  {
+    "id": "press-clipping-5",
+    "name": "Hindi Daily - Underprivileged Children Library Matwada (01 Apr 2022)",
+    "url": "/assets/img/press/press-hindi-daily-matwada-library-01apr2022.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2022-04-01T10:00:00.000Z"
+  },
+  {
+    "id": "press-clipping-6",
+    "name": "Telangana Today - Develop Reading Habit at KGBV Mankammathota",
+    "url": "/assets/img/press/press-develop-reading-habit-kgbv.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2022-02-15T10:00:00.000Z"
+  },
+  {
+    "id": "press-clipping-7",
+    "name": "Namasthe Telangana - Rs 50,000 Financial Aid to Student (29 Nov 2021)",
+    "url": "/assets/img/press/press-namasthe-telangana-student-aid-29nov2021.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2021-11-29T10:00:00.000Z"
+  },
+  {
+    "id": "press-clipping-8",
+    "name": "Telangana Today - TMREIS Boon for Muslim Students (22 May 2021)",
+    "url": "/assets/img/press/press-tmreis-boon-22may2021.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2021-05-22T10:00:00.000Z"
+  },
+  {
     "id": "preset-1",
     "name": "Scholarship Ceremony",
     "url": "/assets/img/scholarship-ceremony.jpg",
