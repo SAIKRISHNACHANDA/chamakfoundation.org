@@ -63,12 +63,13 @@ jobs:
           slot-name: 'Production'
           package: .
 
-      - name: 'Explicitly restart Azure Web App'
+      - name: 'Disable Oryx build + restart'
         uses: azure/cli@v2
         with:
           azcliversion: latest
           inlineScript: |
             RG=$(az webapp list --query "[?name=='chamak-foundation'].resourceGroup | [0]" -o tsv)
             echo "Resource group: $RG"
+            az webapp config appsettings set --name chamak-foundation --resource-group "$RG" --settings SCM_DO_BUILD_DURING_DEPLOYMENT=false ENABLE_ORYX_BUILD=false WEBSITE_RUN_FROM_PACKAGE=0
             az webapp restart --name chamak-foundation --resource-group "$RG"
-            echo "Restart command issued."
+            echo "Settings applied and restart issued."
