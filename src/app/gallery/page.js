@@ -30,6 +30,7 @@ import {
 
 export default function GalleryPage() {
   const [eventsList, setEventsList] = useState(GALLERY_EVENTS);
+  const [uploadedPress, setUploadedPress] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All Updates");
   const [searchQuery, setSearchQuery] = useState("");
   const [lightbox, setLightbox] = useState(null); // { eventIndex, imageIndex }
@@ -51,7 +52,21 @@ export default function GalleryPage() {
         }
       })
       .catch((err) => console.warn("Using fallback gallery events", err));
+
+    fetch("/api/press?t=" + Date.now(), { cache: "no-store" })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && Array.isArray(data.data)) {
+          setUploadedPress(data.data);
+        }
+      })
+      .catch(() => {});
   }, []);
+
+  const pressList = useMemo(
+    () => [...uploadedPress, ...ALL_PRESS_CLIPPINGS],
+    [uploadedPress]
+  );
 
   // Filtered events
   const filteredEvents = useMemo(() => {
@@ -86,13 +101,13 @@ export default function GalleryPage() {
       if (e.key === "ArrowRight") {
         if (lightbox !== null) handleNextPhoto();
         if (pressModal !== null) {
-          setPressModal((prev) => (prev + 1) % ALL_PRESS_CLIPPINGS.length);
+          setPressModal((prev) => (prev + 1) % pressList.length);
         }
       }
       if (e.key === "ArrowLeft") {
         if (lightbox !== null) handlePrevPhoto();
         if (pressModal !== null) {
-          setPressModal((prev) => (prev - 1 + ALL_PRESS_CLIPPINGS.length) % ALL_PRESS_CLIPPINGS.length);
+          setPressModal((prev) => (prev - 1 + pressList.length) % pressList.length);
         }
       }
     };
@@ -109,14 +124,14 @@ export default function GalleryPage() {
     currentEvent && lightbox ? currentEvent.images[lightbox.imageIndex] : null;
 
   const recent2026Clippings = useMemo(
-    () => ALL_PRESS_CLIPPINGS.filter((c) => c.year === "2026"),
-    []
+    () => pressList.filter((c) => c.year === "2026"),
+    [pressList]
   );
   const groundworkClippings = useMemo(
-    () => ALL_PRESS_CLIPPINGS.filter((c) => c.year !== "2026"),
-    []
+    () => pressList.filter((c) => c.year !== "2026"),
+    [pressList]
   );
-  const currentPress = pressModal !== null ? ALL_PRESS_CLIPPINGS[pressModal] : null;
+  const currentPress = pressModal !== null ? pressList[pressModal] : null;
 
   const handleNextPhoto = () => {
     if (!lightbox || !currentEvent) return;
@@ -234,7 +249,7 @@ export default function GalleryPage() {
                   className="gallery-pill__count"
                   style={{ background: "var(--navy-900)", color: "var(--gold-400)" }}
                 >
-                  {ALL_PRESS_CLIPPINGS.length}
+                  {pressList.length}
                 </span>
               </a>
             </div>
@@ -563,7 +578,7 @@ export default function GalleryPage() {
             }}
           >
             {recent2026Clippings.map((clip) => {
-              const globalIndex = ALL_PRESS_CLIPPINGS.indexOf(clip);
+              const globalIndex = pressList.indexOf(clip);
               return (
                 <div
                   key={clip.id}
@@ -879,7 +894,7 @@ export default function GalleryPage() {
             }}
           >
             {groundworkClippings.map((clip) => {
-              const globalIndex = ALL_PRESS_CLIPPINGS.indexOf(clip);
+              const globalIndex = pressList.indexOf(clip);
               return (
                 <div
                   key={clip.id}
@@ -1447,14 +1462,14 @@ export default function GalleryPage() {
               className="gallery-lightbox__stage"
               style={{ maxHeight: "72vh", background: "#0c1524" }}
             >
-              {ALL_PRESS_CLIPPINGS.length > 1 && (
+              {pressList.length > 1 && (
                 <button
                   type="button"
                   onClick={() =>
                     setPressModal(
                       (prev) =>
-                        (prev - 1 + ALL_PRESS_CLIPPINGS.length) %
-                        ALL_PRESS_CLIPPINGS.length
+                        (prev - 1 + pressList.length) %
+                        pressList.length
                     )
                   }
                   className="gallery-lightbox__nav gallery-lightbox__nav--prev"
@@ -1479,11 +1494,11 @@ export default function GalleryPage() {
                 />
               </div>
 
-              {ALL_PRESS_CLIPPINGS.length > 1 && (
+              {pressList.length > 1 && (
                 <button
                   type="button"
                   onClick={() =>
-                    setPressModal((prev) => (prev + 1) % ALL_PRESS_CLIPPINGS.length)
+                    setPressModal((prev) => (prev + 1) % pressList.length)
                   }
                   className="gallery-lightbox__nav gallery-lightbox__nav--next"
                   title="Next Clipping (Right Arrow)"
@@ -1520,7 +1535,7 @@ export default function GalleryPage() {
                     Open Original Full-Res Image <ExternalLink size={12} />
                   </a>
                   <span className="gallery-lightbox__counter">
-                    Clipping {pressModal + 1} of {ALL_PRESS_CLIPPINGS.length}
+                    Clipping {pressModal + 1} of {pressList.length}
                   </span>
                 </div>
               </div>
