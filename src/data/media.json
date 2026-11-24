@@ -1,5 +1,29 @@
 [
   {
+    "id": "press-clipping-1",
+    "name": "SPOT NEWS - Civils Coaching at Jamia Millia (05 Apr 2026)",
+    "url": "/assets/img/press/press-jamia-civils-coaching-05apr2026.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2026-04-05T10:00:00.000Z"
+  },
+  {
+    "id": "press-clipping-2",
+    "name": "SPOT NEWS - Social Media Ban for Under-16 (08 Mar 2026)",
+    "url": "/assets/img/press/press-social-media-ban-08mar2026.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2026-03-08T10:00:00.000Z"
+  },
+  {
+    "id": "press-clipping-3",
+    "name": "SPOT NEWS - 20% Budget for Education (26 Feb 2026)",
+    "url": "/assets/img/press/press-education-budget-26feb2026.jpg",
+    "type": "image/jpeg",
+    "isPreset": true,
+    "uploadedAt": "2026-02-26T10:00:00.000Z"
+  },
+  {
     "id": "preset-1",
     "name": "Scholarship Ceremony",
     "url": "/assets/img/scholarship-ceremony.jpg",
@@ -56,4 +80,3 @@
     "uploadedAt": "2023-10-06T10:00:00.000Z"
   }
 ]
-

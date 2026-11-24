@@ -2618,6 +2618,22 @@ h1.hero__brand-title,
   margin: 0 auto 24px;
 }
 
+/* Press Clippings & Media Cards */
+.press-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.press-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(11, 27, 56, 0.12) !important;
+  border-color: rgba(201, 154, 58, 0.55) !important;
+}
+.press-card:hover .press-hover-overlay {
+  opacity: 1 !important;
+}
+.press-card:hover .press-clip-img {
+  transform: scale(1.03);
+}
+
 /* Responsive Media Queries */
 @media (max-width: 900px) {
   .grid-mosaic {

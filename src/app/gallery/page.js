@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { GALLERY_EVENTS, GALLERY_CATEGORIES } from "@/data/galleryEvents";
+import { FRESH_PRESS_CLIPPINGS, ARCHIVED_PRESS_HIGHLIGHTS } from "@/data/pressClippings";
 import {
   Calendar,
   MapPin,
@@ -32,6 +33,7 @@ export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("All Updates");
   const [searchQuery, setSearchQuery] = useState("");
   const [lightbox, setLightbox] = useState(null); // { eventIndex, imageIndex }
+  const [pressModal, setPressModal] = useState(null); // index in FRESH_PRESS_CLIPPINGS or null
 
   // Sync with live /api/gallery with real-time cache busting
   useEffect(() => {
@@ -73,17 +75,30 @@ export default function GalleryPage() {
     return eventsList.reduce((acc, ev) => acc + (ev.images?.length || 0), 0);
   }, [eventsList]);
 
-  // Keyboard navigation for lightbox
+  // Keyboard navigation for photo lightbox and press modal
   useEffect(() => {
-    if (!lightbox) return;
+    if (lightbox === null && pressModal === null) return;
     const handleKeyDown = (e) => {
-      if (e.key === "Escape") setLightbox(null);
-      if (e.key === "ArrowRight") handleNextPhoto();
-      if (e.key === "ArrowLeft") handlePrevPhoto();
+      if (e.key === "Escape") {
+        setLightbox(null);
+        setPressModal(null);
+      }
+      if (e.key === "ArrowRight") {
+        if (lightbox !== null) handleNextPhoto();
+        if (pressModal !== null) {
+          setPressModal((prev) => (prev + 1) % FRESH_PRESS_CLIPPINGS.length);
+        }
+      }
+      if (e.key === "ArrowLeft") {
+        if (lightbox !== null) handlePrevPhoto();
+        if (pressModal !== null) {
+          setPressModal((prev) => (prev - 1 + FRESH_PRESS_CLIPPINGS.length) % FRESH_PRESS_CLIPPINGS.length);
+        }
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightbox]);
+  }, [lightbox, pressModal]);
 
   const handleOpenPhoto = (eventIndex, imageIndex) => {
     setLightbox({ eventIndex, imageIndex });
@@ -92,6 +107,7 @@ export default function GalleryPage() {
   const currentEvent = lightbox ? filteredEvents[lightbox.eventIndex] : null;
   const currentPhoto =
     currentEvent && lightbox ? currentEvent.images[lightbox.imageIndex] : null;
+  const currentPress = pressModal !== null ? FRESH_PRESS_CLIPPINGS[pressModal] : null;
 
   const handleNextPhoto = () => {
     if (!lightbox || !currentEvent) return;
@@ -189,6 +205,29 @@ export default function GalleryPage() {
                   </button>
                 );
               })}
+              <a
+                href="#press"
+                className="gallery-pill"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  background: "rgba(201,154,58,0.14)",
+                  borderColor: "var(--gold-500)",
+                  color: "var(--navy-900)",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                }}
+              >
+                <Newspaper size={13} style={{ color: "var(--gold-600)" }} />
+                <span>Press Clippings</span>
+                <span
+                  className="gallery-pill__count"
+                  style={{ background: "var(--navy-900)", color: "var(--gold-400)" }}
+                >
+                  {FRESH_PRESS_CLIPPINGS.length}
+                </span>
+              </a>
             </div>
           </div>
 
@@ -455,173 +494,470 @@ export default function GalleryPage() {
         <div className="container">
           <div className="section-head section-head--center section-head--fit">
             <div className="eyebrow" style={{ justifyContent: "center" }}>
-              <Newspaper size={15} /> Press &amp; Media Highlights
+              <Newspaper size={15} /> Verified Press &amp; Media Highlights
             </div>
             <h2 className="hdg-oneline" style={{ fontSize: "clamp(1.5rem, 2.6vw, 2.2rem)", margin: "8px 0 12px" }}>
               Press Clippings &amp; Public Recognition
             </h2>
-            <p style={{ color: "var(--ink-400)", maxWidth: "62ch", margin: "0 auto", fontSize: "0.98rem" }}>
-              Coverage of Chamak Foundation&apos;s grassroots launches, library inaugurations, and scholarship drives across regional and national media.
+            <p style={{ color: "var(--ink-400)", maxWidth: "68ch", margin: "0 auto", fontSize: "0.98rem" }}>
+              Authentic newspaper coverage, educational policy appeals to the government, and higher education initiatives championed by Dr. Mohammad Azam Ali and Chamak Foundation.
             </p>
           </div>
 
-          <div className="grid grid--2" style={{ gap: "24px", marginTop: "36px" }}>
-            <div
-              className="card"
-              style={{
-                background: "#FFFFFF",
-                borderRadius: "18px",
-                padding: "36px 32px",
-                border: "1px solid rgba(201,154,58,0.25)",
-                boxShadow: "0 8px 24px rgba(11,27,56,0.04)",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px" }}>
-                  <span style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--gold-600)", background: "rgba(201,154,58,0.12)", padding: "4px 10px", borderRadius: "12px" }}>
-                    Foundation Launch
-                  </span>
-                  <span style={{ fontSize: "0.82rem", color: "var(--ink-400)", fontWeight: 600 }}>
-                    Namasthe Telangana · Oct 2023
-                  </span>
+          {/* Fresh 2026 Press Coverage Subheader */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: "12px",
+              marginTop: "40px",
+              marginBottom: "24px",
+              paddingBottom: "12px",
+              borderBottom: "1px solid rgba(201,154,58,0.25)",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  background: "var(--navy-900)",
+                  color: "var(--gold-400)",
+                  padding: "6px 14px",
+                  borderRadius: "999px",
+                  fontSize: "0.82rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.04em",
+                  textTransform: "uppercase",
+                }}
+              >
+                <Sparkles size={13} /> Fresh 2026 Coverage · SPOT NEWS
+              </span>
+              <span style={{ fontSize: "0.86rem", color: "var(--ink-400)", fontWeight: 500 }}>
+                {FRESH_PRESS_CLIPPINGS.length} Verified Newspaper Articles
+              </span>
+            </div>
+            <span style={{ fontSize: "0.82rem", color: "var(--gold-700)", fontWeight: 600 }}>
+              💡 Click any clipping to expand in high resolution
+            </span>
+          </div>
+
+          {/* 3-Column Responsive Grid for Fresh 2026 Clippings */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "26px",
+            }}
+          >
+            {FRESH_PRESS_CLIPPINGS.map((clip, index) => (
+              <div
+                key={clip.id}
+                className="card press-card"
+                style={{
+                  background: "#FFFFFF",
+                  borderRadius: "18px",
+                  overflow: "hidden",
+                  border: "1px solid rgba(201,154,58,0.28)",
+                  boxShadow: "0 8px 24px rgba(11,27,56,0.06)",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                }}
+              >
+                {/* Clipping Image Stage with Click to Expand */}
+                <div
+                  style={{
+                    position: "relative",
+                    height: "360px",
+                    background: "#0c1524",
+                    cursor: "pointer",
+                    overflow: "hidden",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  onClick={() => setPressModal(index)}
+                  title="Click to view full newspaper clipping"
+                >
+                  <Image
+                    src={clip.image}
+                    alt={clip.alt}
+                    width={720}
+                    height={1024}
+                    unoptimized
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      transition: "transform 0.35s ease",
+                    }}
+                    className="press-clip-img"
+                  />
+                  {/* Top Badges */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "12px",
+                      left: "12px",
+                      zIndex: 2,
+                    }}
+                  >
+                    <span
+                      style={{
+                        background: "rgba(11,27,56,0.85)",
+                        backdropFilter: "blur(6px)",
+                        color: "#FFFFFF",
+                        fontSize: "0.74rem",
+                        fontWeight: 700,
+                        padding: "5px 11px",
+                        borderRadius: "8px",
+                        border: "1px solid rgba(255,255,255,0.2)",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Calendar size={12} /> {clip.source} · {clip.dateFormatted}
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "12px",
+                      right: "12px",
+                      zIndex: 2,
+                    }}
+                  >
+                    <span
+                      style={{
+                        background: "var(--gold-500)",
+                        color: "var(--navy-950)",
+                        fontSize: "0.72rem",
+                        fontWeight: 800,
+                        padding: "5px 10px",
+                        borderRadius: "8px",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.04em",
+                      }}
+                    >
+                      {clip.badge}
+                    </span>
+                  </div>
+
+                  {/* Hover Overlay */}
+                  <div
+                    className="press-hover-overlay"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "rgba(11,27,56,0.45)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      opacity: 0,
+                      transition: "opacity 0.2s ease",
+                      zIndex: 3,
+                    }}
+                  >
+                    <span
+                      style={{
+                        background: "rgba(255,255,255,0.96)",
+                        color: "var(--navy-900)",
+                        fontWeight: 700,
+                        fontSize: "0.85rem",
+                        padding: "8px 16px",
+                        borderRadius: "999px",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "6px",
+                        boxShadow: "0 6px 16px rgba(0,0,0,0.2)",
+                      }}
+                    >
+                      <Maximize2 size={14} /> Tap to Expand Clipping
+                    </span>
+                  </div>
                 </div>
-                <h3 style={{ fontSize: "1.25rem", color: "var(--navy-900)", marginBottom: "12px", fontFamily: "var(--serif)", lineHeight: 1.35 }}>
-                  Chamak Foundation Unveiled in Hyderabad by Prof. Shantha Sinha
-                </h3>
-                <p style={{ fontSize: "0.92rem", color: "var(--ink-500)", lineHeight: 1.65, margin: 0 }}>
-                  Ramon Magsaysay Awardee and prominent child rights crusader Prof. Shantha Sinha formally launched Chamak Foundation (Chamak Padhai Se) founded by Dr. Mohammad Azam Ali, commending the mission to transform underprivileged youth through quality education and scholarships.
-                </p>
+
+                {/* Content Details */}
+                <div
+                  style={{
+                    padding: "24px 22px 20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    flexGrow: 1,
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <div>
+                    {/* Telugu Original Headline */}
+                    <h3
+                      style={{
+                        fontSize: "1.18rem",
+                        fontWeight: 700,
+                        color: "var(--navy-900)",
+                        lineHeight: 1.4,
+                        marginBottom: "8px",
+                      }}
+                    >
+                      {clip.titleTelugu}
+                    </h3>
+                    {/* English Translated Headline */}
+                    <div
+                      style={{
+                        fontSize: "0.94rem",
+                        fontWeight: 600,
+                        color: "var(--gold-700)",
+                        lineHeight: 1.4,
+                        marginBottom: "12px",
+                      }}
+                    >
+                      {clip.titleEnglish}
+                    </div>
+                    {/* Speaker Badge */}
+                    <div
+                      style={{
+                        fontSize: "0.8rem",
+                        color: "var(--ink-400)",
+                        fontWeight: 600,
+                        marginBottom: "12px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: "7px",
+                          height: "7px",
+                          borderRadius: "50%",
+                          background: "var(--gold-500)",
+                          display: "inline-block",
+                        }}
+                      />
+                      {clip.speaker}
+                    </div>
+                    {/* English Summary */}
+                    <p
+                      style={{
+                        fontSize: "0.88rem",
+                        color: "var(--ink-500)",
+                        lineHeight: 1.62,
+                        margin: 0,
+                      }}
+                    >
+                      {clip.summaryEnglish}
+                    </p>
+
+                    {/* Highlights List */}
+                    {clip.highlights && (
+                      <ul
+                        style={{
+                          margin: "14px 0 0",
+                          paddingLeft: "18px",
+                          fontSize: "0.82rem",
+                          color: "var(--ink-600)",
+                          lineHeight: 1.55,
+                        }}
+                      >
+                        {clip.highlights.map((h, hIdx) => (
+                          <li key={hIdx} style={{ marginBottom: "5px" }}>
+                            {h}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+
+                  {/* Card Actions Footer */}
+                  <div
+                    style={{
+                      marginTop: "22px",
+                      paddingTop: "14px",
+                      borderTop: "1px solid rgba(11,27,56,0.08)",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "10px",
+                    }}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setPressModal(index)}
+                      className="btn btn-gold btn-sm"
+                      style={{ width: "100%", justifyContent: "center", gap: "6px" }}
+                    >
+                      <Maximize2 size={14} /> Read Full Newspaper Clipping
+                    </button>
+                    {clip.portalUrl && (
+                      <a
+                        href={clip.portalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: "0.8rem",
+                          color: "var(--navy-800)",
+                          textAlign: "center",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: "4px",
+                          fontWeight: 600,
+                          textDecoration: "underline",
+                        }}
+                      >
+                        {clip.portalLabel} <ExternalLink size={12} />
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-              <div style={{ marginTop: "20px", paddingTop: "14px", borderTop: "1px solid rgba(11,27,56,0.06)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <span style={{ fontSize: "0.78rem", color: "var(--navy-900)", fontWeight: 700 }}>Inaugural Press Coverage</span>
-                <span style={{ fontSize: "0.8rem", color: "var(--gold-600)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                  Archived Daily <ExternalLink size={12} />
-                </span>
-              </div>
+            ))}
+          </div>
+
+          {/* Archived Milestones Section */}
+          <div style={{ marginTop: "54px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "22px" }}>
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  background: "rgba(201,154,58,0.12)",
+                  color: "var(--gold-700)",
+                  padding: "5px 12px",
+                  borderRadius: "999px",
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                Archived Features
+              </span>
+              <h3 style={{ fontSize: "1.25rem", color: "var(--navy-900)", margin: 0, fontWeight: 700 }}>
+                Foundation Milestones &amp; Historic Press Mentions (2023 – 2024)
+              </h3>
             </div>
 
-            <div
-              className="card"
-              style={{
-                background: "#FFFFFF",
-                borderRadius: "18px",
-                padding: "36px 32px",
-                border: "1px solid rgba(201,154,58,0.25)",
-                boxShadow: "0 8px 24px rgba(11,27,56,0.04)",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px" }}>
-                  <span style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--gold-600)", background: "rgba(201,154,58,0.12)", padding: "4px 10px", borderRadius: "12px" }}>
-                    Library Initiative
-                  </span>
-                  <span style={{ fontSize: "0.82rem", color: "var(--ink-400)", fontWeight: 600 }}>
-                    The Hans India · March 2024
-                  </span>
+            <div className="grid grid--2" style={{ gap: "24px" }}>
+              {ARCHIVED_PRESS_HIGHLIGHTS.map((item) => (
+                <div
+                  key={item.id}
+                  className="card"
+                  style={{
+                    background: "#FFFFFF",
+                    borderRadius: "18px",
+                    padding: "32px 28px",
+                    border: "1px solid rgba(201,154,58,0.22)",
+                    boxShadow: "0 6px 20px rgba(11,27,56,0.04)",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginBottom: "12px",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: "0.75rem",
+                          fontWeight: 700,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.06em",
+                          color: "var(--gold-600)",
+                          background: "rgba(201,154,58,0.12)",
+                          padding: "4px 10px",
+                          borderRadius: "12px",
+                        }}
+                      >
+                        {item.category}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: "0.82rem",
+                          color: "var(--ink-400)",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {item.outlet}
+                      </span>
+                    </div>
+                    <h4
+                      style={{
+                        fontSize: "1.18rem",
+                        color: "var(--navy-900)",
+                        marginBottom: "10px",
+                        fontFamily: "var(--serif)",
+                        lineHeight: 1.35,
+                      }}
+                    >
+                      {item.title}
+                    </h4>
+                    <p
+                      style={{
+                        fontSize: "0.91rem",
+                        color: "var(--ink-500)",
+                        lineHeight: 1.62,
+                        margin: 0,
+                      }}
+                    >
+                      {item.description}
+                    </p>
+                  </div>
+                  <div
+                    style={{
+                      marginTop: "18px",
+                      paddingTop: "12px",
+                      borderTop: "1px solid rgba(11,27,56,0.06)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.78rem",
+                        color: "var(--navy-900)",
+                        fontWeight: 700,
+                      }}
+                    >
+                      {item.meta}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: "0.8rem",
+                        color: "var(--gold-600)",
+                        fontWeight: 600,
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "4px",
+                      }}
+                    >
+                      Archived Daily <ExternalLink size={12} />
+                    </span>
+                  </div>
                 </div>
-                <h3 style={{ fontSize: "1.25rem", color: "var(--navy-900)", marginBottom: "12px", fontFamily: "var(--serif)", lineHeight: 1.35 }}>
-                  Rural Community Library Inaugurated at Rangapoor, Huzurabad
-                </h3>
-                <p style={{ fontSize: "0.92rem", color: "var(--ink-500)", lineHeight: 1.65, margin: 0 }}>
-                  A transformative community library housing over 1,000 foundational, school, and competitive examination books was dedicated to rural youth and students in Rangapoor village (Karimnagar dist) by Chamak Foundation in collaboration with local community leaders.
-                </p>
-              </div>
-              <div style={{ marginTop: "20px", paddingTop: "14px", borderTop: "1px solid rgba(11,27,56,0.06)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <span style={{ fontSize: "0.78rem", color: "var(--navy-900)", fontWeight: 700 }}>Knowledge Access Movement</span>
-                <span style={{ fontSize: "0.8rem", color: "var(--gold-600)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                  Archived Daily <ExternalLink size={12} />
-                </span>
-              </div>
-            </div>
-
-            <div
-              className="card"
-              style={{
-                background: "#FFFFFF",
-                borderRadius: "18px",
-                padding: "36px 32px",
-                border: "1px solid rgba(201,154,58,0.25)",
-                boxShadow: "0 8px 24px rgba(11,27,56,0.04)",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px" }}>
-                  <span style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--gold-600)", background: "rgba(201,154,58,0.12)", padding: "4px 10px", borderRadius: "12px" }}>
-                    Scholarship Drive
-                  </span>
-                  <span style={{ fontSize: "0.82rem", color: "var(--ink-400)", fontWeight: 600 }}>
-                    Eenadu Daily · July 2024
-                  </span>
-                </div>
-                <h3 style={{ fontSize: "1.25rem", color: "var(--navy-900)", marginBottom: "12px", fontFamily: "var(--serif)", lineHeight: 1.35 }}>
-                  Annual Aid &amp; School Supply Distribution to Over 120 Meritorious Students
-                </h3>
-                <p style={{ fontSize: "0.92rem", color: "var(--ink-500)", lineHeight: 1.65, margin: 0 }}>
-                  Spotlighting the foundation&apos;s annual sponsorship drive in Hyderabad, delivering academic fees, uniforms, textbooks, and essential backpacks to economically disadvantaged students with stellar academic records.
-                </p>
-              </div>
-              <div style={{ marginTop: "20px", paddingTop: "14px", borderTop: "1px solid rgba(11,27,56,0.06)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <span style={{ fontSize: "0.78rem", color: "var(--navy-900)", fontWeight: 700 }}>Direct Student Aid</span>
-                <span style={{ fontSize: "0.8rem", color: "var(--gold-600)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                  Archived Daily <ExternalLink size={12} />
-                </span>
-              </div>
-            </div>
-
-            <div
-              className="card"
-              style={{
-                background: "#FFFFFF",
-                borderRadius: "18px",
-                padding: "36px 32px",
-                border: "1px solid rgba(201,154,58,0.25)",
-                boxShadow: "0 8px 24px rgba(11,27,56,0.04)",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px" }}>
-                  <span style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--gold-600)", background: "rgba(201,154,58,0.12)", padding: "4px 10px", borderRadius: "12px" }}>
-                    Career Guidance
-                  </span>
-                  <span style={{ fontSize: "0.82rem", color: "var(--ink-400)", fontWeight: 600 }}>
-                    Vaartha News · Sept 2024
-                  </span>
-                </div>
-                <h3 style={{ fontSize: "1.25rem", color: "var(--navy-900)", marginBottom: "12px", fontFamily: "var(--serif)", lineHeight: 1.35 }}>
-                  Over 70 Career Guidance &amp; Civil Services Sessions Across Telangana
-                </h3>
-                <p style={{ fontSize: "0.92rem", color: "var(--ink-500)", lineHeight: 1.65, margin: 0 }}>
-                  Detailed report on the foundation&apos;s wide-ranging career roadmaps conducted across government junior colleges and high schools, helping youth understand competitive examinations and higher education options.
-                </p>
-              </div>
-              <div style={{ marginTop: "20px", paddingTop: "14px", borderTop: "1px solid rgba(11,27,56,0.06)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <span style={{ fontSize: "0.78rem", color: "var(--navy-900)", fontWeight: 700 }}>Mentorship &amp; Counseling</span>
-                <span style={{ fontSize: "0.8rem", color: "var(--gold-600)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                  Archived Daily <ExternalLink size={12} />
-                </span>
-              </div>
+              ))}
             </div>
           </div>
 
           {/* Media Contact Strip */}
           <div
             style={{
-              marginTop: "36px",
+              marginTop: "40px",
               padding: "24px 30px",
               borderRadius: "16px",
-              background: "linear-gradient(135deg, var(--navy-900) 0%, var(--navy-950) 100%)",
+              background:
+                "linear-gradient(135deg, var(--navy-900) 0%, var(--navy-950) 100%)",
               color: "var(--cream-100)",
               display: "flex",
               flexWrap: "wrap",
@@ -632,14 +968,32 @@ export default function GalleryPage() {
             }}
           >
             <div>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--gold-400)", fontWeight: 700, fontSize: "0.82rem", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "4px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  color: "var(--gold-400)",
+                  fontWeight: 700,
+                  fontSize: "0.82rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  marginBottom: "4px",
+                }}
+              >
                 <FileText size={15} /> Media &amp; Journalist Inquiries
               </div>
-              <p style={{ margin: 0, fontSize: "0.92rem", color: "rgba(250,247,239,0.85)" }}>
-                For press releases, high-resolution media photos, or interviews with Dr. Mohammad Azam Ali, contact our media desk.
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: "0.92rem",
+                  color: "rgba(250,247,239,0.85)",
+                }}
+              >
+                For official press releases, high-resolution media photos, or interview requests with Dr. Mohammad Azam Ali, contact our media desk.
               </p>
             </div>
-            <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+            <div style={{ display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
               <a
                 href="mailto:chamakfoundation23@gmail.com?subject=Press%20Inquiry%20-%20Chamak%20Foundation"
                 className="btn btn-outline-cream btn-sm"
@@ -727,6 +1081,122 @@ export default function GalleryPage() {
                 <span className="gallery-lightbox__counter">
                   Photo {lightbox.imageIndex + 1} of {currentEvent.images.length}
                 </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Fullscreen Press Clipping Modal */}
+      {pressModal !== null && currentPress && (
+        <div className="gallery-lightbox" onClick={() => setPressModal(null)}>
+          <div
+            className="gallery-lightbox__dialog"
+            style={{ maxWidth: "860px" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Lightbox Header */}
+            <div className="gallery-lightbox__header">
+              <div>
+                <span className="gallery-lightbox__badge">
+                  {currentPress.source} · {currentPress.dateFormatted} · {currentPress.badge}
+                </span>
+                <h4 className="gallery-lightbox__title">{currentPress.titleTelugu}</h4>
+                <div style={{ fontSize: "0.88rem", color: "var(--gold-300)", marginTop: "4px", fontWeight: 600 }}>
+                  {currentPress.titleEnglish}
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setPressModal(null)}
+                className="gallery-lightbox__close"
+                title="Close (Esc)"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Lightbox Image Stage */}
+            <div
+              className="gallery-lightbox__stage"
+              style={{ maxHeight: "72vh", background: "#0c1524" }}
+            >
+              {FRESH_PRESS_CLIPPINGS.length > 1 && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    setPressModal(
+                      (prev) =>
+                        (prev - 1 + FRESH_PRESS_CLIPPINGS.length) %
+                        FRESH_PRESS_CLIPPINGS.length
+                    )
+                  }
+                  className="gallery-lightbox__nav gallery-lightbox__nav--prev"
+                  title="Previous Clipping (Left Arrow)"
+                >
+                  <ChevronLeft size={28} />
+                </button>
+              )}
+
+              <div
+                className="gallery-lightbox__image-wrapper"
+                style={{ maxHeight: "72vh", padding: "16px" }}
+              >
+                <Image
+                  src={currentPress.image}
+                  alt={currentPress.alt}
+                  width={750}
+                  height={1080}
+                  unoptimized
+                  className="gallery-lightbox__img"
+                  style={{ maxHeight: "68vh", objectFit: "contain" }}
+                />
+              </div>
+
+              {FRESH_PRESS_CLIPPINGS.length > 1 && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    setPressModal((prev) => (prev + 1) % FRESH_PRESS_CLIPPINGS.length)
+                  }
+                  className="gallery-lightbox__nav gallery-lightbox__nav--next"
+                  title="Next Clipping (Right Arrow)"
+                >
+                  <ChevronRight size={28} />
+                </button>
+              )}
+            </div>
+
+            {/* Lightbox Footer */}
+            <div className="gallery-lightbox__footer">
+              <p className="gallery-lightbox__caption" style={{ marginBottom: "8px" }}>
+                {currentPress.summaryEnglish}
+              </p>
+              <div className="gallery-lightbox__meta" style={{ flexWrap: "wrap", gap: "10px" }}>
+                <span className="gallery-lightbox__location">
+                  <Newspaper size={13} /> {currentPress.source} · {currentPress.dateFormatted} · {currentPress.speaker}
+                </span>
+                <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                  <a
+                    href={currentPress.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      fontSize: "0.82rem",
+                      color: "var(--gold-400)",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "4px",
+                      textDecoration: "underline",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Open Original Full-Res Image <ExternalLink size={12} />
+                  </a>
+                  <span className="gallery-lightbox__counter">
+                    Clipping {pressModal + 1} of {FRESH_PRESS_CLIPPINGS.length}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
