@@ -47,7 +47,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -62,4 +62,13 @@ jobs:
           app-name: 'chamak-foundation'
           slot-name: 'Production'
           package: .
-          
+
+      - name: 'Explicitly restart Azure Web App'
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            RG=$(az webapp list --query "[?name=='chamak-foundation'].resourceGroup | [0]" -o tsv)
+            echo "Resource group: $RG"
+            az webapp restart --name chamak-foundation --resource-group "$RG"
+            echo "Restart command issued."
