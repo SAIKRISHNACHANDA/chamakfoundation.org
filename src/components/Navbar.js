@@ -31,7 +31,7 @@ const NAV_ITEMS = [
     href: "/gallery",
     children: [
       { label: "Photos", href: "/gallery" },
-      { label: "Press Clippings", href: "/gallery#press" },
+      { label: "Press Clippings", href: "/press" },
     ],
   },
   { label: "Testimonials", href: "/testimonials" },
