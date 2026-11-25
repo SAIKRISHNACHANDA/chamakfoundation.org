@@ -60,8 +60,8 @@ export default function PressPage() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-                gap: "18px",
+                gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))",
+                gap: "22px",
               }}
             >
               {items.map((p, i) => (

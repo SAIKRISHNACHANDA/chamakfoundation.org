@@ -74,8 +74,8 @@ export default function GalleryPage() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-                gap: "16px",
+                gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))",
+                gap: "22px",
               }}
             >
               {photos.map((p, i) => (
