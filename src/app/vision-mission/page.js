@@ -16,7 +16,7 @@ import {
 export const metadata = {
   title: "Our Vision & Mission · Chamak Foundation",
   description:
-    "Our Vision is to build an inclusive and educated India where every underprivileged child has access to quality education, equal opportunities, and the confidence to shine in life.",
+    "Our Vision is to build an educated, inclusive, and empowered society where every underprivileged child has access to quality education and equal opportunities.",
 };
 
 export default function VisionMissionPage() {
@@ -43,19 +43,26 @@ export default function VisionMissionPage() {
               </div>
 
               <div className="pillar-card__eyebrow">Our Vision</div>
-              <h2 className="pillar-card__title" style={{ fontSize: "clamp(1.35rem, 1.9vw, 1.65rem)", lineHeight: 1.5, color: "var(--navy-900)", fontWeight: 700 }}>
-                To build an inclusive and educated India where every underprivileged child has access to quality education, equal opportunities, and the confidence to shine in life with dignity and self-reliance.
-              </h2>
-
-              <p style={{ color: "var(--ink-600)", lineHeight: 1.75, fontSize: "1rem", margin: "16px 0 24px" }}>
-                We believe that education is the ultimate catalyst for human dignity and social justice. When an underprivileged child receives equal access to knowledge, the barrier of generational poverty is shattered forever.
-              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "16px" }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "1.02rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
+                  <CheckCircle2 size={20} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
+                  <span>To build an educated, inclusive, and empowered society where every underprivileged child has access to quality education and equal opportunities.</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "1.02rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
+                  <CheckCircle2 size={20} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
+                  <span>To break the cycle of generational poverty through education, knowledge, and social awareness.</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "1.02rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
+                  <CheckCircle2 size={20} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
+                  <span>To nurture confident, responsible, and self-reliant individuals who contribute to a just and progressive India.</span>
+                </li>
+              </ul>
 
               <div className="pillar-card__footer" style={{ marginTop: "auto" }}>
-                <span className="pillar-tag"><span className="dot" /> Inclusive India</span>
+                <span className="pillar-tag"><span className="dot" /> Inclusive Society</span>
                 <span className="pillar-tag"><span className="dot" /> Quality Education</span>
                 <span className="pillar-tag"><span className="dot" /> Equal Opportunities</span>
-                <span className="pillar-tag"><span className="dot" /> Dignity &amp; Self-Reliance</span>
+                <span className="pillar-tag"><span className="dot" /> Self-Reliance</span>
               </div>
             </div>
 
@@ -74,27 +81,23 @@ export default function VisionMissionPage() {
               <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: "16px" }}>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "1.02rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
                   <CheckCircle2 size={20} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
-                  <span>To empower marginalized and disadvantaged students through education.</span>
+                  <span>To empower underprivileged and marginalized children through quality education, mentoring, and guidance.</span>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "1.02rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
                   <CheckCircle2 size={20} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
-                  <span>To promote equitable access to primary, secondary, and higher education.</span>
+                  <span>To promote equitable access to education, life skills development, career guidance, and holistic learning opportunities among rural, tribal, and minority communities.</span>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "1.02rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
                   <CheckCircle2 size={20} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
-                  <span>To create awareness about the transformative power of education in rural, tribal, and minority communities.</span>
-                </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: "12px", fontSize: "1.02rem", color: "var(--ink-700)", lineHeight: 1.6 }}>
-                  <CheckCircle2 size={20} style={{ color: "var(--gold-600)", flexShrink: 0, marginTop: "3px" }} />
-                  <span>To nurture socially responsible, skilled, and value-driven citizens for nation-building.</span>
+                  <span>To create an inclusive and equitable society by nurturing knowledgeable, skilled, confident, and socially responsible citizens.</span>
                 </li>
               </ul>
 
               <div className="pillar-card__footer" style={{ marginTop: "auto" }}>
-                <span className="pillar-tag"><span className="dot" /> Marginalized Students</span>
+                <span className="pillar-tag"><span className="dot" /> Mentoring &amp; Guidance</span>
                 <span className="pillar-tag"><span className="dot" /> Equitable Access</span>
-                <span className="pillar-tag"><span className="dot" /> Community Awareness</span>
-                <span className="pillar-tag"><span className="dot" /> Nation Building</span>
+                <span className="pillar-tag"><span className="dot" /> Life Skills</span>
+                <span className="pillar-tag"><span className="dot" /> Responsible Citizens</span>
               </div>
             </div>
           </div>
