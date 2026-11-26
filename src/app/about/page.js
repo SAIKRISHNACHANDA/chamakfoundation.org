@@ -308,18 +308,6 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Navigation Actions */}
-              <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", paddingTop: "20px", borderTop: "1px solid rgba(11,27,56,0.1)" }}>
-                <Link href="/vision-mission" className="btn btn-navy">
-                  Our Vision &amp; Mission <ArrowRight size={14} style={{ marginLeft: "4px" }} />
-                </Link>
-                <Link href="/programmes" className="btn btn-outline-navy">
-                  Our Programmes
-                </Link>
-                <Link href="/get-involved" className="btn btn-gold">
-                  Support Our Mission
-                </Link>
-              </div>
             </div>
           </div>
         </div>

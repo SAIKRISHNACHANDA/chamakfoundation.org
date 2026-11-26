@@ -168,7 +168,6 @@ export default function SustainableDevelopmentGoalsPage() {
               <div className="sdg-chain-link-icon-wrap sdg-chain-link-icon-wrap--gold-pink">
                 <Link2 size={22} strokeWidth={2.4} />
               </div>
-              <div className="sdg-chain-pill">Catalyzes ➔</div>
             </div>
 
             {/* CARD 2: SDG #5 - GENDER EQUALITY (CHAIN LINK 02: CATALYST) */}
@@ -280,7 +279,6 @@ export default function SustainableDevelopmentGoalsPage() {
               <div className="sdg-chain-link-icon-wrap sdg-chain-link-icon-wrap--pink-purple">
                 <Link2 size={22} strokeWidth={2.4} />
               </div>
-              <div className="sdg-chain-pill">Dismantles ➔</div>
             </div>
 
             {/* CARD 3: SDG #10 - REDUCED INEQUALITIES (CHAIN LINK 03: OUTCOME) */}
@@ -388,15 +386,6 @@ export default function SustainableDevelopmentGoalsPage() {
             </div>
           </div>
 
-          {/* Action CTAs */}
-          <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap", marginTop: "48px" }}>
-            <Link href="/get-involved" className="btn btn-gold" style={{ padding: "14px 34px", fontSize: "0.95rem" }}>
-              Support Our Mission <ArrowRight size={15} style={{ marginLeft: "4px" }} />
-            </Link>
-            <Link href="/programmes" className="btn btn-outline-navy" style={{ padding: "14px 28px", fontSize: "0.95rem" }}>
-              Explore Programmes
-            </Link>
-          </div>
         </div>
       </section>
     </>
