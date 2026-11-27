@@ -171,8 +171,8 @@ export default function ProgrammesPage() {
                 <path d="M4 6c2-1.2 5-1.6 8 0 3-1.6 6-1.2 8 0v12c-2-1.2-5-1.6-8 0-3-1.6-6-1.2-8 0V6z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
               </svg>
             </div>
-            <p>&ldquo;Education is the most powerful weapon which you can use to change the world.&rdquo;</p>
-            <cite>&mdash; Nelson Mandela</cite>
+            <p>&ldquo;One child, one teacher, one book, and one pen can change the world.&rdquo;</p>
+            <cite>&mdash; Malala Yousafzai</cite>
           </div>
         </div>
       </section>
