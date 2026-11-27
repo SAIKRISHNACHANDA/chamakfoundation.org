@@ -19,8 +19,7 @@ import {
   GraduationCap,
   BookOpenCheck,
   Briefcase,
-  Award,
-  MessageCircle
+  Award
 } from "lucide-react";
 
 export default function GetInvolvedPage() {
@@ -560,54 +559,6 @@ export default function GetInvolvedPage() {
               <p style={{ fontSize: "0.88rem", color: "var(--ink-500)", lineHeight: 1.6, margin: 0 }}>
                 Train frontline government and rural school teachers in contemporary pedagogy, classroom tech tools, and joyful learning techniques.
               </p>
-            </div>
-          </div>
-
-          {/* Express Interest Banner */}
-          <div
-            style={{
-              marginTop: "36px",
-              padding: "32px 36px",
-              borderRadius: "18px",
-              background: "linear-gradient(135deg, var(--navy-900) 0%, var(--navy-950) 100%)",
-              color: "var(--cream-100)",
-              display: "flex",
-              flexWrap: "wrap",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "24px",
-              border: "1px solid rgba(201,154,58,0.3)",
-              boxShadow: "0 14px 34px rgba(11,27,56,0.12)",
-            }}
-          >
-            <div style={{ maxWidth: "620px" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "var(--gold-400)", fontWeight: 700, fontSize: "0.82rem", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "6px" }}>
-                <Briefcase size={14} /> Join Our Distinguished Resource Network
-              </div>
-              <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.5rem", color: "var(--cream-100)", margin: "0 0 8px" }}>
-                Deliver a Session or Mentor a Student Cohort
-              </h3>
-              <p style={{ margin: 0, fontSize: "0.93rem", color: "rgba(250,247,239,0.8)", lineHeight: 1.6 }}>
-                Whether you can spare a single Saturday masterclass or want to join as an ongoing subject advisor, our academic council will align with your schedule and subject expertise.
-              </p>
-            </div>
-
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <a
-                href="https://wa.me/919491638052?text=Hello%20Chamak%20Foundation,%20I%20would%20like%20to%20contribute%20as%20a%20Resource%20Person%20/%20Guest%20Speaker."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-gold"
-                style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
-              >
-                <MessageCircle size={16} /> Connect via WhatsApp
-              </a>
-              <a
-                href="mailto:chamakfoundation23@gmail.com?subject=Expression%20of%20Interest%20-%20Resource%20Person"
-                className="btn btn-outline-cream"
-              >
-                Email CV / Bio
-              </a>
             </div>
           </div>
         </div>
