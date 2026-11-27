@@ -1,9 +1,7 @@
 import PageHero from "@/components/PageHero";
 import {
-  Sparkles,
   Eye,
   Target,
-  Compass,
   CheckCircle2,
 } from "lucide-react";
 
@@ -31,9 +29,6 @@ export default function VisionMissionPage() {
                 <div className="pillar-card__icon">
                   <Eye size={28} strokeWidth={1.8} />
                 </div>
-                <span className="pillar-badge pillar-badge--gold">
-                  <Sparkles size={13} /> The North Star
-                </span>
               </div>
 
               <div className="pillar-card__eyebrow">Our Vision</div>
@@ -60,9 +55,6 @@ export default function VisionMissionPage() {
                 <div className="pillar-card__icon">
                   <Target size={28} strokeWidth={1.8} />
                 </div>
-                <span className="pillar-badge pillar-badge--navy">
-                  <Compass size={13} /> The Action Blueprint
-                </span>
               </div>
 
               <div className="pillar-card__eyebrow">Our Mission</div>
