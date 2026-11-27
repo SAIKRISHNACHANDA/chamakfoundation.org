@@ -179,6 +179,19 @@ export default function VisionMissionPage() {
           </div>
         </div>
       </section>
+
+      {/* Inspirational Quote inside an Elegant Box */}
+      <section className="section section--navy quote-section">
+        <div className="container">
+          <div className="quote-box">
+            <span className="quote-box__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote className="quote-box__text">
+              Education is the most powerful weapon which you can use to change the world.
+            </blockquote>
+            <cite className="quote-box__author">&mdash; Nelson Mandela</cite>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -151,9 +151,9 @@ export default function HomePage() {
           <div className="quote-box">
             <span className="quote-box__mark" aria-hidden="true">&ldquo;</span>
             <blockquote className="quote-box__text">
-              Education is the most powerful weapon which you can use to change the world.
+              Chamak Padhaai Se
             </blockquote>
-            <cite className="quote-box__author">&mdash; Nelson Mandela</cite>
+            <cite className="quote-box__author">&mdash; Dr. Mohammad Azam Ali</cite>
           </div>
         </div>
       </section>
