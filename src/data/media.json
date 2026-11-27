@@ -1,5 +1,615 @@
 [
   {
+    "id": "med_1795792227934_xssuu",
+    "name": "25.jpg",
+    "filename": "1795792227917-25.jpg",
+    "url": "/api/uploads/1795792227917-25.jpg",
+    "size": 834196,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.934Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227917_trysb",
+    "name": "24.jpg",
+    "filename": "1795792227905-24.jpg",
+    "url": "/api/uploads/1795792227905-24.jpg",
+    "size": 150507,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.917Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227904_83hwk",
+    "name": "23.jpg",
+    "filename": "1795792227890-23.jpg",
+    "url": "/api/uploads/1795792227890-23.jpg",
+    "size": 179257,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.905Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227890_2i59y",
+    "name": "22.jpg",
+    "filename": "1795792227876-22.jpg",
+    "url": "/api/uploads/1795792227876-22.jpg",
+    "size": 136630,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.890Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227876_g7315",
+    "name": "21.jpg",
+    "filename": "1795792227844-21.jpg",
+    "url": "/api/uploads/1795792227844-21.jpg",
+    "size": 211038,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.876Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227844_k4goc",
+    "name": "20.jpeg",
+    "filename": "1795792227738-20.jpeg",
+    "url": "/api/uploads/1795792227738-20.jpeg",
+    "size": 168262,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.844Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227738_tanm4",
+    "name": "19.jpeg",
+    "filename": "1795792227724-19.jpeg",
+    "url": "/api/uploads/1795792227724-19.jpeg",
+    "size": 235751,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.738Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227724_nyo63",
+    "name": "18A.jpeg",
+    "filename": "1795792227708-18a.jpeg",
+    "url": "/api/uploads/1795792227708-18a.jpeg",
+    "size": 192493,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.724Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227708_znntr",
+    "name": "18.jpeg",
+    "filename": "1795792227693-18.jpeg",
+    "url": "/api/uploads/1795792227693-18.jpeg",
+    "size": 157164,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.708Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227693_6dzsh",
+    "name": "17.jpeg",
+    "filename": "1795792227668-17.jpeg",
+    "url": "/api/uploads/1795792227668-17.jpeg",
+    "size": 167365,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.693Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227668_tr6wz",
+    "name": "16.jpg",
+    "filename": "1795792227654-16.jpg",
+    "url": "/api/uploads/1795792227654-16.jpg",
+    "size": 81256,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.668Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227654_hhzlz",
+    "name": "15.jpg",
+    "filename": "1795792227640-15.jpg",
+    "url": "/api/uploads/1795792227640-15.jpg",
+    "size": 112782,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.654Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227640_o8tj6",
+    "name": "14.jpg",
+    "filename": "1795792227620-14.jpg",
+    "url": "/api/uploads/1795792227620-14.jpg",
+    "size": 86769,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.640Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227620_9vrz8",
+    "name": "13.jpeg",
+    "filename": "1795792227607-13.jpeg",
+    "url": "/api/uploads/1795792227607-13.jpeg",
+    "size": 162296,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.620Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227606_8hpxh",
+    "name": "11.jpeg",
+    "filename": "1795792227583-11.jpeg",
+    "url": "/api/uploads/1795792227583-11.jpeg",
+    "size": 139761,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.607Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227583_lvnqc",
+    "name": "10.jpeg",
+    "filename": "1795792227570-10.jpeg",
+    "url": "/api/uploads/1795792227570-10.jpeg",
+    "size": 180769,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.583Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227570_oopzu",
+    "name": "9A.jpeg",
+    "filename": "1795792227557-9a.jpeg",
+    "url": "/api/uploads/1795792227557-9a.jpeg",
+    "size": 91992,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.570Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227557_rd6ys",
+    "name": "9.jpeg",
+    "filename": "1795792227544-9.jpeg",
+    "url": "/api/uploads/1795792227544-9.jpeg",
+    "size": 181992,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.557Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227544_poclj",
+    "name": "8.jpeg",
+    "filename": "1795792227530-8.jpeg",
+    "url": "/api/uploads/1795792227530-8.jpeg",
+    "size": 561477,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.544Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227530_zd1dj",
+    "name": "7A.jpeg",
+    "filename": "1795792227513-7a.jpeg",
+    "url": "/api/uploads/1795792227513-7a.jpeg",
+    "size": 159312,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.530Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227513_o52v8",
+    "name": "7.jpeg",
+    "filename": "1795792227499-7.jpeg",
+    "url": "/api/uploads/1795792227499-7.jpeg",
+    "size": 151246,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.513Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227499_s6mxd",
+    "name": "6A.jpg",
+    "filename": "1795792227475-6a.jpg",
+    "url": "/api/uploads/1795792227475-6a.jpg",
+    "size": 136887,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.499Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227475_8luwz",
+    "name": "6.jpg",
+    "filename": "1795792227460-6.jpg",
+    "url": "/api/uploads/1795792227460-6.jpg",
+    "size": 92717,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.475Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227460_qweu8",
+    "name": "5.jpg",
+    "filename": "1795792227447-5.jpg",
+    "url": "/api/uploads/1795792227447-5.jpg",
+    "size": 82904,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.460Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227447_u61sx",
+    "name": "4.jpg",
+    "filename": "1795792227433-4.jpg",
+    "url": "/api/uploads/1795792227433-4.jpg",
+    "size": 281664,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.447Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227433_443dt",
+    "name": "3.jpg",
+    "filename": "1795792227401-3.jpg",
+    "url": "/api/uploads/1795792227401-3.jpg",
+    "size": 4544320,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.433Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227401_x42xl",
+    "name": "2.jpeg",
+    "filename": "1795792227382-2.jpeg",
+    "url": "/api/uploads/1795792227382-2.jpeg",
+    "size": 430128,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.401Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227382_9df7w",
+    "name": "1.jpg",
+    "filename": "1795792227368-1.jpg",
+    "url": "/api/uploads/1795792227368-1.jpg",
+    "size": 90872,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.382Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792227368_umiir",
+    "name": "0.jpg",
+    "filename": "1795792227353-0.jpg",
+    "url": "/api/uploads/1795792227353-0.jpg",
+    "size": 196899,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:10:27.368Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792104970_xzunn",
+    "name": "27.jpg",
+    "filename": "1795792104689-27.jpg",
+    "url": "/api/uploads/1795792104689-27.jpg",
+    "size": 16179872,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:24.970Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792104689_sb4s8",
+    "name": "26.JPG",
+    "filename": "1795792104158-26-jpg.jpg",
+    "url": "/api/uploads/1795792104158-26-jpg.jpg",
+    "size": 21293138,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:24.689Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792104158_n6q5x",
+    "name": "25.JPG",
+    "filename": "1795792103849-25-jpg.jpg",
+    "url": "/api/uploads/1795792103849-25-jpg.jpg",
+    "size": 16316063,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:24.158Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792103845_uymkz",
+    "name": "24.JPG",
+    "filename": "1795792103674-24-jpg.jpg",
+    "url": "/api/uploads/1795792103674-24-jpg.jpg",
+    "size": 6157454,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:23.845Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792103674_naxay",
+    "name": "23.JPG",
+    "filename": "1795792103559-23-jpg.jpg",
+    "url": "/api/uploads/1795792103559-23-jpg.jpg",
+    "size": 6310106,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:23.674Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792103559_1fple",
+    "name": "22.JPG",
+    "filename": "1795792103464-22-jpg.jpg",
+    "url": "/api/uploads/1795792103464-22-jpg.jpg",
+    "size": 5653977,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:23.559Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792103464_ysybo",
+    "name": "21.JPG",
+    "filename": "1795792102999-21-jpg.jpg",
+    "url": "/api/uploads/1795792102999-21-jpg.jpg",
+    "size": 15012362,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:23.464Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792102999_yxlcs",
+    "name": "20.JPG",
+    "filename": "1795792102295-20-jpg.jpg",
+    "url": "/api/uploads/1795792102295-20-jpg.jpg",
+    "size": 18184066,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:22.999Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792102295_0zvi3",
+    "name": "19.JPG",
+    "filename": "1795792101757-19-jpg.jpg",
+    "url": "/api/uploads/1795792101757-19-jpg.jpg",
+    "size": 13880167,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:22.295Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792101757_9rc0w",
+    "name": "18A.JPG",
+    "filename": "1795792101504-18a-jpg.jpg",
+    "url": "/api/uploads/1795792101504-18a-jpg.jpg",
+    "size": 3094430,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:21.757Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792101504_h4lu7",
+    "name": "18.JPG",
+    "filename": "1795792101382-18-jpg.jpg",
+    "url": "/api/uploads/1795792101382-18-jpg.jpg",
+    "size": 3386756,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:21.504Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792101382_ym4o5",
+    "name": "17.JPG",
+    "filename": "1795792101292-17-jpg.jpg",
+    "url": "/api/uploads/1795792101292-17-jpg.jpg",
+    "size": 3730977,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:21.382Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792101292_11ngk",
+    "name": "16.jpeg",
+    "filename": "1795792101256-16.jpeg",
+    "url": "/api/uploads/1795792101256-16.jpeg",
+    "size": 1474922,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:21.292Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792101256_qa803",
+    "name": "15.JPG",
+    "filename": "1795792100727-15-jpg.jpg",
+    "url": "/api/uploads/1795792100727-15-jpg.jpg",
+    "size": 16821758,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:21.256Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792100727_28g4j",
+    "name": "14.JPG",
+    "filename": "1795792100665-14-jpg.jpg",
+    "url": "/api/uploads/1795792100665-14-jpg.jpg",
+    "size": 3634274,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:20.727Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792100665_bw575",
+    "name": "13.JPG",
+    "filename": "1795792100458-13-jpg.jpg",
+    "url": "/api/uploads/1795792100458-13-jpg.jpg",
+    "size": 3774210,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:20.665Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792100458_x18e9",
+    "name": "12.JPG",
+    "filename": "1795792100414-12-jpg.jpg",
+    "url": "/api/uploads/1795792100414-12-jpg.jpg",
+    "size": 3359612,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:20.458Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792100413_71ys2",
+    "name": "11.JPG",
+    "filename": "1795792100344-11-jpg.jpg",
+    "url": "/api/uploads/1795792100344-11-jpg.jpg",
+    "size": 3704340,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:20.413Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792100344_b45a3",
+    "name": "10.JPG",
+    "filename": "1795792100203-10-jpg.jpg",
+    "url": "/api/uploads/1795792100203-10-jpg.jpg",
+    "size": 3213443,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:20.344Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792100202_ackqj",
+    "name": "9.JPG",
+    "filename": "1795792100092-9-jpg.jpg",
+    "url": "/api/uploads/1795792100092-9-jpg.jpg",
+    "size": 3419791,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:20.203Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792100092_ybkny",
+    "name": "8A.jpg",
+    "filename": "1795792100051-8a.jpg",
+    "url": "/api/uploads/1795792100051-8a.jpg",
+    "size": 237106,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:20.092Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792100051_1otg3",
+    "name": "8.JPG",
+    "filename": "1795792099913-8-jpg.jpg",
+    "url": "/api/uploads/1795792099913-8-jpg.jpg",
+    "size": 3163849,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:20.051Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792099913_k0i2v",
+    "name": "8 (2).JPG",
+    "filename": "1795792099853-8--2--jpg.jpg",
+    "url": "/api/uploads/1795792099853-8--2--jpg.jpg",
+    "size": 3386756,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:19.913Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792099853_fr884",
+    "name": "7.JPG",
+    "filename": "1795792099829-7-jpg.jpg",
+    "url": "/api/uploads/1795792099829-7-jpg.jpg",
+    "size": 1501615,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:19.853Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792099829_krw3b",
+    "name": "6.JPG",
+    "filename": "1795792099778-6-jpg.jpg",
+    "url": "/api/uploads/1795792099778-6-jpg.jpg",
+    "size": 2938727,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:19.829Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792099778_3d5nl",
+    "name": "5.JPG",
+    "filename": "1795792099734-5-jpg.jpg",
+    "url": "/api/uploads/1795792099734-5-jpg.jpg",
+    "size": 3483542,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:19.778Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792099734_1cni1",
+    "name": "4.JPG",
+    "filename": "1795792099671-4-jpg.jpg",
+    "url": "/api/uploads/1795792099671-4-jpg.jpg",
+    "size": 3921885,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:19.734Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792099671_fxt49",
+    "name": "3.JPG",
+    "filename": "1795792099421-3-jpg.jpg",
+    "url": "/api/uploads/1795792099421-3-jpg.jpg",
+    "size": 3497808,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:19.671Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792099420_trwth",
+    "name": "2.JPG",
+    "filename": "1795792099382-2-jpg.jpg",
+    "url": "/api/uploads/1795792099382-2-jpg.jpg",
+    "size": 2908457,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:19.420Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792099382_8qn29",
+    "name": "1.JPG",
+    "filename": "1795792099338-1-jpg.jpg",
+    "url": "/api/uploads/1795792099338-1-jpg.jpg",
+    "size": 3112322,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:19.382Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792099338_upz1z",
+    "name": "01.JPG",
+    "filename": "1795792099297-01-jpg.jpg",
+    "url": "/api/uploads/1795792099297-01-jpg.jpg",
+    "size": 2735938,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:19.338Z",
+    "isPreset": false
+  },
+  {
+    "id": "med_1795792099297_cek4d",
+    "name": "0.JPG",
+    "filename": "1795792099246-0-jpg.jpg",
+    "url": "/api/uploads/1795792099246-0-jpg.jpg",
+    "size": 3016498,
+    "type": "image/jpeg",
+    "uploadedAt": "2026-11-27T15:08:19.297Z",
+    "isPreset": false
+  },
+  {
     "id": "press-clipping-1",
     "name": "SPOT NEWS - Civils Coaching at Jamia Millia (05 Apr 2026)",
     "url": "/assets/img/press/press-jamia-civils-coaching-05apr2026.jpg",
