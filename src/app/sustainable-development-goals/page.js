@@ -148,19 +148,9 @@ export default function SustainableDevelopmentGoalsPage() {
               </div>
 
               {/* Core Text */}
-              <p style={{ fontSize: "1.04rem", lineHeight: 1.75, color: "var(--ink-700)", margin: "0 0 24px", flexGrow: 1 }}>
+              <p style={{ fontSize: "1.04rem", lineHeight: 1.75, color: "var(--ink-700)", margin: 0, flexGrow: 1 }}>
                 <strong>Quality Education:</strong> Rural libraries, merit sponsorships, and holistic classroom empowerment.
               </p>
-
-              {/* Action Pillars Strip */}
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", paddingTop: "18px", borderTop: "1px solid rgba(217, 175, 82, 0.18)" }}>
-                <span style={{ background: "rgba(217, 175, 82, 0.14)", color: "var(--gold-800)", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
-                  Rural Libraries
-                </span>
-                <span style={{ background: "rgba(217, 175, 82, 0.14)", color: "var(--gold-800)", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
-                  Merit Sponsorships
-                </span>
-              </div>
             </div>
 
             {/* INTERLOCKING CHAIN BRIDGE 1 (04 -> 05) */}
@@ -259,19 +249,9 @@ export default function SustainableDevelopmentGoalsPage() {
               </div>
 
               {/* Core Text */}
-              <p style={{ fontSize: "1.04rem", lineHeight: 1.75, color: "var(--ink-700)", margin: "0 0 24px", flexGrow: 1 }}>
+              <p style={{ fontSize: "1.04rem", lineHeight: 1.75, color: "var(--ink-700)", margin: 0, flexGrow: 1 }}>
                 <strong>Gender Equality:</strong> Empowering girl child education and guaranteeing equal leadership access.
               </p>
-
-              {/* Action Pillars Strip */}
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", paddingTop: "18px", borderTop: "1px solid rgba(229, 36, 59, 0.12)" }}>
-                <span style={{ background: "rgba(229, 36, 59, 0.08)", color: "#c2182d", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
-                  Girl Child Education
-                </span>
-                <span style={{ background: "rgba(229, 36, 59, 0.08)", color: "#c2182d", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
-                  Equal Leadership Access
-                </span>
-              </div>
             </div>
 
             {/* INTERLOCKING CHAIN BRIDGE 2 (05 -> 10) */}
@@ -370,19 +350,9 @@ export default function SustainableDevelopmentGoalsPage() {
               </div>
 
               {/* Core Text */}
-              <p style={{ fontSize: "1.04rem", lineHeight: 1.75, color: "var(--ink-700)", margin: "0 0 24px", flexGrow: 1 }}>
+              <p style={{ fontSize: "1.04rem", lineHeight: 1.75, color: "var(--ink-700)", margin: 0, flexGrow: 1 }}>
                 <strong>Reduced Inequalities:</strong> Dismantling urban-rural divides for first-generation rural scholars.
               </p>
-
-              {/* Action Pillars Strip */}
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", paddingTop: "18px", borderTop: "1px solid rgba(79, 70, 229, 0.12)" }}>
-                <span style={{ background: "rgba(79, 70, 229, 0.08)", color: "#4338ca", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
-                  Urban-Rural Divides
-                </span>
-                <span style={{ background: "rgba(79, 70, 229, 0.08)", color: "#4338ca", fontSize: "0.78rem", fontWeight: 700, padding: "5px 12px", borderRadius: "20px" }}>
-                  First-Gen Scholars
-                </span>
-              </div>
             </div>
           </div>
 

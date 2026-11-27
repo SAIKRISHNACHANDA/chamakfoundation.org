@@ -6,10 +6,6 @@ import {
   ArrowRight,
   ShieldCheck,
   Award,
-  GraduationCap,
-  Compass,
-  Users,
-  HeartHandshake,
 } from "lucide-react";
 
 export const metadata = {
@@ -237,76 +233,9 @@ export default function AboutPage() {
                 <strong>Chamak Foundation</strong>, a beacon of hope in the realm of education, is a non-profit organization dedicated to lighting up the futures of disadvantaged students. Founded on the belief that education is the key to unlocking one&apos;s full potential, we are on a mission to remove the barriers that often stand in the way of aspiring scholars.
               </p>
 
-              <p style={{ color: "var(--ink-700)", lineHeight: 1.8, fontSize: "1.04rem", marginBottom: "24px" }}>
+              <p style={{ color: "var(--ink-700)", lineHeight: 1.8, fontSize: "1.04rem", marginBottom: "0" }}>
                 With a passionate team of educators, volunteers, and advocates, Chamak Foundation offers a comprehensive range of services to nurture the talents of tomorrow&apos;s leaders. Our core programs include, mentorship, tutoring, career guidance, and more, all designed to empower students to achieve academic excellence and realize their dreams.
               </p>
-
-              {/* 4 Feature Cards */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "14px", marginBottom: "28px" }}>
-                <div
-                  style={{
-                    background: "#ffffff",
-                    border: "1px solid rgba(11,27,56,0.08)",
-                    borderRadius: "12px",
-                    padding: "14px 16px",
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: 700, color: "var(--navy-900)", fontSize: "0.95rem" }}>
-                    <GraduationCap size={18} style={{ color: "var(--gold-600)" }} /> Mentorship &amp; Tutoring
-                  </div>
-                  <p style={{ fontSize: "0.84rem", color: "var(--ink-500)", margin: "4px 0 0", lineHeight: 1.4 }}>
-                    Nurturing academic excellence.
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    background: "#ffffff",
-                    border: "1px solid rgba(11,27,56,0.08)",
-                    borderRadius: "12px",
-                    padding: "14px 16px",
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: 700, color: "var(--navy-900)", fontSize: "0.95rem" }}>
-                    <Compass size={18} style={{ color: "var(--gold-600)" }} /> Career Guidance
-                  </div>
-                  <p style={{ fontSize: "0.84rem", color: "var(--ink-500)", margin: "4px 0 0", lineHeight: 1.4 }}>
-                    Empowering career realization.
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    background: "#ffffff",
-                    border: "1px solid rgba(11,27,56,0.08)",
-                    borderRadius: "12px",
-                    padding: "14px 16px",
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: 700, color: "var(--navy-900)", fontSize: "0.95rem" }}>
-                    <HeartHandshake size={18} style={{ color: "var(--gold-600)" }} /> Removing Barriers
-                  </div>
-                  <p style={{ fontSize: "0.84rem", color: "var(--ink-500)", margin: "4px 0 0", lineHeight: 1.4 }}>
-                    Unlocking scholars&apos; full potential.
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    background: "#ffffff",
-                    border: "1px solid rgba(11,27,56,0.08)",
-                    borderRadius: "12px",
-                    padding: "14px 16px",
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: 700, color: "var(--navy-900)", fontSize: "0.95rem" }}>
-                    <Users size={18} style={{ color: "var(--gold-600)" }} /> Dedicated Team
-                  </div>
-                  <p style={{ fontSize: "0.84rem", color: "var(--ink-500)", margin: "4px 0 0", lineHeight: 1.4 }}>
-                    Educators, volunteers &amp; advocates.
-                  </p>
-                </div>
-              </div>
 
             </div>
           </div>
