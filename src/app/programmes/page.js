@@ -1,10 +1,8 @@
-import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { 
   Compass, 
   Smile, 
   Library, 
-  ArrowRight,
   BookOpen
 } from "lucide-react";
 
@@ -155,13 +153,6 @@ export default function ProgrammesPage() {
                           {p.whoItHelps}
                         </p>
                       </div>
-                    </div>
-
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginTop: "20px", paddingTop: "18px", borderTop: `1px solid ${p.boxBorder}` }}>
-                      <Link href="/get-involved" className="btn btn-navy btn-sm" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
-                        <span>Support this Programme</span>
-                        <ArrowRight size={14} />
-                      </Link>
                     </div>
                   </div>
                 </div>
