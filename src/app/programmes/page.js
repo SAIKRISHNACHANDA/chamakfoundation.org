@@ -8,7 +8,6 @@ import {
   Smile, 
   Library, 
   ArrowRight,
-  Sparkles,
   BookOpen
 } from "lucide-react";
 
@@ -158,22 +157,6 @@ export default function ProgrammesPage() {
                       padding: "24px 28px",
                     }}
                   >
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px", marginBottom: "14px" }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
-                        <span style={{ fontFamily: "var(--num)", fontSize: "0.95rem", fontWeight: 700, color: "#FFFFFF", background: "rgba(255,255,255,0.18)", padding: "4px 12px", borderRadius: "8px" }}>
-                          Programme {p.num}
-                        </span>
-                        <span style={{ fontSize: "0.76rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700, color: "#FAF7EF", background: "rgba(255,255,255,0.14)", padding: "4px 12px", borderRadius: "12px" }}>
-                          {p.category}
-                        </span>
-                      </div>
-
-                      <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(0,0,0,0.22)", color: "#FAF7EF", padding: "6px 14px", borderRadius: "20px", fontSize: "0.84rem", fontWeight: 600 }}>
-                        <Sparkles size={14} />
-                        <span>{p.impactStat}</span>
-                      </div>
-                    </div>
-
                     <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
                       <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "rgba(255,255,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FFFFFF", flexShrink: 0 }}>
                         <Icon size={24} />
@@ -211,10 +194,7 @@ export default function ProgrammesPage() {
                       </div>
                     </div>
 
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "16px", marginTop: "20px", paddingTop: "18px", borderTop: `1px solid ${p.boxBorder}` }}>
-                      <div style={{ fontSize: "0.88rem", color: "var(--ink-500)" }}>
-                        Want to support or collaborate on this initiative?
-                      </div>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginTop: "20px", paddingTop: "18px", borderTop: `1px solid ${p.boxBorder}` }}>
                       <Link href="/get-involved" className="btn btn-navy btn-sm" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
                         <span>Support this Programme</span>
                         <ArrowRight size={14} />
