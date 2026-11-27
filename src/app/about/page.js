@@ -20,7 +20,6 @@ export default function AboutPage() {
       <PageHero
         eyebrow="Chamak Padhai Se · Shine Through Education"
         title="About Chamak Foundation"
-        subtitle="Chamak Foundation stands as a symbol of hope, resilience, and transformation—believing firmly that education is the light (“Chamak”) that can illuminate lives and build a better society."
       />
 
       {/* SECTION 1: THE STORY OF CHAMAK & OFFICIAL LAUNCH */}
