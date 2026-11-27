@@ -156,7 +156,7 @@ export default function HomePage() {
             >
               Chamak Padhaai Se
             </blockquote>
-            <cite className="quote-box__author">&mdash; Dr Mohammad Azam Ali</cite>
+            <cite className="quote-box__author" style={{ textTransform: "none", letterSpacing: "0.02em" }}>&mdash; Dr Mohammad Azam Ali</cite>
           </div>
         </div>
       </section>
