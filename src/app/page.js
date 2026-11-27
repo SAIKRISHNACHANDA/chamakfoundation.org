@@ -150,7 +150,10 @@ export default function HomePage() {
         <div className="container">
           <div className="quote-box">
             <span className="quote-box__mark" aria-hidden="true">&ldquo;</span>
-            <blockquote className="quote-box__text">
+            <blockquote
+              className="quote-box__text"
+              style={{ fontWeight: 800, fontStyle: "normal", fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "0.01em" }}
+            >
               Chamak Padhaai Se
             </blockquote>
             <cite className="quote-box__author">&mdash; Dr. Mohammad Azam Ali</cite>
