@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { 
@@ -12,7 +9,6 @@ import {
 } from "lucide-react";
 
 export default function ProgrammesPage() {
-  const [activeFilter, setActiveFilter] = useState("all");
 
   const programmes = [
     {
@@ -89,51 +85,18 @@ export default function ProgrammesPage() {
     },
   ];
 
-  const filterCategories = [
-    { id: "all", label: "All Programmes" },
-    { id: "Higher Ed & Careers", label: "Career Guidance" },
-    { id: "Youth & Leadership", label: "Life Skills" },
-    { id: "Community & Literacy", label: "Community Libraries" },
-    { id: "Policy & Development", label: "Education Dialogue" },
-  ];
-
-  const filtered = activeFilter === "all" 
-    ? programmes 
-    : programmes.filter(p => p.category === activeFilter);
-
   return (
     <>
       <PageHero
         eyebrow="What We Run"
         title="Our Flagship Programmes"
-        subtitle="Creating equitable opportunities. Building unshakeable confidence. Helping dreams move forward."
       />
 
-      {/* Filter Bar */}
-      <section className="section" style={{ paddingBottom: "32px", paddingTop: "48px" }}>
+      {/* Programmes List */}
+      <section className="section" style={{ paddingBottom: "48px", paddingTop: "56px" }}>
         <div className="container">
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px", flexWrap: "wrap", marginBottom: "40px" }}>
-            <span style={{ fontSize: "0.86rem", color: "var(--ink-400)", fontWeight: 600, marginRight: "8px", textTransform: "uppercase", letterSpacing: "0.06em" }}>Filter Initiatives:</span>
-            {filterCategories.map(f => (
-              <button
-                key={f.id}
-                onClick={() => setActiveFilter(f.id)}
-                className={`btn btn-sm ${activeFilter === f.id ? "btn-navy" : "btn-outline-navy"}`}
-                style={{
-                  borderRadius: "30px",
-                  padding: "8px 18px",
-                  transition: "all 0.25s ease",
-                  cursor: "pointer",
-                }}
-              >
-                {f.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Programmes List */}
           <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
-            {filtered.map((p) => {
+            {programmes.map((p) => {
               const Icon = p.icon;
 
               return (
