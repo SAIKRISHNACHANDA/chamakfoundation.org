@@ -1,14 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import {
   Quote,
   Sparkles,
   Award,
   CheckCircle2,
-  GraduationCap,
   HeartHandshake,
-  ArrowRight,
   BookOpen,
   Library,
   Compass,
@@ -303,73 +300,6 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
-      {/* 5. Direct Action Call to Action Band */}
-      <section className="section section--navy">
-        <div className="container">
-          <div
-            style={{
-              textAlign: "center",
-              maxWidth: "760px",
-              margin: "0 auto",
-            }}
-          >
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                color: "var(--gold-400)",
-                fontSize: "0.85rem",
-                fontWeight: 700,
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                marginBottom: "16px",
-              }}
-            >
-              <GraduationCap size={18} /> Be Part of the Mission
-            </div>
-            <h2
-              style={{
-                color: "var(--cream-100)",
-                fontSize: "clamp(2rem, 3.5vw, 2.8rem)",
-                marginBottom: "16px",
-                fontFamily: "var(--serif)",
-              }}
-            >
-              Help More Students Shine Through Education
-            </h2>
-            <p
-              style={{
-                color: "rgba(250, 247, 239, 0.78)",
-                fontSize: "1.02rem",
-                lineHeight: 1.75,
-                margin: "0 auto 32px",
-              }}
-            >
-              Every scholarship, library book, and mentorship session directly empowers a child from an economically disadvantaged background to stay in school and achieve academic excellence.
-            </p>
-            <div
-              style={{
-                display: "flex",
-                gap: "16px",
-                justifyContent: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              <Link href="/get-involved#donate" className="btn btn-gold">
-                Support a Student <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/about#founder"
-                className="btn btn-outline-light"
-                style={{ borderColor: "rgba(250,247,239,0.3)" }}
-              >
-                Learn About Our Founder
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

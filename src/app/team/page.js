@@ -1,7 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
-import { Users, Award, ShieldCheck, HeartHandshake, ArrowRight, BookOpen, GraduationCap, Sparkles, Building2, MapPin } from "lucide-react";
+import { Users, Award, ShieldCheck, BookOpen, GraduationCap, Sparkles, Building2, MapPin } from "lucide-react";
 
 export const metadata = {
   title: "Our Team | Chamak Foundation",
@@ -110,25 +109,6 @@ export default function TeamPage() {
       ],
       bio: "Distinguished academician with 40+ years in higher education (UG, PG, PhD) and 150+ research publications. Former Principal at Vaagdevi and IEEE Hyderabad Section leader, steering Chamak Foundation's higher education mentorship and technical learning roadmaps.",
       focus: "Higher Education & Technical Pedagogy",
-    },
-  ];
-
-  const advisoryPillars = [
-    {
-      domain: "Pedagogy & Curriculum",
-      description: "Advising on foundational literacy benchmarks, bilingual teaching methods, and student learning assessments.",
-    },
-    {
-      domain: "Legal & Regulatory Compliance",
-      description: "Ensuring exemplary institutional governance, trust documentation, and transparent non-profit operations.",
-    },
-    {
-      domain: "Youth Mentorship & Psychology",
-      description: "Structuring mental wellness, emotional resilience workshops, and confidence-building modules for adolescents.",
-    },
-    {
-      domain: "Digital Literacy & Tech Access",
-      description: "Guiding our digital learning tools and community library computerization strategies for modern education.",
     },
   ];
 
@@ -587,96 +567,6 @@ export default function TeamPage() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Core Advisory Domains */}
-          <div style={{ marginTop: "56px" }}>
-            <h3 style={{ textAlign: "center", fontFamily: "var(--serif)", color: "var(--navy-900)", fontSize: "1.35rem", marginBottom: "24px" }}>
-              Core Advisory Domains
-            </h3>
-            <div className="grid grid--4 reveal" style={{ gap: "20px" }}>
-              {advisoryPillars.map((domain, i) => (
-                <div key={i} className="card" style={{ padding: "28px 20px", background: "#FFFFFF", borderRadius: "16px", border: "1px solid rgba(11,27,56,0.06)" }}>
-                  <div style={{ width: "38px", height: "38px", borderRadius: "10px", background: "rgba(201,154,58,0.14)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--gold-600)", marginBottom: "14px" }}>
-                    <Award size={18} />
-                  </div>
-                  <h4 style={{ fontSize: "1.02rem", marginBottom: "8px", color: "var(--navy-900)" }}>{domain.domain}</h4>
-                  <p style={{ fontSize: "0.84rem", color: "var(--ink-400)", lineHeight: 1.6, margin: 0 }}>
-                    {domain.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* VOLUNTEERS */}
-      <section className="section">
-        <div className="container">
-          <div className="split reveal">
-            <div>
-              <div className="eyebrow">The Driving Force</div>
-              <h2 className="hdg-oneline hdg-oneline--split">The Heart of Chamak Foundation</h2>
-              <p style={{ fontSize: "1.05rem", lineHeight: 1.7, color: "var(--ink-600)", marginBottom: "20px" }}>
-                Our 100+ volunteers are university students, young corporate professionals, retired teachers, and local youth advocates who dedicate their weekends to tutoring, organizing library book clubs, and mentoring.
-              </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", marginBottom: "32px" }}>
-                <div style={{ background: "var(--cream-100)", padding: "18px", borderRadius: "12px", border: "1px solid rgba(11,27,56,0.08)" }}>
-                  <div style={{ fontFamily: "var(--num)", fontSize: "2rem", fontWeight: 800, color: "var(--navy-900)", letterSpacing: "-0.02em" }}>100+</div>
-                  <div style={{ fontSize: "0.82rem", color: "var(--ink-400)", textTransform: "uppercase", letterSpacing: "0.04em", fontWeight: 600 }}>Active Volunteers</div>
-                </div>
-                <div style={{ background: "var(--cream-100)", padding: "18px", borderRadius: "12px", border: "1px solid rgba(11,27,56,0.08)" }}>
-                  <div style={{ fontFamily: "var(--num)", fontSize: "2rem", fontWeight: 800, color: "var(--navy-900)", letterSpacing: "-0.02em" }}>5,000+</div>
-                  <div style={{ fontSize: "0.82rem", color: "var(--ink-400)", textTransform: "uppercase", letterSpacing: "0.04em", fontWeight: 600 }}>Mentoring Hours</div>
-                </div>
-              </div>
-              <Link href="/get-involved" className="btn btn-navy" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
-                <span>Join Our Volunteer Team</span>
-                <ArrowRight size={16} />
-              </Link>
-            </div>
-
-            <div className="split__media">
-              <div
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  minHeight: "340px",
-                  background: "linear-gradient(145deg, var(--navy-900) 0%, var(--navy-950) 100%)",
-                  borderRadius: "20px",
-                  padding: "48px 36px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  color: "var(--cream-100)",
-                  position: "relative",
-                  border: "1px solid rgba(201,154,58,0.25)",
-                }}
-              >
-                <HeartHandshake size={48} style={{ color: "var(--gold-400)", marginBottom: "20px" }} />
-                <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.8rem", color: "var(--cream-100)", marginBottom: "12px" }}>
-                  &ldquo;A small act of teaching creates an infinite ripple.&rdquo;
-                </h3>
-                <p style={{ color: "rgba(250,247,239,0.7)", fontSize: "0.95rem", lineHeight: 1.6, margin: 0 }}>
-                  Whether you can spend two hours every Saturday coaching mathematics or conduct monthly career webinars, we welcome your dedication.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CALL TO ACTION */}
-      <section className="section section--navy">
-        <div className="container">
-          <div className="cta-band reveal" style={{ background: "transparent", border: "none", padding: 0 }}>
-            <h2>Want to speak directly with our trustees?</h2>
-            <p>We are always eager to connect with potential institutional partners, alumni, and donors.</p>
-            <div className="cta-band__ctas">
-              <Link href="/contact" className="btn btn-gold">Contact Leadership</Link>
-              <a href="tel:+919491638052" className="btn btn-outline-cream">+91 94916 38052</a>
-            </div>
           </div>
         </div>
       </section>
