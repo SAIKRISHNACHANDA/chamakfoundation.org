@@ -4,7 +4,6 @@ import PageHero from "@/components/PageHero";
 import {
   Sparkles,
   ArrowRight,
-  ShieldCheck,
   Award,
 } from "lucide-react";
 
@@ -70,58 +69,9 @@ export default function AboutPage() {
                 <strong>Chamak Foundation (Chamak Padhai Se) Non-Profit Organization</strong> was launched on <strong>6th October 2023</strong> in Hyderabad by <strong>Professor Shantha Sinha</strong>, a renowned social activist, Ramon Magsaysay Award winner and Former ChairPerson for National Commission for Protection of Child Rights ( NCPCR ) .
               </p>
 
-              <p style={{ color: "var(--ink-700)", lineHeight: 1.8, fontSize: "1.04rem", marginBottom: "26px" }}>
+              <p style={{ color: "var(--ink-700)", lineHeight: 1.8, fontSize: "1.04rem", marginBottom: 0 }}>
                 The NGO is registered with the number <strong>643/2023</strong> under the <strong>Telangana Societies Registration Act, 2001</strong>. Chamak Foundation stands as a symbol of hope, resilience, and transformation—believing firmly that education is the light (&ldquo;Chamak&rdquo;) that can illuminate lives and build a better society.
               </p>
-
-              {/* Registration & Launch Badges */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "14px" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "12px",
-                    background: "#ffffff",
-                    border: "1px solid rgba(11,27,56,0.12)",
-                    borderRadius: "12px",
-                    padding: "12px 16px",
-                    boxShadow: "0 4px 14px rgba(11,27,56,0.04)",
-                  }}
-                >
-                  <ShieldCheck size={26} style={{ color: "var(--navy-800)", flexShrink: 0 }} />
-                  <div>
-                    <div style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--gold-700)", fontWeight: 700 }}>
-                      Official Registration
-                    </div>
-                    <div style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--navy-950)" }}>
-                      Regd. No. 643/2023
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "12px",
-                    background: "#ffffff",
-                    border: "1px solid rgba(11,27,56,0.12)",
-                    borderRadius: "12px",
-                    padding: "12px 16px",
-                    boxShadow: "0 4px 14px rgba(11,27,56,0.04)",
-                  }}
-                >
-                  <Award size={26} style={{ color: "var(--gold-600)", flexShrink: 0 }} />
-                  <div>
-                    <div style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--gold-700)", fontWeight: 700 }}>
-                      Inaugurated By
-                    </div>
-                    <div style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--navy-950)" }}>
-                      Prof. Shantha Sinha
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Right Column: Launch Ceremony Photo */}

@@ -72,11 +72,6 @@ export default function SustainableDevelopmentGoalsPage() {
                 }}
               />
 
-              {/* Chain Badge */}
-              <div className="sdg-chain-badge sdg-chain-badge--gold">
-                <Link2 size={12} strokeWidth={2.5} /> Link 01 · Root
-              </div>
-
               {/* Hexagon Graphic Badge */}
               <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px" }}>
                 <div
@@ -174,11 +169,6 @@ export default function SustainableDevelopmentGoalsPage() {
                 }}
               />
 
-              {/* Chain Badge */}
-              <div className="sdg-chain-badge sdg-chain-badge--pink">
-                <Link2 size={12} strokeWidth={2.5} /> Link 02 · Catalyst
-              </div>
-
               {/* Hexagon Graphic Badge */}
               <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px" }}>
                 <div
@@ -274,11 +264,6 @@ export default function SustainableDevelopmentGoalsPage() {
                   background: "linear-gradient(90deg, #6366F1, #4F46E5)",
                 }}
               />
-
-              {/* Chain Badge */}
-              <div className="sdg-chain-badge sdg-chain-badge--purple">
-                <Link2 size={12} strokeWidth={2.5} /> Link 03 · Outcome
-              </div>
 
               {/* Hexagon Graphic Badge */}
               <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px" }}>
