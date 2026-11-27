@@ -2,8 +2,10 @@ import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 import { GALLERY_EVENTS } from "@/data/galleryEvents";
+import { ensureSeededDataFile, getDataFilePath } from "@/lib/storage";
 
-const DATA_FILE = path.join(process.cwd(), "src", "data", "events.json");
+const DATA_FILENAME = "events.json";
+const DATA_FILE = getDataFilePath(DATA_FILENAME);
 
 const NO_CACHE_HEADERS = {
   "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
@@ -13,20 +15,14 @@ const NO_CACHE_HEADERS = {
 
 async function getStoredEvents() {
   try {
+    await ensureSeededDataFile(DATA_FILENAME, JSON.stringify(GALLERY_EVENTS, null, 2));
     const raw = await fs.readFile(DATA_FILE, "utf-8");
     const parsed = JSON.parse(raw);
     if (Array.isArray(parsed)) {
       return parsed;
     }
   } catch (err) {
-    // If file doesn't exist or cannot be read, initialize it
-    try {
-      await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
-      await fs.writeFile(DATA_FILE, JSON.stringify(GALLERY_EVENTS, null, 2), "utf-8");
-      return GALLERY_EVENTS;
-    } catch (writeErr) {
-      console.warn("Could not write events.json, falling back to static array", writeErr);
-    }
+    console.warn("Could not read/seed events.json, falling back to static array", err);
   }
   return GALLERY_EVENTS;
 }

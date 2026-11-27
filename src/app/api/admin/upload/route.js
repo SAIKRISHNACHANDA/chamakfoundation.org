@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
+import { ensureSeededDataFile, getDataFilePath, getUploadDir } from "@/lib/storage";
 
-const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
-const MEDIA_FILE = path.join(process.cwd(), "src", "data", "media.json");
+const UPLOAD_DIR = getUploadDir();
+const MEDIA_FILENAME = "media.json";
+const MEDIA_FILE = getDataFilePath(MEDIA_FILENAME);
 
 async function getMediaList() {
   try {
+    await ensureSeededDataFile(MEDIA_FILENAME, "[]");
     const raw = await fs.readFile(MEDIA_FILE, "utf-8");
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed : [];
@@ -69,7 +72,7 @@ export async function POST(req) {
           id: `med_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
           name: originalName,
           filename: safeFilename,
-          url: `/uploads/${safeFilename}`,
+          url: `/api/uploads/${safeFilename}`,
           size: file.size || buffer.length,
           type: file.type || "image/jpeg",
           uploadedAt: new Date().toISOString(),
@@ -119,7 +122,7 @@ export async function POST(req) {
         id: `med_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
         name: originalName,
         filename: safeFilename,
-        url: `/uploads/${safeFilename}`,
+        url: `/api/uploads/${safeFilename}`,
         size: buffer.length,
         type: body.type || "image/jpeg",
         uploadedAt: new Date().toISOString(),

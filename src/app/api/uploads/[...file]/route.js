@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
+import { getUploadDir } from "@/lib/storage";
 
 const MIME_TYPES = {
   ".jpg": "image/jpeg",
@@ -20,7 +21,7 @@ export async function GET(req, { params }) {
     }
 
     const safeFilename = path.basename(fileSegments.join("/"));
-    const filePath = path.join(process.cwd(), "public", "uploads", safeFilename);
+    const filePath = path.join(getUploadDir(), safeFilename);
 
     try {
       const buffer = await fs.readFile(filePath);

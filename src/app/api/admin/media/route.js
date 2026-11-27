@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
+import { ensureSeededDataFile, getDataFilePath, getUploadDir } from "@/lib/storage";
 
-const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
-const MEDIA_FILE = path.join(process.cwd(), "src", "data", "media.json");
+const UPLOAD_DIR = getUploadDir();
+const MEDIA_FILENAME = "media.json";
+const MEDIA_FILE = getDataFilePath(MEDIA_FILENAME);
 
 const NO_CACHE_HEADERS = {
   "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
@@ -13,6 +15,7 @@ const NO_CACHE_HEADERS = {
 
 async function getMediaList() {
   try {
+    await ensureSeededDataFile(MEDIA_FILENAME, "[]");
     const raw = await fs.readFile(MEDIA_FILE, "utf-8");
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed : [];
@@ -44,8 +47,8 @@ export async function GET() {
 
       for (const file of files) {
         if (file.startsWith(".")) continue;
-        const fileUrl = `/uploads/${file}`;
-        if (!existingUrls.has(fileUrl)) {
+        const fileUrl = `/api/uploads/${file}`;
+        if (!existingUrls.has(fileUrl) && !existingUrls.has(`/uploads/${file}`)) {
           const filePath = path.join(UPLOAD_DIR, file);
           const stat = await fs.stat(filePath);
           stored.push({

@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
+import { ensureSeededDataFile, getDataFilePath } from "@/lib/storage";
 
-const DATA_FILE = path.join(process.cwd(), "src", "data", "pressUploads.json");
+const DATA_FILENAME = "pressUploads.json";
+const DATA_FILE = getDataFilePath(DATA_FILENAME);
 
 const NO_CACHE_HEADERS = {
   "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
@@ -12,14 +14,11 @@ const NO_CACHE_HEADERS = {
 
 async function readList() {
   try {
+    await ensureSeededDataFile(DATA_FILENAME, "[]");
     const raw = await fs.readFile(DATA_FILE, "utf-8");
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed : [];
   } catch (err) {
-    try {
-      await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
-      await fs.writeFile(DATA_FILE, "[]", "utf-8");
-    } catch {}
     return [];
   }
 }
